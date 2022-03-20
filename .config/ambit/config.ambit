@@ -1,0 +1,43 @@
+.config/ambit/config.ambit;
+.config/nvim/[
+    init.vim,
+    startscreen.vimstart,
+    UltiSnips/[
+        cpp.snippets,
+        markdown.snippets,
+        tex.snippets
+    ]
+];
+.config/eww/[
+    eww.yuck,
+    eww.scss,
+    scripts/[
+        battery,
+        boolflip,
+        brightness,
+        brightnesslabel,
+        currtime,
+        player,
+        songback,
+        songcardartist,
+        songcardplayrender,
+        songcardshow,
+        songcardtitle,
+        songnext,
+        songplay,
+        volume,
+        volumelabel,
+        wifi,
+        workspaces
+    ]
+];
+.config/bspwm/bspwmrc;
+.config/sxhkd/sxhkdrc;
+.doom.d/[
+    config.el,
+    init.el,
+    packages.el
+];
+.config/picom.conf;
+.config/zathura/zathurarc;
+.config/dunst/dunstrc;
