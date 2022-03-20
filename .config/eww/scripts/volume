@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+raw_percent=$(pamixer --get-volume-human)
+if [ "$raw_percent" == "muted" ]; then
+    echo "0"
+else
+    percent=$(echo "$raw_percent" | sed 's/[^0-9]*//g')
+    echo "$percent"
+fi

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+show=$(eww get songcard_reveal)
+
+if [ "$show" == "false" ]; then
+    eww open songcard && eww update songcard_reveal=true
+else
+    eww close songcard && eww update songcard_reveal=false
+fi
+
+./boolflip songcard_reveal

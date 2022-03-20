@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "(label :class \"songcard__artist\" :text \".\")"
+while true 
+do
+    content=$(spt playback --status -f "%a" 2> /dev/null)
+    echo "(label :class \"songcard__artist\" :text \"${content}\")"
+    sleep 1
+done

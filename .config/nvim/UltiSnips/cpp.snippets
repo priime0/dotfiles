@@ -1,0 +1,301 @@
+snippet template "template for comp prog"
+#include <bits/stdc++.h>
+using namespace std;
+int MOD = 1000000007;
+
+int main() {
+	ios::sync_with_stdio();
+	cin.tie(0);
+
+	$0
+}
+endsnippet
+
+snippet if "if statement"
+if ($1) {
+	$0
+}
+endsnippet
+
+snippet while "while loop"
+while ($1) {
+	$0
+}
+endsnippet
+
+snippet fori "for i" w
+for (int i = 0; i < $1; i++) {
+	$0
+}
+endsnippet
+
+snippet forj "for j" w
+for (int j = 0; j < $1; j++) {
+	$0
+}
+endsnippet
+
+snippet fork "for k" w
+for (int k = 0; k < $1; k++) {
+	$0
+}
+endsnippet
+
+snippet fora "for auto" w
+for (&auto i : $1) {
+	$0
+}
+endsnippet
+
+snippet print "print" w
+cout << $1 << '\n';
+$0
+endsnippet
+
+snippet printv "print vector" w
+for (int i = 0; i < $1.size(); i++) {
+	cout << $1[i] << '\n';
+}
+$0
+endsnippet
+
+snippet ins "input string" w
+string $1;
+cin >> $1;
+$0
+endsnippet
+
+snippet ini "input int" w
+int $1;
+cin >> $1;
+$0
+endsnippet
+
+snippet viin "input vector int" w
+int n;
+cin >> n;
+vector<int> $1;
+for (int i = 0; i < n; i++) {
+	int a;
+	cin >> a;
+	$1.push_back(a);
+}
+$0
+endsnippet
+
+snippet vsin "input vector string" w
+int n;
+cin >> n;
+vector<string> $1;
+for (int i = 0; i < n; i++) {
+	string s;
+	cin >> s;
+	$1.push_back(s);
+}
+$0
+endsnippet
+
+snippet sort "sort iterator" w
+sort($1.begin(), $1.end());
+$0
+endsnippet
+
+snippet sortr "sort reverse iterator" w
+sort($1.rbegin(), $1.rend());
+$0
+endsnippet
+
+snippet sortp "sort iterator pains" w
+sort($1.begin(), $1.end(), [](auto &left, auto& right) {
+	$0
+});
+endsnippet
+
+snippet rev "reverse iterator" w
+reverse($1.begin(), $1.end());
+$0
+endsnippet
+
+snippet sum "sum vector" w
+accumulate($1.begin(), $1.end(), 0);
+$0
+endsnippet
+
+snippet vec "vector" w
+vector<$1> $2;
+$0
+endsnippet
+
+snippet vvec "vector vector" w
+vector<vector<$1>> $2;
+$0
+endsnippet
+
+snippet vi "vector int" w
+vector<int> $1;
+$0
+endsnippet
+
+snippet vvi "vector vector int" w
+vector<vector<int>> $1;
+$0
+endsnippet
+
+snippet vii "vector pair int" w
+vector<pair<int, int>> $1;
+$0
+endsnippet
+
+snippet vs "vector string" w
+vector<string> $1;
+$0
+endsnippet
+
+snippet vvs "vector vector string" w
+vector<vector<string>> $1;
+$0
+endsnippet
+
+snippet vss "vector pair int" w
+vector<pair<string,string>> $1;
+$0
+endsnippet
+
+snippet vsi "vector pair string int" w
+vector<pair<string,int>> $1;
+$0
+endsnippet
+
+snippet vis "vector pair int string" w
+vector<pair<int,string>> $1;
+$0
+endsnippet
+
+snippet .pb "vector push back" i
+.push_back($1)$0
+endsnippet
+
+snippet os "ordered set" w
+set<$1> $2;
+$0
+endsnippet
+
+snippet osi "ordered set int" w
+set<int> $1;
+$0
+endsnippet
+
+snippet oss "ordered set string" w
+set<string> $1;
+$0
+endsnippet
+
+snippet us "unordered set" w
+unordered_set<$1> $2;
+$0
+endsnippet
+
+snippet usi "unordered set int" w
+unordered_set<int> $1;
+$0
+endsnippet
+
+snippet uss "unordered set string" w
+unordered_set<string> $1;
+$0
+endsnippet
+
+snippet om "ordered map" w
+map<$1, $2> $3;
+$0
+endsnippet
+
+snippet omii "ordered map int int" w
+map<int, int> $1;
+$0
+endsnippet
+
+snippet omss "ordered map int int" w
+map<string, string> $1;
+$0
+endsnippet
+
+snippet omsi "ordered map string int" w
+map<string, int> $1;
+$0
+endsnippet
+
+snippet omis "ordered map int string" w
+map<int, string> $1;
+$0
+endsnippet
+
+snippet um "unordered map" w
+unordered_map<$1, $2> $3;
+$0
+endsnippet
+
+snippet umii "unordered map int int" w
+unordered_map<int, int> $1;
+$0
+endsnippet
+
+snippet umss "unordered map int int" w
+unordered_map<string, string> $1;
+$0
+endsnippet
+
+snippet umsi "unordered map string int" w
+unordered_map<string, int> $1;
+$0
+endsnippet
+
+snippet umis "unordered map int string" w
+unordered_map<int, string> $1;
+$0
+endsnippet
+
+snippet que "queue" w
+queue<$1> $2;
+$0
+endsnippet
+
+snippet qi "queue integer" w
+queue<int> $1;
+$0
+endsnippet
+
+snippet qs "queue string" w
+queue<string> $1;
+$0
+endsnippet
+
+snippet sta "stack" w
+stack<$1> $2;
+$0
+endsnippet
+
+snippet si "stack int" w
+stack<int> $1;
+$0
+endsnippet
+
+snippet ss "stack string" w
+stack<string> $1;
+$0
+endsnippet
+
+snippet pq "priority queue" w
+priority_queue<$1> $2;
+$0
+endsnippet
+
+snippet pqi "priority queue int" w
+priority_queue<int> $1;
+$0
+endsnippet
+
+snippet pqs "priority queue string" w
+priority_queue<string> $1;
+$0
+endsnippet

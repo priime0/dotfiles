@@ -1,0 +1,223 @@
+;; Global variables
+(deflisten w1 "scripts/workspaces 1")
+(deflisten w2 "scripts/workspaces 2")
+(deflisten w3 "scripts/workspaces 3")
+(deflisten w4 "scripts/workspaces 4")
+(deflisten w5 "scripts/workspaces 5")
+(deflisten w6 "scripts/workspaces 6")
+(deflisten w7 "scripts/workspaces 7")
+(deflisten w8 "scripts/workspaces 8")
+(deflisten w9 "scripts/workspaces 9")
+(deflisten w10 "scripts/workspaces 10")
+(deflisten w11 "scripts/workspaces 11")
+(deflisten w12 "scripts/workspaces 12")
+(deflisten w13 "scripts/workspaces 13")
+(deflisten w14 "scripts/workspaces 14")
+(deflisten w15 "scripts/workspaces 15")
+(deflisten w16 "scripts/workspaces 16")
+(deflisten w17 "scripts/workspaces 17")
+(deflisten w18 "scripts/workspaces 18")
+(deflisten w19 "scripts/workspaces 19")
+(deflisten w20 "scripts/workspaces 20")
+
+(deflisten player_listen :initial '{"show": "no", "content": ""}' "scripts/player")
+(deflisten player :initial '{"content": "TEST"}' "scripts/player")
+
+(deflisten songcardtitle :initial '(label :class "songcard__title" :text "None Playing")'
+  "scripts/songcardtitle")
+(deflisten songcardartist :initial '(label :class "songcard__artist" :text ".")'
+  "scripts/songcardartist")
+
+(defpoll songcard_button :interval "1s" "scripts/songcardplayrender")
+(defpoll wifi_label :interval "1s" "scripts/wifi")
+(defpoll volume_level :interval "1s" "scripts/volume")
+(defpoll volume_label :initial '{"icon": "", content: "0"}' 
+                      :interval "1s"
+  "scripts/volumelabel")
+(defpoll brightness_level :interval "1s" "scripts/brightness")
+(defpoll brightness_label :interval "1s" "scripts/brightnesslabel")
+(defpoll battery_level :interval "15s" "scripts/battery")
+(defpoll currtime :interval "1s" "scripts/currtime")
+
+(defvar songcard_reveal false)
+(defvar brightness_reveal false)
+(defvar volume_reveal false)
+(defvar timedate_reveal false)
+
+;; Main widget
+(defwindow main
+           :monitor 0
+           :geometry (geometry :x "-2px"
+                               :y "15px"
+                               :width "98%"
+                               :height "30px"
+                               :anchor "top center")
+           :stacking "bg"
+           :reserve (struts :distance "50px" :side "top")
+           :windowtype "dialog"
+           :wm-ignore false
+  (container))
+
+;; The main container for all the widgets
+(defwidget container []
+  (centerbox :orientation "horizontal"
+             :space-evenly true
+    (leftwidgets)
+    (middlewidgets)
+    (rightwidgets)))
+
+;; Left widgets
+(defwidget leftwidgets []
+  (box :spacing 4
+       :orientation "horizontal"
+       :halign "start"
+       :valign "center"
+       :class "leftwidgets"
+    (literal :content w1)
+    (literal :content w2)
+    (literal :content w3)
+    (literal :content w4)
+    (literal :content w5)
+    (literal :content w6)
+    (literal :content w7)
+    (literal :content w8)
+    (literal :content w9)
+    (literal :content w10)
+    (literal :content w11)
+    (literal :content w12)
+    (literal :content w13)
+    (literal :content w14)
+    (literal :content w15)
+    (literal :content w16)
+    (literal :content w17)
+    (literal :content w18)
+    (literal :content w19)
+    (literal :content w20)))
+
+;; Middle widgets
+(defwidget middlewidgets []
+  (player))
+
+;; Spotify widget
+(defwidget player []
+  (button :onclick "scripts/songcardshow"
+          :class "player__container"
+    (icon-module :class "player"
+                 :icon ""
+                 :visible {player_listen.show == "yes"}
+      (literal :content {player_listen.content}))))
+
+;; Right widgets
+(defwidget rightwidgets []
+  (box :class "rightwidgets"
+       :orientation "horizontal"
+       :halign "end"
+       :valign "center"
+       :space-evenly "false"
+       :spacing 10
+    (wifi)
+    (brightness)
+    (volume)
+    (power)
+    (timedate)))
+
+;; A widget that displays the current wifi SSID
+(defwidget wifi []
+  (icon-module :icon "↑"
+    (literal :content {wifi_label})))
+
+;; A widget for tracking brightness
+(defwidget brightness []
+  (eventbox :onhover "eww update brightness_reveal=true"
+            :onhoverlost "eww update brightness_reveal=false"
+      (icon-module :icon "☼"
+        (literal :content {brightness_label})
+        (revealer :transition "slideleft"
+                  :reveal brightness_reveal
+                  :duration "350ms"
+          (scale :class "brightness__bar"
+                 :orientation "horizontal"
+                 :value brightness_level
+                 :min 0
+                 :max 100
+                 :onchange "brightnessctl set {}%")))))
+
+;; A widget for tracking volume
+(defwidget volume []
+  (eventbox :onhover "eww update volume_reveal=true"
+            :onhoverlost "eww update volume_reveal=false"
+      (icon-module :icon {volume_label.icon}
+        (literal :content {volume_label.content})
+        (revealer :transition "slideleft"
+                  :reveal volume_reveal
+                  :duration "350ms"
+          (scale :class "volume__bar"
+                 :orientation "horizontal"
+                 :value volume_level
+                 :min 0
+                 :max 100
+                 :onchange "pamixer --set-volume $(printf \"%.0f\" \"{}\")")))))
+
+;; A widget for tracking battery
+(defwidget power []
+  (icon-module :class "power"
+               :icon "⏻"
+               :visible true
+    (literal :content {battery_level})))
+
+;; A widget for tracking time and date
+(defwidget timedate []
+  (box :class "timedate"
+       :orientation "horizontal"
+       :space-evenly false
+       :valign "center"
+       :halign "end"
+    (button :class "timedate__button"
+            :onclick "scripts/boolflip timedate_reveal"
+      (literal :content {currtime}))))
+
+
+;; A module with an icon attached
+(defwidget icon-module [icon ?class ?visible]
+  (box :class "${class} icon-module"
+       :orientation "horizontal"
+       :halign "end"
+       :valign "center"
+       :space-evenly false
+       :visible {visible ?: true}
+    (label :class "icon-module__icon" :text "${icon}")
+    (children)))
+
+; The song card widget
+(defwindow songcard
+           :monitor 0
+           :geometry (geometry :x "0px"
+                               :y "70px"
+                               :width "350px"
+                               :height "50px"
+                               :anchor "top center")
+           :stacking "fg"
+           :reserve (struts :distance "50px" :side "top")
+           :windowtype "dialog"
+           :wm-ignore false
+  (box :orientation "vertical"
+    ;; song metadata
+    (box :orientation "vertical"
+         :halign "center"
+         :valign "top"
+      (literal :content {songcardtitle})
+      (literal :content {songcardartist})
+    ;; song controls
+    (centerbox :class "songcard__controls"
+               :orientation "horizontal"
+               :valign "center"
+               :halign "center"
+      (button :onclick "scripts/songback"
+              :class "songcard__button"
+        (image :path "img/musicback.png" :image-width 20 :image-height 20))
+      (button :onclick "scripts/songplay"
+              :class "songcard__button"
+        (literal :content {songcard_button}))
+      (button :onclick "scripts/songnext"
+              :class "songcard__button"
+        (image :path "img/musicnext.png" :image-width 20 :image-height 20))))))

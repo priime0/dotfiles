@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+wifi=`nmcli c show --active | tail -n 1 | sed 's/ .*//g'`
+if [ ${#wifi} -gt 0 ]; then
+    echo "(label :text \"${wifi}\")"
+else
+    echo ""
+fi

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+var="timedate_reveal"
+val=`eww get ${var}`
+
+if [ "$val" == true ]; then
+    time=`date +"%F %T"`
+    echo "(label :text \"$time\")"
+else
+    time=`date +"%R"`
+    echo "(label :text \"$time\")"
+fi

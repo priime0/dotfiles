@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+var="$1"
+val=`eww get ${var}`
+
+if [ "$val" == "true" ]; then
+    eww update "$var"=false
+else
+    eww update "$var"=true
+fi

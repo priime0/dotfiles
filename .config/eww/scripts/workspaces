@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Checks if a list ($1) contains an element ($2)
+contains() {
+    for e in $1; do
+        [ "$e" == "$2" ] && echo 1 && return
+    done
+    echo 0
+}
+
+workspaces() {
+    icon=""
+    isfocused=$(bspc query -D -d focused --names | grep -w "$1")
+    isoccupied=$(bspc query -D -d .occupied --names | grep -w "$1")
+    if [ ${#isfocused} -ge 1 ]; then
+        class="focused"
+    elif [ ${#isoccupied} -ge 1 ]; then
+        class="occupied"
+    else
+        class="empty"
+    fi
+
+    echo "(button :onclick \"bspc desktop -f '^$1'\" :class \"$class\" \"$icon\")"
+}
+
+workspaces $1
+bspc subscribe desktop node_transfer | while read -r _ ; do
+    workspaces $1
+done
