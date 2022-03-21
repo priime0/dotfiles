@@ -1,11 +1,12 @@
 .config/ambit/config.ambit;
 .config/nvim/[
-    init.vim,
-    startscreen.vimstart,
-    UltiSnips/[
-        cpp.snippets,
-        markdown.snippets,
-        tex.snippets
+    init.lua,
+    lua/[
+        completion.lua,
+        lsp.lua,
+        mappings.lua,
+        plugins.lua,
+        treesitter.lua
     ]
 ];
 .config/eww/[

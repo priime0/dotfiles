@@ -56,6 +56,7 @@ nnoremap <silent> <C-n>b :lua require"gitsigns".blame_line()<CR>
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'wbthomason/packer.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'ayu-theme/ayu-vim'
 Plug 'lewis6991/gitsigns.nvim', {'branch': 'main'}
@@ -154,10 +155,6 @@ require'lspconfig'.ccls.setup{
         }
     }
 }
-EOF
-
-lua << EOF
-require'lspconfig'.pyls.setup{}
 EOF
 
 lua << EOF

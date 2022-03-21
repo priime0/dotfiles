@@ -204,3 +204,7 @@ XF86AudioMute
 
 super + {a,o}
     pactl set-sink-volume @DEFAULT_SINK@ {+,-}2%
+
+# switch monitor mode
+super + {x,b}
+    ~/.screenlayout/{monitor,single-screen}.sh
