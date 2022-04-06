@@ -1,0 +1,17 @@
+[[language]]
+name = "rust"
+auto-format = false
+
+[[language]]
+name = "racket"
+file-types = ["rkt"]
+comment-token = ";"
+indent = { tab-width = 2, unit = " " }
+config = "racket -l racket-langserver"
+
+[[language]]
+name = "java"
+file-types = ["java"]
+comment-token = "//"
+indent = { tab-width = 2, unit = "  " }
+config = "java-language-server"
