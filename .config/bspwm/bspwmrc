@@ -18,4 +18,9 @@ bspc config pointer_follows_monitor true
 bspc config pointer_follows_focus false
 bspc config focus_follows_pointer true
 
+bspc config merge_overlapping_monitors true
+
+bspc rule -a Emacs state=tiled
+bspc rule -a Zathura state=tiled
+
 exec .local/bin/startup

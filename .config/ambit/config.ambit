@@ -42,3 +42,10 @@
 .config/picom.conf;
 .config/zathura/zathurarc;
 .config/dunst/dunstrc;
+.config/qutebrowser/config.py;
+.wallpaper/[
+    sgcfd.jpeg,
+    sgcfdblurred.jpg,
+    sgcfdfalls.jpeg,
+    sgcfdfallsicon.jpeg
+];
