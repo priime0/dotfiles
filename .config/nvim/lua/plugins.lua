@@ -12,6 +12,7 @@ packer.startup(function()
     use("nvim-treesitter/nvim-treesitter")
     use("neovim/nvim-lspconfig")
     use("j-hui/fidget.nvim")
+    use("onsails/lspkind-nvim")
 
     -- ui
     use("ayu-theme/ayu-vim")
@@ -24,13 +25,11 @@ packer.startup(function()
     use("akinsho/toggleterm.nvim")
 
     -- completion
-    use("hrsh7th/nvim-cmp")
-    use("hrsh7th/cmp-path")
-    use("hrsh7th/cmp-buffer")
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-nvim-lua")
-    use("L3MON4D3/LuaSnip")
-    use("saadparwaiz1/cmp_luasnip")
+    use{"ms-jpq/coq_nvim",branch='coq'}
+    
+    -- misc
+    use("davidgranstrom/nvim-markdown-preview")
+    use("folke/todo-comments.nvim")
 
     if packer_bootstrap then
       require('packer').sync()
@@ -84,7 +83,7 @@ require('nvim-web-devicons').setup {}
 -- nvim-tree
 require('nvim-tree').setup {
     view = {
-        width = 25,
+        width = 35,
         signcolumn = "no",
     },
     diagnostics = {
@@ -106,5 +105,13 @@ require('lualine').setup {
 
 -- toggleterm
 require('toggleterm').setup {
-    open_mapping = [[<leader>ot]]
+    open_mapping = nil
 }
+
+-- markdown preview
+vim.cmd[[
+    let g:mkdp_browser = 'surf'
+]]
+
+-- todo-comments
+require('todo-comments').setup {}

@@ -28,8 +28,10 @@ opt("inccommand", "split")
 opt("updatetime", 100)
 opt("mouse", "a")
 
+vim.g.mapleader = " "
+
 require("plugins")
 require("mappings")
 require("treesitter")
-require("lsp")
 require("completion")
+require("lsp")
