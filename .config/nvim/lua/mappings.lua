@@ -20,3 +20,6 @@ map("n", "<leader>op", ":NvimTreeToggle<CR>")
 map("n", "<leader>to", ":Telescope<CR>")
 map("n", "<leader>tf", ":Telescope find_files<CR>")
 map("n", "<leader>tg", ":Telescope live_grep<CR>")
+
+-- copilot
+map('i', '<C-a>', 'copilot#Accept("<CR>")', {expr=true, silent=true})

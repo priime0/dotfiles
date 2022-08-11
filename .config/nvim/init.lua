@@ -29,6 +29,7 @@ opt("updatetime", 100)
 opt("mouse", "a")
 
 vim.g.mapleader = " "
+vim.g.copilot_no_tab_map = true
 
 require("plugins")
 require("mappings")
