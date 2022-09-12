@@ -32,16 +32,27 @@ packer.startup(function()
     use("hrsh7th/nvim-cmp")
     use{"glepnir/lspsaga.nvim",branch="main"}
     use("github/copilot.vim")
-    use("L3MON4D3/LuaSnip")
-    
+    use("SirVer/ultisnips")
+    use("quangnguyen30192/cmp-nvim-ultisnips")
+
     -- misc
     use("davidgranstrom/nvim-markdown-preview")
     use("folke/todo-comments.nvim")
+    use("lervag/vimtex")
 
     if packer_bootstrap then
       require('packer').sync()
     end
 end)
+
+-- vimtex
+vim.cmd("let g:vimtex_compiler_progname = 'nvr'")
+require("nvim-treesitter.configs").setup {
+    ignore_install = { "latex" },
+    highlight = {
+        disable = {"latex"},
+    }
+}
 
 -- fidget
 require("fidget").setup {}

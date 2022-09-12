@@ -1,11 +1,12 @@
 local lspconfig = require("lspconfig")
 local saga = require("lspsaga")
 local cmp = require("cmp")
+local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
 cmp.setup({
     snippet = {
       expand = function(args)
-        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+          vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
     },
     window = {
@@ -17,11 +18,16 @@ cmp.setup({
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ["<Tab>"] = cmp.mapping(
+        function(fallback)
+          cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+        end
+      ),
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'luasnip' }, -- For luasnip users.
+      { name = 'ultisnips' }, -- For ultisnips users.
     }, {
       { name = 'buffer' },
     })
@@ -132,6 +138,16 @@ lspconfig.racket_langserver.setup {
 }
 
 lspconfig.ocamllsp.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+lspconfig.pylsp.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+lspconfig.sumneko_lua.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
