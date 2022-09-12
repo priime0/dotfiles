@@ -7,7 +7,9 @@
         mappings.lua,
         plugins.lua,
         treesitter.lua
-    ]
+    ],
+    ftplugin/tex.lua,
+    UltiSnips/tex.snippets
 ];
 .config/eww/[
     eww.yuck,
@@ -43,6 +45,10 @@
 .config/zathura/zathurarc;
 .config/dunst/dunstrc;
 .config/qutebrowser/config.py;
+.config/helix/[
+    config.toml,
+    languages.toml
+];
 .wallpaper/[
     sgcfd.jpeg,
     sgcfdblurred.jpg,
