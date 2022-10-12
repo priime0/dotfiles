@@ -6,9 +6,14 @@
         lsp.lua,
         mappings.lua,
         plugins.lua,
-        treesitter.lua
+        treesitter.lua,
+        git.lua,
+        neovide.lua
     ],
-    ftplugin/tex.lua,
+    ftplugin/[
+        tex.lua,
+        racket.lua
+    ],
     UltiSnips/tex.snippets
 ];
 .config/eww/[
