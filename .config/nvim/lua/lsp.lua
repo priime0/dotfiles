@@ -5,62 +5,62 @@ local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
 cmp.setup({
     snippet = {
-      expand = function(args)
-          vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      end,
+        expand = function(args)
+            vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        end,
     },
     window = {
-      completion = cmp.config.window.bordered(),
-      documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-      ["<Tab>"] = cmp.mapping(
-        function(fallback)
-          cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
-        end
-      ),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ["<Tab>"] = cmp.mapping(
+            function(fallback)
+                cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+            end
+        ),
     }),
     sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'ultisnips' }, -- For ultisnips users.
+        { name = 'nvim_lsp' },
+        { name = 'ultisnips' }, -- For ultisnips users.
     }, {
-      { name = 'buffer' },
+        { name = 'buffer' },
     })
-  })
+})
 
-  -- Set configuration for specific filetype.
-  cmp.setup.filetype('gitcommit', {
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
-      { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+        { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
     }, {
-      { name = 'buffer' },
+        { name = 'buffer' },
     })
-  })
+})
 
-  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'buffer' }
+        { name = 'buffer' }
     }
-  })
+})
 
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-      { name = 'path' }
+        { name = 'path' }
     }, {
-      { name = 'cmdline' }
+        { name = 'cmdline' }
     })
-  })
+})
 
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true }
@@ -129,8 +129,23 @@ lspconfig.tsserver.setup {
 lspconfig.java_language_server.setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    cmd = { "/usr/share/java/java-language-server/lang_server_linux.sh" }
+    cmd = { "/usr/share/java/java-language-server/lang_server_linux.sh" },
+    root_dir = lspconfig.util.root_pattern('*.iml', '.idea', 'build.xml', 'pom.xml', 'settings.gradle',
+        'settings.gradle.kts')
 }
+
+--lspconfig.jdtls.setup {
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+--    root_dir = lspconfig.util.root_pattern(
+--        'build.xml',
+--        'pom.xml',
+--        'settings.gradle',
+--        'settings.gradle.kts',
+--        '*.iml',
+--        '.idea'
+--    )
+--}
 
 lspconfig.racket_langserver.setup {
     on_attach = on_attach,

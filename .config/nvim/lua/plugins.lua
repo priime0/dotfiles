@@ -13,6 +13,8 @@ packer.startup(function()
     use("neovim/nvim-lspconfig")
     use("j-hui/fidget.nvim")
     use("onsails/lspkind-nvim")
+    use("wlangstroth/vim-racket")
+    use("Olical/conjure")
 
     -- ui
     use("ayu-theme/ayu-vim")
@@ -22,7 +24,8 @@ packer.startup(function()
     use("kyazdani42/nvim-web-devicons")
     use("kyazdani42/nvim-tree.lua")
     use("nvim-lualine/lualine.nvim")
-    use("akinsho/toggleterm.nvim")
+    use{"akinsho/toggleterm.nvim",branch="main"}
+    use("simrat39/symbols-outline.nvim")
 
     -- completion
     use("hrsh7th/cmp-nvim-lsp")
@@ -39,6 +42,9 @@ packer.startup(function()
     use("davidgranstrom/nvim-markdown-preview")
     use("folke/todo-comments.nvim")
     use("lervag/vimtex")
+    use("TimUntersberger/neogit")
+    use("ggandor/leap.nvim")
+    use("eraserhd/parinfer-rust")
 
     if packer_bootstrap then
       require('packer').sync()
@@ -132,10 +138,16 @@ vim.cmd[[
 ]]
 
 -- todo-comments
-require('todo-comments').setup {}
+-- require('todo-comments').setup {}
 
 -- copilot
 vim.g.copilot_filetypes = {
     ['*'] = false,
     ['java'] = true,
 }
+
+-- symbols-outline
+require('symbols-outline').setup {}
+
+-- leap
+require('leap').setup {}

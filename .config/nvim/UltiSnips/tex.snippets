@@ -12,6 +12,55 @@ def env(name):
 endglobal
 
 # General Formatting
+snippet preamble "preamble" w
+\\usepackage[a4paper, margin=0.5in]{geometry}
+\\usepackage{amsmath}
+\\usepackage{amsthm}
+\\usepackage{amssymb}
+\\usepackage{enumitem}
+
+\\usepackage{import}
+\\usepackage{pdfpages}
+\\usepackage{transparent}
+\\usepackage{xcolor}
+
+\\newcommand{\\incfig}[2][1]{%
+\t\\def\\svgwidth{#1\\columnwidth}
+\t\\import{./figures/}{#2.pdf_tex}
+}
+
+\\pdfsuppresswarningpagegroup=1
+
+\\theoremstyle{definition}
+\\newtheorem{all}{Theorem}[section]
+\\theoremstyle{definition}
+\\newtheorem{corollary}[all]{Corollary}
+\\theoremstyle{definition}
+\\newtheorem{lemma}[all]{Lemma}
+\\theoremstyle{definition}
+\\newtheorem{definition}[all]{Definition}
+\\theoremstyle{definition}
+\\newtheorem{exercise}[all]{Exercise}
+\\theoremstyle{definition}
+\\newtheorem{proposition}[all]{Proposition}
+\\theoremstyle{definition}
+\\newtheorem{example}[all]{Example}
+
+\\newenvironment{lecture}[1]{
+\t\\section{\\MakeUppercase{#1}}
+\t\\vspace{-0.5em}
+\t\\hrule
+\t\\vspace{1em}
+\t\\begin{list}{}{
+\t\t\\setlength{\\leftmargin}{1.5em}
+\t}
+\t\\item[]
+}{
+\t\\end{list}
+}
+
+endsnippet
+
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
 	$0
@@ -27,7 +76,6 @@ snippet tob "Bold" w
 endsnippet
 
 # Text Formatting
-
 snippet ... "ldots" A
 \ldots
 endsnippet
@@ -50,8 +98,8 @@ endsnippet
 
 # Math Snippets
 context "math()"
-snippet iff "iff" Ai
-\iff
+snippet iff "iff" iA
+\iff $0
 endsnippet
 
 context "math()"
@@ -91,6 +139,10 @@ endsnippet
 
 snippet __ "subscript" iA
 _{$1}$0
+endsnippet
+
+snippet ^^ "superscript" iA
+^{$1}$0
 endsnippet
 
 context "math()"
@@ -154,13 +206,18 @@ snippet compl "complement" iA
 endsnippet
 
 context "math()"
+snippet txt "text" iA
+\\text{ $1 } $0
+endsnippet
+
+context "math()"
 snippet set "set" wA
 \\{$1\\} $0
 endsnippet
 
 context "math()"
-snippet cc "subset" Ai
-\subset 
+snippet cc "complement" Ai
+^{c}
 endsnippet
 
 snippet notin "not in " iA
@@ -176,11 +233,13 @@ snippet NN "n" iA
 \N
 endsnippet
 
-snippet Nn "cap" iA
+context "math()"
+snippet cap "cap" iA
 \cap 
 endsnippet
 
-snippet UU "cup" iA
+context "math()"
+snippet cup "cup" iA
 \cup 
 endsnippet
 

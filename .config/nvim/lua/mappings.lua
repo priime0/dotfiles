@@ -8,7 +8,9 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- open terminal
-map("n", "<leader>ot", ":ToggleTerm<CR>")
+map("n", "<leader>ott", ":ToggleTerm<CR>")
+map("n", "<leader>otf", ":ToggleTerm direction=float<CR>")
+map("n", "<leader>otv", ":ToggleTerm direction=vertical<CR>")
 
 -- exit terminal mode
 map("t", "<esc>", "<C-\\><C-n>")
@@ -23,3 +25,13 @@ map("n", "<leader>tg", ":Telescope live_grep<CR>")
 
 -- copilot
 map('i', '<C-a>', 'copilot#Accept("<CR>")', {expr=true, silent=true})
+
+-- neogit
+map('n', '<leader>gg', ':Neogit<CR>')
+
+-- symbols outline
+map("n", "<leader>os", ":SymbolsOutline<CR>")
+
+-- leap
+map("n", "<C-s>", ":lua require('leap').leap {}<CR>")
+map("n", "<C-z>", ":lua require('leap').leap {  backward = true }<CR>")

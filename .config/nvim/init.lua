@@ -30,9 +30,12 @@ opt("mouse", "a")
 
 vim.g.mapleader = " "
 vim.g.copilot_no_tab_map = true
+vim.g.maplocalleader = ","
 
 require("plugins")
 require("mappings")
 require("treesitter")
 require("completion")
 require("lsp")
+require("git")
+require("neovide")
