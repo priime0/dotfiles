@@ -20,6 +20,12 @@ bspc config focus_follows_pointer true
 
 bspc config merge_overlapping_monitors true
 
+bspc config top_monocle_padding 25
+bspc config right_monocle_padding 25
+bspc config left_monocle_padding 25
+bspc config bottom_monocle_padding 25
+bspc config borderless_monocle false
+
 bspc rule -a Emacs state=tiled
 bspc rule -a Zathura state=tiled
 
