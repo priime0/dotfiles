@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
-echo "(label :class \"power__text\" :text \"$(cat /sys/class/power_supply/BAT0/capacity)%\")"
+val=$(cat /sys/class/power_supply/BAT0/capacity)
+
+if [ $val -gt 19 ]; then
+    echo "(label :class \"power__text\" :text \"$val%\")"
+else
+    echo "(label :class \"power__text_low\" :text \"$val%\")"
+fi
