@@ -1,4 +1,6 @@
-vim.opt.guifont = { "Source Code Pro", ":h10"}
+local fontsize = 10
+
+vim.opt.guifont = { "Roboto Mono Medium", ":h" .. fontsize}
 
 vim.g.neovide_hide_mouse_when_typing = true
 
