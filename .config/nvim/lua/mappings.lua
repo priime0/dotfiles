@@ -35,3 +35,10 @@ map("n", "<leader>os", ":SymbolsOutline<CR>")
 -- leap
 map("n", "<C-s>", ":lua require('leap').leap {}<CR>")
 map("n", "<C-z>", ":lua require('leap').leap {  backward = true }<CR>")
+
+-- pollen
+map("i", "<A-d>", "◊")
+
+-- ayu toggle
+map("n", "<A-j>", ":let ayucolor=\"dark\"<CR>:colorscheme ayu<CR>")
+map("n", "<A-k>", ":let ayucolor=\"light\"<CR>:colorscheme ayu<CR>")
