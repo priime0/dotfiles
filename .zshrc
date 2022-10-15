@@ -137,7 +137,7 @@ alias tree="exa -T"
 alias mv="mv -i"
 alias mkdir="mkdir -p"
 
-alias v="nvim"
+alias v="open neovide"
 alias h="helix"
 alias f="fzf -i"
 
@@ -169,6 +169,8 @@ alias untar="tar -zxvf"
 alias mktar="tar -cvzf"
 
 alias manim="python3 -m manim"
+
+alias weather="curl 'wttr.in/Boston?M'"
 
 function cprog() {
     v /tmp/$((1 + $RANDOM)).cpp
