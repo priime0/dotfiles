@@ -90,7 +90,7 @@ local on_attach = function(client, bufnr)
     key('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
     key('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>')
     key('n', '<leader>cr', '<cmd>lua vim.lsp.buf.references()<CR>')
-    key('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+    key('n', '<space>f', '<cmd>lua vim.lsp.buf.format()<CR>')
     key('n', '<leader>cs', '<cmd>lua vim.diagnostic.open_float()<CR>')
 end
 
