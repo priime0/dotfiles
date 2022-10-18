@@ -27,6 +27,7 @@ opt("showcmd", true)
 opt("inccommand", "split")
 opt("updatetime", 100)
 opt("mouse", "a")
+opt("mousescroll", "ver:1,hor:1")
 
 vim.g.mapleader = " "
 vim.g.copilot_no_tab_map = true
