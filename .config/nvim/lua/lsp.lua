@@ -150,6 +150,9 @@ lspconfig.java_language_server.setup {
 lspconfig.racket_langserver.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    root_dir = lspconfig.util.root_pattern(
+        'main.rkt'
+    )
 }
 
 lspconfig.ocamllsp.setup {
