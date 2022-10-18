@@ -42,3 +42,7 @@ map("i", "<A-d>", "◊")
 -- ayu toggle
 map("n", "<A-j>", ":let ayucolor=\"dark\"<CR>:colorscheme ayu<CR>")
 map("n", "<A-k>", ":let ayucolor=\"light\"<CR>:colorscheme ayu<CR>")
+
+-- horizontal scrolling
+map("n", "<C-l>", "zl")
+map("n", "<C-h>", "zh")
