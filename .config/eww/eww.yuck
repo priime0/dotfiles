@@ -30,6 +30,7 @@
 
 (defpoll songcard_button :interval "1s" "scripts/songcardplayrender")
 (defpoll wifi_label :interval "1s" "scripts/wifi")
+(defpoll bluetooth_label :interval "1s" "scripts/bluetooth")
 (defpoll volume_level :interval "1s" "scripts/volume")
 (defpoll volume_label :initial '{"icon": "", content: "0"}' 
                       :interval "1s"
@@ -116,6 +117,7 @@
        :space-evenly "false"
        :spacing 10
     (wifi)
+    (bluetooth)
     (brightness)
     (volume)
     (power)
@@ -125,6 +127,12 @@
 (defwidget wifi []
   (icon-module :icon "↑"
     (literal :content {wifi_label})))
+
+(defwidget bluetooth []
+  (icon-module :class "bluetooth"
+               :icon "ᛒ"
+               :visible true
+    (literal :content {bluetooth_label})))
 
 ;; A widget for tracking brightness
 (defwidget brightness []
@@ -208,16 +216,16 @@
       (literal :content {songcardtitle})
       (literal :content {songcardartist})
     ;; song controls
-    (centerbox :class "songcard__controls"
-               :orientation "horizontal"
-               :valign "center"
-               :halign "center"
-      (button :onclick "scripts/songback"
-              :class "songcard__button"
-        (image :path "img/musicback.png" :image-width 20 :image-height 20))
-      (button :onclick "scripts/songplay"
-              :class "songcard__button"
-        (literal :content {songcard_button}))
-      (button :onclick "scripts/songnext"
-              :class "songcard__button"
-        (image :path "img/musicnext.png" :image-width 20 :image-height 20))))))
+     (centerbox :class "songcard__controls"
+                :orientation "horizontal"
+                :valign "center"
+                :halign "center"
+       (button :onclick "scripts/songback"
+               :class "songcard__button"
+         (image :path "img/musicback.png" :image-width 20 :image-height 20))
+       (button :onclick "scripts/songplay"
+               :class "songcard__button"
+         (literal :content {songcard_button}))
+       (button :onclick "scripts/songnext"
+               :class "songcard__button"
+         (image :path "img/musicnext.png" :image-width 20 :image-height 20))))))

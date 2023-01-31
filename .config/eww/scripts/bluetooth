@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+val=$(bluetoothctl devices Connected | wc -l)
+
+echo "(label :class \"bluetooth__label\" :text \"$val\")"
