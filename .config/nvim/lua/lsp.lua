@@ -1,7 +1,8 @@
 local lspconfig = require("lspconfig")
-local saga = require("lspsaga")
 local cmp = require("cmp")
 local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+
+require('lspsaga').setup {}
 
 cmp.setup({
     snippet = {
@@ -10,8 +11,8 @@ cmp.setup({
         end,
     },
     window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        -- completion = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -79,7 +80,7 @@ local on_attach = function(client, bufnr)
     -- Mappings
     key('n', '<leader>cD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
     key('n', '<leader>cd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-    key('n', '<leader>cp', '<cmd>Lspsaga preview_definition<CR>')
+    key('n', '<leader>cp', '<cmd>Lspsaga peek_definition<CR>')
     key('n', '<leader>ch', '<cmd>Lspsaga hover_doc<CR>')
     key('n', '<leader>ci', '<cmd>lua vim.lsp.buf.implementation()<CR>')
     key('n', '<leader>sh', '<cmd>Lspsaga signature_help<CR>')
@@ -90,7 +91,7 @@ local on_attach = function(client, bufnr)
     key('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
     key('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>')
     key('n', '<leader>cr', '<cmd>lua vim.lsp.buf.references()<CR>')
-    key('n', '<space>f', '<cmd>lua vim.lsp.buf.format()<CR>')
+    -- key('n', '<space>f', '<cmd>lua vim.lsp.buf.format()<CR>')
     key('n', '<leader>cs', '<cmd>lua vim.diagnostic.open_float()<CR>')
 end
 
@@ -170,4 +171,7 @@ lspconfig.sumneko_lua.setup {
     capabilities = capabilities,
 }
 
-saga.init_lsp_saga()
+lspconfig.clojure_lsp.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}

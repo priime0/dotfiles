@@ -29,13 +29,14 @@ opt("updatetime", 100)
 opt("mouse", "a")
 opt("mousescroll", "ver:1,hor:1")
 
-vim.cmd[[autocmd FocusGained * CheckTime]]
+vim.cmd[[autocmd FocusGained * checktime]]
 
 vim.g.mapleader = " "
 vim.g.copilot_no_tab_map = true
 vim.g.maplocalleader = ","
 
 vim.wo.wrap = false
+vim.opt.signcolumn = "yes"
 
 require("plugins")
 require("mappings")

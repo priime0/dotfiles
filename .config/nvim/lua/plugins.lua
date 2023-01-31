@@ -8,6 +8,9 @@ packer.startup(function()
     -- lib
     use("nvim-lua/plenary.nvim")
 
+    -- setup
+    use("Olical/aniseed")
+
     -- language
     use("nvim-treesitter/nvim-treesitter")
     use("neovim/nvim-lspconfig")
@@ -15,6 +18,7 @@ packer.startup(function()
     use("onsails/lspkind-nvim")
     use("wlangstroth/vim-racket")
     use("Olical/conjure")
+    use("yioneko/nvim-yati")
 
     -- ui
     use("ayu-theme/ayu-vim")
@@ -26,6 +30,8 @@ packer.startup(function()
     use("nvim-lualine/lualine.nvim")
     use{"akinsho/toggleterm.nvim",branch="main"}
     use("simrat39/symbols-outline.nvim")
+    use("lcheylus/overlength.nvim")
+    use("akinsho/bufferline.nvim")
 
     -- completion
     use("hrsh7th/cmp-nvim-lsp")
@@ -45,6 +51,10 @@ packer.startup(function()
     use("TimUntersberger/neogit")
     use("ggandor/leap.nvim")
     use("eraserhd/parinfer-rust")
+    use("windwp/nvim-autopairs")
+    use("mhartington/formatter.nvim")
+    use{"kylechui/nvim-surround",branch="main"}
+    use("numToStr/Comment.nvim")
 
     if packer_bootstrap then
       require('packer').sync()
@@ -64,7 +74,7 @@ require("nvim-treesitter.configs").setup {
 require("fidget").setup {}
 
 -- ayu
-vim.cmd([[let ayucolor="dark"]])
+vim.cmd([[let ayucolor="light"]])
 vim.cmd([[colorscheme ayu]])
 
 -- telescope
@@ -138,7 +148,7 @@ vim.cmd[[
 ]]
 
 -- todo-comments
--- require('todo-comments').setup {}
+require('todo-comments').setup {}
 
 -- copilot
 vim.g.copilot_filetypes = {
@@ -151,3 +161,55 @@ require('symbols-outline').setup {}
 
 -- leap
 require('leap').setup {}
+
+-- overlength
+require('overlength').setup {}
+
+-- formatter
+require('formatter').setup {
+    filetype = {
+        rust = {
+            -- Rustfmt
+            function()
+                return {
+                    exe = "rustfmt",
+                    args = {"--emit=stdout", "--edition=2021"},
+                    stdin = true
+                }
+            end
+        },
+        cpp = {
+            require('formatter.filetypes.cpp').clangformat
+        },
+        ocaml = {
+            require('formatter.filetypes.ocaml').ocamlformat
+        },
+        python = {
+            require('formatter.filetypes.python').black
+        },
+        javascript = {
+            require('formatter.filetypes.javascript').prettier
+        },
+        tex = {
+            require('formatter.filetypes.latex').latexindent
+        },
+        -- apply to all filetypes
+        ["*"] = {
+            require('formatter.filetypes.any').remove_trailing_whitespace
+        },
+    }
+}
+
+-- bufferline
+require('bufferline').setup {}
+
+-- nvim surround
+require('nvim-surround').setup {}
+
+-- Comment
+require('Comment').setup {}
+
+-- autopairs
+require("nvim-autopairs").setup {
+    disable_filetype = { "TelescopePrompt", "racket" }
+}

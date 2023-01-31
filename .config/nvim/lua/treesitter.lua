@@ -31,5 +31,12 @@ ts_config.setup {
     highlight = {
         enable = true,
         use_languagetree = true
+    },
+    indent = {
+        enable = false,
+        disable = { "python" }
+    },
+    yati = {
+        enable = true,
     }
 }

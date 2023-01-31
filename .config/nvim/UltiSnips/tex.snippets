@@ -18,6 +18,8 @@ snippet preamble "preamble" w
 \\usepackage{amsthm}
 \\usepackage{amssymb}
 \\usepackage{enumitem}
+\\usepackage{libertine}
+\\usepackage{euler}
 
 \\usepackage{import}
 \\usepackage{pdfpages}
@@ -58,6 +60,11 @@ snippet preamble "preamble" w
 }{
 \t\\end{list}
 }
+
+\\newcommand{\\N}{\\mathbb{N}}
+\\newcommand{\\R}{\\mathbb{R}}
+\\newcommand{\\I}{\\mathbb{I}}
+\\newcommand{\\Z}{\\mathbb{Z}}
 
 endsnippet
 
@@ -174,7 +181,7 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int|iint|iiint)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -216,8 +223,13 @@ snippet set "set" wA
 endsnippet
 
 context "math()"
-snippet cc "complement" Ai
+snippet ccc "complement" Ai
 ^{c}
+endsnippet
+
+context "math()"
+snippet ooo "infinity" iA
+\\infty
 endsnippet
 
 snippet notin "not in " iA
@@ -241,6 +253,11 @@ endsnippet
 context "math()"
 snippet cup "cup" iA
 \cup 
+endsnippet
+
+context "math()"
+snippet limm "limit" iA
+\\lim\\limits_{$1}{$2}$0
 endsnippet
 
 priority 10

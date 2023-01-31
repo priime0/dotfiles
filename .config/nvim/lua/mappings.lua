@@ -7,6 +7,9 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- format
+map('n', '<leader>f', ':Format<CR>')
+
 -- open terminal
 map("n", "<leader>ott", ":ToggleTerm<CR>")
 map("n", "<leader>otf", ":ToggleTerm direction=float<CR>")
@@ -26,8 +29,9 @@ map("n", "<leader>tg", ":Telescope live_grep<CR>")
 -- copilot
 map('i', '<C-a>', 'copilot#Accept("<CR>")', {expr=true, silent=true})
 
--- neogit
+-- neogit / git related
 map('n', '<leader>gg', ':Neogit<CR>')
+map('n', '<leader>gb', ':Gitsigns blame_line<CR>')
 
 -- symbols outline
 map("n", "<leader>os", ":SymbolsOutline<CR>")
@@ -46,3 +50,9 @@ map("n", "<A-k>", ":let ayucolor=\"light\"<CR>:colorscheme ayu<CR>")
 -- horizontal scrolling
 map("n", "<C-l>", "zl")
 map("n", "<C-h>", "zh")
+
+-- bufferline
+map("n", "<C-k>", ":BufferLineCycleNext<CR>")
+map("n", "<C-j>", ":BufferLineCyclePrev<CR>")
+map("n", "<C-S-k>", ":BufferLineMoveNext<CR>")
+map("n", "<C-S-j>", ":BufferLineMovePrev<CR>")
