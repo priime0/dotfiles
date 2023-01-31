@@ -21,6 +21,7 @@
     eww.scss,
     scripts/[
         battery,
+        bluetooth,
         boolflip,
         brightness,
         brightnesslabel,
