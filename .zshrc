@@ -237,3 +237,6 @@ function glp() {
 }
 
 # bonsai.sh -b 3 -L 50 -M 10
+
+# opam configuration
+[[ ! -r /home/priime/.opam/opam-init/init.zsh ]] || source /home/priime/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
