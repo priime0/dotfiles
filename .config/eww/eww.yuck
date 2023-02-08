@@ -39,6 +39,7 @@
 (defpoll brightness_label :interval "1s" "scripts/brightnesslabel")
 (defpoll battery_level :interval "15s" "scripts/battery")
 (defpoll currtime :interval "1s" "scripts/currtime")
+(defpoll autosus :interval "5s" "scripts/autosus")
 
 (defvar songcard_reveal false)
 (defvar brightness_reveal false)
@@ -116,6 +117,7 @@
        :valign "center"
        :space-evenly "false"
        :spacing 10
+    (literal :content {autosus})
     (wifi)
     (bluetooth)
     (brightness)
