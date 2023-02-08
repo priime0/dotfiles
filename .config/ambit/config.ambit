@@ -37,7 +37,9 @@
         volume,
         volumelabel,
         wifi,
-        workspaces
+        workspaces,
+        Makefile,
+        autosus.c
     ]
 ];
 .config/bspwm/bspwmrc;
