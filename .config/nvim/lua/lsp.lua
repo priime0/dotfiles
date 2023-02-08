@@ -30,7 +30,6 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'ultisnips' }, -- For ultisnips users.
     }, {
-        { name = 'buffer' },
     })
 })
 
@@ -151,9 +150,6 @@ lspconfig.java_language_server.setup {
 lspconfig.racket_langserver.setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    root_dir = lspconfig.util.root_pattern(
-        'main.rkt'
-    )
 }
 
 lspconfig.ocamllsp.setup {
@@ -161,7 +157,7 @@ lspconfig.ocamllsp.setup {
     capabilities = capabilities,
 }
 
-lspconfig.pylsp.setup {
+lspconfig.jedi_language_server.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }

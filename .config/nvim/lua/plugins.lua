@@ -32,6 +32,7 @@ packer.startup(function()
     use("simrat39/symbols-outline.nvim")
     use("lcheylus/overlength.nvim")
     use("akinsho/bufferline.nvim")
+    use("folke/trouble.nvim")
 
     -- completion
     use("hrsh7th/cmp-nvim-lsp")
@@ -178,6 +179,9 @@ require('formatter').setup {
                 }
             end
         },
+        c = {
+            require('formatter.filetypes.c').clangformat
+        },
         cpp = {
             require('formatter.filetypes.cpp').clangformat
         },
@@ -213,3 +217,6 @@ require('Comment').setup {}
 require("nvim-autopairs").setup {
     disable_filetype = { "TelescopePrompt", "racket" }
 }
+
+-- trouple
+require("trouble").setup {}

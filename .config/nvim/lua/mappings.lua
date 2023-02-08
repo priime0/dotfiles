@@ -8,7 +8,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- format
-map('n', '<leader>f', ':Format<CR>')
+map('n', '<leader>f', ':w<CR>:Format<CR>')
 
 -- open terminal
 map("n", "<leader>ott", ":ToggleTerm<CR>")
@@ -56,3 +56,6 @@ map("n", "<C-k>", ":BufferLineCycleNext<CR>")
 map("n", "<C-j>", ":BufferLineCyclePrev<CR>")
 map("n", "<C-S-k>", ":BufferLineMoveNext<CR>")
 map("n", "<C-S-j>", ":BufferLineMovePrev<CR>")
+
+-- trouble
+map("n", "<leader>od", ":TroubleToggle<CR>")

@@ -7,8 +7,6 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-require("nvim-autopairs").setup {}
-
 map("i", "<C-c>", "<ESC>:w<CR>:!just<CR>")
 map("n", "<C-c>", "<ESC>:w<CR>:!just<CR>")
 
