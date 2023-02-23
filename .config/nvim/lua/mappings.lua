@@ -32,6 +32,7 @@ map('i', '<C-a>', 'copilot#Accept("<CR>")', {expr=true, silent=true})
 -- neogit / git related
 map('n', '<leader>gg', ':Neogit<CR>')
 map('n', '<leader>gb', ':Gitsigns blame_line<CR>')
+map('n', '<leader>gs', ':Gitsigns stage_hunk<CR>')
 
 -- symbols outline
 map("n", "<leader>os", ":SymbolsOutline<CR>")
@@ -43,9 +44,11 @@ map("n", "<C-z>", ":lua require('leap').leap {  backward = true }<CR>")
 -- pollen
 map("i", "<A-d>", "◊")
 
--- ayu toggle
-map("n", "<A-j>", ":let ayucolor=\"dark\"<CR>:colorscheme ayu<CR>")
-map("n", "<A-k>", ":let ayucolor=\"light\"<CR>:colorscheme ayu<CR>")
+-- colorscheme toggle
+-- map("n", "<A-j>", ":let ayucolor=\"dark\"<CR>:colorscheme ayu<CR>")
+-- map("n", "<A-k>", ":let ayucolor=\"light\"<CR>:colorscheme ayu<CR>")
+map("n", "<A-j>", ":colorscheme catppuccin-mocha<CR>")
+map("n", "<A-k>", ":colorscheme catppuccin-latte<CR>")
 
 -- horizontal scrolling
 map("n", "<C-l>", "zl")
@@ -56,6 +59,11 @@ map("n", "<C-k>", ":BufferLineCycleNext<CR>")
 map("n", "<C-j>", ":BufferLineCyclePrev<CR>")
 map("n", "<C-S-k>", ":BufferLineMoveNext<CR>")
 map("n", "<C-S-j>", ":BufferLineMovePrev<CR>")
+map("n", "<leader>bd", ":bd<CR>")
 
 -- trouble
 map("n", "<leader>od", ":TroubleToggle<CR>")
+
+-- workspaces
+map("n", "<leader>pp", ":Telescope workspaces theme=dropdown<CR>")
+map("n", "<leader>pa", ":WorkspacesAdd ")

@@ -22,6 +22,7 @@ packer.startup(function()
 
     -- ui
     use("ayu-theme/ayu-vim")
+    use{"catppuccin/nvim", as="catppuccin"}
     use("nvim-lua/popup.nvim")
     use("nvim-telescope/telescope.nvim")
     use("lewis6991/gitsigns.nvim")
@@ -56,6 +57,7 @@ packer.startup(function()
     use("mhartington/formatter.nvim")
     use{"kylechui/nvim-surround",branch="main"}
     use("numToStr/Comment.nvim")
+    use("natecraddock/workspaces.nvim")
 
     if packer_bootstrap then
       require('packer').sync()
@@ -75,8 +77,14 @@ require("nvim-treesitter.configs").setup {
 require("fidget").setup {}
 
 -- ayu
-vim.cmd([[let ayucolor="light"]])
-vim.cmd([[colorscheme ayu]])
+-- vim.cmd([[let ayucolor="light"]])
+-- vim.cmd([[colorscheme ayu]])
+
+-- catppuccin
+require("catppuccin").setup {
+    flavour = "latte"
+}
+vim.cmd([[colorscheme catppuccin]])
 
 -- telescope
 require("telescope").setup {
@@ -90,8 +98,14 @@ require("telescope").setup {
             hidden = true,
             file_ignore_patterns = { ".git/" }
         }
+    },
+    extensions = {
+        workspaces = {
+            keep_insert = false,
+        }
     }
 }
+require("telescope").load_extension("workspaces")
 
 -- git signs
 require('gitsigns').setup {
@@ -128,7 +142,8 @@ require('nvim-tree').setup {
         enable = true,
         ignore = true,
         timeout = 1500,
-    }
+    },
+    sync_root_with_cwd = true
 }
 
 -- lualine
@@ -197,6 +212,21 @@ require('formatter').setup {
         tex = {
             require('formatter.filetypes.latex').latexindent
         },
+        java = {
+            function ()
+                return {
+                    exe = "google-java-format",
+                    args = {
+                        "--add-exports", "jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+                        "--add-exports", "jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
+                        "--add-exports", "jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
+                        "--add-exports", "jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+                        "--add-exports", "jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
+                    },
+                    stdin = false
+                }
+            end
+        },
         -- apply to all filetypes
         ["*"] = {
             require('formatter.filetypes.any').remove_trailing_whitespace
@@ -215,8 +245,13 @@ require('Comment').setup {}
 
 -- autopairs
 require("nvim-autopairs").setup {
-    disable_filetype = { "TelescopePrompt", "racket" }
+    disable_filetype = { "TelescopePrompt" }
 }
 
--- trouple
+-- trouble
 require("trouble").setup {}
+vim.diagnostic.config({
+    virtual_text = false,
+})
+
+require("workspaces").setup {}

@@ -150,6 +150,7 @@ lspconfig.java_language_server.setup {
 lspconfig.racket_langserver.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    root_dir = lspconfig.util.root_pattern('main.rkt')
 }
 
 lspconfig.ocamllsp.setup {
@@ -162,7 +163,7 @@ lspconfig.jedi_language_server.setup {
     capabilities = capabilities,
 }
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
@@ -170,4 +171,9 @@ lspconfig.sumneko_lua.setup {
 lspconfig.clojure_lsp.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+}
+
+lspconfig.texlab.setup {
+    on_attach=on_attach,
+    capabilities=capabilities
 }
