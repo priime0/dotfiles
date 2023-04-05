@@ -12,11 +12,31 @@ control + Return
 
 # program launcher
 super + space
-	/home/priime/.config/rofi/scripts/rofi-apps
+	rofi -show drun
 
-# ChatGPT
-super + y
-    /home/priime/.config/rofi/scripts/rofi-chatnotify
+# all programs launcher
+super + shift + space
+    rofi -show run
+
+# window jumper
+super + shift + Tab
+    rofi -show window
+
+# passwords
+super + p
+    passes
+
+# bluetooth
+super + b
+    rofi-bluetooth
+
+# vpn
+super + v
+    rofi-vpn
+
+# power
+super + BackSpace
+    powermenu
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -67,11 +87,11 @@ super + ctrl + {m,x,y,z}
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+    bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# super + {p,b,comma,period}
+    # bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 # super + {_,shift + }c
