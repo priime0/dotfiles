@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
 val=$(cat /sys/class/power_supply/BAT0/capacity)
+discharging=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i "state" | grep -i "discharging" | wc -l)
 
 if [ $val -gt 19 ]; then
+    echo "(label :class \"power__text\" :text \"$val%\")"
+elif [ $discharging -eq 0 ]; then
     echo "(label :class \"power__text\" :text \"$val%\")"
 else
     echo "(label :class \"power__text_low\" :text \"$val%\")"
