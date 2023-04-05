@@ -172,6 +172,8 @@ alias manim="python3 -m manim"
 
 alias weather="curl 'wttr.in/Boston?M'"
 
+alias clear="printf '\033[2J\033[3J\033[1;1H'"
+
 function cprog() {
     v /tmp/$((1 + $RANDOM)).cpp
 }
