@@ -17,14 +17,26 @@
 
 (straight-use-package 'company)
 (straight-use-package 'company-box)
+(straight-use-package 'company-math)
 (straight-use-package 'magit)
 (straight-use-package 'vertico
 		      :init (vertico-mode))
+(straight-use-package 'marginalia)
 (straight-use-package 'racket-mode)
-(straight-use-package 'lsp-mode)                      
+(straight-use-package 'lsp-mode)
 (straight-use-package 'lsp-ui)
-(straight-use-package 'parinfer-rust-mode)
 (straight-use-package 'rust-mode)
+(straight-use-package 'which-key)
+(straight-use-package 'neotree)
+(straight-use-package 'flycheck)
+(straight-use-package 'git-gutter)
+(straight-use-package 'paredit)
+(straight-use-package 'tuareg)
+(straight-use-package 'projectile)
+
+(add-to-list 'load-path (expand-file-name "lisp/pollen-mode" user-emacs-directory))
+(autoload 'pollen-mode "pollen" "A major mode for the pollen preprocessor." t)
+
 ;; ====== Configuration ======================
 
 (setq inhibit-startup-message t
@@ -51,18 +63,23 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Theme
-(load-theme 'tango t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(setq catppuccin-flavor 'latte)
+(load-theme 'catppuccin t)
 
 ;; ====== Hooks ==============================
 (add-hook 'after-init-hook      'global-company-mode)
+(add-hook 'after-init-hook      'marginalia-mode)
+(add-hook 'after-init-hook      'which-key-mode)
+(add-hook 'after-init-hook      'global-flycheck-mode)
+(add-hook 'after-init-hook      'git-gutter-mode)
 (add-hook 'company-mode-hook    'company-box-mode)
 
-(add-hook 'emacs-lisp-mode-hook 'parinfer-rust-mode)
-(add-hook 'scheme-mode-hook     'parinfer-rust-mode)
-(add-hook 'racket-mode-hook     'parinfer-rust-mode)
-(add-hook 'clojure-mode-hook    'parinfer-rust-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'scheme-mode-hook     'paredit-mode)
+(add-hook 'racket-mode-hook     'paredit-mode)
+(add-hook 'clojure-mode-hook    'paredit-mode)
 
-(add-hook 'racket-mode-hook     #'lsp-racket-enable)
+(add-hook 'racket-mode-hook     'lsp-racket-enable)
 
 (add-hook 'lsp-mode             'lsp-ui-mode)
-;; (add-hook 'racket-mode-hook     'eglot-ensure)
