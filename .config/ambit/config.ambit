@@ -44,11 +44,7 @@
 ];
 .config/bspwm/bspwmrc;
 .config/sxhkd/sxhkdrc;
-.doom.d/[
-    config.el,
-    init.el,
-    packages.el
-];
+.emacs.d/init.el;
 .config/picom.conf;
 .config/zathura/zathurarc;
 .config/dunst/dunstrc;
