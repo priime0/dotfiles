@@ -140,6 +140,7 @@ alias mkdir="mkdir -p"
 alias v="open neovide"
 alias h="helix"
 alias f="fzf -i"
+alias e="open emacs"
 
 alias dlmp4="youtube-dl -f mp4"
 alias cpr="rustc -o bin"
