@@ -40,8 +40,12 @@
 (straight-use-package 'justl)
 (straight-use-package 'org)
 (straight-use-package 'org-roam)
+(straight-use-package '(nano-theme :type git :host github
+                                   :repo "rougier/nano-theme"))
 
 (add-to-list 'load-path (expand-file-name "lisp/pollen-mode" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
 (autoload 'pollen-mode "pollen" "A major mode for the pollen preprocessor." t)
 
 ;; ====== Configuration ======================
@@ -49,13 +53,9 @@
 (setq inhibit-startup-message t
       visible-bell            nil)
 
-;; Backup directory
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
-      backup-by-copying t
-      version-control t
-      delete-old-versions t
-      kept-new-versions 5
-      kept-old-versions 5)
+;; Backups
+(setq make-backup-files nil)
+(rassq-delete-all 'auto-save-mode auto-mode-alist)
 
 ;; UI
 (menu-bar-mode   -1)
@@ -73,7 +73,7 @@
 
 ;; Font
 (defvar font-size 10)
-(defvar font-family "Roboto Mono Medium")
+(defvar font-family "JetBrains Mono Medium")
 (set-frame-font (format "%s %d" font-family font-size))
 
 ;; Use spaces instead of tabs
@@ -87,8 +87,73 @@
 
 ;; Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(setq catppuccin-flavor 'latte)
-(load-theme 'catppuccin t)
+(load-theme 'nano t)
+(nano-light)
+
+;; ====== Org Mode ===========================
+
+(require 'org)
+(require 'org-capture)
+(setq org-hide-emphasis-markers t)
+(setcar (nthcdr 4 org-emphasis-regexp-components) 20)
+(org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
+(setq org-agenda-files '("~/org/inbox.org"
+                         "~/org/gtd.org"
+                         "~/org/tickler.org"))
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+                               (file+headline "~/org/inbox.org" "Tasks")
+                               "* TODO %i%?")
+                              ("T" "Tickler" entry
+                               (file+headline "~/org/tickler.org" "Tickler")
+                               "* %i%? \n %U")))
+(setq org-refile-targets '(("~/org/gtd.org" :maxlevel . 3)
+                           ("~/org/someday.org" :level . 1)
+                           ("~/org/tickler.org" :maxlevel . 2)))
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
+(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
+;; Enable Racket in Org-mode Babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((racket . t)))
+
+;; ====== mu4e ===============================
+
+(require 'mu4e)
+
+(setq
+ mue4e-headers-skip-duplicates  t
+ mu4e-view-show-images t
+ mu4e-view-show-addresses t
+ mu4e-compose-format-flowed nil
+ mu4e-date-format "%Y-%m-%d"
+ mu4e-headers-date-format "%Y-%m-%d"
+ mu4e-change-filenames-when-moving t
+ mu4e-attachments-dir "~/Downloads"
+
+ mu4e-maildir       "~/mail"   ;; top-level Maildir
+ ;; note that these folders below must start with /
+ ;; the paths are relative to maildir root
+ mu4e-refile-folder "/Archive"
+ mu4e-sent-folder   "/Sent"
+ mu4e-drafts-folder "/Drafts"
+ mu4e-trash-folder  "/Trash")
+
+;; this setting allows to re-sync and re-index mail
+;; by pressing U
+(setq mu4e-get-mail-command  "mbsync -a")
+
+(setq
+   message-send-mail-function   'smtpmail-send-it
+   smtpmail-default-smtp-server "smtp.fastmail.com"
+   smtpmail-smtp-server         "smtp.fastmail.com")
+
+(setq user-full-name "Lucas Sta Maria")
+(setq user-mail-address "lucas@priime.dev")
+(setq smtpmail-smtp-service 587)
+
+(require 'mu4e-dashboard)
 
 ;; ====== Keybindings ========================
 
