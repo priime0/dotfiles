@@ -40,6 +40,9 @@
 (straight-use-package 'justl)
 (straight-use-package 'org)
 (straight-use-package 'org-roam)
+(straight-use-package 'elfeed)
+(straight-use-package 'scribble-mode)
+(straight-use-package 'go-mode)
 (straight-use-package '(nano-theme :type git :host github
                                    :repo "rougier/nano-theme"))
 
@@ -68,12 +71,15 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
+;; Tabs
+(setq-default tab-width 2)
+
 ;; Cursor
 (blink-cursor-mode 1)
 
 ;; Font
 (defvar font-size 10)
-(defvar font-family "JetBrains Mono Medium")
+(defvar font-family "JetBrains Mono SemiBold")
 (set-frame-font (format "%s %d" font-family font-size))
 
 ;; Use spaces instead of tabs
@@ -84,6 +90,16 @@
 
 ;; Auto file refresh
 (global-auto-revert-mode t)
+
+;; Git Gutter
+(global-git-gutter-mode +1)
+
+;; Elfeed
+(setq elfeed-feeds
+      '(("https://edwardwibowo.com/rss.xml"     blog)
+        ("https://priime.dev/feed.xml"          blog)
+        ("https://fasterthanli.me/index.xml"    blog)
+        ("https://blog.cleancoder.com/atom.xml" blog)))
 
 ;; Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
@@ -117,6 +133,19 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((racket . t)))
+
+(defmacro η (fnc)
+  "Return function that ignores its arguments and invokes FNC."
+  `(lambda (&rest _rest)
+     (funcall ,fnc)))
+
+;; Auto-save org buffers
+(advice-add 'org-deadline       :after (η #'org-save-all-org-buffers))
+(advice-add 'org-schedule       :after (η #'org-save-all-org-buffers))
+(advice-add 'org-store-log-note :after (η #'org-save-all-org-buffers))
+(advice-add 'org-todo           :after (η #'org-save-all-org-buffers))
+(advice-add 'org-refile         :after (η #'org-save-all-org-buffers))
+(advice-add 'org-sort           :after (η #'org-save-all-org-buffers))
 
 ;; ====== mu4e ===============================
 
@@ -176,9 +205,7 @@
 (add-hook 'after-init-hook      'marginalia-mode)
 (add-hook 'after-init-hook      'which-key-mode)
 (add-hook 'after-init-hook      'global-flycheck-mode)
-(add-hook 'after-init-hook      'git-gutter-mode)
 (add-hook 'after-init-hook      'workgroups-mode)
-(add-hook 'after-init-hook      'git-gutter-mode)
 (add-hook 'after-init-hook      'vertico-mode)
 
 (add-hook 'company-mode-hook    'company-box-mode)
@@ -194,6 +221,14 @@
 
 (add-hook 'python-mode          'lsp-mode)
 (add-hook 'rust-mode            'lsp-rust)
+
+(add-hook 'racket-mode-hook     'racket-xp-mode)
+
+(add-hook 'org-agenda-mode-hook
+          (lambda ()
+            (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
+            (auto-save-mode)))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
