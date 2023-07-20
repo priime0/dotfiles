@@ -198,7 +198,10 @@
 (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\")))
 (setq web-mode-markup-indent-offset 2)
 
+(setq lsp-rust-analyzer-cargo-watch-enable t)
+(setq lsp-rust-analyzer-cargo-watch-command "clippy")
 (setq lsp-rust-analyzer-server-display-inlay-hints t)
+(setq lsp-rust-analyzer-inlay-hints-mode t)
 
 ;; ====== Hooks ==============================
 (add-hook 'after-init-hook      'global-company-mode)
