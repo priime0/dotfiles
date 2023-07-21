@@ -10,6 +10,10 @@
 
 ;; Backups
 (setq make-backup-files nil)
+(setq vc-make-backup-files nil)
+(setq kept-new-versions nil)
+(setq kept-old-versions nil)
+(setq delete-old-versions t)
 (rassq-delete-all 'auto-save-mode auto-mode-alist)
 
 ;; UI
