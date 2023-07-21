@@ -20,9 +20,6 @@ c.hints.chars = "aoeuidhtns"
 
 def redirect(request: interceptor.Request):
     redirect_dict: Dict[str, str] = {
-        "www.reddit.com": "www.troddit.com",
-        "old.reddit.com": "www.troddit.com",
-        "reddit.com": "www.troddit.com",
     }
 
     if request.request_url.host() in redirect_dict.keys():
