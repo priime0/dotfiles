@@ -58,6 +58,7 @@
 (straight-use-package 'justl)
 (straight-use-package 'scribble-mode)
 (straight-use-package 'go-mode)
+(straight-use-package 'auctex)
 
 
 ;; ====== Custom =============================
@@ -69,6 +70,7 @@
 (load-library "orgconfig")
 (load-library "mu4econfig")
 (load-library "racket")
+(load-library "latexconfig")
 
 ;; ====== Hooks ==============================
 (add-hook 'after-init-hook      'global-company-mode)
