@@ -10,8 +10,8 @@ My Arch Linux configuration.
 | Program Launcher    | rofi (currently absent in config) |
 | Wallpaper Setter    | nitrogen                          |
 | Terminal Emulator   | kitty                             |
-| Document Viewer     | zathura                           |
-| Text Editor         | emacs / neovim                    |
+| Document Viewer     | zathura / emacs                   |
+| Text Editor         | emacs                             |
 | Notification Daemon | dunst                             |
 | Compositor          | picom                             |
 | Shell               | zsh                               |
