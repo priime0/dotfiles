@@ -15,37 +15,52 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; Completion
 (straight-use-package 'company)
 (straight-use-package 'company-box)
 (straight-use-package 'company-math)
-(straight-use-package 'magit)
 (straight-use-package 'vertico)
 (straight-use-package 'marginalia)
-(straight-use-package 'racket-mode)
-(straight-use-package 'lsp-mode)
-(straight-use-package 'lsp-ui)
-(straight-use-package 'rust-mode)
-(straight-use-package 'rustic)
-(straight-use-package 'which-key)
-(straight-use-package 'neotree)
+
+;; Syntax checking and editing
 (straight-use-package 'flycheck)
-(straight-use-package 'git-gutter)
 (straight-use-package 'paredit)
-(straight-use-package 'tuareg)
+
+;; Convenience
 (straight-use-package 'projectile)
 (straight-use-package 'workgroups2)
+
+;; UI
+(straight-use-package 'which-key)
+(straight-use-package 'magit)
+(straight-use-package 'neotree)
+(straight-use-package 'all-the-icons)
+(straight-use-package 'git-gutter)
+(straight-use-package '(nano-theme :type git :host github
+                                   :repo "rougier/nano-theme"))
+
+;; Productivity
+(straight-use-package 'org)
+(straight-use-package 'elfeed)
+
+;; LSP
+(straight-use-package 'lsp-mode)
+(straight-use-package 'lsp-ui)
+
+;; Languages
+(straight-use-package 'racket-mode)
+(straight-use-package 'rust-mode)
+(straight-use-package 'rustic)
+(straight-use-package 'tuareg)
 (straight-use-package 'markdown-mode)
 (straight-use-package 'web-mode)
 (straight-use-package 'just-mode)
 (straight-use-package 'justl)
-(straight-use-package 'org)
-(straight-use-package 'org-roam)
-(straight-use-package 'elfeed)
 (straight-use-package 'scribble-mode)
 (straight-use-package 'go-mode)
-(straight-use-package '(nano-theme :type git :host github
-                                   :repo "rougier/nano-theme"))
 
+
+;; ====== Custom =============================
 (add-to-list 'load-path "~/.emacs.d/include")
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
 
