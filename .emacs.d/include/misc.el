@@ -7,6 +7,7 @@
 
 (require 'git-gutter)
 (require 'elfeed)
+(require 'neotree)
 
 ;; Git Gutter
 (global-git-gutter-mode +1)
@@ -31,6 +32,22 @@
 (setq lsp-rust-analyzer-cargo-watch-command "clippy")
 (setq lsp-rust-analyzer-server-display-inlay-hints t)
 (setq lsp-rust-analyzer-inlay-hints-mode t)
+
+;; Neotree
+(defun neotree-toggle-current-directory ()
+  "Toggle neotree at the current directory."
+  (interactive)
+  (let ((current-directory
+         (if buffer-file-name
+             (file-name-directory buffer-file-name)
+           "~")))
+    (if (and (fboundp 'neo-global--window-exists-p)
+             (neo-global--window-exists-p))
+        (neotree-hide)
+      (neotree-dir current-directory))))
+
+(global-set-key (kbd "C-c t") #'neotree-toggle-current-directory)
+(setq neo-theme 'icon)
 
 (provide 'misc)
 ;;; misc.el ends here
