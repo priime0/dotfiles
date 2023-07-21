@@ -19,7 +19,7 @@
         ("https://blog.cleancoder.com/atom.xml" blog)))
 
 ;; Bind Magit
-(global-set-key (kbd "C-c g g") 'magit)
+(global-set-key (kbd "C-c g g") #'magit)
 
 ;; Web configuration
 (add-to-list 'auto-mode-alist '("\\.jsx?$" . web-mode))
