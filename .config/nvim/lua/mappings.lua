@@ -43,6 +43,7 @@ map("n", "<C-z>", ":lua require('leap').leap {  backward = true }<CR>")
 
 -- pollen
 map("i", "<A-d>", "◊")
+map("i", "<A-l>", "λ")
 
 -- colorscheme toggle
 -- map("n", "<A-j>", ":let ayucolor=\"dark\"<CR>:colorscheme ayu<CR>")
@@ -67,3 +68,6 @@ map("n", "<leader>od", ":TroubleToggle<CR>")
 -- workspaces
 map("n", "<leader>pp", ":Telescope workspaces theme=dropdown<CR>")
 map("n", "<leader>pa", ":WorkspacesAdd ")
+
+-- relative line numbers
+map("n", "<C-f>", ":set relativenumber!<CR>")

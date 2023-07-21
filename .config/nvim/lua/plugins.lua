@@ -34,6 +34,8 @@ packer.startup(function()
     use("lcheylus/overlength.nvim")
     use("akinsho/bufferline.nvim")
     use("folke/trouble.nvim")
+    use("m4xshen/smartcolumn.nvim")
+    -- use("goolord/alpha-nvim")
 
     -- completion
     use("hrsh7th/cmp-nvim-lsp")
@@ -45,6 +47,10 @@ packer.startup(function()
     use("github/copilot.vim")
     use("SirVer/ultisnips")
     use("quangnguyen30192/cmp-nvim-ultisnips")
+
+    -- sessions
+    use("rmagatti/auto-session")
+    use("rmagatti/session-lens")
 
     -- misc
     use("davidgranstrom/nvim-markdown-preview")
@@ -58,6 +64,7 @@ packer.startup(function()
     use{"kylechui/nvim-surround",branch="main"}
     use("numToStr/Comment.nvim")
     use("natecraddock/workspaces.nvim")
+    use("Twinside/vim-hoogle")
 
     if packer_bootstrap then
       require('packer').sync()
@@ -143,7 +150,7 @@ require('nvim-tree').setup {
         ignore = true,
         timeout = 1500,
     },
-    sync_root_with_cwd = true
+    sync_root_with_cwd = true,
 }
 
 -- lualine
@@ -155,7 +162,8 @@ require('lualine').setup {
 
 -- toggleterm
 require('toggleterm').setup {
-    open_mapping = nil
+    open_mapping = nil,
+    start_in_insert = false,
 }
 
 -- markdown preview
@@ -170,6 +178,8 @@ require('todo-comments').setup {}
 vim.g.copilot_filetypes = {
     ['*'] = false,
     ['java'] = true,
+    ['ocaml'] = true,
+    -- ['tex'] = true,
 }
 
 -- symbols-outline
@@ -209,21 +219,21 @@ require('formatter').setup {
         javascript = {
             require('formatter.filetypes.javascript').prettier
         },
+        astro = {
+            require('formatter.filetypes.javascript').prettier
+        },
         tex = {
             require('formatter.filetypes.latex').latexindent
         },
         java = {
             function ()
                 return {
-                    exe = "google-java-format",
+                    exe = "clang-format",
                     args = {
-                        "--add-exports", "jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
-                        "--add-exports", "jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
-                        "--add-exports", "jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
-                        "--add-exports", "jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
-                        "--add-exports", "jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
+                        "--style=Google",
+                        "--assume-filename=.java"
                     },
-                    stdin = false
+                    stdin = true
                 }
             end
         },
@@ -254,4 +264,70 @@ vim.diagnostic.config({
     virtual_text = false,
 })
 
+-- workspaces
 require("workspaces").setup {}
+
+-- smartcolumn
+require("smartcolumn").setup {
+    colorcolumn = 0,
+    disabled_filetypes = { "help", "Telescope", "TelescopePrompt" }
+}
+
+-- alpha
+-- local dashboard = require'alpha.themes.dashboard'
+-- dashboard.section.header.val = {
+--     [[                &&&&&                ]],
+--     [[            & & &&&&& &              ]],
+--     [[         &  &&&&&/&                  ]],
+--     [[           &&  &&&&&                 ]],
+--     [[             & &&&&                  ]],
+--     [[         &&&&&  &&&&&&               ]],
+--     [[          & &  &&/||                 ]],
+--     [[    & &  &&&  &&//~  &   &&          ]],
+--     [[  & &&&&\__&_/  //~~& &&&&&& &       ]],
+--     [[   &&&&&        /|\\_/&&&&& &        ]],
+--     [[    & && &&\_\&\/& & &_&&&&&& &&     ]],
+--     [[       & &&&&&&&/&&&  \&&&&&& &&&  &&]],
+--     [[       && &/ &&&&&      & &          ]],
+--     [[        &/&&    /~~                  ]],
+--     [[                /~|                  ]],
+--     [[                 \                   ]],
+--     [[                  /|                 ]],
+--     [[                  /|                 ]],
+--     [[                  \                  ]],
+--     [[                   /                 ]],
+--     [[    ╓───────────╭╱⎨⏆╲╮───────────╖   ]],
+--     [[    ║                            ║   ]],
+--     [[    ╟────────────────────────────╢   ]],
+--     [[    ╟────────────────────────────╢   ]],
+--     [[    ╚════════════════════════════╝   ]],
+--     [[                                     ]],
+--     [[        [ https://priime.dev ]       ]],
+-- }
+-- dashboard.section.buttons.val = {
+--     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+--     dashboard.button("SPC p p", "  Open projects"),
+--     dashboard.button("SPC t f", "  Find files"),
+--     dashboard.button("SPC t g", "  Grep text"),
+--     dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
+-- }
+-- dashboard.config.opts.noautocmd = true
+-- dashboard.config.opts.redraw_on_resize = false
+
+-- require("alpha").setup(dashboard.config)
+
+-- sessions
+require("auto-session").setup {
+    log_level = "error",
+    cwd_change_handling = {
+        restore_upcoming_session = true,
+        post_cwd_changed_hook = function()
+            require("lualine").refresh()
+            vim.cmd([[filetype detect]])
+        end,
+    },
+    auto_session_suppress_dirs = { "~/", "/" }
+}
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+require("session-lens").setup {}

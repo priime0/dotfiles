@@ -27,8 +27,9 @@ cmp.setup({
         ),
     }),
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'ultisnips' }, -- For ultisnips users.
+        { name = 'nvim_lsp', priority = 1000 },
+        { name = 'ultisnips', priority = 750 }, -- For ultisnips users.
+        { name = 'path', priority = 500 },
     }, {
     })
 })
@@ -124,6 +125,7 @@ lspconfig.rust_analyzer.setup {
 lspconfig.tsserver.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
 }
 
 lspconfig.java_language_server.setup {
@@ -176,4 +178,10 @@ lspconfig.clojure_lsp.setup {
 lspconfig.texlab.setup {
     on_attach=on_attach,
     capabilities=capabilities
+}
+
+lspconfig.hls.setup {
+    on_attach=on_attach,
+    capabilities=capabilities,
+    filetypes = { "haskell", "lhaskell", "cabal" }
 }
