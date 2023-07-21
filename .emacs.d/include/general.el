@@ -46,6 +46,9 @@
 ;; Auto file refresh
 (global-auto-revert-mode t)
 
+;; Automatically follow symlinks
+(setq vc-follow-symlinks t)
+
 ;; Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'nano t)
