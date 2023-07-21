@@ -44,7 +44,16 @@
 ];
 .config/bspwm/bspwmrc;
 .config/sxhkd/sxhkdrc;
-.emacs.d/init.el;
+.emacs.d/[
+    init.el,
+    include/[
+        general.el,
+        misc.el,
+        orgconfig.el,
+        mu4econfig.el,
+        racket.el
+    ]
+];
 .config/picom.conf;
 .config/zathura/zathurarc;
 .config/dunst/dunstrc;
