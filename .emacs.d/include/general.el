@@ -15,6 +15,10 @@
 (setq kept-old-versions nil)
 (setq delete-old-versions t)
 (rassq-delete-all 'auto-save-mode auto-mode-alist)
+(setq auto-save-default nil)
+(setq auto-save-mode -1)
+(setq backup-directory-alist '(("." . "~/.emacs/backups/")))
+(setq backup-by-copying t)
 
 ;; UI
 (menu-bar-mode   -1)
