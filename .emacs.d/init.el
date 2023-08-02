@@ -82,10 +82,10 @@
 
 (add-hook 'company-mode-hook    'company-box-mode)
 
-(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-(add-hook 'scheme-mode-hook     'paredit-mode)
-(add-hook 'racket-mode-hook     'paredit-mode)
-(add-hook 'clojure-mode-hook    'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+(add-hook 'scheme-mode-hook     #'paredit-mode)
+(add-hook 'racket-mode-hook     #'paredit-mode)
+(add-hook 'clojure-mode-hook    #'paredit-mode)
 
 (add-hook 'lsp-mode             'lsp-ui-mode)
 
