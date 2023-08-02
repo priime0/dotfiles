@@ -8,6 +8,10 @@ super + Return
 
 # neovide
 control + Return
+    emacs
+
+# neovide
+super + control + Return
     neovide
 
 # program launcher
