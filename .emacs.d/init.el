@@ -33,6 +33,7 @@
 ;; UI
 (straight-use-package 'which-key)
 (straight-use-package 'magit)
+(straight-use-package 'forge)
 (straight-use-package 'neotree)
 (straight-use-package 'all-the-icons)
 (straight-use-package 'git-gutter)

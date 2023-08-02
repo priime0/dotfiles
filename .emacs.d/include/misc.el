@@ -19,8 +19,9 @@
         ("https://fasterthanli.me/index.xml"    blog)
         ("https://blog.cleancoder.com/atom.xml" blog)))
 
-;; Bind Magit
+;; Magit
 (global-set-key (kbd "C-c g g") #'magit)
+(setq auth-sources '("~/.authinfo"))
 
 ;; Web configuration
 (add-to-list 'auto-mode-alist '("\\.jsx?$" . web-mode))
