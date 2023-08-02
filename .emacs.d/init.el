@@ -59,6 +59,7 @@
 (straight-use-package 'scribble-mode)
 (straight-use-package 'go-mode)
 (straight-use-package 'auctex)
+(straight-use-package 'yaml-mode)
 
 
 ;; ====== Custom =============================
@@ -71,6 +72,7 @@
 (load-library "mu4econfig")
 (load-library "racket")
 (load-library "latexconfig")
+(load-library "cppconfig")
 
 ;; ====== Hooks ==============================
 (add-hook 'after-init-hook      'global-company-mode)
