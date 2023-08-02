@@ -138,12 +138,9 @@ alias mv="mv -i"
 alias mkdir="mkdir -p"
 
 alias v="open neovide"
-alias h="helix"
 alias f="fzf -i"
 alias e="open emacs"
 
-alias dlmp4="youtube-dl -f mp4"
-alias cpr="rustc -o bin"
 alias psax="ps -ax | grep -i"
 alias copy="xclip -i"
 alias paste="xclip -o"
@@ -158,10 +155,7 @@ alias alsamixer="alsamixer -c 0"
 alias df="df -h"
 
 alias tb="open zathura"
-alias notes="open marktext"
-alias kdec="kdeconnect-cli"
 
-alias n="nnn -dQe"
 alias sus="systemctl suspend"
 alias lock="dm-tool lock"
 
@@ -169,15 +163,7 @@ alias lstar="tar -ztvf"
 alias untar="tar -zxvf"
 alias mktar="tar -cvzf"
 
-alias manim="python3 -m manim"
-
-alias weather="curl 'wttr.in/Boston?M'"
-
 alias clear="printf '\033[2J\033[3J\033[1;1H'"
-
-function cprog() {
-    v /tmp/$((1 + $RANDOM)).cpp
-}
 
 function cd() {
     builtin cd $@ && ll
@@ -191,10 +177,6 @@ function mkcd() {
     mkdir $1 && cd $1
 }
 
-function cacd() {
-    cargo new $1 && cd $1
-}
-
 function spot() {
     pkill spotifyd
     spotifyd
@@ -204,13 +186,6 @@ function spot() {
 function remind() {
     echo 'notify-send REMINDER $2' | at $1
 }
-
-# Meme Macros
-# alias nano="echo \"fuck nano\" && sleep 2 && nvim"
-# alias emacs="echo \"fuck emacs\" && sleep 2 && nvim"
-# alias vim="echo \"you won't notice a difference if i...\" && sleep 3 && nvim"
-alias pls="sudo"
-alias fuck="sudo !!"
 
 # Git Macros
 alias ga="git add"
