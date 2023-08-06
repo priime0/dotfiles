@@ -27,6 +27,7 @@
               '("init.el"
                 "include/general.el"
                 "include/misc.el"
+                "include/utils.el"
                 "include/racket.el"
                 "include/pdfconfig.el"
                 "include/cppconfig.el"
