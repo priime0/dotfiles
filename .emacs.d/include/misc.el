@@ -9,6 +9,11 @@
 (require 'elfeed)
 (require 'neotree)
 
+(defun config-recompile ()
+  "Recompile the current Emacs configuration."
+  (interactive)
+  (byte-recompile-directory "~/.emacs.d/"))
+
 ;; Git Gutter
 (global-git-gutter-mode +1)
 
