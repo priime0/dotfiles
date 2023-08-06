@@ -1,6 +1,6 @@
 # Dotfiles
 
-My Arch Linux configuration.
+My Arch Linux and Emacs configuration.
 
 | Program             | Name                              |
 |---------------------|-----------------------------------|
