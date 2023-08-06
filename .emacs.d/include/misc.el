@@ -15,7 +15,7 @@
   (byte-recompile-directory "~/.emacs.d/"))
 
 (defun config-download (&optional confirm)
-  "Download the latest Emacs configuration files from the GitHub repository."
+  "Download the latest Emacs config files from the GitHub repository if CONFIRM."
   (interactive)
   (let* ((confirm (or confirm
                       (read-string "Type `YES' to confirm download: "))))
