@@ -26,7 +26,7 @@
 (scroll-bar-mode -1)
 
 ;; Line
-(global-display-line-numbers-mode 1)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (hl-line-mode -1)
 (setq line-number-mode t)
 (setq column-number-mode t)

@@ -5,10 +5,6 @@
 
 ;; PDF Tools
 (pdf-tools-install)
-(add-hook 'doc-view-mode (lambda () (display-line-numbers-mode -1)))
-(add-hook 'doc-view-mode 'pdf-view-mode)
-(add-hook 'pdf-view-mode (lambda () (display-line-numbers-mode -1)))
-(add-hook 'pdf-view-mode (lambda () (line-number-mode -1)))
 
 (defun pdf-download-and-view (&optional url filename)
   "Download and view the PDF given by its URL as FILENAME."
