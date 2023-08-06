@@ -43,6 +43,8 @@
 ;; Productivity
 (straight-use-package 'org)
 (straight-use-package 'elfeed)
+(straight-use-package '(pdf-tools :type git :host github
+                                  :repo "vedang/pdf-tools"))
 
 ;; LSP
 (straight-use-package 'lsp-mode)
@@ -74,6 +76,7 @@
 (load-library "racket")
 (load-library "latexconfig")
 (load-library "cppconfig")
+(load-library "pdfconfig")
 
 ;; ====== Hooks ==============================
 (add-hook 'after-init-hook      'global-company-mode)

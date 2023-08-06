@@ -53,7 +53,8 @@
         mu4econfig.el,
         racket.el,
         latexconfig.el,
-        cppconfig.el
+        cppconfig.el,
+        pdfconfig.el
     ]
 ];
 .config/picom.conf;
