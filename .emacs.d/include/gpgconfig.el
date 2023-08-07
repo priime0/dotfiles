@@ -49,5 +49,26 @@
       (setq info (-filter (lambda (s) (not (string-match "image" (car s)))) info))
       info)))
 
+(defun gpg-encrypt-sign-save-buffer (&optional filename)
+  "Encrypt, sign, and save the buffer as FILENAME.asc for the recipients."
+  (interactive)
+
+  (let* ((key-alist (gpg-public-keys))
+         (recipients (completing-read-multiple "Recipients: " key-alist))
+         (recipient-keys (mapcar (lambda (x) (cdr (assoc x key-alist)))
+                                 recipients))
+         (recipients-cli-args (mapconcat (lambda (s) (concat "-r " s))
+                                         recipient-keys
+                                         " ")))
+    (unless (or filename buffer-file-name)
+      (setq filename (read-string "Filename: " nil nil)))
+    (let ((gpg-encrypt-command
+           (concat "gpg --encrypt --sign --armor "
+                   recipients-cli-args
+                   " "
+                   (or filename buffer-file-name))))
+      (redraw-display)
+      (term gpg-encrypt-command))))
+
 (provide 'gpgconfig)
 ;;; gpgconfig.el ends here
