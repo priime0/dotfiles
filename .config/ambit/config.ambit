@@ -50,6 +50,7 @@
         general.el,
         misc.el,
         utils.el,
+        gpgconfig.el,
         orgconfig.el,
         mu4econfig.el,
         racket.el,

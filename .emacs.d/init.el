@@ -81,6 +81,7 @@
 (load-library "latexconfig")
 (load-library "cppconfig")
 (load-library "pdfconfig")
+(load-library "gpgconfig")
 
 ;; ====== Hooks ==============================
 (add-hook 'after-init-hook      'global-company-mode)
