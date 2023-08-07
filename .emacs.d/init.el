@@ -50,6 +50,9 @@
 (straight-use-package 'lsp-mode)
 (straight-use-package 'lsp-ui)
 
+;; Misc
+(straight-use-package 'dash)
+
 ;; Languages
 (straight-use-package 'racket-mode)
 (straight-use-package 'rust-mode)
