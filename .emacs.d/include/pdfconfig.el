@@ -12,7 +12,7 @@
   (let* ((url (or url
                   (read-string "Download URL: ")))
          (default-filename (or filename
-                                (car (last (split-string url "/" t)))))
+                               (car (last (split-string url "/" t)))))
          (filename (or filename
                        (read-string (format "Filename (%s): " default-filename)
                                     nil
