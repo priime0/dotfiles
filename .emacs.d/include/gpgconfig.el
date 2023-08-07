@@ -30,11 +30,10 @@
                                                (string-to-list curline))))
                       (start (+ 2 (- original-length
                                      (length start-raw))))
-                      (name-email (substring curline start -1))
-                      (keyid-name-email (concat keyid " " name-email)))
+                      (name-email (substring curline start -1)))
                  (if (not (memq (string-to-char "(")
                                 (string-to-list name-email)))
-                     (push keyid-name-email info)
+                     (push (cons name-email keyid) info)
                    ;; Remove key descriptions inside parentheses
                    (let* ((open-paren-start
                            (length (concat (memq (string-to-char "(")
@@ -45,9 +44,9 @@
                                                  (string-to-list name-email)))))
                           (email-part (substring name-email
                                                  (+ 2 (- close-paren-start))))
-                          (sanitized (concat keyid " " name-part email-part)))
-                     (push sanitized info)))))))
-      (setq info (-filter (lambda (s) (not (string-match "image" s))) info))
+                          (sanitized (concat name-part email-part)))
+                     (push (cons sanitized keyid) info)))))))
+      (setq info (-filter (lambda (s) (not (string-match "image" (car s)))) info))
       info)))
 
 (provide 'gpgconfig)
