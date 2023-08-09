@@ -22,7 +22,7 @@
     (if (not (string= confirm "YES"))
         (print "Cancelling config download/update...")
       (let* ((gh-url "https://raw.githubusercontent.com/priime0/dotfiles/master/.emacs.d/")
-             (target-dir "~/temp/.emacs.d/")
+             (target-dir "~/.emacs.d/")
              (filenames
               '("init.el"
                 "include/general.el"
