@@ -90,6 +90,7 @@
 (add-hook 'after-init-hook      'global-flycheck-mode)
 (add-hook 'after-init-hook      'workgroups-mode)
 (add-hook 'after-init-hook      'vertico-mode)
+(add-hook 'after-init-hook      'tab-bar-mode)
 
 (add-hook 'company-mode-hook    'company-box-mode)
 
