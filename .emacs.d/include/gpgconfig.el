@@ -70,5 +70,16 @@
       (redraw-display)
       (term gpg-encrypt-command))))
 
+(defun gpg-decrypt-buffer (&optional filename)
+  "Decrypt the current file FILENAME with GPG."
+  (interactive)
+
+  (let* ((filename (or filename
+                       buffer-file-name
+                       (read-string "Decrypt file: ")))
+         (buf (get-buffer-create "*gpg-decrypt*")))
+    (switch-to-buffer buf)
+    (insert (shell-command-to-string (concat "gpg --decrypt " filename)))))
+
 (provide 'gpgconfig)
 ;;; gpgconfig.el ends here
