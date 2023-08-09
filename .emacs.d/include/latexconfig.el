@@ -11,7 +11,8 @@
 
 (defun configure-latex ()
   "Configure my custom LaTex environment."
-  (local-set-key (kbd "C-c C-z") #'custom-compile-latex))
+  (local-set-key (kbd "C-c C-z") #'custom-compile-latex)
+  (electric-indent-mode -1))
 
 (add-hook 'LaTeX-mode-hook #'configure-latex)
 
