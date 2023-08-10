@@ -85,5 +85,9 @@
 (global-set-key (kbd "C-c t") #'neotree-toggle-current-directory)
 (setq neo-theme 'icon)
 
+;; Orderless
+(setq completion-styles '(orderless basic))
+(setq completion-category-overrides '((file (styles basic partial-completion))))
+
 (provide 'misc)
 ;;; misc.el ends here

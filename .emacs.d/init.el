@@ -21,6 +21,7 @@
 (straight-use-package 'company-math)
 (straight-use-package 'vertico)
 (straight-use-package 'marginalia)
+(straight-use-package 'orderless)
 
 ;; Syntax checking and editing
 (straight-use-package 'flycheck)
