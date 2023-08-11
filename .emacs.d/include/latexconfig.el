@@ -1,4 +1,4 @@
-;;; latex.el --- Configuration for LaTeX
+;;; latexconfig.el --- Configuration for LaTeX
 ;;; Commentary:
 ;;    Custom configuration for LaTeX editing
 ;;; Code:
@@ -12,9 +12,10 @@
 (defun configure-latex ()
   "Configure my custom LaTex environment."
   (local-set-key (kbd "C-c C-z") #'custom-compile-latex)
+  (local-set-key (kbd "C-c C-b") #'latex-insert-block)
   (electric-indent-mode -1))
 
 (add-hook 'LaTeX-mode-hook #'configure-latex)
 
-(provide 'latex)
-;;; latex.el ends here
+(provide 'latexconfig)
+;;; latexconfig.el ends here
