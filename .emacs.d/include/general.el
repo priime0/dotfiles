@@ -41,6 +41,8 @@
 (defvar font-size 10)
 (defvar font-family "JetBrains Mono SemiBold")
 (set-frame-font (format "%s %d" font-family font-size))
+(custom-set-faces
+ '(shr-text ((t (:inherit variable-pitch-text :family "Noto Sans Light")))))
 
 ;; Use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
