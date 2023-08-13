@@ -17,6 +17,7 @@
   (set (make-local-variable 'TeX-electric-math)
        (cons "\\(" "\\)"))
   (set (make-local-variable 'LaTeX-electric-left-right-brace) t)
+  (set 'preview-scale-function 0.8)
 
   (electric-indent-mode -1)
   (LaTeX-math-mode))
