@@ -13,7 +13,13 @@
   "Configure my custom LaTex environment."
   (local-set-key (kbd "C-c C-z") #'custom-compile-latex)
   (local-set-key (kbd "C-c C-b") #'latex-insert-block)
-  (electric-indent-mode -1))
+
+  (set (make-local-variable 'TeX-electric-math)
+       (cons "\\(" "\\)"))
+  (set (make-local-variable 'LaTeX-electric-left-right-brace) t)
+
+  (electric-indent-mode -1)
+  (LaTeX-math-mode))
 
 (add-hook 'LaTeX-mode-hook #'configure-latex)
 
