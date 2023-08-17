@@ -70,6 +70,7 @@
 (global-unset-key (kbd "C-x f"))
 (global-set-key (kbd "C-x f f") #'set-fill-column)
 (global-set-key (kbd "C-x f i") #'display-fill-column-indicator-mode)
+(global-set-key (kbd "C-x f a") #'auto-fill-mode)
 
 ;; Garbage Collection
 (setq gc-cons-threshold 50000000)
