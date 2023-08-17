@@ -5,6 +5,8 @@
 
 (require 'org)
 (require 'org-capture)
+;; Templates for org-mode
+(require 'org-tempo)
 
 (setq org-hide-emphasis-markers t)
 (setq org-adapt-indentation nil)
