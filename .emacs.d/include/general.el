@@ -5,8 +5,7 @@
 
 (require 'nano-theme)
 
-(setq inhibit-startup-message t
-      visible-bell            nil)
+
 
 ;; Backups
 (setq make-backup-files nil)
@@ -24,12 +23,19 @@
 (menu-bar-mode   -1)
 (tool-bar-mode   -1)
 (scroll-bar-mode -1)
+(setq inhibit-startup-message t)
+(setq visible-bell            nil)
+(setq truncate-lines          t)
+
+;; Scratch
+(setq initial-scratch-message nil)
 
 ;; Line
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (hl-line-mode -1)
-(setq line-number-mode t)
-(setq column-number-mode t)
+(line-number-mode 1)
+(column-number-mode 1)
+(size-indication-mode 1)
 
 ;; Tabs
 (setq-default tab-width 2)
@@ -61,6 +67,9 @@
 
 ;; Automatically follow symlinks
 (setq vc-follow-symlinks t)
+
+;; Undos
+(setq undo-limit 200000)
 
 ;; Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
