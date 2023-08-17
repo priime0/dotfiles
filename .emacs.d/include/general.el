@@ -67,6 +67,14 @@
 ;; Keybindings
 (global-set-key (kbd "C-M-j") (lambda () (interactive) (scroll-up 1)))
 (global-set-key (kbd "C-M-k") (lambda () (interactive) (scroll-down 1)))
+(global-set-key (kbd "C-x f f") #'set-fill-column)
+(global-set-key (kbd "C-x f i") #'display-fill-column-indicator-mode)
+
+;; Garbage Collection
+(setq gc-cons-threshold 50000000)
+
+;; Confirmations
+(fset 'yes-or-no-p 'y-or-n-p)
 
 
 (provide 'general)
