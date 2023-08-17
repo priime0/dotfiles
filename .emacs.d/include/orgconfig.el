@@ -5,7 +5,17 @@
 
 (require 'org)
 (require 'org-capture)
+
 (setq org-hide-emphasis-markers t)
+(setq org-adapt-indentation nil)
+(setq org-confirm-babel-evaluate nil)
+(setq org-export-use-babel nil)
+
+;; Enable Racket in Org-mode Babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((racket . t)))
+
 (setcar (nthcdr 4 org-emphasis-regexp-components) 20)
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
 (setq org-agenda-files '("~/org/inbox.org"
@@ -23,11 +33,6 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
 (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
-
-;; Enable Racket in Org-mode Babel
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((racket . t)))
 
 (defmacro η (fnc)
   "Return function that ignores its arguments and invokes FNC."
