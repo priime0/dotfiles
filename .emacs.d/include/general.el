@@ -67,6 +67,7 @@
 ;; Keybindings
 (global-set-key (kbd "C-M-j") (lambda () (interactive) (scroll-up 1)))
 (global-set-key (kbd "C-M-k") (lambda () (interactive) (scroll-down 1)))
+(global-unset-key (kbd "C-x f"))
 (global-set-key (kbd "C-x f f") #'set-fill-column)
 (global-set-key (kbd "C-x f i") #'display-fill-column-indicator-mode)
 
