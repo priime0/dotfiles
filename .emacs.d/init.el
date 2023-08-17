@@ -67,11 +67,14 @@
 (straight-use-package 'go-mode)
 (straight-use-package 'auctex)
 (straight-use-package 'yaml-mode)
+(straight-use-package 'poetry)
+(straight-use-package 'slime)
 
 
 ;; ====== Custom =============================
 (add-to-list 'load-path "~/.emacs.d/include")
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
+(require 'llvm-mode)
 
 (load-library "general")
 (load-library "misc")
