@@ -56,6 +56,9 @@
 ;; Auto file refresh
 (global-auto-revert-mode t)
 
+;; Improve performance in files with long lines
+(global-so-long-mode t)
+
 ;; Automatically follow symlinks
 (setq vc-follow-symlinks t)
 
