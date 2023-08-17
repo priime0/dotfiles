@@ -102,6 +102,7 @@
 (add-hook 'scheme-mode-hook     #'paredit-mode)
 (add-hook 'racket-mode-hook     #'paredit-mode)
 (add-hook 'clojure-mode-hook    #'paredit-mode)
+(add-hook 'lisp-mode-hook       #'paredit-mode)
 
 (add-hook 'lsp-mode             'lsp-ui-mode)
 
