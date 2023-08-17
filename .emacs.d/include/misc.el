@@ -89,5 +89,8 @@
 (setq completion-styles '(orderless basic))
 (setq completion-category-overrides '((file (styles basic partial-completion))))
 
+;; SLIME
+(setq inferior-lisp-program "sbcl")
+
 (provide 'misc)
 ;;; misc.el ends here
