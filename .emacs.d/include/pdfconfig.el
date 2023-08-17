@@ -28,4 +28,6 @@
     (write-file file-path)
     (find-file (expand-file-name file-path))))
 
+(setq pdf-view-continuous t)
+
 ;;; pdfconfig.el ends here
