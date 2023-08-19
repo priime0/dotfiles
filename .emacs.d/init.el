@@ -41,8 +41,12 @@
 (straight-use-package '(nano-theme :type git :host github
                                    :repo "rougier/nano-theme"))
 
-;; Productivity
+;; Org
 (straight-use-package 'org)
+(straight-use-package '(ob-racket :type git :host github
+				  :repo "DEADB17/ob-racket"))
+
+;; Productivity
 (straight-use-package 'elfeed)
 (straight-use-package '(pdf-tools :type git :host github
                                   :repo "vedang/pdf-tools"))
