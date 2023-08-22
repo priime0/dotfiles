@@ -8,7 +8,8 @@
 
 ;; Recognize pollen filetypes
 (setq auto-mode-alist (cons '("\\.pp$" . racket-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.pm$" . racket-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.pm$" . pollen-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.pmd$" . pollen-mode) auto-mode-alist))
 
 (provide 'racket)
 ;;; racket.el ends here
