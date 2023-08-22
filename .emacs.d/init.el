@@ -108,7 +108,7 @@
 (add-hook 'clojure-mode-hook    #'paredit-mode)
 (add-hook 'lisp-mode-hook       #'paredit-mode)
 
-(add-hook 'lsp-mode             'lsp-ui-mode)
+(add-hook 'lsp-mode-hook        'lsp-ui-mode)
 
 (add-hook 'python-mode          'lsp-mode)
 (add-hook 'rust-mode            'lsp-rust)
