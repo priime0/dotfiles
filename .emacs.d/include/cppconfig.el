@@ -18,7 +18,7 @@
   "Configure my custom C++ enviroment."
   (local-set-key (kbd "C-c C-c") #'custom-compile-c++)
   (local-set-key (kbd "C-c C-r") #'custom-run-c++)
-  (local-set-key (kbd "C-c C-.")   #'company-complete))
+  (local-set-key (kbd "C-c C-.") #'company-complete))
 
 (add-hook 'c-mode-hook   #'configure-c++)
 (add-hook 'c++-mode-hook #'configure-c++)
