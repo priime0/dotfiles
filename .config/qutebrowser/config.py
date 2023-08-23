@@ -13,8 +13,8 @@ c.bindings.commands["normal"] = {
 
     # Commands
     "<Alt-x>":                "cmd-set-text :",
-    "<Control-x>b":           "cmd-set-text :buffer",
-    "<Control-x>k":           "tab-close",
+    "<Control-x>b":           "cmd-set-text :tab-focus",
+    "<Control-d>":            "tab-close",
     "<Control-x><Control-c>": "quit",
 
     # Searching
