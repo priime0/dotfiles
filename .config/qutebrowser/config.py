@@ -10,14 +10,14 @@ c.bindings.commands["normal"] = {
     "<Alt-v>":                "scroll-page 0 -0.5",
 
     # Commands
-    "<Alt-x>":                "set-cmd-text :",
-    "<Control-x>b":           "set-cmd-text :buffer",
+    "<Alt-x>":                "cmd-set-text :",
+    "<Control-x>b":           "cmd-set-text :buffer",
     "<Control-x>k":           "tab-close",
     "<Control-x><Control-c>": "quit",
 
     # Searching
-    "<Control-s>":            "set-cmd-text /",
-    "<Control-r>":            "set-cmd-text ?",
+    "<Control-s>":            "cmd-set-text /",
+    "<Control-r>":            "cmd-set-text ?",
 
     # Hinting
     "<Alt-s>":                "hint all",
@@ -31,8 +31,8 @@ c.bindings.commands["normal"] = {
     "<Shift-left>":           "tab-prev",
 
     # Open
-    "<Control-x><Control-f>": "set-cmd-text -s :open",
-    "<Control-x><Control-o>": "set-cmd-text -s :open -t",
+    "<Control-x><Control-f>": "cmd-set-text -s :open",
+    "<Control-x><Control-o>": "cmd-set-text -s :open -t",
 
     # Editing
     "<Control-f>":            "fake-key <Right>",
