@@ -4,6 +4,7 @@
 ;;; Code:
 
 (require 'nano-theme)
+(require 'view)
 
 
 
@@ -88,6 +89,8 @@
 (global-set-key (kbd "C-x f f") #'set-fill-column)
 (global-set-key (kbd "C-x f i") #'display-fill-column-indicator-mode)
 (global-set-key (kbd "C-x f a") #'auto-fill-mode)
+(global-set-key (kbd "C-v")     #'View-scroll-half-page-forward)
+(global-set-key (kbd "M-v")     #'View-scroll-half-page-backward)
 
 ;; Garbage Collection
 (setq gc-cons-threshold 50000000)
