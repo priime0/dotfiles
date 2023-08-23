@@ -55,6 +55,9 @@ c.bindings.commands["normal"] = {
     "7":                      "fake-key 7",
     "8":                      "fake-key 8",
     "9":                      "fake-key 9",
+
+    # Links
+    "<Alt-w>":                "yank",
 }
 
 c.bindings.commands["command"] = {
