@@ -8,6 +8,8 @@ c.bindings.commands["normal"] = {
     # Navigation
     "<Control-v>":            "scroll-page 0 0.5",
     "<Alt-v>":                "scroll-page 0 -0.5",
+    "<":                      "scroll-to-perc 0",
+    ">":                      "scroll-to-perc",
 
     # Commands
     "<Alt-x>":                "cmd-set-text :",
@@ -21,10 +23,11 @@ c.bindings.commands["normal"] = {
 
     # Hinting
     "<Alt-s>":                "hint all",
+    "<Alt-Shift-s>":          "hint all tab",
 
     # History
     "<Control-C>f":           "forward",
-    "<Control-C>b":           "backward",
+    "<Control-C>p":           "back",
 
     # Tabs
     "<Shift-right>":          "tab-next",
@@ -32,6 +35,7 @@ c.bindings.commands["normal"] = {
 
     # Open
     "<Control-x><Control-f>": "cmd-set-text -s :open",
+    "<Control-x><Control-e>": "cmd-set-text -s :open {url:pretty}",
     "<Control-x><Control-o>": "cmd-set-text -s :open -t",
 
     # Editing
