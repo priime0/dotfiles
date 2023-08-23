@@ -102,6 +102,12 @@
 
 (add-hook 'company-mode-hook    'company-box-mode)
 
+(add-hook 'racket-mode-hook     #'lsp)
+(add-hook 'rustic-mode-hook     #'lsp)
+(add-hook 'python-mode-hook     #'lsp)
+(add-hook 'go-mode-hook         #'lsp)
+(add-hook 'tuareg-mode-hook     #'lsp)
+
 (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
 (add-hook 'scheme-mode-hook     #'paredit-mode)
 (add-hook 'racket-mode-hook     #'paredit-mode)
@@ -109,8 +115,5 @@
 (add-hook 'lisp-mode-hook       #'paredit-mode)
 
 (add-hook 'lsp-mode-hook        'lsp-ui-mode)
-
-(add-hook 'python-mode          'lsp-mode)
-(add-hook 'rust-mode            'lsp-rust)
 
 (add-hook 'racket-mode-hook     'racket-xp-mode)
