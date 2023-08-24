@@ -89,8 +89,20 @@
 (global-set-key (kbd "C-x f f") #'set-fill-column)
 (global-set-key (kbd "C-x f i") #'display-fill-column-indicator-mode)
 (global-set-key (kbd "C-x f a") #'auto-fill-mode)
+(global-set-key (kbd "C-x f n") #'toggle-display-line-numbers)
 (global-set-key (kbd "C-v")     #'View-scroll-half-page-forward)
 (global-set-key (kbd "M-v")     #'View-scroll-half-page-backward)
+
+(defun toggle-display-line-numbers ()
+  "Toggle the display of line numbers."
+  (interactive)
+  (cond ((equal display-line-numbers t)
+         (setq display-line-numbers 'relative))
+        ((equal display-line-numbers 'relative)
+         (setq display-line-numbers t))
+        (progn
+          (display-line-numbers-mode 1)
+          (setq display-line-numbers nil))))
 
 ;; Garbage Collection
 (setq gc-cons-threshold 50000000)
