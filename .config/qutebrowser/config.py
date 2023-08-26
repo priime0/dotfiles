@@ -29,6 +29,10 @@ c.bindings.commands["normal"] = {
     "<Control-C>f":           "forward",
     "<Control-C>p":           "back",
 
+    # Zoom
+    "<Control-X>+":           "zoom-in",
+    "<Control-X>-":           "zoom-out",
+
     # Tabs
     "<Shift-right>":          "tab-next",
     "<Shift-left>":           "tab-prev",
