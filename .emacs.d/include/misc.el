@@ -56,6 +56,7 @@
 
 ;; Magit
 (global-set-key (kbd "C-c g g") #'magit)
+(global-set-key (kbd "C-c g b") #'magit-blame)
 (setq auth-sources '("~/.authinfo"))
 
 ;; Web configuration
