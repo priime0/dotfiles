@@ -73,15 +73,15 @@ c.bindings.commands["command"] = {
     "<Control-p>":            "completion-item-focus prev",
     "<Control-n>":            "completion-item-focus next",
 
-    "<Control-g>":            "leave-mode",
+    "<Control-g>":            "mode-leave",
 }
 
 c.bindings.commands["hint"] = {
-    "<Control-g>":            "leave-mode",
+    "<Control-g>":            "mode-leave",
 }
 
 c.bindings.commands["caret"] = {
-    "<Control-g>":            "leave-mode",
+    "<Control-g>":            "mode-leave",
 }
 
 c.content.blocking.method = "both"
