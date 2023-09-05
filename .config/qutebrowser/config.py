@@ -38,6 +38,10 @@ c.bindings.commands["normal"] = {
     "<Shift-right>":          "tab-next",
     "<Shift-left>":           "tab-prev",
 
+    # Bookmarks
+    "<Control-X>l":           "bookmark-list",
+    "<Control-X>a":           "bookmark-add",
+
     # Open
     "<Control-x><Control-f>": "cmd-set-text -s :open",
     "<Control-x><Control-e>": "cmd-set-text -s :open {url:pretty}",
