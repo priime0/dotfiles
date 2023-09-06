@@ -16,6 +16,7 @@ c.bindings.commands["normal"] = {
     "<Control-x>b":           "cmd-set-text :tab-focus",
     "<Control-x>r":           "reload",
     "<Control-d>":            "tab-close",
+    "<Control-/>":            "undo",
     "<Control-x><Control-c>": "quit",
 
     # Searching
