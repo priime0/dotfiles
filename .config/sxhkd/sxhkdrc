@@ -6,13 +6,9 @@
 super + Return
 	kitty
 
-# neovide
-control + Return
-    emacs
-
-# neovide
+# emacs
 super + control + Return
-    neovide
+    emacs
 
 # program launcher
 super + space
