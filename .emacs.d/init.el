@@ -70,6 +70,7 @@
 (straight-use-package 'scribble-mode)
 (straight-use-package 'go-mode)
 (straight-use-package 'auctex)
+(straight-use-package 'cdlatex)
 (straight-use-package 'yaml-mode)
 (straight-use-package 'poetry)
 (straight-use-package 'slime)

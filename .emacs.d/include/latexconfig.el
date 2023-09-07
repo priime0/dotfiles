@@ -11,16 +11,23 @@
 
 (defun configure-latex ()
   "Configure my custom LaTex environment."
+  (electric-indent-mode -1)
+  (LaTeX-math-mode 1)
+  (cdlatex-mode 1)
+  
   (local-set-key (kbd "C-c C-z") #'custom-compile-latex)
   (local-set-key (kbd "C-c C-b") #'latex-insert-block)
+  (local-set-key (kbd "C-c C-h")
+                 (lambda ()
+                   (interactive)
+                   (insert "\\(\\)")
+                   (backward-char 2)))
 
   (set (make-local-variable 'TeX-electric-math)
        (cons "\\(" "\\)"))
+  (set (make-local-variable 'TeX-electric-sub-and-superscript) t)
   (set (make-local-variable 'LaTeX-electric-left-right-brace) t)
-  (set 'preview-scale-function 0.75)
-
-  (electric-indent-mode -1)
-  (LaTeX-math-mode))
+  (set 'preview-scale-function 0.75))
 
 (add-hook 'LaTeX-mode-hook #'configure-latex)
 
