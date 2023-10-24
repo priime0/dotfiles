@@ -75,6 +75,8 @@
 (straight-use-package 'yaml-mode)
 (straight-use-package 'poetry)
 (straight-use-package 'slime)
+(straight-use-package 'haskell-mode)
+(straight-use-package 'lsp-haskell)
 
 
 ;; ====== Custom =============================
