@@ -50,6 +50,7 @@
 (straight-use-package 'elfeed)
 (straight-use-package '(pdf-tools :type git :host github
                                   :repo "vedang/pdf-tools"))
+(straight-use-package 'olivetti)
 
 ;; LSP
 (straight-use-package 'lsp-mode)
