@@ -31,5 +31,15 @@
 
 (add-hook 'LaTeX-mode-hook #'configure-latex)
 
+(setq cdlatex-math-symbol-alist
+      '((?I ("\\int"        "\\Im"))
+        (?0 ("\\varnothing" "\\emptyset"))
+        (?- ("\\not"        "\\neg"))
+        (?+ ("\\cup"        "\\cap"))
+        (?{ ("\\subset"     "\\subseteq"))
+        (?} ("\\supset"     "\\supseteq"))
+        (?. ("\\cdot"       "\\cdots"    "\\ldots"))
+        (?# ("\\mathbb"     "\\mathcal"))))
+
 (provide 'latexconfig)
 ;;; latexconfig.el ends here
