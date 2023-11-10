@@ -51,6 +51,9 @@
 (straight-use-package '(pdf-tools :type git :host github
                                   :repo "vedang/pdf-tools"))
 (straight-use-package 'olivetti)
+(straight-use-package 'rg)
+(straight-use-package 'anzu)
+(straight-use-package 'vterm)
 
 ;; LSP
 (straight-use-package 'lsp-mode)
@@ -103,6 +106,7 @@
 (add-hook 'after-init-hook      'workgroups-mode)
 (add-hook 'after-init-hook      'vertico-mode)
 (add-hook 'after-init-hook      'tab-bar-mode)
+(add-hook 'after-init-hook      'global-anzu-mode)
 
 (add-hook 'company-mode-hook    'company-box-mode)
 

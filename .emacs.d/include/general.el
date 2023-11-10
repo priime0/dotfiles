@@ -45,6 +45,7 @@
 (blink-cursor-mode 1)
 
 ;; Font
+(add-to-list 'default-frame-alist '(font . "JetBrains Mono SemiBold-10"))
 (defvar font-size 10)
 (defvar font-family "JetBrains Mono SemiBold")
 (set-frame-font (format "%s %d" font-family font-size))
@@ -110,6 +111,9 @@
 ;; Confirmations
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Disable suspend state
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
 
 (provide 'general)
 ;;; general.el ends here
