@@ -11,5 +11,11 @@
 (setq auto-mode-alist (cons '("\\.pm$" . pollen-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.pmd$" . pollen-mode) auto-mode-alist))
 
+(defun configure-scribble ()
+  "Configure keybinds for scribble"
+  (local-set-key (kbd "C-c C-c") #'compile))
+
+(add-hook 'scribble-mode-hook #'configure-scribble)
+
 (provide 'racket)
 ;;; racket.el ends here
