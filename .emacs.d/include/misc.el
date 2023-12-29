@@ -62,17 +62,6 @@
 (global-set-key (kbd "C-c g b") #'magit-blame)
 (setq auth-sources '("~/.authinfo"))
 
-;; Web configuration
-(add-to-list 'auto-mode-alist '("\\.jsx?$" . web-mode))
-(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\")))
-(setq web-mode-markup-indent-offset 2)
-
-;; Rust LSP configuration
-(setq lsp-rust-analyzer-cargo-watch-enable t)
-(setq lsp-rust-analyzer-cargo-watch-command "clippy")
-(setq lsp-rust-analyzer-server-display-inlay-hints t)
-(setq lsp-rust-analyzer-inlay-hints-mode t)
-
 ;; Neotree
 (defun neotree-toggle-current-directory ()
   "Toggle neotree at the current directory."

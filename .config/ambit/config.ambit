@@ -56,7 +56,9 @@
         racket.el,
         latexconfig.el,
         cppconfig.el,
-        pdfconfig.el
+        pdfconfig.el,
+        rustconfig.el,
+        ocamlconfig.el
     ]
 ];
 .config/picom.conf;
