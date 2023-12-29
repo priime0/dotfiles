@@ -44,6 +44,9 @@
                 (url-copy-file (cdr f) (car f) t))
               file-path-urls)))))
 
+;; LSP
+(setq lsp-inlay-hint-enable t)
+
 ;; Git Gutter
 (global-git-gutter-mode +1)
 
