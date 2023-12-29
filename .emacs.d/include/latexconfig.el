@@ -37,13 +37,21 @@
 
 (setq cdlatex-math-symbol-alist
       '((?I ("\\int"        "\\Im"))
+        (?L ("\\Lambda"     "\\lim"))
         (?0 ("\\varnothing" "\\emptyset"))
         (?- ("\\not"        "\\neg"))
         (?+ ("\\cup"        "\\cap"))
+        (?/ ("\\frac"))
         (?{ ("\\subset"     "\\subseteq"))
         (?} ("\\supset"     "\\supseteq"))
         (?. ("\\cdot"       "\\cdots"    "\\ldots"))
         (?# ("\\mathbb"     "\\mathcal"))))
+
+(setq cdlatex-math-modify-alist
+      '((?b "\\mathbb"  "\\textbf" t nil nil)
+        (?B "\\mathbf"  "\\textbf" t nil nil)
+        (?c "\\mathcal" nil t nil nil)
+        (?t "\\text" nil t nil nil)))
 
 (provide 'latexconfig)
 ;;; latexconfig.el ends here
