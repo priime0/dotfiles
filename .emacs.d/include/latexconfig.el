@@ -3,6 +3,8 @@
 ;;    Custom configuration for LaTeX editing
 ;;; Code:
 
+(require 'cdlatex)
+
 (defun custom-compile-latex ()
   "Run the `just' command -- the command I use to compile my environment."
   (interactive)
@@ -22,6 +24,8 @@
                    (interactive)
                    (insert "\\(\\)")
                    (backward-char 2)))
+  (keymap-substitute cdlatex-mode-map 'cdlatex-dollar 'cdlatex-math-symbol)
+  (setq cdlatex-math-symbol-prefix ?$)
 
   (set (make-local-variable 'TeX-electric-math)
        (cons "\\(" "\\)"))
