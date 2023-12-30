@@ -43,8 +43,15 @@
 
 ;; Org
 (straight-use-package 'org)
-(straight-use-package '(ob-racket :type git :host github
-				  :repo "DEADB17/ob-racket"))
+(straight-use-package 'org-modern)
+(straight-use-package '(org-modern-indent
+                        :type git
+                        :host github
+                        :repo "jdtsmith/org-modern-indent"))
+(straight-use-package '(ob-racket
+                        :type git
+                        :host github
+                        :repo "DEADB17/ob-racket"))
 
 ;; Productivity
 (straight-use-package 'elfeed)

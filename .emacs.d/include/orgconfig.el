@@ -12,6 +12,7 @@
 (setq org-adapt-indentation nil)
 (setq org-confirm-babel-evaluate nil)
 (setq org-export-use-babel nil)
+(setq org-agenda-include-diary t)
 
 ;; Enable Racket in Org-mode Babel
 (org-babel-do-load-languages
@@ -56,6 +57,9 @@
             (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
             (add-hook 'org-mode-hook 'auto-fill-mode)
             (auto-save-mode)))
+(add-hook 'org-mode-hook #'org-modern-mode)
+(add-hook 'org-mode-hook #'org-modern-indent-mode 90)
+(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 
 (provide 'orgconfig)
 ;;; orgconfig.el ends here
