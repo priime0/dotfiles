@@ -61,5 +61,26 @@
 (add-hook 'org-mode-hook #'org-modern-indent-mode 90)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 
+;; Diary-syncing functionality
+(defun pull-diary ()
+  "MUST sync the calendars prior to running this command"
+  (interactive)
+  (let* ((diary-file-name (expand-file-name "~/.emacs.d/diary"))
+         (calendar-dir (expand-file-name "~/.calendars/"))
+         (calendar-file-suffix ".ics")
+         (calendar-file? (lambda (f) (s-suffix? calendar-file-suffix f)))
+         (calendar-dir-files (directory-files calendar-dir))
+         (calendar-names (-filter calendar-file? calendar-dir-files))
+         (calendar-files (-map (lambda (f) (expand-file-name f calendar-dir)) calendar-names)))
+    (-map (lambda (f)
+            (icalendar-import-file f diary-file-name)
+            (find-file f)
+            (kill-buffer))
+          calendar-files)
+    (find-file diary-file-name)
+    (delete-duplicate-lines (point-min) (point-max))
+    (save-buffer)
+    (kill-buffer)))
+
 (provide 'orgconfig)
 ;;; orgconfig.el ends here
