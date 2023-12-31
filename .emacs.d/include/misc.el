@@ -101,12 +101,12 @@
 
 ;; Markdown
 (custom-set-faces
- '(markdown-header-face-1 ((t (:inherit nano-strong :height 1.3 :family "Inter"))))
- '(markdown-header-face-2 ((t (:inherit nano-strong :height 1.2 :family "Inter"))))
- '(markdown-header-face-3 ((t (:inherit nano-strong :height 1.1 :family "Inter"))))
- '(markdown-header-face-4 ((t (:inherit nano-strong :height 1.0 :family "Inter"))))
- '(markdown-header-face-5 ((t (:inherit nano-strong :height 0.9 :family "Inter"))))
- '(markdown-header-face-6 ((t (:inherit nano-strong :height 0.8 :family "Inter")))))
+ '(markdown-header-face-1 ((t (:inherit nano-strong :height 1.3  :family "Inter"))))
+ '(markdown-header-face-2 ((t (:inherit nano-strong :height 1.25 :family "Inter"))))
+ '(markdown-header-face-3 ((t (:inherit nano-strong :height 1.2  :family "Inter"))))
+ '(markdown-header-face-4 ((t (:inherit nano-strong :height 1.15 :family "Inter"))))
+ '(markdown-header-face-5 ((t (:inherit nano-strong :height 1.1  :family "Inter"))))
+ '(markdown-header-face-6 ((t (:inherit nano-strong :height 1.05 :family "Inter")))))
 (add-hook 'markdown-mode-hook #'markdown-toggle-fontify-code-blocks-natively)
 
 (provide 'misc)
