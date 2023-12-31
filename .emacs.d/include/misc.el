@@ -82,6 +82,9 @@
 (setq completion-styles '(orderless basic))
 (setq completion-category-overrides '((file (styles basic partial-completion))))
 
+;; hledger
+(setq hledger-currency-string "$")
+
 ;; SLIME
 (setq inferior-lisp-program "sbcl")
 

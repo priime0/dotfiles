@@ -62,6 +62,7 @@
 (straight-use-package 'rg)
 (straight-use-package 'anzu)
 (straight-use-package 'vterm)
+(straight-use-package 'hledger-mode)
 
 ;; LSP
 (straight-use-package 'lsp-mode)
