@@ -52,6 +52,11 @@
 (set-frame-font (format "%s %d" font-family font-size))
 (custom-set-faces
  '(shr-text ((t (:inherit variable-pitch-text :family "Noto Sans Light")))))
+(set-face-attribute 'italic nil
+                    :family "Roboto Mono"
+                    :slant 'italic
+                    :weight 'bold
+                    :foreground nano-light-foreground)
 
 ;; Use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
