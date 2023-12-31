@@ -24,6 +24,8 @@
         (parameterize ([current-output-port out])
           (write-bytes data))))
 
+    (displayln (format "finished writing to ~s" out-filename))
+
     (void)))
 
 (module+ main
