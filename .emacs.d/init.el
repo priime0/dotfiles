@@ -44,6 +44,7 @@
 ;; Org
 (straight-use-package 'org)
 (straight-use-package 'org-modern)
+(straight-use-package 'org-recur)
 (straight-use-package '(org-modern-indent
                         :type git
                         :host github
@@ -69,13 +70,19 @@
 ;; Misc
 (straight-use-package 'dash)
 
+;; Programming
+(straight-use-package '(copilot :type git :host github
+                                :repo "zerolfx/copilot.el"
+                                :branch "main"
+                                :files ("dist" "*.el")))
+
 ;; Languages
 (straight-use-package 'racket-mode)
 (straight-use-package 'rust-mode)
 (straight-use-package 'rustic)
-(straight-use-package 'tuareg)
+
 (straight-use-package 'markdown-mode)
-(straight-use-package 'web-mode)
+(straight-use-package 'rjsx-mode)
 (straight-use-package 'just-mode)
 (straight-use-package 'justl)
 (straight-use-package 'scribble-mode)

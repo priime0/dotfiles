@@ -60,6 +60,8 @@
             (auto-save-mode)))
 (add-hook 'org-mode-hook #'olivetti-mode)
 (add-hook 'org-mode-hook #'org-modern-mode)
+(add-hook 'org-mode-hook #'org-recur-mode)
+(add-hook 'org-agenda-mode-hook #'org-recur-mode)
 (add-hook 'org-mode-hook #'org-modern-indent-mode 90)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 
