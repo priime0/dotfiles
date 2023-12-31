@@ -1,0 +1,30 @@
+#!/usr/bin/racket
+
+#lang racket/base
+
+(require racket/match)
+(require racket/port)
+(require net/url)
+
+(define calendars
+  '())
+
+(define (main)
+  (for ([calendar-info calendars])
+    (match-define [cons name calendar-link] calendar-info)
+    (define url (string->url calendar-link))
+    (define data (port->bytes (get-pure-port url)))
+    (define out-filename (format "~a.ics" name))
+
+    (when (file-exists? out-filename)
+      (delete-file out-filename))
+
+    (call-with-output-file out-filename
+      (lambda (out)
+        (parameterize ([current-output-port out])
+          (write-bytes data))))
+
+    (void)))
+
+(module+ main
+  (main))

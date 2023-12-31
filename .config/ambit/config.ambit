@@ -77,3 +77,4 @@
 ];
 .zshrc;
 .config/kitty/kitty.conf;
+.calendars/sync;
