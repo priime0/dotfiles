@@ -56,7 +56,9 @@
           (lambda ()
             (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
             (add-hook 'org-mode-hook 'auto-fill-mode)
+
             (auto-save-mode)))
+(add-hook 'org-mode-hook #'olivetti-mode)
 (add-hook 'org-mode-hook #'org-modern-mode)
 (add-hook 'org-mode-hook #'org-modern-indent-mode 90)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
@@ -81,6 +83,17 @@
     (delete-duplicate-lines (point-min) (point-max))
     (save-buffer)
     (kill-buffer)))
+
+;; Theme
+(custom-set-faces
+ '(org-document-info ((t (:inherit nano-strong :height 1.0 :family "Roboto Mono"))))
+ '(org-document-title ((t (:inherit nano-strong :height 1.5 :family "Roboto Mono"))))
+ '(org-level-1 ((t (:inherit nano-strong :extend nil :height 1.4 :family "Inter"))))
+ '(org-level-2 ((t (:inherit nano-strong :extend nil :height 1.3 :family "Inter"))))
+ '(org-level-3 ((t (:inherit nano-strong :extend nil :height 1.2 :family "Inter"))))
+ '(org-level-4 ((t (:inherit nano-strong :extend nil :height 1.1 :family "Inter"))))
+ '(org-link ((t (:inherit nano-salient :underline t)))))
+
 
 (provide 'orgconfig)
 ;;; orgconfig.el ends here
