@@ -91,15 +91,13 @@
 (setq hledger-currency-string "$")
 (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
 (setq hledger-jfile "~/finance/2024.journal")
-(add-to-list 'company-backends 'hledger-company)
-(add-to-list 'ac-modes 'hledger-mode)
-(add-hook 'hledger-mode-hook
-    (lambda ()
-        (setq-local ac-sources '(hledger-ac-source))))
 
 
 ;; SLIME
 (setq inferior-lisp-program "sbcl")
+
+;; Copilot
+(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
 
 (provide 'misc)
 ;;; misc.el ends here
