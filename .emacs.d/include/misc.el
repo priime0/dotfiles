@@ -82,6 +82,11 @@
 (setq completion-styles '(orderless basic))
 (setq completion-category-overrides '((file (styles basic partial-completion))))
 
+;; beframe
+(beframe-mode 1)
+(global-unset-key (kbd "C-x b"))
+(global-set-key (kbd "C-x b") #'beframe-switch-buffer)
+
 ;; hledger
 (setq hledger-currency-string "$")
 (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
