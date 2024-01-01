@@ -76,6 +76,7 @@
          (calendar-dir-files (directory-files calendar-dir))
          (calendar-names (-filter calendar-file? calendar-dir-files))
          (calendar-files (-map (lambda (f) (expand-file-name f calendar-dir)) calendar-names)))
+    (delete-file diary-file-name)
     (-map (lambda (f)
             (find-file f)
             (icalendar-import-buffer diary-file-name t nil)
