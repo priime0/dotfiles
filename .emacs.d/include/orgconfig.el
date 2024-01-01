@@ -71,7 +71,7 @@
   (interactive)
   ;; Sync the calendars directory
   (let ((default-directory (expand-file-name "~/.calendars/")))
-    (shell-command "./sync" "*scratch*"))
+    (shell-command "./sync"))
   ;; Import the calendars into the diary
   (let* ((diary-file-name (expand-file-name "~/.emacs.d/diary"))
          (calendar-dir (expand-file-name "~/.calendars/"))
