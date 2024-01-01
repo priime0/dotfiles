@@ -13,6 +13,7 @@
 (setq org-confirm-babel-evaluate nil)
 (setq org-export-use-babel nil)
 (setq org-agenda-include-diary t)
+(setq org-src-preserve-indentation t)
 
 ;; Enable Racket in Org-mode Babel
 (org-babel-do-load-languages
