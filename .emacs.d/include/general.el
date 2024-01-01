@@ -45,6 +45,12 @@
 ;; Cursor
 (blink-cursor-mode 1)
 
+;; Theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'nano t)
+(nano-light)
+
+
 ;; Font
 (add-to-list 'default-frame-alist '(font . "JetBrains Mono SemiBold-10"))
 (defvar font-size 10)
@@ -83,11 +89,6 @@
 ;; Emacs thinks that sentences ends with period and two spaces,
 ;; disable this.
 (setq sentence-end-double-space nil)
-
-;; Theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'nano t)
-(nano-light)
 
 ;; Keybindings
 (global-set-key (kbd "C-M-j") (lambda () (interactive) (scroll-up 1)))
