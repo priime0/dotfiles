@@ -67,8 +67,12 @@
 
 ;; Diary-syncing functionality
 (defun pull-diary ()
-  "MUST sync the calendars prior to running this command"
+  "Syncs the calendars directory and imports the calendars into the diary."
   (interactive)
+  ;; Sync the calendars directory
+  (let ((default-directory (expand-file-name "~/.calendars/")))
+    (shell-command "./sync" "*scratch*"))
+  ;; Import the calendars into the diary
   (let* ((diary-file-name (expand-file-name "~/.emacs.d/diary"))
          (calendar-dir (expand-file-name "~/.calendars/"))
          (calendar-file-suffix ".ics")
