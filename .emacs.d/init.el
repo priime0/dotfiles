@@ -98,6 +98,10 @@
 (straight-use-package 'lsp-haskell)
 (straight-use-package 'company-coq)
 (straight-use-package 'proof-general)
+(straight-use-package '(llvm-mode :type git :host github
+                                  :repo "nverno/llvm-mode"))
+(straight-use-package '(pollen-mode :type git :host github
+                                    :repo "basus/pollen-mode"))
 
 (straight-use-package 'tuareg)
 (straight-use-package 'utop)
@@ -110,7 +114,6 @@
 ;; ====== Custom =============================
 (add-to-list 'load-path "~/.emacs.d/include")
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
-(require 'llvm-mode)
 
 (load-library "general")
 (load-library "misc")
