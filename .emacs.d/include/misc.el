@@ -44,6 +44,15 @@
                 (url-copy-file (cdr f) (car f) t))
               file-path-urls)))))
 
+
+(defun download-file (&optional url filepath)
+  "Download the file from URL to FILEPATH."
+  (interactive)
+  (let* ((url (or url
+                  (read-string "url: ")))
+         (filepath (or filepath (read-file-name "filename: "))))
+    (url-copy-file url filepath 1)))
+
 ;; LSP
 (setq lsp-inlay-hint-enable t)
 
