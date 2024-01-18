@@ -19,7 +19,8 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((racket . t)
-   (python . t)))
+   (python . t)
+   (java . t)))
 
 (setcar (nthcdr 4 org-emphasis-regexp-components) 20)
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
