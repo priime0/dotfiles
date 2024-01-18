@@ -88,6 +88,10 @@
 (global-set-key (kbd "C-c g b") #'magit-blame)
 (setq auth-sources '("~/.authinfo"))
 
+;; Projectile
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 ;; Neotree
 (defun neotree-toggle-current-directory ()
   "Toggle neotree at the current directory."
