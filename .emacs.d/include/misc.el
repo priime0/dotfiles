@@ -138,6 +138,7 @@
  '(markdown-header-face-5 ((t (:inherit nano-strong :height 1.1  :family "Inter"))))
  '(markdown-header-face-6 ((t (:inherit nano-strong :height 1.05 :family "Inter")))))
 (add-hook 'markdown-mode-hook #'markdown-toggle-fontify-code-blocks-natively)
+(add-hook 'markdown-mode-hook #'olivetti-mode)
 
 (provide 'misc)
 ;;; misc.el ends here
