@@ -122,6 +122,9 @@
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
 
+;; emacs-nativecomp
+(setq native-comp-async-report-warnings-errors nil)
+
 ;; From https://stackoverflow.com/questions/8309769/how-can-i-prevent-emacs-from-opening-new-window-for-compilation-output
 
 ;; Helper for compilation. Close the compilation window if
