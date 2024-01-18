@@ -5,9 +5,12 @@
 ;;    short), then it belongs here.
 ;;; Code:
 
+(require 'lsp-mode)
+(require 'lsp-java)
 (require 'git-gutter)
 (require 'elfeed)
 (require 'neotree)
+(require 'copilot)
 
 (defun config-compile ()
   "(Re)compile the current Emacs configuration."
@@ -59,13 +62,16 @@
 (setq lsp-ui-doc-header t)
 (setq lsp-ui-doc-border (face-foreground 'default))
 (setq lsp-ui-sideline-show-code-actions t)
+(setq lsp-enable-file-watchers nil)
+(setq lsp-log-max nil)
+(setq lsp-enable-links nil)
+(setq lsp-use-plists t)
+
 (custom-set-faces
  '(lsp-ui-doc-header ((t (:inherit nano-strong :background-color nano-dark-background)))))
 
-(setq lsp-java-configuration-runtimes
-      '[(:name "JavaSE-21"
-               :path "/usr/lib/jvm/java-21-openjdk"
-               :default t)])
+(setq read-process-output-max (* 4 1024 1024))
+
 
 ;; Git Gutter
 (global-git-gutter-mode +1)
