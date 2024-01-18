@@ -96,6 +96,7 @@
 (straight-use-package 'slime)
 (straight-use-package 'haskell-mode)
 (straight-use-package 'lsp-haskell)
+(straight-use-package 'lsp-java)
 (straight-use-package 'company-coq)
 (straight-use-package 'proof-general)
 (straight-use-package '(llvm-mode :type git :host github
@@ -146,13 +147,13 @@
 (add-hook 'go-mode-hook         #'lsp)
 (add-hook 'tuareg-mode-hook     #'lsp)
 (add-hook 'haskell-mode-hook    #'lsp)
+(add-hook 'java-mode-hook       #'lsp)
 
 (add-hook 'emacs-lisp-mode-hook  #'paredit-mode)
 (add-hook 'scheme-mode-hook      #'paredit-mode)
 (add-hook 'racket-mode-hook      #'paredit-mode)
 (add-hook 'clojure-mode-hook     #'paredit-mode)
 (add-hook 'lisp-mode-hook        #'paredit-mode)
-(add-hook 'racket-repl-mode-hook #'paredit-mode)
 
 (add-hook 'lsp-mode-hook        'lsp-ui-mode)
 (add-hook 'lsp-mode-hook        'lsp-inlay-hints-mode)
