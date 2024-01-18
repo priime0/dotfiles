@@ -55,6 +55,17 @@
 
 ;; LSP
 (setq lsp-inlay-hint-enable t)
+(setq lsp-ui-doc-include-signature t)
+(setq lsp-ui-doc-header t)
+(setq lsp-ui-doc-border (face-foreground 'default))
+(setq lsp-ui-sideline-show-code-actions t)
+(custom-set-faces
+ '(lsp-ui-doc-header ((t (:inherit nano-strong :background-color nano-dark-background)))))
+
+(setq lsp-java-configuration-runtimes
+      '[(:name "JavaSE-21"
+               :path "/usr/lib/jvm/java-21-openjdk"
+               :default t)])
 
 ;; Git Gutter
 (global-git-gutter-mode +1)
