@@ -54,6 +54,10 @@
 (advice-add 'org-sort           :after (η #'org-save-all-org-buffers))
 
 ;; Org hooks
+(add-hook 'org-mode-hook
+          (lambda ()
+            (modify-syntax-entry ?< ".")
+            (modify-syntax-entry ?> ".")))
 (add-hook 'org-agenda-mode-hook
           (lambda ()
             (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
