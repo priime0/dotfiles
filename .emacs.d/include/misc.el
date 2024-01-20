@@ -6,7 +6,6 @@
 ;;; Code:
 
 (require 'lsp-mode)
-(require 'lsp-java)
 (require 'git-gutter)
 (require 'elfeed)
 (require 'neotree)
@@ -72,6 +71,15 @@
 
 (setq read-process-output-max (* 4 1024 1024))
 
+;; Eglot
+(with-eval-after-load 'eglot-java
+  (define-key eglot-java-mode-map (kbd "C-c l n") #'eglot-java-file-new)
+  (define-key eglot-java-mode-map (kbd "C-c l x") #'eglot-java-run-main)
+  (define-key eglot-java-mode-map (kbd "C-c l t") #'eglot-java-run-test)
+  (define-key eglot-java-mode-map (kbd "C-c l N") #'eglot-java-project-new)
+  (define-key eglot-java-mode-map (kbd "C-c l T") #'eglot-java-project-build-task)
+  (define-key eglot-java-mode-map (kbd "C-c l R") #'eglot-java-project-build-refresh)
+  (setq c-basic-offset 2))
 
 ;; Git Gutter
 (global-git-gutter-mode +1)
