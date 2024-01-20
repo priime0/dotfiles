@@ -139,7 +139,7 @@ alias mkdir="mkdir -p"
 
 alias v="open neovide"
 alias f="fzf -i"
-alias e="open emacs"
+alias e="open emacsclient --create-frame"
 
 alias psax="ps -ax | grep -i"
 alias copy="xclip -i"
@@ -162,6 +162,8 @@ alias lock="dm-tool lock"
 alias lstar="tar -ztvf"
 alias untar="tar -zxvf"
 alias mktar="tar -cvzf"
+
+alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|time to|percentage"'
 
 alias clear="printf '\033[2J\033[3J\033[1;1H'"
 
