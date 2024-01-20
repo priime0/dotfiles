@@ -69,6 +69,7 @@
 (straight-use-package 'lsp-mode)
 (straight-use-package 'lsp-ui)
 (straight-use-package 'eglot)
+(straight-use-package 'eldoc-box)
 
 ;; Misc
 (straight-use-package 'dash)
@@ -156,7 +157,8 @@
 (add-hook 'clojure-mode-hook     #'paredit-mode)
 (add-hook 'lisp-mode-hook        #'paredit-mode)
 
-(add-hook 'lsp-mode-hook        'lsp-ui-mode)
-(add-hook 'lsp-mode-hook        'lsp-inlay-hints-mode)
+(add-hook 'lsp-mode-hook           #'lsp-ui-mode)
+(add-hook 'lsp-mode-hook           #'lsp-inlay-hints-mode)
+(add-hook 'eglot-managed-mode-hook #'eldoc-box-hover-at-point-mode)
 
 (add-hook 'racket-mode-hook     'racket-xp-mode)
