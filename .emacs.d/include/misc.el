@@ -79,6 +79,7 @@
   (define-key eglot-java-mode-map (kbd "C-c l N") #'eglot-java-project-new)
   (define-key eglot-java-mode-map (kbd "C-c l T") #'eglot-java-project-build-task)
   (define-key eglot-java-mode-map (kbd "C-c l R") #'eglot-java-project-build-refresh)
+  (define-key eglot-java-mode-map (kbd "C-c l a") #'eglot-code-actions)
   (setq c-basic-offset 2))
 
 ;; Git Gutter
