@@ -16,6 +16,9 @@
   (electric-indent-mode -1)
   (LaTeX-math-mode 1)
   (cdlatex-mode 1)
+  (auto-fill-mode 1)
+  (display-fill-column-indicator-mode 1)
+  (set-fill-column 100)
   
   (local-set-key (kbd "C-c C-z") #'custom-compile-latex)
   (local-set-key (kbd "C-c C-b") #'latex-insert-block)
