@@ -116,6 +116,7 @@
 
 (keymap-global-set "C-c t" #'neotree-toggle-current-directory)
 (setq neo-theme 'icons)
+(setq neo-smart-open t)
 
 ;; Orderless
 (setq completion-styles '(orderless basic))
