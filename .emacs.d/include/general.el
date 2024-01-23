@@ -91,15 +91,15 @@
 (setq sentence-end-double-space nil)
 
 ;; Keybindings
-(global-set-key (kbd "C-M-j") (lambda () (interactive) (scroll-up 1)))
-(global-set-key (kbd "C-M-k") (lambda () (interactive) (scroll-down 1)))
-(global-unset-key (kbd "C-x f"))
-(global-set-key (kbd "C-x f f") #'set-fill-column)
-(global-set-key (kbd "C-x f i") #'display-fill-column-indicator-mode)
-(global-set-key (kbd "C-x f a") #'auto-fill-mode)
-(global-set-key (kbd "C-x f n") #'toggle-display-line-numbers)
-(global-set-key (kbd "C-v")     #'View-scroll-half-page-forward)
-(global-set-key (kbd "M-v")     #'View-scroll-half-page-backward)
+(keymap-global-set "C-M-j" (lambda () (interactive) (scroll-up 1)))
+(keymap-global-set "C-M-k" (lambda () (interactive) (scroll-down 1)))
+(keymap-global-unset "C-x f")
+(keymap-global-set "C-x f f" #'set-fill-column)
+(keymap-global-set "C-x f i" #'display-fill-column-indicator-mode)
+(keymap-global-set "C-x f a" #'auto-fill-mode)
+(keymap-global-set "C-x f n" #'toggle-display-line-numbers)
+(keymap-global-set "C-v"     #'View-scroll-half-page-forward)
+(keymap-global-set "M-v"     #'View-scroll-half-page-backward)
 
 (defun toggle-display-line-numbers ()
   "Toggle the display of line numbers."

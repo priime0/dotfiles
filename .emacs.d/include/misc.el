@@ -93,8 +93,8 @@
         ("https://blog.cleancoder.com/atom.xml" blog)))
 
 ;; Magit
-(global-set-key (kbd "C-c g g") #'magit)
-(global-set-key (kbd "C-c g b") #'magit-blame)
+(keymap-global-set "C-c g g" #'magit)
+(keymap-global-set "C-c g b" #'magit-blame)
 (setq auth-sources '("~/.authinfo"))
 
 ;; Projectile
@@ -114,7 +114,7 @@
         (neotree-hide)
       (neotree-dir current-directory))))
 
-(global-set-key (kbd "C-c t") #'neotree-toggle-current-directory)
+(keymap-global-set "C-c t" #'neotree-toggle-current-directory)
 (setq neo-theme 'icon)
 
 ;; Orderless
