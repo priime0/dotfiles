@@ -32,8 +32,7 @@
   (keymap-local-set "C-c C-/"
                     (lambda ()
                       (interactive)
-                      (when (texmathp)
-                        (LaTeX-math-frac))))
+                      (LaTeX-math-frac (not (texmathp)))))
   (keymap-substitute cdlatex-mode-map 'cdlatex-dollar 'cdlatex-math-symbol)
   (setq cdlatex-math-symbol-prefix ?$)
 
