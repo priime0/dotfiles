@@ -123,8 +123,9 @@
 
 ;; bufler
 (bufler-mode 1)
-(global-unset-key (kbd "C-x b"))
-(global-set-key (kbd "C-x b") #'bufler-switch-buffer)
+(keymap-global-set "C-x b" #'bufler-switch-buffer)
+(keymap-global-set "C-x C-b" #'bufler-list)
+
 
 ;; hledger
 (setq hledger-currency-string "$")
