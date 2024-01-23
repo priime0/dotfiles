@@ -115,7 +115,7 @@
       (neotree-dir current-directory))))
 
 (keymap-global-set "C-c t" #'neotree-toggle-current-directory)
-(setq neo-theme 'icon)
+(setq neo-theme 'icons)
 
 ;; Orderless
 (setq completion-styles '(orderless basic))
