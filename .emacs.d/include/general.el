@@ -108,9 +108,10 @@
          (setq display-line-numbers 'relative))
         ((equal display-line-numbers 'relative)
          (setq display-line-numbers t))
-        (progn
-          (display-line-numbers-mode 1)
-          (setq display-line-numbers nil))))
+        (t
+         (progn
+           (display-line-numbers-mode 1)
+           (setq display-line-numbers t)))))
 
 ;; Garbage Collection
 (setq gc-cons-threshold 50000000)
