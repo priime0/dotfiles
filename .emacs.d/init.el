@@ -30,7 +30,7 @@
 ;; Convenience
 (straight-use-package 'projectile)
 (straight-use-package 'workgroups2)
-(straight-use-package 'beframe)
+(straight-use-package 'bufler)
 
 ;; UI
 (straight-use-package 'which-key)

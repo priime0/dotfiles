@@ -121,10 +121,10 @@
 (setq completion-styles '(orderless basic))
 (setq completion-category-overrides '((file (styles basic partial-completion))))
 
-;; beframe
-(beframe-mode 1)
+;; bufler
+(bufler-mode 1)
 (global-unset-key (kbd "C-x b"))
-(global-set-key (kbd "C-x b") #'beframe-switch-buffer)
+(global-set-key (kbd "C-x b") #'bufler-switch-buffer)
 
 ;; hledger
 (setq hledger-currency-string "$")
