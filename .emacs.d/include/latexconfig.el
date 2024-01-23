@@ -3,6 +3,7 @@
 ;;    Custom configuration for LaTeX editing
 ;;; Code:
 
+(require 'latex)
 (require 'cdlatex)
 
 (defun custom-compile-latex ()
@@ -54,7 +55,12 @@
       '((?b "\\mathbb"  "\\textbf" t nil nil)
         (?B "\\mathbf"  "\\textbf" t nil nil)
         (?c "\\mathcal" nil t nil nil)
+        (?s "\\sqrt" nil t nil nil)
         (?t "\\text" nil t nil nil)))
+
+(setq LaTeX-font-list
+      (cons (list ?\^U "\\underline{" "}")
+            LaTeX-font-list))
 
 (provide 'latexconfig)
 ;;; latexconfig.el ends here
