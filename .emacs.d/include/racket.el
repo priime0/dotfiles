@@ -12,8 +12,8 @@
 (setq auto-mode-alist (cons '("\\.pmd$" . pollen-mode) auto-mode-alist))
 
 (defun configure-scribble ()
-  "Configure keybinds for scribble"
-  (local-set-key (kbd "C-c C-c") #'compile))
+  "Configure keybinds for scribble."
+  (keymap-local-set "C-c C-c" #'compile))
 
 (add-hook 'scribble-mode-hook #'configure-scribble)
 
