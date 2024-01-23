@@ -6,6 +6,8 @@
 ;; PDF Tools
 (pdf-tools-install)
 
+(setq doc-view-resolution 300)
+
 (defun pdf-download-and-view (&optional url filename)
   "Download and view the PDF given by its URL as FILENAME."
   (interactive)
