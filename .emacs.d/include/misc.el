@@ -151,5 +151,33 @@
 (add-hook 'markdown-mode-hook #'markdown-toggle-fontify-code-blocks-natively)
 (add-hook 'markdown-mode-hook #'olivetti-mode)
 
+;; Grading
+(defun grade-next (&optional inc)
+  "Go to the next homework by INC to grade."
+  (interactive)
+  (let ((inc (or inc 1))
+        (grading-directory "pl-grading")
+        (extension ".rkt")
+        (filepath (buffer-file-name (current-buffer))))
+    (if (not (and (string-match-p grading-directory filepath)
+                  (string-match-p extension filepath)))
+        (message (format "not in %s!" grading-directory))
+      (let* ((target-directory (file-name-directory filepath)) 
+             (filename-parts (string-split filepath "/"))
+             (source-filename (-last-item filename-parts))
+             (source-number-str (file-name-sans-extension source-filename))
+             (source-number (string-to-number source-number-str))
+             (target-number (+ inc source-number))
+             (target-number-str (format "%02d" target-number))
+             (target-filename (format "%s.rkt" target-number-str))
+             (target-filepath (concat target-directory target-filename)))
+        (find-file target-filepath)))))
+
+(defun start-grading ()
+  "Start grading."
+  (interactive)
+  (keymap-global-set "C-c f" #'grade-next)
+  (keymap-global-set "C-c b" (lambda () (interactive) (grade-next -1))))
+
 (provide 'misc)
 ;;; misc.el ends here
