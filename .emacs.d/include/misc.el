@@ -171,7 +171,9 @@
              (target-number-str (format "%02d" target-number))
              (target-filename (format "%s.rkt" target-number-str))
              (target-filepath (concat target-directory target-filename)))
-        (find-file target-filepath)))))
+        (if (file-exists-p target-filepath) 
+            (find-file target-filepath)
+          (message (format "next grading file doesn't exist!")))))))
 
 (defun start-grading ()
   "Start grading."
