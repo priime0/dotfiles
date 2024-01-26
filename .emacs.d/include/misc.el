@@ -82,6 +82,11 @@
   (define-key eglot-java-mode-map (kbd "C-c l a") #'eglot-code-actions)
   (setq c-basic-offset 2))
 
+(set-face-attribute 'eglot-highlight-symbol-face nil
+                    :family "JetBrains Mono"
+                    :weight 'semi-bold
+                    :underline t)
+
 ;; Git Gutter
 (global-git-gutter-mode +1)
 
