@@ -59,9 +59,9 @@
 (custom-set-faces
  '(shr-text ((t (:inherit variable-pitch-text :family "Noto Sans Light")))))
 (set-face-attribute 'italic nil
-                    :family "Roboto Mono"
+                    :family "JetBrains Mono"
                     :slant 'italic
-                    :weight 'bold
+                    :weight 'semi-bold
                     :foreground nano-light-foreground)
 
 ;; Use spaces instead of tabs
