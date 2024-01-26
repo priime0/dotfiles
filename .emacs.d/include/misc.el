@@ -6,6 +6,7 @@
 ;;; Code:
 
 (require 'lsp-mode)
+(require 'eglot)
 (require 'git-gutter)
 (require 'elfeed)
 (require 'neotree)
