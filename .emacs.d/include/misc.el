@@ -124,6 +124,7 @@
 (keymap-global-set "C-c t" #'neotree-toggle-current-directory)
 (setq neo-theme 'icons)
 (setq neo-smart-open t)
+(add-hook 'neotree-mode-hook (lambda () (text-scale-set -0.5)))
 
 ;; Orderless
 (setq completion-styles '(orderless basic))
