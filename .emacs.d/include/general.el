@@ -93,6 +93,16 @@
 ;; Keybindings
 (keymap-global-set "C-M-j" (lambda () (interactive) (scroll-up 1)))
 (keymap-global-set "C-M-k" (lambda () (interactive) (scroll-down 1)))
+(keymap-global-set "C-x <"
+                   (lambda (arg)
+                     (interactive "P")
+                     (let ((amt (or arg 1)))
+                       (scroll-right amt))))
+(keymap-global-set "C-x >"
+                   (lambda (arg)
+                     (interactive "P")
+                     (let ((amt (or arg 1)))
+                       (scroll-left amt))))
 (keymap-global-unset "C-x f")
 (keymap-global-set "C-x f f" #'set-fill-column)
 (keymap-global-set "C-x f i" #'display-fill-column-indicator-mode)
