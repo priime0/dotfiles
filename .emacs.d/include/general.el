@@ -90,6 +90,10 @@
 ;; disable this.
 (setq sentence-end-double-space nil)
 
+;; Scrolling
+(put 'scroll-left 'disabled nil)
+(put 'scroll-right 'disabled nil)
+
 ;; Keybindings
 (keymap-global-set "C-M-j" (lambda () (interactive) (scroll-up 1)))
 (keymap-global-set "C-M-k" (lambda () (interactive) (scroll-down 1)))
