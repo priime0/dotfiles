@@ -11,7 +11,7 @@ My Arch Linux and Emacs configuration.
 | Wallpaper Setter    | nitrogen              |
 | Terminal Emulator   | kitty                 |
 | Document Viewer     | zathura / emacs       |
-| Editor              | Emacs                 |
+| Editor              | emacs                 |
 | Notification Daemon | dunst                 |
 | Compositor          | picom                 |
 | Shell               | zsh                   |
