@@ -79,3 +79,8 @@
 .zshrc;
 .config/kitty/kitty.conf;
 .calendars/sync;
+.config/rofi/config.rasi;
+.local/bin/[
+    rofi-pass,
+    rofi-vpn
+];

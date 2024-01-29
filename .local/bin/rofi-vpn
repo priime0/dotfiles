@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+print_opts() {
+    printf "reconnect\nconnect\ndisconnect\n"
+}
+
+main() {
+    selected="$(print_opts 2>/dev/null \
+                | rofi -dmenu -p 'mullvad')"
+
+    case "$selected" in
+    "reconnect")
+        mullvad reconnect && sleep 1 && notify-send "Mullvad VPN" "$(mullvad status)"
+        ;;
+    "connect")
+        mullvad connect && sleep 1 && notify-send "Mullvad VPN" "$(mullvad status)"
+        ;;
+    "disconnect")
+        mullvad disconnect && sleep 1 && notify-send "Mullvad VPN" "$(mullvad status)"
+        ;;
+    esac
+}
+
+main

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+get_accounts() {
+    find ~/.password-store \
+        | grep "$HOME/.password-store/"\
+        | sed "s|$HOME/.password-store/||"\
+        | grep "\gpg$" \
+        | sed "s/\.gpg$//" \
+        | grep ".*/" \
+        | grep -v "^z/"
+}
+
+main () {
+    selected="$(get_accounts 2>/dev/null \
+                | rofi -dmenu -p 'pass')"
+    pass -c "$selected"
+}
+
+main
