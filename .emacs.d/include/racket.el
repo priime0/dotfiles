@@ -11,6 +11,12 @@
 (setq auto-mode-alist (cons '("\\.pm$" . pollen-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.pmd$" . pollen-mode) auto-mode-alist))
 
+(defun configure-racket-repl ()
+  "Configure keybinds for the racket repl."
+  (keymap-local-set "C-c C-a" #'racket-repl-clear-leaving-last-prompt))
+
+(add-hook 'racket-repl-mode-hook #'configure-racket-repl)
+
 (defun configure-scribble ()
   "Configure keybinds for scribble."
   (keymap-local-set "C-c C-c" #'compile))
