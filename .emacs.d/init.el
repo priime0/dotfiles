@@ -22,6 +22,7 @@
 (straight-use-package 'vertico)
 (straight-use-package 'marginalia)
 (straight-use-package 'orderless)
+(straight-use-package 'consult)
 
 ;; Syntax checking and editing
 (straight-use-package 'flycheck)
