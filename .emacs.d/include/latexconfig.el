@@ -36,6 +36,7 @@
   (keymap-substitute cdlatex-mode-map 'cdlatex-dollar 'cdlatex-math-symbol)
   (setq cdlatex-math-symbol-prefix ?$)
 
+  (setq cdlatex-use-dollar-to-ensure-math nil)
   (set (make-local-variable 'TeX-electric-math)
        (cons "\\(" "\\)"))
   (set (make-local-variable 'TeX-electric-sub-and-superscript) t)
