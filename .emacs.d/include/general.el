@@ -134,8 +134,8 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Disable suspend state
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-x C-z"))
+(keymap-global-unset "C-z")
+(keymap-global-unset "C-x C-z")
 
 ;; emacs-nativecomp
 (setq native-comp-async-report-warnings-errors nil)
