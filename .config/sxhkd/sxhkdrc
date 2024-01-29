@@ -24,7 +24,7 @@ super + shift + Tab
 
 # passwords
 super + p
-    passes
+    rofi-pass
 
 # bluetooth
 super + b
