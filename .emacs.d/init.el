@@ -107,6 +107,7 @@
                                   :repo "nverno/llvm-mode"))
 (straight-use-package '(pollen-mode :type git :host github
                                     :repo "basus/pollen-mode"))
+(straight-use-package 'clojure-mode)
 
 (straight-use-package 'tuareg)
 (straight-use-package 'utop)
