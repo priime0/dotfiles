@@ -131,10 +131,11 @@
     (literal :content {wifi_label})))
 
 (defwidget bluetooth []
-  (icon-module :class "bluetooth"
-               :icon "ᛒ"
-               :visible true
-    (literal :content {bluetooth_label})))
+  (button :onclick "scripts/bluetoothpanel"
+    (icon-module :class "bluetooth"
+                 :icon "ᛒ"
+                 :visible true
+      (literal :content {bluetooth_label}))))
 
 ;; A widget for tracking brightness
 (defwidget brightness []
