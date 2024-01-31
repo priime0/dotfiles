@@ -146,6 +146,7 @@
 
 (add-hook 'company-mode-hook    'company-box-mode)
 
+(add-hook 'prog-mode-hook       #'git-gutter-mode)
 (add-hook 'racket-mode-hook     #'lsp)
 (add-hook 'rustic-mode-hook     #'lsp)
 (add-hook 'python-mode-hook     #'lsp)

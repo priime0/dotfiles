@@ -89,9 +89,6 @@
                     :weight 'semi-bold
                     :underline t)
 
-;; Git Gutter
-(global-git-gutter-mode +1)
-
 ;; Elfeed
 (setq elfeed-feeds
       '(("https://edwardwibowo.com/rss.xml"     blog)
