@@ -177,10 +177,11 @@
 
 ;; A widget for tracking battery
 (defwidget power []
-  (icon-module :class "power"
-               :icon "⏻"
-               :visible true
-    (literal :content {battery_level})))
+  (button :onclick "scripts/powernotify"
+    (icon-module :class "power"
+                 :icon "⏻"
+                 :visible true
+      (literal :content {battery_level}))))
 
 ;; A widget for tracking time and date
 (defwidget timedate []

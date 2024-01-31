@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+msg=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | \
+      grep -E "state|time to|percentage" | \
+      awk '{$1=$1};1')
+
+notify-send -t 3000 "Battery Status" "$msg"
