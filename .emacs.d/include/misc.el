@@ -157,6 +157,10 @@
 (add-hook 'markdown-mode-hook #'markdown-toggle-fontify-code-blocks-natively)
 (add-hook 'markdown-mode-hook #'olivetti-mode)
 
+;; Consult
+(keymap-global-set "C-c r r" #'consult-ripgrep)
+(keymap-global-set "C-c r g" #'consult-grep)
+
 ;; Grading
 (defun grade-next (&optional inc)
   "Go to the next homework by INC to grade."
