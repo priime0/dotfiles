@@ -12,6 +12,19 @@
   (save-buffer)
   (shell-command-to-string "just"))
 
+(defun enter-math ()
+  "Enter and ensure math-mode."
+  (interactive)
+  (unless (texmathp)
+    (cond ((use-region-p)
+           (let ((selection (buffer-substring-no-properties (region-beginning) (region-end))))
+             (delete-region (region-beginning)
+                            (region-end))
+             (insert (concat "\\(" selection "\\)"))))
+          (t
+           (insert "\\(\\)")
+           (backward-char 2)))))
+
 (defun configure-latex ()
   "Configure my custom LaTex environment."
   (electric-indent-mode -1)
@@ -23,12 +36,7 @@
   
   (keymap-local-set "C-c C-z" #'custom-compile-latex)
   (keymap-local-set "C-c C-b" #'latex-insert-block)
-  (keymap-local-set "C-c C-h"
-                    (lambda ()
-                      (interactive)
-                      (unless (texmathp)
-                        (insert "\\(\\)")
-                        (backward-char 2))))
+  (keymap-local-set "C-c C-h" #'enter-math)
   (keymap-local-set "C-c C-/"
                     (lambda ()
                       (interactive)
