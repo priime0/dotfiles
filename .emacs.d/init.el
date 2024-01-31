@@ -40,6 +40,7 @@
 (straight-use-package 'neotree)
 (straight-use-package 'all-the-icons)
 (straight-use-package 'git-gutter)
+(straight-use-package 'hl-todo)
 (straight-use-package '(nano-theme :type git :host github
                                    :repo "rougier/nano-theme"))
 
@@ -147,6 +148,8 @@
 (add-hook 'company-mode-hook    'company-box-mode)
 
 (add-hook 'prog-mode-hook       #'git-gutter-mode)
+(add-hook 'prog-mode-hook       #'hl-todo-mode)
+
 (add-hook 'racket-mode-hook     #'lsp)
 (add-hook 'rustic-mode-hook     #'lsp)
 (add-hook 'python-mode-hook     #'lsp)

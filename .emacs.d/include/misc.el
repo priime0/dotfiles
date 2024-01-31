@@ -161,6 +161,27 @@
 (keymap-global-set "C-c r r" #'consult-ripgrep)
 (keymap-global-set "C-c r g" #'consult-grep)
 
+;; hl-todo
+(custom-set-faces
+ '(hl-todo ((t (:inherit nano-salient-i)))))
+(setq hl-todo-keyword-faces
+      '(("HOLD" .   "#ffffff")
+        ("TODO" .   "#ffffff")
+        ("NEXT" .   "#ffffff")
+        ("THEM" .   "#ffffff")
+        ("PROG" .   "#ffffff")
+        ("OKAY" .   "#ffffff")
+        ("DONT" .   "#ffffff")
+        ("FAIL" .   "#ffffff")
+        ("DONE" .   "#ffffff")
+        ("NOTE" .   "#ffffff")
+        ("MAYBE" .  "#ffffff")
+        ("KLUDGE" . "#ffffff")
+        ("HACK" .   "#ffffff")
+        ("TEMP" .   "#ffffff")
+        ("FIXME" .  "#ffffff")
+        ("XXXX*" .  "#ffffff")))
+
 ;; Grading
 (defun grade-next (&optional inc)
   "Go to the next homework by INC to grade."
