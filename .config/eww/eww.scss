@@ -57,6 +57,16 @@ scale trough {
     font-size: 15px;
 }
 
+.button__container {
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 5px;
+}
+
+.button__container:hover {
+    background-color: hsla(210, 25%, 25%, 0.3);
+}
+
 .player {
     color: #e5e1cf;
 }
@@ -109,7 +119,7 @@ scale trough {
 }
 
 .timedate__button {
-    padding: 3px 9px;
+    padding: 3px 6gpx;
     border-radius: 5px;
 }
 

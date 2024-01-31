@@ -117,7 +117,7 @@
        :halign "end"
        :valign "center"
        :space-evenly "false"
-       :spacing 10
+       :spacing 5
     (literal :content {autosus})
     (weather)
     (wifi)
@@ -138,6 +138,7 @@
 
 (defwidget bluetooth []
   (button :onclick "scripts/bluetoothpanel"
+          :class   "button__container"
     (icon-module :class "bluetooth"
                  :icon "ᛒ"
                  :visible true
@@ -178,6 +179,7 @@
 ;; A widget for tracking battery
 (defwidget power []
   (button :onclick "scripts/powernotify"
+          :class   "button__container"
     (icon-module :class "power"
                  :icon "⏻"
                  :visible true
