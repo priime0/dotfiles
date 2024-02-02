@@ -189,7 +189,9 @@
 
 (defun grade-file-format (num)
   "Format NUM to a file in the grading directory."
-  (let* ((dir              (file-name-directory (buffer-file-name)))
+  (let* ((dir              (if (eq 'dired-mode major-mode)
+                               (dired-current-directory)
+                             (file-name-directory (buffer-file-name))))
          (dir-files        (directory-files dir))
          (extension        ".rkt")
          (all-rkt-files    (-filter (lambda (f) (string= (file-name-extension f) "rkt"))
