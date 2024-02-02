@@ -13,7 +13,7 @@
 
 (defun configure-racket-repl ()
   "Configure keybinds for the racket repl."
-  (keymap-local-set "C-c C-a" #'racket-repl-clear-leaving-last-prompt))
+  (keymap-local-set "C-c C-k" #'racket-repl-clear-leaving-last-prompt))
 
 (add-hook 'racket-repl-mode-hook #'configure-racket-repl)
 
