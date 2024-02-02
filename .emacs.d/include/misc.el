@@ -222,11 +222,17 @@
             (find-file target-filepath)
           (message (format "next grading file doesn't exist!")))))))
 
+(defun grade-prev (&optional dec)
+  "Go to the previous homework by DEC to grade."
+  (interactive)
+  (let ((dec (or dec 1)))
+    (grade-next (- dec))))
+
 (defun grade-start (&optional start)
   "Start grading in the current directory with homework START."
   (interactive)
   (keymap-global-set "C-c f" #'grade-next)
-  (keymap-global-set "C-c b" (lambda () (interactive) (grade-next -1)))
+  (keymap-global-set "C-c b" #'grade-prev)
 
   (let* ((start (or start 1))
          (dir (if (eq major-mode 'dired-mode)
