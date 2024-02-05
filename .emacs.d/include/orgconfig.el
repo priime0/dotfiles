@@ -69,6 +69,7 @@
 (add-hook 'org-agenda-mode-hook #'org-recur-mode)
 (add-hook 'org-mode-hook #'org-modern-indent-mode 90)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+(add-hook 'org-mode-hook #'(lambda () (setq line-spacing 0.1)))
 
 ;; Diary-syncing functionality
 (defun pull-diary ()
@@ -117,7 +118,8 @@
  '(org-table ((t :inherit fixed-pitch)))
  '(org-block-begin-line ((t :inherit (nano-faded fixed-pitch) :extend t)))
  '(org-block-end-line ((t :inherit   (nano-faded fixed-pitch) :extend t)))
- '(org-meta-line ((t :inherit (nano-faded fixed-pitch)))))
+ '(org-meta-line ((t :inherit (nano-faded fixed-pitch))))
+ '(org-drawer ((t :inherit (nano-faded fixed-pitch)))))
 
 
 (provide 'orgconfig)
