@@ -73,6 +73,8 @@
 
 (setq read-process-output-max (* 4 1024 1024))
 
+(define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
+
 ;; Eglot
 (with-eval-after-load 'eglot-java
   (define-key eglot-java-mode-map (kbd "C-c l n") #'eglot-java-file-new)
