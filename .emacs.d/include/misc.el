@@ -100,8 +100,6 @@
         ("https://blog.cleancoder.com/atom.xml" blog)))
 
 ;; Magit
-(keymap-global-set "C-c g g" #'magit)
-(keymap-global-set "C-c g b" #'magit-blame)
 (setq auth-sources '("~/.authinfo"))
 
 ;; Projectile
