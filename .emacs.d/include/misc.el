@@ -257,7 +257,9 @@
         (windmove-right)
         (find-file solution-file)
         (windmove-right)
-        (find-file readme-file)))))
+        (find-file readme-file)
+        (windmove-left)
+        (windmove-left)))))
 
 (provide 'misc)
 ;;; misc.el ends here
