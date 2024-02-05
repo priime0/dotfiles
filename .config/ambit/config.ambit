@@ -28,6 +28,7 @@
         brightnesslabel,
         currtime,
         player,
+        powernotify,
         songback,
         songcardartist,
         songcardplayrender,
