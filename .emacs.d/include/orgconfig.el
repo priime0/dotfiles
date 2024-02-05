@@ -101,13 +101,15 @@
 
 ;; Theme
 (custom-set-faces
- '(org-document-info ((t (:inherit nano-strong :height 1.0 :family "JetBrains Mono SemiBold"))))
- '(org-document-title ((t (:inherit nano-strong :height 1.5 :family "JetBrains Mono SemiBold"))))
+ '(org-document-info ((t (:inherit nano-strong :height 1.0))))
+ '(org-document-title ((t (:inherit nano-strong :height 1.5 :family "Linux Libertine"))))
  '(org-document-info-keyword ((t :inherit (nano-faded fixed-pitch))))
- '(org-level-1 ((t (:inherit nano-strong :extend nil :height 1.4 :family "Linux Libertine"))))
- '(org-level-2 ((t (:inherit nano-strong :extend nil :height 1.3 :family "Linux Libertine"))))
- '(org-level-3 ((t (:inherit nano-strong :extend nil :height 1.2 :family "Linux Libertine"))))
- '(org-level-4 ((t (:inherit nano-strong :extend nil :height 1.1 :family "Linux Libertine"))))
+ '(org-level-1 ((t (:inherit nano-strong :extend nil :height 1.4))))
+ '(org-level-2 ((t (:inherit nano-strong :extend nil :height 1.3))))
+ '(org-level-3 ((t (:inherit nano-strong :extend nil :height 1.2))))
+ '(org-level-4 ((t (:inherit nano-strong :extend nil :height 1.1))))
+ '(org-level-4 ((t (:inherit nano-strong :extend nil :height 1.0))))
+ '(org-level-4 ((t (:inherit nano-strong :extend nil :height 1.0))))
  '(org-link ((t (:inherit nano-salient :underline t))))
  '(org-block ((t :inherit fixed-pitch)))
  '(org-code ((t :inherit (nano-salient fixed-pitch))))
