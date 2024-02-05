@@ -57,9 +57,11 @@
 (defvar font-family "JetBrains Mono SemiBold")
 (set-frame-font (format "%s %d" font-family font-size))
 (custom-set-faces
- '(shr-text ((t (:inherit variable-pitch-text :family "Noto Sans Light")))))
+ '(variable-pitch ((t (:family "Linux Libertine" :height 125 :weight medium))))
+ '(fixed-pitch ((t (:family "JetBrains Mono SemiBold" :height 100))))
+ '(shr-text ((t (:inherit variable-pitch-text :family "Linux Libertine")))))
 (set-face-attribute 'italic nil
-                    :family "JetBrains Mono"
+                    :family 'inherit
                     :slant 'italic
                     :weight 'semi-bold
                     :foreground nano-light-foreground)

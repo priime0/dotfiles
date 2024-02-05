@@ -65,6 +65,7 @@
 (add-hook 'org-mode-hook #'olivetti-mode)
 (add-hook 'org-mode-hook #'org-modern-mode)
 (add-hook 'org-mode-hook #'org-recur-mode)
+(add-hook 'org-mode-hook #'variable-pitch-mode)
 (add-hook 'org-agenda-mode-hook #'org-recur-mode)
 (add-hook 'org-mode-hook #'org-modern-indent-mode 90)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
@@ -100,13 +101,21 @@
 
 ;; Theme
 (custom-set-faces
- '(org-document-info ((t (:inherit nano-strong :height 1.0 :family "Roboto Mono"))))
- '(org-document-title ((t (:inherit nano-strong :height 1.5 :family "Roboto Mono"))))
- '(org-level-1 ((t (:inherit nano-strong :extend nil :height 1.4 :family "Inter"))))
- '(org-level-2 ((t (:inherit nano-strong :extend nil :height 1.3 :family "Inter"))))
- '(org-level-3 ((t (:inherit nano-strong :extend nil :height 1.2 :family "Inter"))))
- '(org-level-4 ((t (:inherit nano-strong :extend nil :height 1.1 :family "Inter"))))
- '(org-link ((t (:inherit nano-salient :underline t)))))
+ '(org-document-info ((t (:inherit nano-strong :height 1.0 :family "JetBrains Mono SemiBold"))))
+ '(org-document-title ((t (:inherit nano-strong :height 1.5 :family "JetBrains Mono SemiBold"))))
+ '(org-document-info-keyword ((t :inherit (nano-faded fixed-pitch))))
+ '(org-level-1 ((t (:inherit nano-strong :extend nil :height 1.4 :family "Linux Libertine"))))
+ '(org-level-2 ((t (:inherit nano-strong :extend nil :height 1.3 :family "Linux Libertine"))))
+ '(org-level-3 ((t (:inherit nano-strong :extend nil :height 1.2 :family "Linux Libertine"))))
+ '(org-level-4 ((t (:inherit nano-strong :extend nil :height 1.1 :family "Linux Libertine"))))
+ '(org-link ((t (:inherit nano-salient :underline t))))
+ '(org-block ((t :inherit fixed-pitch)))
+ '(org-code ((t :inherit (nano-salient fixed-pitch))))
+ '(org-indent ((t :inherit (org-hide fixed-pitch))))
+ '(org-table ((t :inherit fixed-pitch)))
+ '(org-block-begin-line ((t :inherit (nano-faded fixed-pitch) :extend t)))
+ '(org-block-end-line ((t :inherit   (nano-faded fixed-pitch) :extend t)))
+ '(org-meta-line ((t :inherit (nano-faded fixed-pitch)))))
 
 
 (provide 'orgconfig)
