@@ -113,6 +113,7 @@
   (let ((current-directory
          (or (and buffer-file-name (file-name-directory buffer-file-name))
              (and (eq major-mode 'dired-mode) (dired-current-directory))
+             (and (eq major-mode 'magit-status-mode) (magit-toplevel))
              "~")))
     (if (and (fboundp 'neo-global--window-exists-p)
              (neo-global--window-exists-p))
