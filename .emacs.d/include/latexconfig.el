@@ -63,7 +63,8 @@
         (?+ ("\\cup"            "\\cap"))
         (?{ ("\\subset"         "\\subseteq"))
         (?} ("\\supset"         "\\supseteq"))
-        (?. ("\\cdot"           "\\cdots"              "\\ldots"))
+        (?. ("\\cdots"          "\\ldots"))
+        (?* ("\\cdot"           "\\times"))
         (?# ("\\mathbb"         "\\mathcal"))
         (?= ("\\Leftrightarrow" "\\Longleftrightarrow" "\\cong"))))
 
