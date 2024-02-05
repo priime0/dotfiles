@@ -30,7 +30,6 @@
 
 ;; Convenience
 (straight-use-package 'projectile)
-(straight-use-package 'workgroups2)
 (straight-use-package 'bufler)
 
 ;; UI
@@ -140,7 +139,6 @@
 (add-hook 'after-init-hook      'marginalia-mode)
 (add-hook 'after-init-hook      'which-key-mode)
 (add-hook 'after-init-hook      'global-flycheck-mode)
-(add-hook 'after-init-hook      'workgroups-mode)
 (add-hook 'after-init-hook      'vertico-mode)
 (add-hook 'after-init-hook      'tab-bar-mode)
 (add-hook 'after-init-hook      'global-anzu-mode)
