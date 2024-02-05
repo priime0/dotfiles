@@ -111,9 +111,9 @@
   "Toggle neotree at the current directory."
   (interactive)
   (let ((current-directory
-         (if buffer-file-name
-             (file-name-directory buffer-file-name)
-           "~")))
+         (or (and buffer-file-name (file-name-directory buffer-file-name))
+             (and (eq major-mode 'dired-mode) (dired-current-directory))
+             "~")))
     (if (and (fboundp 'neo-global--window-exists-p)
              (neo-global--window-exists-p))
         (neotree-hide)
@@ -122,6 +122,7 @@
 (keymap-global-set "C-c t" #'neotree-toggle-current-directory)
 (setq neo-theme 'icons)
 (setq neo-smart-open t)
+(setq neo-window-fixed-size nil)
 (add-hook 'neotree-mode-hook (lambda () (text-scale-set -0.5)))
 
 ;; Orderless
