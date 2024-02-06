@@ -45,14 +45,6 @@
   `(lambda (&rest _rest)
      (funcall ,fnc)))
 
-;; Auto-save org buffers
-(advice-add 'org-deadline       :after (η #'org-save-all-org-buffers))
-(advice-add 'org-schedule       :after (η #'org-save-all-org-buffers))
-(advice-add 'org-store-log-note :after (η #'org-save-all-org-buffers))
-(advice-add 'org-todo           :after (η #'org-save-all-org-buffers))
-(advice-add 'org-refile         :after (η #'org-save-all-org-buffers))
-(advice-add 'org-sort           :after (η #'org-save-all-org-buffers))
-
 ;; Org hooks
 (add-hook 'org-mode-hook
           (lambda ()
