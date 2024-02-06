@@ -63,7 +63,7 @@
 (set-face-attribute 'italic nil
                     :family 'inherit
                     :slant 'italic
-                    :weight 'semi-bold
+                    :weight 'medium
                     :foreground nano-light-foreground)
 
 ;; Use spaces instead of tabs
