@@ -113,6 +113,7 @@
  '(org-level-4 ((t (:inherit nano-strong :extend nil :height 1.0))))
  '(org-link ((t (:inherit nano-salient :underline t))))
  '(org-code ((t :inherit (nano-salient fixed-pitch))))
+ '(org-verbatim ((t :inherit (nano-popout fixed-pitch))))
  '(org-indent ((t :inherit (org-hide fixed-pitch))))
  '(org-table ((t :inherit fixed-pitch)))
  '(org-block-begin-line ((t :inherit (nano-faded fixed-pitch) :extend t :underline nil)))
