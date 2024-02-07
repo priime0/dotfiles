@@ -5,6 +5,7 @@
 
 (require 'org)
 (require 'org-capture)
+(require 'org-modern)
 ;; Templates for org-mode
 (require 'org-tempo)
 
@@ -14,6 +15,7 @@
 (setq org-export-use-babel nil)
 (setq org-agenda-include-diary t)
 (setq org-src-preserve-indentation t)
+(setq org-modern-star '("#" "##" "###" "####" "#####" "######"))
 
 ;; Enable Racket in Org-mode Babel
 (org-babel-do-load-languages
