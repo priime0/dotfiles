@@ -24,6 +24,10 @@
    (python . t)
    (java . t)))
 
+(setq org-babel-default-header-args:racket
+      '((:session . "none")
+        (:results . "output")))
+
 (setcar (nthcdr 4 org-emphasis-regexp-components) 20)
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
 (setq org-agenda-files '("~/org/inbox.org"
