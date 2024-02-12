@@ -54,7 +54,7 @@
 (straight-use-package '(ob-racket
                         :type git
                         :host github
-                        :repo "DEADB17/ob-racket"))
+                        :repo "hasu/emacs-ob-racket"))
 
 ;; Productivity
 (straight-use-package 'elfeed)
