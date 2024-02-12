@@ -25,6 +25,7 @@
 (straight-use-package 'consult)
 
 ;; Syntax checking and editing
+(straight-use-package 'meow)
 (straight-use-package 'flycheck)
 (straight-use-package 'paredit)
 
