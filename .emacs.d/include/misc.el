@@ -323,8 +323,10 @@
   (keymap-global-set "C-c f" #'grade-next)
   (keymap-global-set "C-c b" #'grade-prev)
 
-  (let* ((start (or start
-                    (string-to-number (read-string "File number to start with: "))))
+  (let* ((file-msg "File number to start with (default 0):")
+         (start (or start
+                       (string-to-number (read-string file-msg))
+                       1))
          (dir (if (eq major-mode 'dired-mode)
                   (dired-current-directory)
                 (error "Must be in Dired directory")))
