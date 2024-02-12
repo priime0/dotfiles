@@ -147,6 +147,7 @@
 
 (add-hook 'prog-mode-hook       #'git-gutter-mode)
 (add-hook 'prog-mode-hook       #'hl-todo-mode)
+(add-hook 'prog-mode-hook       #'display-line-numbers-mode)
 
 (add-hook 'racket-mode-hook     #'lsp)
 (add-hook 'rustic-mode-hook     #'lsp)

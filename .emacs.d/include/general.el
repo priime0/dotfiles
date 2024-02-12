@@ -33,11 +33,11 @@
 (setq initial-scratch-message nil)
 
 ;; Line
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (hl-line-mode 1)
 (line-number-mode 1)
 (column-number-mode 1)
 (size-indication-mode 1)
+(setq display-line-numbers 'relative)
 
 ;; Tabs
 (setq-default tab-width 2)
