@@ -282,7 +282,7 @@
          (dir-files        (directory-files dir))
          (extension        ".rkt")
          (all-rkt-files    (-filter (lambda (f) (string= (file-name-extension f) "rkt"))
-                                   dir-files))
+                                    dir-files))
          (all-rkt-files+   (-map #'file-name-sans-extension all-rkt-files))
          (hw-files         (-filter (lambda (f) (not (zerop (string-to-number f)))) all-rkt-files+))
          (hw-files+        (seq-sort-by #'length #'> hw-files))
