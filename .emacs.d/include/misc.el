@@ -122,7 +122,6 @@
    '("O" . meow-to-block)
    '("p" . meow-prev)
    '("P" . meow-prev-expand)
-   '("q" . meow-quit)
    '("r" . meow-replace)
    '("R" . meow-swap-grab)
    '("s" . meow-search)
