@@ -1,5 +1,0 @@
-theme = "onedark"
-
-[editor]
-line-number = "relative"
-mouse = true
