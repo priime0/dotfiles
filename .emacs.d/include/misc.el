@@ -348,5 +348,9 @@
         (windmove-left)
         (windmove-left)))))
 
+;; rjsx
+
+(setq auto-mode-alist (cons '("\\.tsx$" . rjsx-mode) auto-mode-alist))
+
 (provide 'misc)
 ;;; misc.el ends here

@@ -156,6 +156,7 @@
 (add-hook 'go-mode-hook         #'lsp)
 (add-hook 'tuareg-mode-hook     #'lsp)
 (add-hook 'haskell-mode-hook    #'lsp)
+(add-hook 'rjsx-mode-hook       #'lsp)
 (add-hook 'java-mode-hook       #'eglot-java-mode)
 
 (add-hook 'emacs-lisp-mode-hook  #'paredit-mode)
