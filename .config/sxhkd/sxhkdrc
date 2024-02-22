@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	kitty
+  kitty
 
 # emacs
 super + control + Return
-    emacsclient --create-frame
+  emacsclient --create-frame
 
 # program launcher
 super + space
@@ -16,27 +16,27 @@ super + space
 
 # all programs launcher
 super + shift + space
-    rofi -show run
+  rofi -show run
 
 # window jumper
 super + shift + Tab
-    rofi -show window
+  rofi -show window
 
 # passwords
 super + p
-    rofi-pass
+  rofi-pass
 
 # bluetooth
 super + b
-    rofi-bluetooth
+  rofi-bluetooth
 
 # vpn
 super + v
-    rofi-vpn
+  rofi-vpn
 
 # power
 super + BackSpace
-    powermenu
+  powermenu
 
 # make sxhkd reload its configuration files:
 super + Escape
