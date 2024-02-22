@@ -3,11 +3,11 @@
 #
 
 # terminal emulator
-super + Return
-  kitty
+super + control + Return
+  warp-terminal
 
 # emacs
-super + control + Return
+super + Return
   emacsclient --create-frame
 
 # program launcher
