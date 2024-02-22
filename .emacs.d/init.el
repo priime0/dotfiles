@@ -46,6 +46,7 @@
 
 ;; Org
 (straight-use-package 'org)
+(straight-use-package 'org-roam)
 (straight-use-package 'org-modern)
 (straight-use-package 'org-recur)
 (straight-use-package '(org-modern-indent

@@ -4,6 +4,7 @@
 ;;; Code:
 
 (require 'org)
+(require 'org-roam)
 (require 'org-capture)
 (require 'org-modern)
 ;; Templates for org-mode
@@ -16,6 +17,9 @@
 (setq org-agenda-include-diary t)
 (setq org-src-preserve-indentation t)
 (setq org-modern-star '("#" "##" "###" "####" "#####" "######"))
+(setq org-roam-directory "~/org/docs/")
+(setq org-roam-extract-new-file-path "${slug}.org")
+(org-roam-db-autosync-mode)
 
 ;; Enable Racket in Org-mode Babel
 (org-babel-do-load-languages
@@ -39,17 +43,31 @@
                               ("T" "Tickler" entry
                                (file+headline "~/org/tickler.org" "Tickler")
                                "* %i%? \n %U")))
+(setq org-roam-capture-templates
+      '(("n" "default" plain "%?"
+         :target (file+head "${slug}.org" "#+title: ${title}\n")
+         :unnarrowed t)
+        ("N" "encrypted" plain "%?"
+         :target (file+head "${slug}.org.gpg" "#+title: ${title}\n")
+         :unnarrowed t)))
 (setq org-refile-targets '(("~/org/gtd.org" :maxlevel . 3)
                            ("~/org/someday.org" :level . 1)
                            ("~/org/tickler.org" :maxlevel . 2)))
-(keymap-global-set "C-c a" #'org-agenda)
-(keymap-global-set "C-c c" #'org-capture)
 (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 (defmacro η (fnc)
   "Return function that ignores its arguments and invokes FNC."
   `(lambda (&rest _rest)
      (funcall ,fnc)))
+
+;; Keybinds
+(defvar-keymap org-roam-keymap
+  "n" #'org-roam-capture
+  "f" #'org-roam-node-find)
+
+(keymap-global-set "C-c a" #'org-agenda)
+(keymap-global-set "C-c c" #'org-capture)
+(keymap-global-set "C-c o" org-roam-keymap)
 
 ;; Org hooks
 (add-hook 'org-mode-hook
