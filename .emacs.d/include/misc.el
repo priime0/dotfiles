@@ -59,6 +59,7 @@
     (url-copy-file url filepath 1)))
 
 ;; meow
+(meow-global-mode)
 (defun meow-setup ()
   "Set up meow."
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
@@ -137,8 +138,7 @@
    '("y" . meow-yank)
    '("z" . meow-pop-selection)
    '("'" . repeat)
-   '("<escape>" . ignore)
-   '("TAB" . meow-indent)))
+   '("<escape>" . ignore)))
 
 (meow-setup)
 
