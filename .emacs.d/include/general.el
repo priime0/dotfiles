@@ -95,6 +95,7 @@
 ;; Scrolling
 (put 'scroll-left 'disabled nil)
 (put 'scroll-right 'disabled nil)
+(setq scroll-step 1)
 
 ;; Keybindings
 (keymap-global-set "C-M-j" (lambda () (interactive) (scroll-up 1)))
