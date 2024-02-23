@@ -15,6 +15,12 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; Elisp
+(straight-use-package 's)
+(straight-use-package 'f)
+(straight-use-package 'dash)
+
+
 ;; Completion
 (straight-use-package 'company)
 (straight-use-package 'company-box)
@@ -73,9 +79,6 @@
 (straight-use-package 'lsp-ui)
 (straight-use-package 'eglot)
 (straight-use-package 'eldoc-box)
-
-;; Misc
-(straight-use-package 'dash)
 
 ;; Programming
 (straight-use-package '(copilot :type git :host github
