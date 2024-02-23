@@ -45,21 +45,20 @@
 ;; Cursor
 (blink-cursor-mode 1)
 
-;; Theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+;; Theme & Font
 (load-theme 'nano t)
 (nano-light)
 
-
-;; Font
 (add-to-list 'default-frame-alist '(font . "JetBrains Mono SemiBold-10"))
 (defvar font-size 10)
 (defvar font-family "JetBrains Mono SemiBold")
 (set-frame-font (format "%s %d" font-family font-size))
+
 (custom-set-faces
+ '(region         ((t (:inherit nano-subtle :background "#EBE5F5"))))
  '(variable-pitch ((t (:family "Linux Libertine" :height 125 :weight medium))))
- '(fixed-pitch ((t (:family "JetBrains Mono SemiBold" :height 100))))
- '(shr-text ((t (:inherit variable-pitch-text :family "Linux Libertine")))))
+ '(fixed-pitch    ((t (:family "JetBrains Mono SemiBold" :height 100))))
+ '(shr-text       ((t (:inherit variable-pitch-text :family "Linux Libertine")))))
 (set-face-attribute 'italic nil
                     :family 'inherit
                     :slant 'italic
