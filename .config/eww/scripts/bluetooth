@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
-val=$(bluetoothctl devices Connected | wc -l)
+powered=$(bluetoothctl show | grep -i "powered" | grep -i "yes" | wc -l)
 
-echo "(label :class \"bluetooth__label\" :text \"$val\")"
+if [[ "$powered" -eq 1 ]]; then
+    val=$(bluetoothctl devices Connected | wc -l)
+    echo "(label :class \"bluetooth__label\" :text \"$val\")"
+else
+    echo "(label :class \"bluetooth__label\" :text \"-\")"
+fi
