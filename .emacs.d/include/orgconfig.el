@@ -64,7 +64,8 @@
 ;; Keybinds
 (defvar-keymap org-roam-keymap
   "n" #'org-roam-capture
-  "f" #'org-roam-node-find)
+  "f" #'org-roam-node-find
+  "i" #'org-roam-node-insert)
 
 (keymap-global-set "C-c a" #'org-agenda)
 (keymap-global-set "C-c c" #'org-capture)
