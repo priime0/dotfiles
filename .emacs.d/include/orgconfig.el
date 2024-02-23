@@ -6,6 +6,7 @@
 (require 'org)
 (require 'org-roam)
 (require 'org-capture)
+(require 'org-id)
 (require 'org-modern)
 ;; Templates for org-mode
 (require 'org-tempo)
@@ -32,6 +33,20 @@
 (setq org-babel-default-header-args:racket
       '((:session . "none")
         (:results . "output")))
+
+(defun org-roam-migrate ()
+  "Migrate a regular org file into an org-roam file in my format."
+  (interactive)
+  (unless (eq major-mode 'dired-mode)
+    (error "BAD!"))
+  (dired-find-file)
+  (let* ((id (org-id-get))
+         (filename-old (buffer-file-name (current-buffer)))
+         (filename-min (file-name-sans-extension filename-old))
+         (filename-new (format "%s:%s.org" filename-min id)))
+    (rename-file filename-old filename-new)
+    (kill-buffer (current-buffer))
+    (revert-buffer)))
 
 (setcar (nthcdr 4 org-emphasis-regexp-components) 20)
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
