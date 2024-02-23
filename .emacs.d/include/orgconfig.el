@@ -19,6 +19,7 @@
 (setq org-modern-star '("#" "##" "###" "####" "#####" "######"))
 (setq org-roam-directory "~/org/docs/")
 (setq org-roam-extract-new-file-path "${slug}.org")
+(setq org-roam-node-display-template "${title}  (${id:8})")
 (org-roam-db-autosync-mode)
 
 ;; Enable Racket in Org-mode Babel
