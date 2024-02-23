@@ -46,10 +46,10 @@
                                "* %i%? \n %U")))
 (setq org-roam-capture-templates
       '(("n" "default" plain "%?"
-         :target (file+head "${slug}.org" "#+title: ${title}\n")
+         :target (file+head "${slug}:${id}.org" "#+title: ${title}\n")
          :unnarrowed t)
         ("N" "encrypted" plain "%?"
-         :target (file+head "${slug}.org.gpg" "#+title: ${title}\n")
+         :target (file+head "${slug}:${id}.org.gpg" "#+title: ${title}\n")
          :unnarrowed t)))
 (setq org-refile-targets '(("~/org/gtd.org" :maxlevel . 3)
                            ("~/org/someday.org" :level . 1)
