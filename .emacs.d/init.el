@@ -79,6 +79,7 @@
 (straight-use-package 'lsp-ui)
 (straight-use-package 'eglot)
 (straight-use-package 'eldoc-box)
+(straight-use-package 'lsp-grammarly)
 
 ;; Programming
 (straight-use-package '(copilot :type git :host github
