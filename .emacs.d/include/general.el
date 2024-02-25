@@ -86,6 +86,9 @@
 ;; Undos
 (setq undo-limit 200000)
 
+;; Whitespace
+(setq show-trailing-whitespace t)
+
 ;; Sentences
 ;; Emacs thinks that sentences ends with period and two spaces,
 ;; disable this.
