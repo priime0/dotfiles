@@ -25,6 +25,26 @@
            (insert "\\(\\)")
            (backward-char 2)))))
 
+(defun insert-frac ()
+  "Insert a fraction in math mode."
+  (interactive)
+  (enter-math)
+  (backward-char)
+  (defconst bc (char-after))
+  (defconst bcs (char-to-string bc))
+  (forward-char)
+  (cond ((or (string-blank-p bcs)
+             (memq bc '(?\ ?( ?) ?{ ?} ?[ ?])))
+         (LaTeX-math-frac (not (texmathp))))
+        (t
+         (push-mark)
+         (backward-word)
+         (defconst content (buffer-substring (point) (mark)))
+         (delete-region (point) (mark))
+         (pop-mark)
+         (insert "\\frac{" content "}{}")
+         (backward-char))))
+
 (defun configure-latex ()
   "Configure my custom LaTex environment."
   (electric-indent-mode -1)
@@ -37,6 +57,7 @@
   (keymap-local-set "C-c C-z" #'custom-compile-latex)
   (keymap-local-set "C-c C-b" #'latex-insert-block)
   (keymap-local-set "C-c C-h" #'enter-math)
+  (keymap-local-set "/"       #'insert-frac)
   (keymap-local-set "C-c C-/"
                     (lambda ()
                       (interactive)
