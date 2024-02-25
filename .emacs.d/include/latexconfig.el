@@ -57,11 +57,7 @@
   (keymap-local-set "C-c C-z" #'custom-compile-latex)
   (keymap-local-set "C-c C-b" #'latex-insert-block)
   (keymap-local-set "C-c C-h" #'enter-math)
-  (keymap-local-set "/"       #'insert-frac)
-  (keymap-local-set "C-c C-/"
-                    (lambda ()
-                      (interactive)
-                      (LaTeX-math-frac (not (texmathp)))))
+  (keymap-local-set "C-c C-/" #'insert-frac)
   (keymap-substitute cdlatex-mode-map 'cdlatex-dollar 'cdlatex-math-symbol)
   (setq cdlatex-math-symbol-prefix ?$)
 
