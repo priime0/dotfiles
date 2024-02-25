@@ -20,7 +20,10 @@
 (setq org-modern-star '("#" "##" "###" "####" "#####" "######"))
 (setq org-roam-directory "~/org/docs/")
 (setq org-roam-extract-new-file-path "${slug}.org")
-(setq org-roam-node-display-template "${title}  (${id:8})")
+(setq org-roam-node-display-template
+      (concat "${title}  "
+              "(${id:8}) "
+              (propertize "[${tags:10}]" 'face 'org-tag)))
 (org-roam-db-autosync-mode)
 
 ;; Enable Racket in Org-mode Babel
@@ -81,7 +84,8 @@
 (defvar-keymap org-roam-keymap
   "n" #'org-roam-capture
   "f" #'org-roam-node-find
-  "i" #'org-roam-node-insert)
+  "i" #'org-roam-node-insert
+  "t" #'org-roam-tag-add)
 
 (keymap-global-set "C-c a" #'org-agenda)
 (keymap-global-set "C-c c" #'org-capture)
