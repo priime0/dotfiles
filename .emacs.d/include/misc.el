@@ -60,6 +60,13 @@
 
 ;; meow
 (meow-global-mode)
+
+(defun meow-change-line ()
+  "Kill rest of line and switch to insert state."
+  (interactive)
+  (kill-line)
+  (meow-insert))
+
 (defun meow-setup ()
   "Set up meow."
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
@@ -101,6 +108,7 @@
    '("b" . meow-back-word)
    '("B" . meow-back-symbol)
    '("c" . meow-change)
+   '("C" . meow-change-line)
    '("d" . meow-delete)
    '("D" . meow-backward-delete)
    '("e" . meow-line)
