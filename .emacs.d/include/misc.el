@@ -61,6 +61,13 @@
 ;; meow
 (meow-global-mode)
 
+(defun meow-yank-above ()
+  "Yank the killed text to the line above."
+  (interactive)
+  (save-excursion
+    (move-beginning-of-line nil)
+    (meow-yank)))
+
 (defun meow-change-line ()
   "Kill rest of line and switch to insert state."
   (interactive)
@@ -144,6 +151,7 @@
    '("x" . meow-save)
    '("X" . meow-sync-grab)
    '("y" . meow-yank)
+   '("Y" . meow-yank-above)
    '("z" . meow-pop-selection)
    '("'" . repeat)
    '("<escape>" . ignore)))
