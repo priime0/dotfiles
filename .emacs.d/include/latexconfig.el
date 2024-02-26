@@ -25,6 +25,15 @@
            (insert "\\(\\)")
            (backward-char 2)))))
 
+(defun latex-absorbable-p ()
+  "Determine if the character before the cursor can be absorbed."
+  (backward-char)
+  (defconst bc (char-after))
+  (defconst bcs (char-to-string bc))
+  (forward-char)
+  (not (or (string-blank-p bcs)
+           (memq bc '(?\ ?( ?) ?{ ?} ?[ ?])))))
+
 (defun insert-frac ()
   "Insert a fraction in math mode."
   (interactive)
@@ -33,17 +42,15 @@
   (defconst bc (char-after))
   (defconst bcs (char-to-string bc))
   (forward-char)
-  (cond ((or (string-blank-p bcs)
-             (memq bc '(?\ ?( ?) ?{ ?} ?[ ?])))
-         (LaTeX-math-frac (not (texmathp))))
-        (t
-         (push-mark)
-         (backward-word)
-         (defconst content (buffer-substring (point) (mark)))
-         (delete-region (point) (mark))
-         (pop-mark)
-         (insert "\\frac{" content "}{}")
-         (backward-char))))
+  (if (not (latex-absorbable-p))
+      (LaTeX-math-frac (not (texmathp)))
+    (push-mark)
+    (backward-word)
+    (defconst content (buffer-substring (point) (mark)))
+    (delete-region (point) (mark))
+    (pop-mark)
+    (insert "\\frac{" content "}{}")
+    (backward-char)))
 
 (defun configure-latex ()
   "Configure my custom LaTex environment."
