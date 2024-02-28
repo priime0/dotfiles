@@ -111,14 +111,14 @@
   (set 'preview-scale-function 0.75)
 
   (LaTeX-add-environments
-   '("theorem" latex-env-theorem)
-   '("corollary" latex-env-theorem)
-   '("lemma" latex-env-theorem)
-   '("definition" latex-env-theorem)
-   '("exercise" latex-env-theorem)
+   '("theorem"     latex-env-theorem)
+   '("corollary"   latex-env-theorem)
+   '("lemma"       latex-env-theorem)
+   '("definition"  latex-env-theorem)
+   '("exercise"    latex-env-theorem)
    '("proposition" latex-env-theorem)
-   '("example" latex-env-theorem)
-   '("remark" latex-env-theorem)))
+   '("example"     latex-env-theorem)
+   '("remark"      latex-env-theorem)))
 
 (add-hook 'LaTeX-mode-hook #'configure-latex)
 
