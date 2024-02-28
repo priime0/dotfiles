@@ -23,7 +23,7 @@
 (setq org-roam-node-display-template
       (concat "${title}  "
               "(${id:8}) "
-              (propertize "[${tags:10}]" 'face 'org-tag)))
+              (propertize "[${tags}]" 'face 'org-tag)))
 (org-roam-db-autosync-mode)
 
 ;; Enable Racket in Org-mode Babel
