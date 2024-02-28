@@ -78,7 +78,6 @@
     sgcfdfallsicon.jpeg
 ];
 .zshrc;
-.config/kitty/kitty.conf;
 .config/alacritty/alacritty.toml;
 .calendars/sync;
 .config/rofi/config.rasi;
