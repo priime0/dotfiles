@@ -61,6 +61,11 @@
 ;; meow
 (meow-global-mode)
 
+(defun meow-mq ()
+  "Reformat/reindent."
+  (interactive)
+  (call-interactively (global-key-binding "\M-q")))
+
 (defun meow-yank-above ()
   "Yank the killed text to the line above."
   (interactive)
@@ -138,6 +143,7 @@
    '("O" . meow-to-block)
    '("p" . meow-prev)
    '("P" . meow-prev-expand)
+   '("q" . meow-mq)
    '("r" . meow-replace)
    '("R" . meow-swap-grab)
    '("s" . meow-search)
