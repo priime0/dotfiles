@@ -46,7 +46,7 @@
   (defconst bcs (char-to-string bc))
   (forward-char)
   (not (or (string-blank-p bcs)
-           (memq bc '(?\ ?( ?) ?{ ?} ?[ ?])))))
+           (memq bc '(?\ ?\( ?\( ?{ ?} ?\[ ?\])))))
 
 (defun insert-raw-slash ()
   "Insert a `/'."
