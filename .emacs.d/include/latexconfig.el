@@ -5,12 +5,26 @@
 
 (require 'latex)
 (require 'cdlatex)
+(require 'f)
 
 (defun custom-compile-latex ()
   "Run the `just' command -- the command I use to compile my environment."
   (interactive)
   (save-buffer)
   (shell-command-to-string "just"))
+
+(defun open-out-pdf ()
+  "Find and open the produced PDF via Zathura."
+  (interactive)
+  (save-excursion
+    (when (f-directory-p "./out/")
+      (defconst --pdf-files (f-glob "./out/*.pdf"))
+      (unless (zerop (length --pdf-files))
+        (defconst --pdf-command "zathura")
+        (defconst --pdf-file (car --pdf-files))
+        (defconst --shell-command (format "%s %s" --pdf-command --pdf-file))
+        (setq-local async-shell-command-buffer 'rename-buffer)
+        (async-shell-command --shell-command)))))
 
 (defun enter-math ()
   "Enter and ensure math-mode."
@@ -72,7 +86,8 @@
   (display-fill-column-indicator-mode 1)
   (set-fill-column 100)
   
-  (keymap-local-set "C-c C-z" #'custom-compile-latex)
+  (keymap-local-set "C-c C-c" #'custom-compile-latex)
+  (keymap-local-set "C-c C-z" #'open-out-pdf)
   (keymap-local-set "C-c C-b" #'latex-insert-block)
   (keymap-local-set "C-c C-h" #'enter-math)
   (keymap-local-set "C-c C-/" #'insert-frac)
