@@ -1,21 +1,4 @@
 .config/ambit/config.ambit;
-.config/nvim/[
-    init.lua,
-    lua/[
-        completion.lua,
-        lsp.lua,
-        mappings.lua,
-        plugins.lua,
-        treesitter.lua,
-        git.lua,
-        neovide.lua
-    ],
-    ftplugin/[
-        tex.lua,
-        racket.lua
-    ],
-    UltiSnips/tex.snippets
-];
 .config/eww/[
     eww.yuck,
     eww.scss,
