@@ -1,6 +1,6 @@
 #+title: Dotfiles
 
-My Arch Linux and Emacs configuration.
+My Arch Linux and Emacs configuration. I use [[https://github.com/plamorg/ambit][ambit]] to sync my dotfiles.
 
 | *Program*             | *Name*                  |
 |---------------------+-----------------------|
