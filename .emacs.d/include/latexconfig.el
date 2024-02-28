@@ -34,8 +34,19 @@
   (not (or (string-blank-p bcs)
            (memq bc '(?\ ?( ?) ?{ ?} ?[ ?])))))
 
+(defun insert-raw-slash ()
+  "Insert a `/'."
+  (interactive)
+  (insert "/"))
+
+(defun math-insert-frac ()
+  "Insert a fraction if in math mode."
+  (interactive)
+  (when (texmathp)
+    (insert-frac)))
+
 (defun insert-frac ()
-  "Insert a fraction in math mode."
+  "Ensure math mode and then insert a fraction."
   (interactive)
   (enter-math)
   (backward-char)
@@ -65,6 +76,9 @@
   (keymap-local-set "C-c C-b" #'latex-insert-block)
   (keymap-local-set "C-c C-h" #'enter-math)
   (keymap-local-set "C-c C-/" #'insert-frac)
+  (keymap-local-set "/"       #'math-insert-frac)
+  ;; For cases where we actually do want `/' in math...
+  (keymap-local-set "M-/"     #'insert-raw-slash)
   (keymap-substitute cdlatex-mode-map 'cdlatex-dollar 'cdlatex-math-symbol)
   (setq cdlatex-math-symbol-prefix ?$)
 
