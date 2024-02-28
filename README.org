@@ -9,11 +9,11 @@ My Arch Linux and Emacs configuration. I use [[https://github.com/plamorg/ambit]
 | Hotkey Daemon       | sxhkd                 |
 | Program Launcher    | rofi                  |
 | Wallpaper Setter    | nitrogen              |
-| Terminal Emulator   | kitty                 |
+| Terminal Emulator   | alacritty             |
 | Document Viewer     | zathura / emacs       |
 | Editor              | emacs                 |
 | Notification Daemon | dunst                 |
 | Compositor          | picom                 |
-| Shell               | zsh                   |
+| Shell               | fish                  |
 | Browser             | qutebrowser / firefox |
 
