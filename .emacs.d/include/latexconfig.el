@@ -26,6 +26,12 @@
         (setq-local async-shell-command-buffer 'rename-buffer)
         (async-shell-command --shell-command)))))
 
+(defun latex-env-theorem (environment)
+  "Insert ENVIRONMENT with the given name and ref specifications."
+  (let ((name (TeX-read-string "Name: " nil nil ""))
+        (ref  (TeX-read-string "Ref: " nil nil "")))
+    (LaTeX-insert-environment environment (format "{%s}{%s}" name ref))))
+
 (defun enter-math ()
   "Enter and ensure math-mode."
   (interactive)
@@ -102,7 +108,17 @@
        (cons "\\(" "\\)"))
   (set (make-local-variable 'TeX-electric-sub-and-superscript) t)
   (set (make-local-variable 'LaTeX-electric-left-right-brace) t)
-  (set 'preview-scale-function 0.75))
+  (set 'preview-scale-function 0.75)
+
+  (LaTeX-add-environments
+   '("theorem" latex-env-theorem)
+   '("corollary" latex-env-theorem)
+   '("lemma" latex-env-theorem)
+   '("definition" latex-env-theorem)
+   '("exercise" latex-env-theorem)
+   '("proposition" latex-env-theorem)
+   '("example" latex-env-theorem)
+   '("remark" latex-env-theorem)))
 
 (add-hook 'LaTeX-mode-hook #'configure-latex)
 
