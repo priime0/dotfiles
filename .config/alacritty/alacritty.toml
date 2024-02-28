@@ -1,0 +1,32 @@
+import = [ "~/.config/alacritty/themes/ayu_light.toml" ]
+
+[shell]
+program = "fish"
+
+[font]
+size = 10
+
+[font.bold]
+family = "Roboto Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Roboto Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Roboto Mono"
+style = "Italic"
+
+[font.normal]
+family = "Roboto Mono"
+style = "SemiBold"
+
+[window]
+padding = { x = 5, y = 5 }
+
+[cursor]
+thickness = 0.1
+
+[mouse]
+hide_when_typing = true
