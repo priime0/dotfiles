@@ -7,6 +7,9 @@
 (require 'cdlatex)
 (require 'f)
 
+(require 'company)
+(require 'company-math)
+
 (defun custom-compile-latex ()
   "Run the `just' command -- the command I use to compile my environment."
   (interactive)
@@ -108,6 +111,10 @@
   (set (make-local-variable 'TeX-electric-sub-and-superscript) t)
   (set (make-local-variable 'LaTeX-electric-left-right-brace) t)
   (set 'preview-scale-function 0.75)
+
+  (setq-local company-backends
+              (append '((company-math-symbols-latex company-latex-commands))
+                      company-backends))
 
   (LaTeX-add-environments
    '("theorem"     latex-env-theorem)
