@@ -83,7 +83,7 @@
   "Set up meow."
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
   (meow-leader-define-key
-   '("?" . meow-cheatsheet))
+   '("u" . "C-u"))
   (meow-motion-overwrite-define-key
    ;; custom keybinding for motion state
    '("<escape>" . ignore))
