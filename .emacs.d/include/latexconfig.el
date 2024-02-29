@@ -25,7 +25,6 @@
       (unless (zerop (length --pdf-files))
         (defconst --pdf-command "zathura")
         (defconst --pdf-file (car --pdf-files))
-        (setq-local async-shell-command-buffer 'rename-buffer)
         (async-start-process "emacs-zathura" --pdf-command nil --pdf-file)))))
 
 (defun latex-env-theorem (environment)
