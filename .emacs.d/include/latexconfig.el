@@ -26,7 +26,7 @@
         (defconst --pdf-command "zathura")
         (defconst --pdf-file (car --pdf-files))
         (setq-local async-shell-command-buffer 'rename-buffer)
-        (async-start-process "" --pdf-command nil --pdf-file)))))
+        (async-start-process "emacs-zathura" --pdf-command nil --pdf-file)))))
 
 (defun latex-env-theorem (environment)
   "Insert ENVIRONMENT with the given name and ref specifications."
