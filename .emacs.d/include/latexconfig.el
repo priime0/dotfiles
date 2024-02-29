@@ -142,7 +142,7 @@
         (?. ("\\cdots"          "\\ldots"))
         (?* ("\\cdot"           "\\times"))
         (?# ("\\mathbb"         "\\mathcal"))
-        (?= ("\\Leftrightarrow" "\\Longleftrightarrow" "\\cong"))))
+        (?= ("\\Leftrightarrow" "\\Longleftrightarrow" "\\equiv"))))
 
 (setq cdlatex-math-modify-alist
       '((?b "\\mathbb"  "\\textbf" t nil nil)
