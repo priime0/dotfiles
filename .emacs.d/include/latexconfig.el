@@ -14,7 +14,7 @@
   "Run the `just' command -- the command I use to compile my environment."
   (interactive)
   (save-buffer)
-  (shell-command-to-string "just"))
+  (async-start-process "emacs-just" "just" nil))
 
 (defun open-out-pdf ()
   "Find and open the produced PDF via Zathura."
