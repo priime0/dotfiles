@@ -92,6 +92,9 @@
   (auto-fill-mode 1)
   (display-fill-column-indicator-mode 1)
   (set-fill-column 100)
+
+  (setq-local flycheck-disabled-checkers
+              '(tex-chktex))
   
   (keymap-local-set "C-c C-c" #'custom-compile-latex)
   (keymap-local-set "C-c C-z" #'open-out-pdf)
