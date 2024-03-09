@@ -187,15 +187,19 @@
 (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
 
 ;; Eglot
+(defvar-keymap eglot-java-keymap
+  "n" #'eglot-java-file-new
+  "x" #'eglot-java-run-main
+  "t" #'eglot-java-run-test
+  "N" #'eglot-java-project-new
+  "T" #'eglot-java-project-build-task
+  "R" #'eglot-java-project-build-refresh
+  "a" #'eglot-code-actions
+  "r" #'eglot-rename
+  "f" #'eglot-format-buffers)
+
 (with-eval-after-load 'eglot-java
-  (define-key eglot-java-mode-map (kbd "C-c l n") #'eglot-java-file-new)
-  (define-key eglot-java-mode-map (kbd "C-c l x") #'eglot-java-run-main)
-  (define-key eglot-java-mode-map (kbd "C-c l t") #'eglot-java-run-test)
-  (define-key eglot-java-mode-map (kbd "C-c l N") #'eglot-java-project-new)
-  (define-key eglot-java-mode-map (kbd "C-c l T") #'eglot-java-project-build-task)
-  (define-key eglot-java-mode-map (kbd "C-c l R") #'eglot-java-project-build-refresh)
-  (define-key eglot-java-mode-map (kbd "C-c l a") #'eglot-code-actions)
-  (define-key eglot-java-mode-map (kbd "C-c l r") #'eglot-rename)
+  (keymap-global-set "C-c l" eglot-java-keymap)
   (setq c-basic-offset 2))
 
 (set-face-attribute 'eglot-highlight-symbol-face nil
