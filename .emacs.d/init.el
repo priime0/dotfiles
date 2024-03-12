@@ -121,6 +121,7 @@
 (straight-use-package 'flycheck-ocaml)
 (straight-use-package 'merlin-eldoc)
 (straight-use-package 'ocamlformat)
+(straight-use-package 'elixir-mode)
 
 
 ;; ====== Custom =============================

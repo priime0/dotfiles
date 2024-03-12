@@ -208,6 +208,9 @@
                     :weight 'semi-bold
                     :underline t)
 
+(add-to-list 'eglot-server-programs
+             '(elixir-mode "~/.emacs.d/elixir-ls/language_server.sh"))
+
 ;; Elfeed
 (setq elfeed-feeds
       '(("https://edwardwibowo.com/rss.xml"     blog)
