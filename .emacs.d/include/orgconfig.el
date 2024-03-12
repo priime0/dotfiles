@@ -10,7 +10,30 @@
 (require 'org-modern)
 ;; Templates for org-mode
 (require 'org-tempo)
+(require 's)
 
+;; Multiple Org Workspaces
+(defvar org-workspaces-alist
+  '(("docs"    . ("~/org/docs/" . "~/.emacs.d/org-roam.db"))
+    ("cs 2800" . ("~/docs/notes/cs/2800/lectures/" . "~/docs/notes/cs/2800/lectures/org-roam.db"))
+    ("cs 3620" . ("~/docs/notes/cs/3620/lectures/" . "~/docs/notes/cs/3620/lectures/org-roam.db"))))
+
+(defun org-switch-workspace (&optional workspace-name)
+  "Switch the current org-roam-directory to WORKSPACE-NAME."
+  (interactive)
+  (defconst default-workspace-name (caar org-workspaces-alist))
+  (defconst prompt-message (format "Org Roam Workspace (default \"%s\")"
+                                   default-workspace-name))
+  (let ((workspace-name
+         (or workspace-name
+             (completing-read prompt-message org-workspaces-alist))))
+    (when (s-blank? workspace-name)
+      (error "Requires valid workspace"))
+    (setq org-roam-directory (cadr (assoc workspace-name org-workspaces-alist)))
+    (setq org-roam-db-location (cddr (assoc workspace-name org-workspaces-alist)))
+    (org-roam-db-sync t)))
+
+;; Settings
 (setq org-hide-emphasis-markers t)
 (setq org-adapt-indentation nil)
 (setq org-confirm-babel-evaluate nil)
