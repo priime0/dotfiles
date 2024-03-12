@@ -16,7 +16,7 @@
 (defvar org-workspaces-alist
   '(("docs"    . ("~/org/docs/" . "~/.emacs.d/org-roam.db"))
     ("cs 2800" . ("~/docs/notes/cs/2800/lectures/" . "~/docs/notes/cs/2800/lectures/org-roam.db"))
-    ("cs 3620" . ("~/docs/notes/cs/3620/lectures/" . "~/docs/notes/cs/3620/lectures/org-roam.db"))))
+    ("cs 3620" . ("~/docs/notes/cs/3620/" . "~/docs/notes/cs/3620/org-roam.db"))))
 
 (defun org-switch-workspace (&optional workspace-name)
   "Switch the current org-roam-directory to WORKSPACE-NAME."
