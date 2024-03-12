@@ -109,7 +109,9 @@
   "n" #'org-roam-capture
   "f" #'org-roam-node-find
   "i" #'org-roam-node-insert
-  "t" #'org-roam-tag-add)
+  "t" #'org-roam-tag-add
+  "s" #'org-save-all-org-buffers
+  "w" #'org-switch-workspace)
 
 (keymap-global-set "C-c a" #'org-agenda)
 (keymap-global-set "C-c c" #'org-capture)
