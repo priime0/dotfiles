@@ -160,7 +160,8 @@
    '("Y" . meow-yank-above)
    '("z" . meow-pop-selection)
    '("'" . repeat)
-   '("<escape>" . ignore)))
+   '("<escape>" . ignore)
+   '("C-q" . meow-quit)))
 
 (meow-setup)
 
