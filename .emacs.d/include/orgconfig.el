@@ -22,16 +22,17 @@
   "Switch the current org-roam-directory to WORKSPACE-NAME."
   (interactive)
   (defconst default-workspace-name (caar org-workspaces-alist))
-  (defconst prompt-message (format "Org Roam Workspace (default \"%s\")"
+  (defconst prompt-message (format "Org Roam Workspace (default \"%s\"): "
                                    default-workspace-name))
   (let ((workspace-name
          (or workspace-name
-             (completing-read prompt-message org-workspaces-alist))))
-    (when (s-blank? workspace-name)
-      (error "Requires valid workspace"))
+             (completing-read prompt-message
+                              org-workspaces-alist
+                              nil t nil nil
+                              default-workspace-name))))
     (setq org-roam-directory (cadr (assoc workspace-name org-workspaces-alist)))
     (setq org-roam-db-location (cddr (assoc workspace-name org-workspaces-alist)))
-    (org-roam-db-sync t)))
+    (org-roam-db-sync nil)))
 
 ;; Settings
 (setq org-hide-emphasis-markers t)
