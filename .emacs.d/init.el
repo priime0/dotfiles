@@ -40,7 +40,6 @@
 (straight-use-package 'bufler)
 
 ;; UI
-(straight-use-package 'which-key)
 (straight-use-package 'magit)
 (straight-use-package 'forge)
 (straight-use-package 'neotree)
@@ -144,7 +143,6 @@
 ;; ====== Hooks ==============================
 (add-hook 'after-init-hook      'global-company-mode)
 (add-hook 'after-init-hook      'marginalia-mode)
-(add-hook 'after-init-hook      'which-key-mode)
 (add-hook 'after-init-hook      'global-flycheck-mode)
 (add-hook 'after-init-hook      'vertico-mode)
 (add-hook 'after-init-hook      'tab-bar-mode)
