@@ -29,6 +29,8 @@
 (straight-use-package 'marginalia)
 (straight-use-package 'orderless)
 (straight-use-package 'consult)
+(straight-use-package 'yasnippet)
+(straight-use-package 'yasnippet-snippets)
 
 ;; Syntax checking and editing
 (straight-use-package 'meow)
