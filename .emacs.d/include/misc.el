@@ -249,6 +249,9 @@
 (setq completion-styles '(orderless basic))
 (setq completion-category-overrides '((file (styles basic partial-completion))))
 
+;; embark
+(keymap-global-set "C-." #'embark-act)
+
 ;; bufler
 (bufler-mode 1)
 (keymap-global-set "C-x b" #'bufler-switch-buffer)

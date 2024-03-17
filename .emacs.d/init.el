@@ -40,6 +40,9 @@
 ;; Convenience
 (straight-use-package 'projectile)
 (straight-use-package 'bufler)
+(straight-use-package 'embark)
+(straight-use-package 'embark-consult)
+(straight-use-package 'wgrep)
 
 ;; UI
 (straight-use-package 'magit)
