@@ -49,6 +49,9 @@
 (load-theme 'nano t)
 (nano-light)
 
+(defvar priime-fixed-font "Jetbrains Mono Semibold")
+(defvar priime-variable-font "Newsreader")
+
 (add-to-list 'default-frame-alist '(font . "JetBrains Mono SemiBold-10"))
 (defvar font-size 10)
 (defvar font-family "JetBrains Mono SemiBold")
@@ -56,9 +59,9 @@
 
 (custom-set-faces
  '(region         ((t (:inherit nano-subtle :background "#EBE5F5"))))
- '(variable-pitch ((t (:family "Linux Libertine" :height 125 :weight medium))))
- '(fixed-pitch    ((t (:family "JetBrains Mono SemiBold" :height 100))))
- '(shr-text       ((t (:inherit variable-pitch-text :family "Linux Libertine")))))
+ `(variable-pitch ((t (:family ,priime-variable-font :height 125 :weight medium))))
+ `(fixed-pitch    ((t (:family ,priime-fixed-font :height 100))))
+ `(shr-text       ((t (:inherit variable-pitch-text :family ,priime-variable-font)))))
 (set-face-attribute 'italic nil
                     :family 'inherit
                     :slant 'italic
