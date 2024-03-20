@@ -87,15 +87,10 @@
 
 (setcar (nthcdr 4 org-emphasis-regexp-components) 20)
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
-(setq org-agenda-files '("~/org/inbox.org"
-                         "~/org/gtd.org"
-                         "~/org/tickler.org"))
+(setq org-agenda-files '("~/org/gtd.org"))
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                               (file+headline "~/org/inbox.org" "Tasks")
-                               "* TODO %i%?")
-                              ("T" "Tickler" entry
-                               (file+headline "~/org/tickler.org" "Tickler")
-                               "* %i%? \n %U")))
+                               (file+headline "~/org/gtd.org" "GTD")
+                               "* TODO %i%?")))
 (setq org-roam-capture-templates
       '(("n" "default" plain "%?"
          :target (file+head "${slug}-${id}.org" "#+title: ${title}\n")
