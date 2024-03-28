@@ -389,5 +389,18 @@
 
 (setq auto-mode-alist (cons '("\\.tsx$" . rjsx-mode) auto-mode-alist))
 
+;; elixir
+
+(defvar-keymap inf-elixir-keymap
+  "i" #'inf-elixir
+  "p" #'inf-elixir-project
+  "c" #'inf-elixir-send-line
+  "b" #'inf-elixir-send-buffer
+  "r" #'inf-elixir-send-region
+  "R" #'inf-elixir-reload-module)
+(add-hook 'elixir-mode-hook
+          (lambda ()
+            (keymap-local-set "C-c i" inf-elixir-keymap)))
+
 (provide 'misc)
 ;;; misc.el ends here
