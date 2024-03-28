@@ -28,6 +28,17 @@
 (setq auto-mode-alist (cons '("\\.pm$" . pollen-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.pmd$" . pollen-mode) auto-mode-alist))
 
+;; raco review flycheck support
+(flycheck-define-checker racket-review
+  "check racket source code using racket review"
+  :command ("raco" "review" source)
+  :error-patterns
+  ((error line-start (file-name) ":" line ":" column ":error:" (message) line-end)
+   (warning line-start (file-name) ":" line ":" column ":warning:" (message) line-end))
+  :modes racket-mode)
+(add-to-list 'flycheck-checkers 'racket-review)
+(add-to-list 'flycheck-disabled-checkers 'racket)
+
 (defun configure-racket ()
   "Configure keybinds for racket buffers."
   (keymap-local-set "C-c C-z" #'racket-repl-switch))
