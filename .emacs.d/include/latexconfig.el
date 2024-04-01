@@ -84,6 +84,12 @@
     (insert "\\frac{" content "}{}")
     (backward-char)))
 
+(defun latex-tab ()
+  "Multi-purpose tab for LaTeX."
+  (interactive)
+  (align-current)
+  (cdlatex-tab))
+
 (defun configure-latex ()
   "Configure my custom LaTex environment."
   (electric-indent-mode -1)
@@ -95,7 +101,8 @@
 
   (setq-local flycheck-disabled-checkers
               '(tex-chktex))
-  
+
+  (keymap-local-set "C-c C-a" #'align-current)
   (keymap-local-set "C-c C-c" #'custom-compile-latex)
   (keymap-local-set "C-c C-z" #'open-out-pdf)
   (keymap-local-set "C-c C-b" #'latex-insert-block)
@@ -104,6 +111,7 @@
   (keymap-local-set "/"       #'math-insert-frac)
   ;; For cases where we actually do want `/' in math...
   (keymap-local-set "M-/"     #'insert-raw-slash)
+  (keymap-local-set "C-TAB"   #'latex-tab)
   (keymap-substitute cdlatex-mode-map 'cdlatex-dollar 'cdlatex-math-symbol)
   (setq cdlatex-math-symbol-prefix ?$)
 
