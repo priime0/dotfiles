@@ -199,9 +199,10 @@
   "r" #'eglot-rename
   "f" #'eglot-format-buffers)
 
-(with-eval-after-load 'eglot-java
-  (keymap-global-set "C-c l" eglot-java-keymap)
-  (setq c-basic-offset 2))
+(add-hook 'eglot-java-mode-hook
+          (lambda ()
+            (keymap-local-set "C-c l" eglot-java-keymap)
+            (setq c-basic-offset 2)))
 
 (set-face-attribute 'eglot-highlight-symbol-face nil
                     :family "JetBrains Mono"
