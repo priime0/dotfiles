@@ -16,116 +16,131 @@
   (load bootstrap-file nil 'nomessage))
 
 ;; Elisp
-(straight-use-package 's)
-(straight-use-package 'f)
-(straight-use-package 'dash)
+(use-package s    :straight t)
+(use-package f    :straight t)
+(use-package dash :straight t)
 
 
 ;; Completion
-(straight-use-package 'company)
-(straight-use-package 'company-box)
-(straight-use-package 'company-math)
-(straight-use-package 'vertico)
-(straight-use-package 'marginalia)
-(straight-use-package 'orderless)
-(straight-use-package 'consult)
-(straight-use-package 'yasnippet)
-(straight-use-package 'yasnippet-snippets)
+(use-package company            :straight t)
+(use-package company-box        :straight t)
+(use-package company-math       :straight t)
+(use-package vertico            :straight t)
+(use-package marginalia         :straight t)
+(use-package orderless          :straight t)
+(use-package consult            :straight t)
+(use-package yasnippet          :straight t)
+(use-package yasnippet-snippets :straight t)
 
 ;; Syntax checking and editing
-(straight-use-package 'meow)
-(straight-use-package 'flycheck)
-(straight-use-package 'paredit)
+(use-package meow      :straight t)
+(use-package flycheck  :straight t)
+(use-package paredit   :straight t)
 
 ;; Convenience
-(straight-use-package 'projectile)
-(straight-use-package 'bufler)
-(straight-use-package 'embark)
-(straight-use-package 'embark-consult)
-(straight-use-package 'wgrep)
+(use-package projectile      :straight t)
+(use-package bufler          :straight t)
+(use-package embark          :straight t)
+(use-package embark-consult  :straight t)
+(use-package wgrep           :straight t)
 
 ;; UI
-(straight-use-package 'magit)
-(straight-use-package 'forge)
-(straight-use-package 'neotree)
-(straight-use-package 'all-the-icons)
-(straight-use-package 'git-gutter)
-(straight-use-package 'hl-todo)
-(straight-use-package '(nano-theme :type git :host github
-                                   :repo "rougier/nano-theme"))
+(use-package magit          :straight t)
+(use-package forge          :straight t)
+(use-package neotree        :straight t)
+(use-package all-the-icons  :straight t)
+(use-package git-gutter     :straight t)
+(use-package hl-todo        :straight t)
+(use-package nano-theme
+  :straight '(nano-theme :type git :host github
+                         :repo "rougier/nano-theme"))
 
 ;; Org
-(straight-use-package 'org)
-(straight-use-package 'org-roam)
-(straight-use-package 'org-modern)
-(straight-use-package 'org-recur)
-(straight-use-package '(org-modern-indent
-                        :type git
-                        :host github
-                        :repo "jdtsmith/org-modern-indent"))
-(straight-use-package '(ob-racket
-                        :type git
-                        :host github
-                        :repo "hasu/emacs-ob-racket"))
+(use-package org        :straight t)
+(use-package org-roam   :straight t)
+(use-package org-modern :straight t)
+(use-package org-recur  :straight t)
+(use-package org-modern-indent
+  :straight
+  '(org-modern-indent
+    :type git
+    :host github
+    :repo "jdtsmith/org-modern-indent"))
+(use-package ob-racket
+  :straight
+  '(ob-racket
+    :type git
+    :host github
+    :repo "hasu/emacs-ob-racket"))
 
 ;; Productivity
-(straight-use-package 'elfeed)
-(straight-use-package '(pdf-tools :type git :host github
-                                  :repo "vedang/pdf-tools"))
-(straight-use-package 'olivetti)
-(straight-use-package 'rg)
-(straight-use-package 'anzu)
-(straight-use-package 'vterm)
-(straight-use-package 'hledger-mode)
+(use-package elfeed :straight t)
+(use-package pdf-tools
+  :straight
+  '(pdf-tools :type git :host github
+              :repo "vedang/pdf-tools"))
+(use-package olivetti     :straight t)
+(use-package rg           :straight t)
+(use-package anzu         :straight t)
+(use-package vterm        :straight t)
+(use-package hledger-mode :straight t)
 
 ;; LSP
-(straight-use-package 'lsp-mode)
-(straight-use-package 'lsp-ui)
-(straight-use-package 'eglot)
-(straight-use-package 'eldoc-box)
-(straight-use-package 'lsp-grammarly)
+(use-package lsp-mode      :straight t)
+(use-package lsp-ui        :straight t)
+(use-package eglot         :straight t)
+(use-package eldoc         :straight t)
+(use-package eldoc-box     :straight t)
+(use-package lsp-grammarly :straight t)
 
 ;; Programming
-(straight-use-package '(copilot :type git :host github
-                                :repo "zerolfx/copilot.el"
-                                :branch "main"
-                                :files ("dist" "*.el")))
+(use-package copilot
+  :straight
+  '(copilot :type git :host github
+            :repo "zerolfx/copilot.el"
+            :branch "main"
+            :files ("dist" "*.el")))
 
 ;; Languages
-(straight-use-package 'racket-mode)
-(straight-use-package 'rust-mode)
-(straight-use-package 'rustic)
+(use-package racket-mode :straight t)
+(use-package rust-mode :straight t)
+(use-package rustic :straight t)
 
-(straight-use-package 'markdown-mode)
-(straight-use-package 'rjsx-mode)
-(straight-use-package 'just-mode)
-(straight-use-package 'justl)
-(straight-use-package 'scribble-mode)
-(straight-use-package 'go-mode)
-(straight-use-package 'auctex)
-(straight-use-package 'cdlatex)
-(straight-use-package 'yaml-mode)
-(straight-use-package 'poetry)
-(straight-use-package 'slime)
-(straight-use-package 'slime-company)
-(straight-use-package 'haskell-mode)
-(straight-use-package 'lsp-haskell)
-(straight-use-package 'eglot-java)
-(straight-use-package 'company-coq)
-(straight-use-package 'proof-general)
-(straight-use-package '(llvm-mode :type git :host github
-                                  :repo "nverno/llvm-mode"))
-(straight-use-package '(pollen-mode :type git :host github
-                                    :repo "basus/pollen-mode"))
-(straight-use-package 'clojure-mode)
+(use-package markdown-mode :straight t)
+(use-package rjsx-mode :straight t)
+(use-package just-mode :straight t)
+(use-package justl :straight t)
+(use-package scribble-mode :straight t)
+(use-package go-mode :straight t)
+(use-package auctex :straight t)
+(use-package cdlatex :straight t)
+(use-package yaml-mode :straight t)
+(use-package poetry :straight t)
+(use-package slime :straight t)
+(use-package slime-company :straight t)
+(use-package haskell-mode :straight t)
+(use-package lsp-haskell :straight t)
+(use-package eglot-java :straight t)
+(use-package company-coq :straight t)
+(use-package llvm-mode
+  :straight
+  '(llvm-mode :type git :host github
+              :repo "nverno/llvm-mode"))
+(use-package pollen-mode
+  :straight
+  '(pollen-mode :type git :host github
+                :repo "basus/pollen-mode"))
+(use-package clojure-mode :straight t)
 
-(straight-use-package 'tuareg)
-(straight-use-package 'utop)
-(straight-use-package 'dune)
-(straight-use-package 'flycheck-ocaml)
-(straight-use-package 'merlin-eldoc)
-(straight-use-package 'ocamlformat)
-(straight-use-package 'elixir-mode)
+(use-package tuareg :straight t)
+(use-package utop :straight t)
+(use-package dune :straight t)
+(use-package flycheck-ocaml :straight t)
+(use-package merlin-eldoc :straight t)
+(use-package ocamlformat :straight t)
+(use-package elixir-mode :straight t)
+(use-package inf-elixir :straight t)
+(use-package nix-mode :straight t)
 
 
 ;; ====== Custom =============================
