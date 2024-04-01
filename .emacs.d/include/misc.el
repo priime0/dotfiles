@@ -81,6 +81,7 @@
 
 (defun meow-setup ()
   "Set up meow."
+  (keymap-global-set "C-q" #'meow-quit)
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
   (meow-leader-define-key
    '("u" . "C-u"))
@@ -160,8 +161,7 @@
    '("Y" . meow-yank-above)
    '("z" . meow-pop-selection)
    '("'" . repeat)
-   '("<escape>" . ignore)
-   '("C-q" . meow-quit)))
+   '("<escape>" . ignore)))
 
 (meow-setup)
 
