@@ -267,7 +267,6 @@
 
 ;; SLIME
 (setq inferior-lisp-program "sbcl")
-(slime-setup '(slime-fancy slime-company))
 
 ;; Copilot
 (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
