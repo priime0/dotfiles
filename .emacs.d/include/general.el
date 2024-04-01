@@ -60,7 +60,7 @@
 (custom-set-faces
  '(region         ((t (:inherit nano-subtle :background "#EBE5F5"))))
  `(variable-pitch ((t (:family ,priime-variable-font :height 125 :weight medium))))
- `(fixed-pitch    ((t (:family ,priime-fixed-font :height 100))))
+ `(fixed-pitch    ((t (:family ,priime-fixed-font :height 0.8 :inherit nil))))
  `(shr-text       ((t (:inherit variable-pitch-text :family ,priime-variable-font)))))
 (set-face-attribute 'italic nil
                     :family 'inherit
