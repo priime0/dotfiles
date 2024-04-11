@@ -64,7 +64,6 @@
 (use-package org        :straight t)
 (use-package org-roam   :straight t)
 (use-package org-modern :straight t)
-(use-package org-recur  :straight t)
 (use-package org-modern-indent
   :straight
   '(org-modern-indent
