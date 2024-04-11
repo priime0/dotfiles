@@ -36,6 +36,11 @@
 (use-package meow      :straight t)
 (use-package flycheck  :straight t)
 (use-package paredit   :straight t)
+(use-package undo-tree :straight t
+  :custom
+  (undo-tree-auto-save-history nil)
+  :config
+  (global-undo-tree-mode))
 
 ;; Convenience
 (use-package projectile      :straight t)
