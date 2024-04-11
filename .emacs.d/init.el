@@ -130,10 +130,6 @@
   :straight
   '(llvm-mode :type git :host github
               :repo "nverno/llvm-mode"))
-(use-package pollen-mode
-  :straight
-  '(pollen-mode :type git :host github
-                :repo "basus/pollen-mode"))
 (use-package clojure-mode :straight t)
 
 (use-package tuareg :straight t)
