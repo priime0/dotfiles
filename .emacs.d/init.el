@@ -56,7 +56,11 @@
 (use-package forge          :straight t)
 (use-package neotree        :straight t)
 (use-package all-the-icons  :straight t)
-(use-package git-gutter     :straight t)
+(use-package git-gutter     :straight t
+  :custom
+  (git-gutter:update-interval 1)
+  :config
+  (git-gutter:start-update-timer))
 (use-package hl-todo        :straight t)
 (use-package nano-theme
   :straight '(nano-theme :type git :host github
