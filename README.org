@@ -17,3 +17,4 @@ My Arch Linux and Emacs configuration. I use [[https://github.com/plamorg/ambit]
 | Shell               | fish                  |
 | Browser             | qutebrowser / firefox |
 
+/Aside/: My Emacs config is relatively messy right now... I'm in the process of reorganising to leverage =use-package=.
