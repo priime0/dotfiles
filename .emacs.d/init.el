@@ -1,4 +1,7 @@
-;; priime0 emacs configuration file
+;;; init.el -- Base configuration
+;;; Commentary:
+;;    Base configuration.
+;;; Code:
 
 ;; ====== Packages ===========================
 
@@ -22,11 +25,20 @@
 
 
 ;; Completion
-(use-package company            :straight t)
-(use-package company-box        :straight t)
-(use-package company-math       :straight t)
-(use-package vertico            :straight t)
-(use-package marginalia         :straight t)
+(use-package company            :straight t
+  :init
+  (add-hook 'after-init-hook 'global-company-mode))
+(use-package company-box        :straight t
+  :after (company)
+  :hook (company-mode . company-box-mode))
+(use-package company-math       :straight t
+  :after (company))
+(use-package vertico            :straight t
+  :init
+  (add-hook 'after-init-hook 'vertico-mode))
+(use-package marginalia         :straight t
+  :init
+  (add-hook 'after-init-hook 'marginalia-mode))
 (use-package orderless          :straight t)
 (use-package consult            :straight t)
 (use-package yasnippet          :straight t)
@@ -36,8 +48,12 @@
 (use-package meow      :straight t)
 (use-package flycheck  :straight t
   :custom
-  (flycheck-check-syntax-automatically '(save mode-enable)))
-(use-package paredit   :straight t)
+  (flycheck-check-syntax-automatically '(save mode-enable))
+  :init
+  (add-hook 'after-init-hook 'global-flycheck-mode))
+(use-package paredit   :straight t
+  :hook ((emacs-lisp-mode scheme-mode racket-mode clojure-mode lisp-mode)
+         . paredit-mode))
 (use-package undo-tree :straight t
   :custom
   (undo-tree-auto-save-history nil)
@@ -57,11 +73,13 @@
 (use-package neotree        :straight t)
 (use-package all-the-icons  :straight t)
 (use-package git-gutter     :straight t
+  :hook (prog-mode . git-gutter-mode)
   :custom
   (git-gutter:update-interval 1)
   :config
   (git-gutter:start-update-timer))
-(use-package hl-todo        :straight t)
+(use-package hl-todo        :straight t
+  :hook (prog-mode . hl-todo-mode))
 (use-package nano-theme
   :straight '(nano-theme :type git :host github
                          :repo "rougier/nano-theme"))
@@ -91,13 +109,18 @@
               :repo "vedang/pdf-tools"))
 (use-package olivetti     :straight t)
 (use-package rg           :straight t)
-(use-package anzu         :straight t)
+(use-package anzu         :straight t
+  :init
+  (add-hook 'after-init-hook 'global-anzu-mode))
 (use-package vterm        :straight t)
 (use-package hledger-mode :straight t)
 
 ;; LSP
 (use-package lsp-mode      :straight t)
-(use-package lsp-ui        :straight t)
+(use-package lsp-ui        :straight t
+  :after (lsp-mode)
+  :hook ((lsp-mode . lsp-ui-mode)
+         (lsp-mode . lsp-inlay-hints-mode)))
 (use-package eglot         :straight t)
 (use-package eldoc         :straight t)
 (use-package eldoc-box     :straight t)
@@ -112,7 +135,8 @@
             :files ("dist" "*.el")))
 
 ;; Languages
-(use-package racket-mode :straight t)
+(use-package racket-mode :straight t
+  :hook (racket-mode . racket-xp-mode))
 (use-package rust-mode :straight t)
 (use-package rustic :straight t)
 
@@ -130,7 +154,6 @@
 (use-package haskell-mode :straight t)
 (use-package lsp-haskell :straight t)
 (use-package eglot-java :straight t)
-(use-package company-coq :straight t)
 (use-package llvm-mode
   :straight
   '(llvm-mode :type git :host github
@@ -166,16 +189,6 @@
 (load-library "ocamlconfig")
 
 ;; ====== Hooks ==============================
-(add-hook 'after-init-hook      'global-company-mode)
-(add-hook 'after-init-hook      'marginalia-mode)
-(add-hook 'after-init-hook      'global-flycheck-mode)
-(add-hook 'after-init-hook      'vertico-mode)
-(add-hook 'after-init-hook      'global-anzu-mode)
-
-(add-hook 'company-mode-hook    'company-box-mode)
-
-(add-hook 'prog-mode-hook       #'git-gutter-mode)
-(add-hook 'prog-mode-hook       #'hl-todo-mode)
 (add-hook 'prog-mode-hook       #'display-line-numbers-mode)
 
 (add-hook 'racket-mode-hook     #'lsp)
@@ -187,14 +200,4 @@
 (add-hook 'rjsx-mode-hook       #'lsp)
 (add-hook 'java-mode-hook       #'eglot-java-mode)
 
-(add-hook 'emacs-lisp-mode-hook  #'paredit-mode)
-(add-hook 'scheme-mode-hook      #'paredit-mode)
-(add-hook 'racket-mode-hook      #'paredit-mode)
-(add-hook 'clojure-mode-hook     #'paredit-mode)
-(add-hook 'lisp-mode-hook        #'paredit-mode)
-
-(add-hook 'lsp-mode-hook           #'lsp-ui-mode)
-(add-hook 'lsp-mode-hook           #'lsp-inlay-hints-mode)
 (add-hook 'eglot-managed-mode-hook #'eldoc-box-hover-at-point-mode)
-
-(add-hook 'racket-mode-hook     'racket-xp-mode)
