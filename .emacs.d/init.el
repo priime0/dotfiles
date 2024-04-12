@@ -34,7 +34,9 @@
 
 ;; Syntax checking and editing
 (use-package meow      :straight t)
-(use-package flycheck  :straight t)
+(use-package flycheck  :straight t
+  :custom
+  (flycheck-check-syntax-automatically '(save mode-enable)))
 (use-package paredit   :straight t)
 (use-package undo-tree :straight t
   :custom
