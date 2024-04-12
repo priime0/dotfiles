@@ -86,8 +86,11 @@
 
 ;; Org
 (use-package org        :straight t)
-(use-package org-roam   :straight t)
-(use-package org-modern :straight t)
+(use-package org-roam   :straight t
+  :after (org))
+(use-package org-modern :straight t
+  :after (org)
+  :hook (org-mode org-modern-mode))
 (use-package org-modern-indent
   :straight
   '(org-modern-indent
@@ -107,7 +110,8 @@
   :straight
   '(pdf-tools :type git :host github
               :repo "vedang/pdf-tools"))
-(use-package olivetti     :straight t)
+(use-package olivetti     :straight t
+  :hook (org-mode . olivetti-mode))
 (use-package rg           :straight t)
 (use-package anzu         :straight t
   :init
