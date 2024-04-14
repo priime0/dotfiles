@@ -83,8 +83,7 @@
   "Set up meow."
   (keymap-global-set "C-q" #'meow-quit)
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
-  (meow-leader-define-key
-   '("u" . "C-u"))
+  (meow-leader-define-key '("u" . "C-u"))
   (meow-motion-overwrite-define-key
    ;; custom keybinding for motion state
    '("<escape>" . ignore))
@@ -245,6 +244,7 @@
 (setq neo-smart-open t)
 (setq neo-window-fixed-size nil)
 (add-hook 'neotree-mode-hook (lambda () (text-scale-set -0.5)))
+                                        ;(add-hook 'neotree-mode-hook (lambda () (buffer-face-set :background "#ffffff")))
 
 ;; Orderless
 (setq completion-styles '(orderless basic))
@@ -252,12 +252,6 @@
 
 ;; embark
 (keymap-global-set "C-." #'embark-act)
-
-;; bufler
-(bufler-mode 1)
-(keymap-global-set "C-x b" #'bufler-switch-buffer)
-(keymap-global-set "C-x C-b" #'bufler-list)
-
 
 ;; hledger
 (setq hledger-currency-string "$")

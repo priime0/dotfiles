@@ -61,11 +61,15 @@
   (global-undo-tree-mode))
 
 ;; Convenience
-(use-package projectile      :straight t)
-(use-package bufler          :straight t)
-(use-package embark          :straight t)
-(use-package embark-consult  :straight t)
-(use-package wgrep           :straight t)
+(use-package projectile       :straight t)
+(use-package bufler           :straight t
+  :bind (("C-x C-b" . bufler-list)
+         ("C-x b" . bufler-switch-buffer))
+  :init
+  (bufler-mode 1))
+(use-package embark           :straight t)
+(use-package embark-consult   :straight t)
+(use-package wgrep            :straight t)
 (use-package perspective      :straight t
   :custom
   (persp-mode-prefix-key (kbd "C-c M-p"))
