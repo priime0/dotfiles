@@ -66,6 +66,13 @@
 (use-package embark          :straight t)
 (use-package embark-consult  :straight t)
 (use-package wgrep           :straight t)
+(use-package perspective      :straight t
+  :custom
+  (persp-mode-prefix-key (kbd "C-c M-p"))
+  :init
+  (persp-mode))
+(use-package persp-projectile :straight t
+  :after (perspective projectile))
 
 ;; UI
 (use-package magit          :straight t)
