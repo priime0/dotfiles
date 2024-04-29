@@ -159,7 +159,9 @@
 (use-package rust-mode :straight t)
 (use-package rustic :straight t)
 
-(use-package markdown-mode :straight t)
+(use-package markdown-mode :straight t
+  :custom-face
+  (markdown-inline-code-face ((t (:inherit nano-salient)))))
 (use-package rjsx-mode :straight t)
 (use-package just-mode :straight t)
 (use-package justl :straight t)
