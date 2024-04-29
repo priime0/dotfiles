@@ -101,13 +101,17 @@
   :after (org))
 (use-package org-modern :straight t
   :after (org)
-  :hook (org-mode org-modern-mode))
+  :hook (org-mode . org-modern-mode)
+  :custom
+  (org-modern-star '("#" "##" "###" "####" "#####" "######")))
 (use-package org-modern-indent
   :straight
   '(org-modern-indent
     :type git
     :host github
-    :repo "jdtsmith/org-modern-indent"))
+    :repo "jdtsmith/org-modern-indent")
+  :after (org-modern)
+  :hook (org-mode . org-modern-indent-mode))
 (use-package ob-racket
   :straight
   '(ob-racket

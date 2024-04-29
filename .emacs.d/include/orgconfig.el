@@ -7,7 +7,6 @@
 (require 'org-roam)
 (require 'org-capture)
 (require 'org-id)
-(require 'org-modern)
 ;; Templates for org-mode
 (require 'org-tempo)
 (require 's)
@@ -41,7 +40,6 @@
 (setq org-export-use-babel nil)
 (setq org-agenda-include-diary t)
 (setq org-src-preserve-indentation t)
-(setq org-modern-star '("#" "##" "###" "####" "#####" "######"))
 (setq org-roam-directory "~/org/docs/")
 (setq org-roam-extract-new-file-path "${slug}.org")
 (setq org-roam-node-display-template
@@ -132,7 +130,6 @@
             (auto-save-mode)))
 (add-hook 'org-mode-hook #'variable-pitch-mode)
 (add-hook 'org-agenda-mode-hook #'org-recur-mode)
-(add-hook 'org-mode-hook #'org-modern-indent-mode 90)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 (add-hook 'org-mode-hook #'(lambda () (setq line-spacing 0.1)))
 
