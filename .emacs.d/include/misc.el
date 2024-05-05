@@ -164,10 +164,6 @@
 
 (meow-setup)
 
-;; Company completion
-(keymap-global-set "M-SPC" #'company-complete)
-(setq completion-styles '(basic orderless))
-
 ;; LSP
 (setq lsp-inlay-hint-enable t)
 (setq lsp-ui-doc-include-signature t)

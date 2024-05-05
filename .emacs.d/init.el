@@ -26,6 +26,10 @@
 
 ;; Completion
 (use-package company            :straight t
+  :custom
+  (completion-styles '(basic orderless))
+  :bind
+  ("M-SPC" . #'company-complete)
   :init
   (add-hook 'after-init-hook 'global-company-mode))
 (use-package company-box        :straight t
