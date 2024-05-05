@@ -236,9 +236,6 @@
       (neotree-dir current-directory))))
 
 (keymap-global-set "C-c t" #'neotree-toggle-current-directory)
-(setq neo-theme 'icons)
-(setq neo-smart-open t)
-(setq neo-window-fixed-size nil)
 (add-hook 'neotree-mode-hook (lambda () (text-scale-set -0.5)))
                                         ;(add-hook 'neotree-mode-hook (lambda () (buffer-face-set :background "#ffffff")))
 

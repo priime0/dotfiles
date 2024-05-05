@@ -85,7 +85,11 @@
 ;; UI
 (use-package magit          :straight t)
 (use-package forge          :straight t)
-(use-package neotree        :straight t)
+(use-package neotree        :straight t
+  :custom
+  ((neo-theme 'icons)
+   (neo-smart-open t)
+   (neo-window-fixed-size nil)))
 (use-package all-the-icons  :straight t)
 (use-package git-gutter     :straight t
   :hook (prog-mode . git-gutter-mode)
