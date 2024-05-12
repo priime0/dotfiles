@@ -48,7 +48,7 @@
 (use-package yasnippet          :straight t)
 (use-package yasnippet-snippets :straight t)
 
-;; Syntax checking and editing
+;; Syntax checking and editing, and formatting
 (use-package meow      :straight t)
 (use-package flycheck  :straight t
   :custom
@@ -63,6 +63,9 @@
   (undo-tree-auto-save-history nil)
   :config
   (global-undo-tree-mode))
+(use-package format-all :straight t)
+(use-package ws-butler :straight t
+  :hook (prog-mode . ws-butler-mode))
 
 ;; Convenience
 (use-package projectile       :straight t)
