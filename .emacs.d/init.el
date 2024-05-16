@@ -63,7 +63,8 @@
   (undo-tree-auto-save-history nil)
   :config
   (global-undo-tree-mode))
-(use-package format-all :straight t)
+(use-package format-all :straight t
+  :bind ("C-c f" . format-all-region-or-buffer))
 (use-package ws-butler :straight t
   :hook (prog-mode . ws-butler-mode))
 
