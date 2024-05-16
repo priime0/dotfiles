@@ -49,22 +49,29 @@
 (load-theme 'nano t)
 (nano-light)
 
-(defvar priime-fixed-font
-  (cond ((eq system-type 'gnu/linux) "JetBrains Mono SemiBold")
-        ((eq system-type 'darwin)    "Menlo")
-        (t "Roboto Mono")))
-(defvar priime-variable-font
-  (cond ((eq system-type 'gnu/linux) "Newsreader")
-        ((eq system-type 'darwin)    "Verdana")
-        (t "Arial")))
+(defvar priime-fixed-font nil)
+(defvar priime-variable-font nil)
+(defvar priime-font-size nil)
+(defvar priime-fixed-height nil)
+
+(cond ((eq system-type 'gnu/linux)
+       (setf priime-fixed-font "JetBrains Mono SemiBold")
+       (setf priime-variable-font "Newsreader")
+       (setf priime-font-size 10)
+       (setf priime-fixed-height 0.8))
+      ((eq system-type 'darwin)
+       (setf priime-fixed-font "Menlo")
+       (setf priime-variable-font "Verdana")
+       (setf priime-font-size 11)
+       (setf priime-fixed-height 1))
+      (t
+       (setf priime-fixed-font "Roboto Mono")
+       (setf priime-variable-font "Roboto")
+       (setf priime-font-size 10)
+       (setf priime-fixed-height 0.8)))
 
 (add-to-list 'default-frame-alist `(font . ,(format "%s-10" priime-fixed-font)))
-(defvar priime-font-size 10)
 (set-frame-font (format "%s %d" priime-fixed-font priime-font-size))
-(defvar priime-fixed-height
-  (cond ((eq system-type 'gnu/linux) 0.8)
-        ((eq system-type 'darwin)    1)
-        (t                           1)))
 
 (custom-set-faces
  '(region         ((t (:inherit nano-subtle :background "#EBE5F5"))))
