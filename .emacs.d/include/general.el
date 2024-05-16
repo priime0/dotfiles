@@ -49,19 +49,28 @@
 (load-theme 'nano t)
 (nano-light)
 
-(defvar priime-fixed-font "Jetbrains Mono Semibold")
-(defvar priime-variable-font "Newsreader")
+(defvar priime-fixed-font
+  (cond ((eq system-type 'gnu/linux) "JetBrains Mono SemiBold")
+        ((eq system-type 'darwin)    "Menlo")
+        (t "Roboto Mono")))
+(defvar priime-variable-font
+  (cond ((eq system-type 'gnu/linux) "Newsreader")
+        ((eq system-type 'darwin)    "Verdana")
+        (t "Arial")))
 
-(add-to-list 'default-frame-alist '(font . "JetBrains Mono SemiBold-10"))
-(defvar font-size 10)
-(defvar font-family "JetBrains Mono SemiBold")
-(set-frame-font (format "%s %d" font-family font-size))
+(add-to-list 'default-frame-alist `(font . ,(format "%s-10" priime-fixed-font)))
+(defvar priime-font-size 10)
+(set-frame-font (format "%s %d" priime-fixed-font priime-font-size))
+(defvar priime-fixed-height
+  (cond ((eq system-type 'gnu/linux) 0.8)
+        ((eq system-type 'darwin)    1)
+        (t                           1)))
 
 (custom-set-faces
  '(region         ((t (:inherit nano-subtle :background "#EBE5F5"))))
  '(lazy-highlight ((t (:inherit region))))
  `(variable-pitch ((t (:family ,priime-variable-font :height 125 :weight medium))))
- `(fixed-pitch    ((t (:family ,priime-fixed-font :height 0.8 :inherit nil))))
+ `(fixed-pitch    ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit nil))))
  `(shr-text       ((t (:inherit variable-pitch-text :family ,priime-variable-font)))))
 (set-face-attribute 'italic nil
                     :family 'inherit
