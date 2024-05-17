@@ -115,7 +115,7 @@
   :after (org)
   :hook (org-mode . org-modern-mode)
   :custom
-  (org-modern-star '("#" "##" "###" "####" "#####" "######")))
+  (org-modern-star 'fold))
 (use-package org-modern-indent
   :straight
   '(org-modern-indent
