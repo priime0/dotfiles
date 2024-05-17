@@ -62,7 +62,7 @@
       ((eq system-type 'darwin)
        (setf priime-fixed-font "Menlo")
        (setf priime-variable-font "Verdana")
-       (setf priime-font-size 11)
+       (setf priime-font-size 12)
        (setf priime-fixed-height 1))
       (t
        (setf priime-fixed-font "Roboto Mono")
