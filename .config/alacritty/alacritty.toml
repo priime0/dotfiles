@@ -4,7 +4,7 @@ import = [ "~/.config/alacritty/themes/ayu_light.toml" ]
 program = "fish"
 
 [font]
-size = 10
+size = 5
 
 [font.bold]
 family = "Roboto Mono"
