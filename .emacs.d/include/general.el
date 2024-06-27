@@ -26,8 +26,11 @@
 (tool-bar-mode   -1)
 (scroll-bar-mode -1)
 (setq inhibit-startup-message t)
-(setq visible-bell            nil)
 (setq truncate-lines          t)
+
+;; Bell
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
 
 ;; Scratch
 (setq initial-scratch-message nil)
