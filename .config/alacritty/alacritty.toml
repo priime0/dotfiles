@@ -7,19 +7,19 @@ program = "fish"
 size = 5
 
 [font.bold]
-family = "Roboto Mono"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Roboto Mono"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Roboto Mono"
+family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-family = "Roboto Mono"
+family = "JetBrains Mono"
 style = "SemiBold"
 
 [window]
