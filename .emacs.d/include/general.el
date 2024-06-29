@@ -185,10 +185,7 @@
 (setq compilation-exit-message-function 'compilation-exit-autoclose)
 
 ;; shell
-(setq vterm-shell
-      (if (file-exists-p "/usr/bin/fish")
-          "/usr/bin/fish"
-        shell-file-name))
+(setq vterm-shell (or (executable-find "fish") shell-file-name))
 (keymap-global-set "C-c v" #'vterm)
 
 (provide 'general)
