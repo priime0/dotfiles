@@ -1,0 +1,28 @@
+{
+  description = "priime0 nixos configuration";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-utils.url = "github:numtide/flake-utils";
+  };
+
+  outputs = { self, nixpkgs, home-manager, flake-utils, ... }@inputs:
+    let inherit (self) outputs;
+    in {
+      nixosConfigurations.framework = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inputs = inputs; };
+        modules = [
+          home-manager.nixosModule
+          ./hosts/common/sys.nix
+          ./hosts/framework/sys.nix
+        ];
+      };
+    };
+}
