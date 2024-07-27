@@ -1,20 +1,26 @@
 #+title: Dotfiles
 
-My Arch Linux and Emacs configuration. I use [[https://github.com/plamorg/ambit][ambit]] to sync my dotfiles.
+My NixOS and Emacs configuration. I use [[https://www.gnu.org/software/stow/][stow]] to sync my dotfiles.
 
 | *Program*             | *Name*                  |
 |---------------------+-----------------------|
-| Window Manager      | bspwm                 |
-| Status Bar          | eww                   |
-| Hotkey Daemon       | sxhkd                 |
-| Program Launcher    | rofi                  |
+| Window Manager      | i3                    |
+| Status Bar          | i3 status             |
+| Hotkey Daemon       | i3                    |
+| Program Launcher    | dmenu                 |
 | Wallpaper Setter    | nitrogen              |
 | Terminal Emulator   | alacritty             |
 | Document Viewer     | zathura / emacs       |
 | Editor              | emacs                 |
-| Notification Daemon | dunst                 |
+| Notification Daemon | dunst (nixos: none)   |
 | Compositor          | picom                 |
 | Shell               | fish                  |
 | Browser             | qutebrowser / firefox |
 
 /Aside/: My Emacs config is relatively messy right now... I'm in the process of reorganising to leverage =use-package=.
+
+Nix files are stored in the =nix/= directory. To rebuild:
+
+#+begin_src sh
+sudo nixos-rebuild switch --flake .#framework
+#+end_src
