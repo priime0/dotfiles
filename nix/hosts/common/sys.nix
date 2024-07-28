@@ -49,6 +49,7 @@
         xclip
         xdotool
         ripgrep
+        fd
 
         nix-index
 
