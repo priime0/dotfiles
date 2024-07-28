@@ -40,6 +40,7 @@
       nitrogen
       redshift
       networkmanager
+      nixfmt
 
       firefox
       discord
@@ -71,13 +72,6 @@
     ];
   in packages;
 
-  home.sessionVariables = {
-    EDITOR = "emacsclient";
-    CC = "gcc";
-    LSP_USE_PLISTS = "true";
-    MOZ_USE_XINPUT2 = "1";
-  };
-
   ### Services
 
   # Compositor
@@ -96,6 +90,9 @@
   };
 
   ### Programs
+  programs.home-manager.enable = true;
+  programs.fish.enable = true;
+
   programs.alacritty = {
     enable = true;
     settings = {

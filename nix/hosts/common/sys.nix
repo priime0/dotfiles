@@ -50,11 +50,13 @@
         xdotool
         ripgrep
         fd
+        home-manager
 
         nix-index
+        nixfmt
 
+        rustc
         cargo
-        rustup
         rustfmt
         clippy
         rust-analyzer

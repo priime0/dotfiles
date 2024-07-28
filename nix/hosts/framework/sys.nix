@@ -80,6 +80,13 @@
 
   documentation.dev.enable = true;
 
+  environment.variables = {
+    EDITOR = "emacsclient";
+    CC = "gcc";
+    LSP_USE_PLISTS = "true";
+    MOZ_USE_XINPUT2 = "1";
+  };
+
   ### Services
 
   # xserver and i3
