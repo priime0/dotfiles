@@ -60,6 +60,9 @@
       emacs
       alacritty
 
+      mu
+      msmtp
+
       jdk22
 
       noto-fonts
@@ -70,7 +73,8 @@
       jetbrains-mono
       noto-fonts-cjk-sans
     ];
-  in packages;
+    emacsPackages = with pkgs.emacsPackages; [ mu4e ];
+  in packages ++ emacsPackages;
 
   ### Services
 
@@ -92,6 +96,7 @@
   ### Programs
   programs.home-manager.enable = true;
   programs.fish.enable = true;
+  programs.mu.enable = true;
 
   programs.alacritty = {
     enable = true;
