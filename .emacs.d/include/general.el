@@ -188,5 +188,9 @@
 (setq vterm-shell (or (executable-find "fish") shell-file-name))
 (keymap-global-set "C-c v" #'vterm)
 
+;; epa/gpg
+(setq epa-file-encrypt-to '("lucas@priime.dev"))
+(setq epa-file-select-keys 1)
+
 (provide 'general)
 ;;; general.el ends here
