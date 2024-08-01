@@ -152,9 +152,6 @@
   :after (lsp-mode)
   :hook ((lsp-mode . lsp-ui-mode)
          (lsp-mode . lsp-inlay-hints-mode)))
-(use-package eglot         :straight t)
-(use-package eldoc         :straight t)
-(use-package eldoc-box     :straight t)
 (use-package lsp-grammarly :straight t)
 
 ;; Programming
@@ -186,7 +183,6 @@
 (use-package sly :straight t)
 (use-package haskell-mode :straight t)
 (use-package lsp-haskell :straight t)
-(use-package eglot-java :straight t)
 (use-package llvm-mode
   :straight
   '(llvm-mode :type git :host github
@@ -232,6 +228,3 @@
 (add-hook 'tuareg-mode-hook     #'lsp)
 (add-hook 'haskell-mode-hook    #'lsp)
 (add-hook 'rjsx-mode-hook       #'lsp)
-(add-hook 'java-mode-hook       #'eglot-java-mode)
-
-(add-hook 'eglot-managed-mode-hook #'eldoc-box-hover-at-point-mode)
