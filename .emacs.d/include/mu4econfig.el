@@ -31,11 +31,12 @@
 (setq
    message-send-mail-function   'smtpmail-send-it
    smtpmail-default-smtp-server "smtp.fastmail.com"
-   smtpmail-smtp-server         "smtp.fastmail.com")
+   smtpmail-smtp-server         "smtp.fastmail.com"
+   smtpmail-smtp-service        587
+   smtpmail-debug-info          t)
 
 (setq user-full-name "Lucas Sta Maria")
 (setq user-mail-address "lucas@priime.dev")
-(setq smtpmail-smtp-service 587)
 
 
 (provide 'mu4econfig)
