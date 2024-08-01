@@ -63,6 +63,10 @@
       mu
       msmtp
 
+      semgrep
+
+      ruff-lsp
+
       jdk22
 
       noto-fonts
@@ -74,7 +78,8 @@
       noto-fonts-cjk-sans
     ];
     emacsPackages = with pkgs.emacsPackages; [ mu4e ];
-  in packages ++ emacsPackages;
+    pythonPackages = with pkgs.python312Packages; [ python-lsp-server ];
+  in packages ++ emacsPackages ++ pythonPackages;
 
   ### Services
 
