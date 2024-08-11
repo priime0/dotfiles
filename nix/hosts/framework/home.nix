@@ -41,6 +41,8 @@
       redshift
       networkmanager
       nixfmt
+      hurl
+      gh
 
       firefox
       discord
@@ -53,7 +55,7 @@
       thunderbird
       signal-desktop
       kdeconnect
-      (prismlauncher.override { jdks = [ jdk22 ]; })
+      (prismlauncher.override { jdks = [ jdk22 jdk8 ]; })
       tidal-hifi
       zotero
 
@@ -65,6 +67,7 @@
 
       semgrep
 
+      ruff
       ruff-lsp
 
       jdk22
@@ -125,5 +128,10 @@
         style = "Bold Italic";
       };
     };
+  };
+
+  programs.gh = {
+    enable = true;
+    settings.editor = "emacsclient";
   };
 }
