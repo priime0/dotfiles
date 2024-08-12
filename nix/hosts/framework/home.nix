@@ -43,6 +43,7 @@
       nixfmt
       hurl
       gh
+      libnotify
 
       firefox
       discord
@@ -58,6 +59,7 @@
       (prismlauncher.override { jdks = [ jdk22 jdk8 ]; })
       tidal-hifi
       zotero
+      deadd-notification-center
 
       emacs
       alacritty

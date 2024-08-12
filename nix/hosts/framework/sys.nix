@@ -71,6 +71,18 @@
   # Mouse
   services.libinput.mouse = { middleEmulation = false; };
 
+  # Notification Server
+  systemd.user.services.deadd-notification-center = {
+    description = "deadd notification center";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.deadd-notification-center}/bin/deadd-notification-center";
+      Restart = "always";
+      RestartSec = 3;
+    };
+  };
+
   users.users.priime = {
     isNormalUser = true;
     description = "Lucas";
