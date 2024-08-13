@@ -28,6 +28,7 @@
       jetbrains-mono
       noto-fonts-cjk-sans
       libertine
+      roboto
     ];
   };
 

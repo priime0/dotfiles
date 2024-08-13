@@ -82,6 +82,7 @@
       jetbrains-mono
       noto-fonts-cjk-sans
       libertine
+      roboto
     ];
     emacsPackages = with pkgs.emacsPackages; [ mu4e ];
     pythonPackages = with pkgs.python312Packages; [ python-lsp-server ];
