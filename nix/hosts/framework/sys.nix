@@ -27,6 +27,7 @@
       roboto-mono
       jetbrains-mono
       noto-fonts-cjk-sans
+      libertine
     ];
   };
 
@@ -77,7 +78,8 @@
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
     serviceConfig = {
-      ExecStart = "${pkgs.deadd-notification-center}/bin/deadd-notification-center";
+      ExecStart =
+        "${pkgs.deadd-notification-center}/bin/deadd-notification-center";
       Restart = "always";
       RestartSec = 3;
     };
