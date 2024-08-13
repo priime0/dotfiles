@@ -59,7 +59,7 @@
 
 (cond ((eq system-type 'gnu/linux)
        (setf priime-fixed-font "JetBrains Mono SemiBold")
-       (setf priime-variable-font "Newsreader")
+       (setf priime-variable-font "Roboto")
        (setf priime-font-size 10)
        (setf priime-fixed-height 0.8))
       ((eq system-type 'darwin)
@@ -79,7 +79,7 @@
 (custom-set-faces
  '(region         ((t (:inherit nano-subtle :background "#EBE5F5"))))
  '(lazy-highlight ((t (:inherit region))))
- `(variable-pitch ((t (:family ,priime-variable-font :height 125 :weight medium))))
+ `(variable-pitch ((t (:family ,priime-variable-font :height 125 :weight regular))))
  `(fixed-pitch    ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit nil))))
  `(shr-text       ((t (:inherit variable-pitch-text :family ,priime-variable-font)))))
 (set-face-attribute 'italic nil

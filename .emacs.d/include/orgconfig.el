@@ -165,7 +165,7 @@
 ;; Theme
 (custom-set-faces
  '(org-document-info ((t (:inherit nano-strong :height 1.0))))
- '(org-document-title ((t (:inherit nano-strong :height 1.5 :family "Newsreader"))))
+ '(org-document-title ((t (:inherit nano-strong :height 1.5 :family "Roboto"))))
  '(org-document-info-keyword ((t :inherit (nano-faded fixed-pitch))))
  '(org-level-1 ((t (:inherit nano-strong :extend nil :height 1.4))))
  '(org-level-2 ((t (:inherit nano-strong :extend nil :height 1.3))))
