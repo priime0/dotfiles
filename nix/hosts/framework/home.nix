@@ -110,6 +110,11 @@
     };
   };
 
+  services.emacs = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   ### Programs
   programs.home-manager.enable = true;
   programs.fish.enable = true;
