@@ -88,6 +88,11 @@
     pythonPackages = with pkgs.python312Packages; [ python-lsp-server ];
   in packages ++ emacsPackages ++ pythonPackages;
 
+  xresources.properties = {
+    "Xft.hinting" = 1;
+    "Xft.hintstyle" = "hintslight";
+  };
+
   ### Services
 
   # Compositor

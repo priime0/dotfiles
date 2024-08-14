@@ -79,7 +79,7 @@
 (custom-set-faces
  '(region         ((t (:inherit nano-subtle :background "#EBE5F5"))))
  '(lazy-highlight ((t (:inherit region))))
- `(variable-pitch ((t (:family ,priime-variable-font :height 125 :weight regular))))
+ `(variable-pitch ((t (:inherit default :family ,priime-variable-font :height 125 :weight regular))))
  `(fixed-pitch    ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit nil))))
  `(shr-text       ((t (:inherit variable-pitch-text :family ,priime-variable-font)))))
 (set-face-attribute 'italic nil
