@@ -89,7 +89,9 @@
   in packages ++ emacsPackages ++ pythonPackages;
 
   xresources.properties = {
-    "Xft.hinting" = 1;
+    "Xft.antialias" = true;
+    "Xft.rgba" = "rgb"; # type of anti-aliasing
+    "Xft.hinting" = 1; # font hinting
     "Xft.hintstyle" = "hintslight";
   };
 
