@@ -85,6 +85,7 @@
   (persp-mode))
 (use-package persp-projectile :straight t
   :after (perspective projectile))
+(use-package no-littering :straight t)
 
 ;; UI
 (use-package magit          :straight t)
