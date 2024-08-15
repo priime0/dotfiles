@@ -88,9 +88,11 @@
 (use-package no-littering :straight t)
 
 ;; UI
-(use-package magit          :straight t)
-(use-package forge          :straight t)
-(use-package neotree        :straight t
+(use-package magit :straight t
+  :bind (("<f5>" . magit-status)))
+(use-package forge :straight t
+  :after (magit))
+(use-package neotree :straight t
   :custom
   ((neo-theme 'icons)
    (neo-smart-open t)
