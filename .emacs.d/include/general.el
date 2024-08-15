@@ -113,6 +113,7 @@
 (setq scroll-conservatively 101)
 
 ;; Keybindings
+(keymap-global-set "<f6>" #'split-window-right)
 (keymap-global-set "C-M-j" (lambda () (interactive) (scroll-up 1)))
 (keymap-global-set "C-M-k" (lambda () (interactive) (scroll-down 1)))
 (keymap-global-set "C-x <"
