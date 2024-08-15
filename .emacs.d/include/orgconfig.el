@@ -13,9 +13,7 @@
 
 ;; Multiple Org Workspaces
 (defvar org-workspaces-alist
-  '(("docs"    . ("~/org/docs/" . "~/.emacs.d/org-roam.db"))
-    ("cs 2800" . ("~/docs/notes/cs/2800/lectures/" . "~/docs/notes/cs/2800/lectures/org-roam.db"))
-    ("cs 3620" . ("~/docs/notes/cs/3620/" . "~/docs/notes/cs/3620/org-roam.db"))))
+  '(("docs"    . ("~/org/docs/" . "~/.emacs.d/org-roam.db"))))
 
 (defun org-switch-workspace (&optional workspace-name)
   "Switch the current org-roam-directory to WORKSPACE-NAME."
@@ -131,7 +129,9 @@
 (add-hook 'org-mode-hook #'variable-pitch-mode)
 (add-hook 'org-agenda-mode-hook #'org-recur-mode)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
-(add-hook 'org-mode-hook #'(lambda () (setq line-spacing 0.1)))
+(add-hook 'org-mode-hook #'(lambda ()
+                             (setq line-spacing 0.1)
+                             (electric-indent-mode -1)))
 
 ;; Diary-syncing functionality
 (defun pull-diary ()
