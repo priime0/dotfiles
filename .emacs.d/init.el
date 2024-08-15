@@ -89,7 +89,8 @@
 
 ;; UI
 (use-package magit :straight t
-  :bind (("<f5>" . magit-status)))
+  :bind (("<f5>" . magit-status)
+         ("C-x g" . magit-status)))
 (use-package forge :straight t
   :after (magit))
 (use-package neotree :straight t
