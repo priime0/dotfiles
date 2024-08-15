@@ -155,7 +155,6 @@
   :after (lsp-mode)
   :hook ((lsp-mode . lsp-ui-mode)
          (lsp-mode . lsp-inlay-hints-mode)))
-(use-package lsp-grammarly :straight t)
 
 ;; Programming
 (use-package copilot
