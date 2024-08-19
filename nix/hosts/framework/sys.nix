@@ -128,21 +128,33 @@
     overrideDevices = true;
     overrideFolders = false;
     settings = {
-      devices = { };
-      folders = { };
       gui = { user = "priime"; };
     };
   };
 
   # Programs
+  programs.kdeconnect.enable = true;
+  programs.steam.enable = true;
+  programs.dconf.enable = true;
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
     pinentryPackage = lib.mkForce pkgs.pinentry-gtk2;
   };
-  programs.kdeconnect.enable = true;
-  programs.steam.enable = true;
-  programs.dconf.enable = true;
+
+  programs.msmtp = {
+    enable = true;
+    accounts = {
+      default = {
+        auth = true;
+        host = "smtp.fastmail.com";
+        passwordeval =
+          "gpg --decrypt --no-tty -q ~/backupcodes/emacsframeworkfastmail.asc";
+        user = "lucas@priime.dev";
+      };
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

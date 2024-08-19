@@ -46,7 +46,6 @@
       libnotify
       tokei
 
-      firefox
       discord
       steam
       bitwarden
@@ -151,5 +150,14 @@
   programs.gh = {
     enable = true;
     settings.editor = "emacsclient";
+  };
+
+  programs.firefox = {
+    enable = true;
+    policies = {
+      WebsiteFilter = {
+        Block = [ "*://*.facebook.com/" ];
+      };
+    };
   };
 }
