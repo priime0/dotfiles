@@ -44,6 +44,7 @@
       hurl
       gh
       libnotify
+      tokei
 
       firefox
       discord
@@ -60,6 +61,7 @@
       tidal-hifi
       zotero
       deadd-notification-center
+      mullvad-browser
 
       emacs
       alacritty
