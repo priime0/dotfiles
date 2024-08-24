@@ -30,8 +30,10 @@
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles partial-completion))))
   (corfu-auto t)
+  (corfu-popupinfo-delay 0)
   :init
-  (global-corfu-mode))
+  (global-corfu-mode)
+  (corfu-popupinfo-mode))
 (use-package company-box        :straight t
   :after (company)
   :hook (company-mode . company-box-mode))
