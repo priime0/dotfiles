@@ -239,13 +239,6 @@
 (add-hook 'neotree-mode-hook (lambda () (text-scale-set -0.5)))
                                         ;(add-hook 'neotree-mode-hook (lambda () (buffer-face-set :background "#ffffff")))
 
-;; Orderless
-(setq completion-styles '(orderless basic))
-(setq completion-category-overrides '((file (styles basic partial-completion))))
-
-;; embark
-(keymap-global-set "C-." #'embark-act)
-
 ;; hledger
 (setq hledger-currency-string "$")
 (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))

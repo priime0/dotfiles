@@ -19,19 +19,19 @@
   (load bootstrap-file nil 'nomessage))
 
 ;; Elisp
-(use-package s    :straight t)
-(use-package f    :straight t)
+(use-package s :straight t)
+(use-package f :straight t)
 (use-package dash :straight t)
 
 
 ;; Completion
-(use-package company            :straight t
+(use-package corfu :straight t
   :custom
-  (completion-styles '(basic orderless))
-  :bind
-  ("M-SPC" . #'company-complete)
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles partial-completion))))
+  (corfu-auto t)
   :init
-  (add-hook 'after-init-hook 'global-company-mode))
+  (global-corfu-mode))
 (use-package company-box        :straight t
   :after (company)
   :hook (company-mode . company-box-mode))
@@ -75,7 +75,9 @@
          ("C-x b" . bufler-switch-buffer))
   :init
   (bufler-mode 1))
-(use-package embark           :straight t)
+(use-package embark :straight t
+  :bind
+  (("C-." . embark-act)))
 (use-package embark-consult   :straight t)
 (use-package wgrep            :straight t)
 (use-package perspective      :straight t
