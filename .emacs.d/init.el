@@ -71,15 +71,17 @@
   :hook (prog-mode . ws-butler-mode))
 
 ;; Convenience
-(use-package projectile       :straight t)
-(use-package bufler           :straight t
+(use-package projectile :straight t
+  :bind (("C-c p" . 'projectile-command-map))
+  :init
+  (projectile-mode))
+(use-package bufler :straight t
   :bind (("C-x C-b" . bufler-list)
          ("C-x b" . bufler-switch-buffer))
   :init
   (bufler-mode 1))
 (use-package embark :straight t
-  :bind
-  (("C-." . embark-act)))
+  :bind (("C-." . embark-act)))
 (use-package embark-consult   :straight t)
 (use-package wgrep            :straight t)
 (use-package perspective      :straight t
@@ -97,13 +99,17 @@
          ("C-x g" . magit-status)))
 (use-package forge :straight t
   :after (magit))
-(use-package neotree :straight t
-  :custom
-  ((neo-theme 'icons)
-   (neo-smart-open t)
-   (neo-window-fixed-size nil)))
-(use-package all-the-icons  :straight t)
-(use-package git-gutter     :straight t
+(use-package treemacs :straight t
+  :bind (("C-c t" . treemacs)))
+(use-package treemacs-magit :straight t
+  :after (treemacs magit))
+(use-package treemacs-persp :straight t
+  :after (treemacs persp-mode)
+  :config (treemacs-set-scope-type 'Perspectives))
+(use-package treemacs-projectile :straight t
+  :after (treemacs projectile-mode))
+(use-package all-the-icons :straight t)
+(use-package git-gutter :straight t
   :hook (prog-mode . git-gutter-mode)
   :custom
   (git-gutter:update-interval 1)
