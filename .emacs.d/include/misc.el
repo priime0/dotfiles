@@ -182,8 +182,23 @@
 ;; Magit
 (setq auth-sources '("~/.authinfo"))
 
+;; Projectile
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+;; Neotree
+(defun neotree-toggle-current-directory ()
+  "Toggle neotree at the current directory."
+  (interactive)
+  (let ((current-directory
+         (or (and buffer-file-name (file-name-directory buffer-file-name))
+             (and (eq major-mode 'dired-mode) (dired-current-directory))
+             (and (eq major-mode 'magit-status-mode) (magit-toplevel))
+             "~")))
+    (if (and (fboundp 'neo-global--window-exists-p)
+             (neo-global--window-exists-p))
+        (neotree-hide)
+      (neotree-dir current-directory))))
 
 ;; hledger
 (setq hledger-currency-string "$")

@@ -98,15 +98,11 @@
   :after (magit))
 
 ;; UI
-(use-package treemacs :straight t
-  :bind (("C-c t" . treemacs)))
-(use-package treemacs-magit :straight t
-  :after (treemacs magit))
-(use-package treemacs-persp :straight t
-  :after (treemacs persp-mode)
-  :config (treemacs-set-scope-type 'Perspectives))
-(use-package treemacs-projectile :straight t
-  :after (treemacs projectile-mode))
+(use-package neotree :straight t
+  :custom
+  ((neo-theme 'icons)
+   (neo-smart-open t)
+   (neo-window-fixed-size nil)))
 (use-package all-the-icons :straight t)
 (use-package git-gutter :straight t
   :hook (prog-mode . git-gutter-mode)
