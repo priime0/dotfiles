@@ -23,7 +23,6 @@
  ("editorconfig-emacs" . "fbd078ad647888c971abe3508dd0ba27fac97cb9")
  ("el-get" . "c0713e8d8e8ad987fe1283d76b9c637a10f048ef")
  ("eldoc" . "91a8ae2fa66ac09f45337f9eca6c7aa643a063f4")
- ("elfeed" . "904b6d4feca78e7e5336d7dbb7b8ba53b8c4dac1")
  ("emacs-async" . "67613344e153009ac9afb96b455130b7d27ba361")
  ("emacs-elixir" . "00d6580a040a750e019218f9392cf9a4c2dac23a")
  ("emacs-format-all-the-code" . "f8feea08fef7ed542b8e676e90445d57ebd2c458")
