@@ -182,6 +182,9 @@
 ;; Magit
 (setq auth-sources '("~/.authinfo"))
 
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 ;; hledger
 (setq hledger-currency-string "$")
 (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))

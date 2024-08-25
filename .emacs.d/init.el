@@ -71,10 +71,7 @@
   :hook (prog-mode . ws-butler-mode))
 
 ;; Convenience
-(use-package projectile :straight t
-  :bind (("C-c p" . 'projectile-command-map))
-  :init
-  (projectile-mode))
+(use-package projectile :straight t)
 (use-package bufler :straight t
   :bind (("C-x C-b" . bufler-list)
          ("C-x b" . bufler-switch-buffer))
