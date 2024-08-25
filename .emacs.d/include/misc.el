@@ -7,9 +7,7 @@
 
 (require 'meow)
 (require 'lsp-mode)
-(require 'eglot)
 (require 'git-gutter)
-(require 'elfeed)
 (require 'copilot)
 (require 'seq)
 
@@ -180,38 +178,6 @@
 (setq read-process-output-max (* 4 1024 1024))
 
 (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
-
-;; Eglot
-(defvar-keymap eglot-java-keymap
-  "n" #'eglot-java-file-new
-  "x" #'eglot-java-run-main
-  "t" #'eglot-java-run-test
-  "N" #'eglot-java-project-new
-  "T" #'eglot-java-project-build-task
-  "R" #'eglot-java-project-build-refresh
-  "a" #'eglot-code-actions
-  "r" #'eglot-rename
-  "f" #'eglot-format-buffers)
-
-(add-hook 'eglot-java-mode-hook
-          (lambda ()
-            (keymap-local-set "C-c l" eglot-java-keymap)
-            (setq c-basic-offset 2)))
-
-(set-face-attribute 'eglot-highlight-symbol-face nil
-                    :family "JetBrains Mono"
-                    :weight 'semi-bold
-                    :underline t)
-
-(add-to-list 'eglot-server-programs
-             '(elixir-mode "~/.emacs.d/elixir-ls/language_server.sh"))
-
-;; Elfeed
-(setq elfeed-feeds
-      '(("https://edwardwibowo.com/rss.xml"     blog)
-        ("https://priime.dev/feed.xml"          blog)
-        ("https://fasterthanli.me/index.xml"    blog)
-        ("https://blog.cleancoder.com/atom.xml" blog)))
 
 ;; Magit
 (setq auth-sources '("~/.authinfo"))

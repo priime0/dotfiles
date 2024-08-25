@@ -146,7 +146,6 @@
     :repo "hasu/emacs-ob-racket"))
 
 ;; Productivity
-(use-package elfeed :straight t)
 (use-package pdf-tools
   :straight
   '(pdf-tools :type git :host github
