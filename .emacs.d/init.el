@@ -90,12 +90,14 @@
   :after (perspective projectile))
 (use-package no-littering :straight t)
 
-;; UI
+;; Version control
 (use-package magit :straight t
   :bind (("<f5>" . magit-status)
          ("C-x g" . magit-status)))
 (use-package forge :straight t
   :after (magit))
+
+;; UI
 (use-package treemacs :straight t
   :bind (("C-c t" . treemacs)))
 (use-package treemacs-magit :straight t
