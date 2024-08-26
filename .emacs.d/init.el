@@ -31,6 +31,11 @@
   (completion-category-overrides '((file (styles partial-completion))))
   (corfu-auto t)
   (corfu-popupinfo-delay 0)
+  :bind (:map corfu-map
+              ("C-n"   . corfu-next)
+              ("C-p"   . corfu-previous)
+              ("<tab>" . corfu-insert)
+              ("RET"   . nil))
   :init
   (global-corfu-mode)
   (corfu-popupinfo-mode))
