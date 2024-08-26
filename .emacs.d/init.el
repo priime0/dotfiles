@@ -34,11 +34,6 @@
   :init
   (global-corfu-mode)
   (corfu-popupinfo-mode))
-(use-package company-box        :straight t
-  :after (company)
-  :hook (company-mode . company-box-mode))
-(use-package company-math       :straight t
-  :after (company))
 (use-package vertico            :straight t
   :init
   (add-hook 'after-init-hook 'vertico-mode))
