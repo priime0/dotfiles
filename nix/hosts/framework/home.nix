@@ -45,6 +45,7 @@
       gh
       libnotify
       tokei
+      eza
 
       discord
       steam
@@ -120,7 +121,6 @@
 
   ### Programs
   programs.home-manager.enable = true;
-  programs.fish.enable = true;
   programs.mu.enable = true;
 
   programs.alacritty = {
@@ -144,6 +144,15 @@
         family = "JetBrains Mono";
         style = "Bold Italic";
       };
+    };
+  };
+
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      psax = "ps -ax | grep -i";
+      ls = "eza";
+      ll = "eza --all --long";
     };
   };
 
