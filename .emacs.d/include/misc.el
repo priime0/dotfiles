@@ -8,7 +8,6 @@
 (require 'meow)
 (require 'lsp-mode)
 (require 'git-gutter)
-(require 'copilot)
 (require 'seq)
 
 (defun config-compile ()
@@ -208,9 +207,6 @@
 
 ;; SLIME
 (setq inferior-lisp-program "sbcl")
-
-;; Copilot
-(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
 
 ;; Markdown
 (custom-set-faces

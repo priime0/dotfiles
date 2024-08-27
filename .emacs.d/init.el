@@ -71,7 +71,9 @@
   :hook (prog-mode . ws-butler-mode))
 
 ;; Convenience
-(use-package projectile :straight t)
+(use-package projectile :straight t
+  :custom
+  (projectile-completion-system 'auto))
 (use-package bufler :straight t
   :bind (("C-x C-b" . bufler-list)
          ("C-x b" . bufler-switch-buffer))
@@ -162,14 +164,6 @@
   :after (lsp-mode)
   :hook ((lsp-mode . lsp-ui-mode)
          (lsp-mode . lsp-inlay-hints-mode)))
-
-;; Programming
-(use-package copilot
-  :straight
-  '(copilot :type git :host github
-            :repo "zerolfx/copilot.el"
-            :branch "main"
-            :files ("dist" "*.el")))
 
 ;; Languages
 (use-package racket-mode :straight t
