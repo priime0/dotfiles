@@ -51,7 +51,10 @@
 (use-package yasnippet-snippets :straight t)
 
 ;; Syntax checking and editing, and formatting
-(use-package meow      :straight t)
+(use-package meow :straight t
+  :init
+  (meow-global-mode)
+  (meow-setup-indicator))
 (use-package flycheck  :straight t
   :custom
   (flycheck-check-syntax-automatically '(save mode-enable))

@@ -55,8 +55,6 @@
     (url-copy-file url filepath 1)))
 
 ;; meow
-(meow-global-mode)
-
 (defun meow-mq ()
   "Reformat/reindent."
   (interactive)
