@@ -62,6 +62,7 @@
       zotero
       deadd-notification-center
       mullvad-browser
+      networkmanagerapplet
 
       emacs
       alacritty
