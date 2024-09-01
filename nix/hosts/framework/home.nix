@@ -63,6 +63,7 @@
       deadd-notification-center
       mullvad-browser
       networkmanagerapplet
+      pasystray
 
       emacs
       alacritty
@@ -119,6 +120,8 @@
     enable = true;
     defaultEditor = true;
   };
+
+  services.pasystray.enable = true;
 
   ### Programs
   programs.home-manager.enable = true;
