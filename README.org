@@ -12,7 +12,7 @@ My NixOS and Emacs configuration. I use [[https://www.gnu.org/software/stow/][st
 | Terminal Emulator   | alacritty             |
 | Document Viewer     | zathura / emacs       |
 | Editor              | emacs                 |
-| Notification Daemon | dunst (nixos: none)   |
+| Notification Daemon | deadd                 |
 | Compositor          | picom                 |
 | Shell               | fish                  |
 | Browser             | qutebrowser / firefox |
