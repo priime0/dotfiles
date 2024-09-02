@@ -2,7 +2,7 @@
   imports = [ ./hw.nix ];
 
   networking.hostName = "framework";
-  time.timeZone = "America/Los_Angeles";
+  time.timeZone = "America/New_York";
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
