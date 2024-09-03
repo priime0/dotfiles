@@ -64,6 +64,7 @@
       mullvad-browser
       networkmanagerapplet
       pasystray
+      arandr
 
       emacs
       alacritty
