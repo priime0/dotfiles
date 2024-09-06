@@ -30,7 +30,7 @@
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles partial-completion))))
   (corfu-auto t)
-  (corfu-popupinfo-delay 0)
+  (corfu-popupinfo-delay 1)
   :bind (:map corfu-map
               ("C-n"   . corfu-next)
               ("C-p"   . corfu-previous)
