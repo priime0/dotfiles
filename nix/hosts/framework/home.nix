@@ -124,6 +124,17 @@
 
   services.pasystray.enable = true;
 
+  services.redshift = {
+    enable = true;
+    tray = true;
+    dawnTime = "6:00-7:00";
+    duskTime = "18:00-19:00";
+    temperature = {
+      day = 6500;
+      night = 6500;
+    };
+  };
+
   ### Programs
   programs.home-manager.enable = true;
   programs.mu.enable = true;
