@@ -65,6 +65,7 @@
       networkmanagerapplet
       pasystray
       arandr
+      inkscape
 
       emacs
       alacritty
