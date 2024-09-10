@@ -66,6 +66,7 @@
       pasystray
       arandr
       inkscape
+      zoom-us
 
       emacs
       alacritty
@@ -132,7 +133,7 @@
     duskTime = "18:00-19:00";
     temperature = {
       day = 6500;
-      night = 6500;
+      night = 4500;
     };
   };
 
