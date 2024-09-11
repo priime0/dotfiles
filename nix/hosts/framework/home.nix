@@ -46,6 +46,8 @@
       libnotify
       tokei
       eza
+      typst
+      typst-live
 
       discord
       steam
