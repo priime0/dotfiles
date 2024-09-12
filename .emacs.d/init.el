@@ -148,17 +148,18 @@
     :repo "hasu/emacs-ob-racket"))
 
 ;; Productivity
+(use-package vterm :straight t)
+(use-package rg :straight t)
+(use-package anzu :straight t
+  :init
+  (add-hook 'after-init-hook 'global-anzu-mode))
 (use-package pdf-tools
   :straight
   '(pdf-tools :type git :host github
               :repo "vedang/pdf-tools"))
-(use-package olivetti     :straight t
+(use-package olivetti :straight t
   :hook (org-mode . olivetti-mode))
-(use-package rg           :straight t)
-(use-package anzu         :straight t
-  :init
-  (add-hook 'after-init-hook 'global-anzu-mode))
-(use-package vterm        :straight t)
+
 (use-package hledger-mode :straight t)
 
 ;; LSP
