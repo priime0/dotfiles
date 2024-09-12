@@ -97,6 +97,10 @@
     pythonPackages = with pkgs.python312Packages; [ python-lsp-server ];
   in packages ++ emacsPackages ++ pythonPackages;
 
+  home.sessionPath = [
+    "$HOME/.local/share/racket/8.14/bin/" # This has to be updated every time Racket updates :(
+  ];
+
   xresources.properties = {
     "Xft.antialias" = true;
     "Xft.rgba" = "rgb"; # type of anti-aliasing
