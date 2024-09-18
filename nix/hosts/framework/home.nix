@@ -51,6 +51,7 @@
       gdb
       ccls
       clang-tools
+      valgrind
 
       discord
       steam
