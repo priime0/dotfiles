@@ -48,6 +48,9 @@
       eza
       typst
       typst-live
+      gdb
+      ccls
+      clang-tools
 
       discord
       steam
