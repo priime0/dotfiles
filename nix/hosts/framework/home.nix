@@ -72,6 +72,7 @@
       arandr
       inkscape
       zoom-us
+      gimp
 
       emacs
       alacritty
