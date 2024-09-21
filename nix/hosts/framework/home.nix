@@ -74,6 +74,7 @@
       inkscape
       zoom-us
       gimp
+      libreoffice
 
       emacs
       alacritty
