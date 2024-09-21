@@ -55,12 +55,14 @@
   :init
   (meow-global-mode)
   (meow-setup-indicator))
-(use-package flycheck  :straight t
+(use-package flycheck :straight t
   :custom
   (flycheck-check-syntax-automatically '(save mode-enable))
   :init
   (add-hook 'after-init-hook 'global-flycheck-mode))
-(use-package paredit   :straight t
+(use-package paredit :straight t
+  :bind (("M-<backspace>" . #'backward-kill-sexp)
+         ("M-k" . #'kill-sexp))
   :hook ((emacs-lisp-mode scheme-mode racket-mode clojure-mode lisp-mode)
          . paredit-mode))
 (use-package undo-tree :straight t
