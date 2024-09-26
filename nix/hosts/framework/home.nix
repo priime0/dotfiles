@@ -52,6 +52,7 @@
       ccls
       clang-tools
       valgrind
+      fzf
 
       discord
       steam
