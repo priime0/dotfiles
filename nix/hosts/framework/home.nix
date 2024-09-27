@@ -186,7 +186,7 @@
       ll = "eza --all --long";
       e = "emacs";
       ed = "emacs --daemon";
-      ec = "emacsclient -n -c -a \"\"";
+      ec = ''emacsclient -n -c -a ""'';
     };
   };
 
