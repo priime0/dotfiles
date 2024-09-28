@@ -54,6 +54,7 @@
       valgrind
       fzf
       rofi
+      rofi-bluetooth
 
       discord
       steam
