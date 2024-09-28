@@ -53,6 +53,7 @@
       clang-tools
       valgrind
       fzf
+      rofi
 
       discord
       steam
