@@ -90,6 +90,8 @@
       ruff
       ruff-lsp
 
+      irony-server
+
       jdk22
 
       noto-fonts
