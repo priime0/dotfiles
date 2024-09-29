@@ -12,7 +12,11 @@
 (defun custom-run-c++ ()
   "Run the produced `bin' binary."
   (interactive)
-  (shell-command "./bin"))
+
+  (let ((buf (get-buffer-create "*bin-output*")))
+    (shell-command "./bin" buf buf)
+    (pop-to-buffer buf)
+    (read-only-mode 1)))
 
 (defun configure-c++ ()
   "Configure my custom C++ enviroment."
