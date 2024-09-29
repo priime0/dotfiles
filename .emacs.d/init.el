@@ -207,6 +207,9 @@
 (use-package elixir-mode :straight t)
 (use-package inf-elixir :straight t)
 (use-package nix-mode :straight t)
+(use-package irony :straight t
+  :hook ((c++-mode-hook irony-mode)
+         (c-mode-hook irony-mode)))
 
 
 ;; ====== Custom =============================

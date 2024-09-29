@@ -41,6 +41,7 @@
  ("hydra" . "317e1de33086637579a7aeb60f77ed0405bf359b")
  ("inf-elixir" . "857210b83f3c6a68673222c1271c40cb0b5641bc")
  ("inheritenv" . "bac62ca6324828623cf8ce5a3d6aee0fcb65d620")
+ ("irony-mode" . "40e0ce19eb850bdf1f77225f11713cc816250d95")
  ("js2-mode" . "9b90d31ed968e5c51bd3e279d4003248ea896807")
  ("just-mode.el" . "4c0df4cc4b8798f1a7e99fb78b79c4bf7eec12c1")
  ("justl.el" . "9bf1fc645682b8dcb638d448cd2e804960ee625f")
