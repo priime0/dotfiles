@@ -5,6 +5,7 @@
  ("bufler.el" . "ef3b28bbdcb1e813a1d5b06a91d09774998967c5")
  ("burly.el" . "d5b7133b5b629dd6bca29bb16660a9e472e82e25")
  ("caml-mode" . "47defafa2b08fb680e89bfee9cb9ce82bd9e3bcf")
+ ("cape" . "2734e4ea0631f0e2944eac1aed79a55951157f55")
  ("cdlatex" . "33770dec73138909714711b05a63e79da5a19ccd")
  ("clojure-mode" . "59888c84b61081e9b0085e388f55132925a66e7a")
  ("closql" . "c1a346d56ecee16d1f0d7707f0d62c72604a8802")
