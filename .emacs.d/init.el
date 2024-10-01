@@ -39,6 +39,12 @@
   :init
   (global-corfu-mode)
   (corfu-popupinfo-mode))
+(use-package cape :straight t
+  :bind ("M-p" . cape-prefix-map)
+  :init
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-file)
+  (add-hook 'completion-at-point-functions #'cape-elisp-block))
 (use-package vertico            :straight t
   :init
   (add-hook 'after-init-hook 'vertico-mode))
@@ -165,8 +171,8 @@
 (use-package hledger-mode :straight t)
 
 ;; LSP
-(use-package lsp-mode      :straight t)
-(use-package lsp-ui        :straight t
+(use-package lsp-mode :straight t)
+(use-package lsp-ui :straight t
   :after (lsp-mode)
   :hook ((lsp-mode . lsp-ui-mode)
          (lsp-mode . lsp-inlay-hints-mode)))
