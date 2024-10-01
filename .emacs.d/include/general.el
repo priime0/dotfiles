@@ -123,7 +123,10 @@
                      (interactive)
                      (split-window-right)
                      (windmove-right)
-                     (vterm)))
+                     (if (projectile-project-p)
+                         (projectile-run-vterm)
+                       (vterm))
+                     (balance-windows)))
 (keymap-global-set "C-M-j" (lambda () (interactive) (scroll-up 1)))
 (keymap-global-set "C-M-k" (lambda () (interactive) (scroll-down 1)))
 (keymap-global-set "C-x <"
