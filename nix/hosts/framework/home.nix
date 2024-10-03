@@ -55,6 +55,7 @@
       fzf
       rofi
       rofi-bluetooth
+      docker
 
       discord
       steam
@@ -78,6 +79,7 @@
       zoom-us
       gimp
       libreoffice
+      peek
 
       emacs
       alacritty
