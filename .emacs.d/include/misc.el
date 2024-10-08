@@ -55,6 +55,11 @@
     (url-copy-file url filepath 1)))
 
 ;; meow
+(defun meow-mx (arg)
+  "Press alt + x."
+  (interactive "P")
+  (execute-extended-command arg))
+
 (defun meow-mq ()
   "Reformat/reindent."
   (interactive)
@@ -154,6 +159,7 @@
    '("Y" . meow-yank-above)
    '("z" . meow-pop-selection)
    '("'" . repeat)
+   '(":" . meow-mx)
    '("<escape>" . ignore)))
 
 (meow-setup)
