@@ -22,11 +22,11 @@
 (setq create-lockfiles nil)
 
 ;; UI
-(menu-bar-mode   -1)
-(tool-bar-mode   -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 (scroll-bar-mode -1)
 (setq inhibit-startup-message t)
-(setq truncate-lines          t)
+(setq-default truncate-lines t)
 
 ;; Bell
 (setq visible-bell nil)
