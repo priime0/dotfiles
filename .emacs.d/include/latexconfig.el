@@ -60,8 +60,9 @@
 (defun math-insert-frac ()
   "Insert a fraction if in math mode."
   (interactive)
-  (when (texmathp)
-    (insert-frac)))
+  (if (texmathp)
+      (insert-frac)
+    (insert-raw-slash)))
 
 (defun insert-frac ()
   "Ensure math mode and then insert a fraction."
