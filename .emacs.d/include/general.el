@@ -67,11 +67,13 @@
 (set-frame-font (format "%s %d" priime-fixed-font priime-font-size))
 
 (custom-set-faces
- '(region         ((t (:inherit nano-subtle :background "#EBE5F5"))))
- '(lazy-highlight ((t (:inherit region))))
- `(variable-pitch ((t (:inherit default :family ,priime-variable-font :height 125 :weight regular))))
- `(fixed-pitch    ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit nil))))
- `(shr-text       ((t (:inherit variable-pitch-text :family ,priime-variable-font)))))
+ '(region                   ((t (:inherit nano-subtle :background "#EBE5F5"))))
+ '(lazy-highlight           ((t (:inherit region))))
+ `(variable-pitch           ((t (:inherit default :family ,priime-variable-font :height 125 :weight regular))))
+ `(fixed-pitch              ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit nil))))
+ `(shr-text                 ((t (:inherit variable-pitch-text :family ,priime-variable-font))))
+ '(line-number              ((t (:inherit default :foreground "#98A4AE"))))
+ '(line-number-current-line ((t (:inherit default :foreground "#98A4AE")))))
 (set-face-attribute 'italic nil
                     :family 'inherit
                     :slant 'italic
