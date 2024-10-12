@@ -22,6 +22,7 @@
     let
       packages = [
         nixos-rebuild
+        bash
         coreutils
         git
         gnupg
