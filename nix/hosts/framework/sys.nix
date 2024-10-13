@@ -86,10 +86,12 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+
   users.users.priime = {
     isNormalUser = true;
     description = "Lucas";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [ ];
   };
 
