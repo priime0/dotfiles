@@ -52,6 +52,7 @@
         ripgrep
         fd
         home-manager
+        yq
 
         nix-index
         nixfmt
