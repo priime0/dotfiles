@@ -146,7 +146,8 @@
         (?. ("\\cdots"          "\\ldots"))
         (?* ("\\cdot"           "\\times"))
         (?# ("\\mathbb"         "\\mathcal"))
-        (?= ("\\Leftrightarrow" "\\Longleftrightarrow" "\\equiv"))))
+        (?= ("\\Leftrightarrow" "\\Longleftrightarrow" "\\equiv"))
+        (?| ("\\mapsto"         "\\longmapsto"         "\\mid"))))
 
 (setq cdlatex-math-modify-alist
       '((?b "\\mathbb"  "\\textbf" t nil nil)
