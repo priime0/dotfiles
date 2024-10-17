@@ -43,6 +43,8 @@
   "Configure keybinds for racket buffers."
   (keymap-local-set "C-c C-z" #'racket-repl-switch))
 
+(add-hook 'racket-mode-hook #'configure-racket)
+
 (defun configure-racket-repl ()
   "Configure keybinds for the racket repl."
   (keymap-local-set "C-c C-k" #'racket-repl-clear-leaving-last-prompt)
