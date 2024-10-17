@@ -190,6 +190,20 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;; Neotree
+(defun neotree-toggle-dir-or-project ()
+  "By default, toggle the directory at the project level, with prefix current."
+  (interactive)
+  (if (eq current-prefix-arg nil)
+      (neotree-toggle-project)
+    (neotree-toggle-current-directory)))
+
+(defun neotree-toggle-project ()
+  "Toggle neotree at the project level if the project exists, otherwise current."
+  (interactive)
+  (if (projectile-project-p)
+      (neotree-toggle-directory (projectile-project-root))
+    (neotree-toggle-current-directory)))
+
 (defun neotree-toggle-current-directory ()
   "Toggle neotree at the current directory."
   (interactive)
@@ -198,10 +212,15 @@
              (and (eq major-mode 'dired-mode) (dired-current-directory))
              (and (eq major-mode 'magit-status-mode) (magit-toplevel))
              "~")))
-    (if (and (fboundp 'neo-global--window-exists-p)
-             (neo-global--window-exists-p))
-        (neotree-hide)
-      (neotree-dir current-directory))))
+    (neotree-toggle-directory current-directory)))
+
+(defun neotree-toggle-directory (dir)
+  "Toggle neotree at the given DIR."
+  (if (and (fboundp 'neo-global--window-exists-p)
+           (neo-global--window-exists-p))
+      (neotree-hide)
+    (neotree-dir dir)))
+
 
 ;; hledger
 (setq hledger-currency-string "$")

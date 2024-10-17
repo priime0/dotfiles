@@ -117,7 +117,7 @@
    (neo-smart-open t)
    (neo-window-fixed-size nil)
    (neo-show-hidden-files t))
-  :bind (("C-c t" . #'neotree-toggle-current-directory)))
+  :bind (("C-c t" . #'neotree-toggle-dir-or-project)))
 (use-package all-the-icons :straight t)
 (use-package git-gutter :straight t
   :hook (prog-mode . git-gutter-mode)
