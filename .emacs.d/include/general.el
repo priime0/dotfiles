@@ -131,6 +131,11 @@
 (keymap-global-set "<f7>"
                    (lambda ()
                      (interactive)
+                     (split-window-below)
+                     (windmove-down)))
+(keymap-global-set "<f8>"
+                   (lambda ()
+                     (interactive)
                      (split-window-right)
                      (windmove-right)
                      (if (projectile-project-p)
