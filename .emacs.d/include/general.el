@@ -36,11 +36,19 @@
 (setq initial-scratch-message nil)
 
 ;; Line
-(hl-line-mode 1)
-(line-number-mode 1)
 (column-number-mode 1)
 (size-indication-mode 1)
 (setq display-line-numbers 'relative)
+
+;; Window splitting
+(setq-default split-height-threshold
+  (cond ((string= (system-name) "framework") 100)
+        ;; default emacs value
+        (t 80)))
+(setq-default split-width-threshold
+  (cond ((string= (system-name) "framework") 180)
+        ;; default emacs value
+        (t 160)))
 
 ;; Tabs
 (setq-default tab-width 2)
