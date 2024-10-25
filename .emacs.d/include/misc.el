@@ -9,6 +9,7 @@
 (require 'lsp-mode)
 (require 'git-gutter)
 (require 'seq)
+(require 'justl)
 
 (defun config-compile ()
   "(Re)compile the current Emacs configuration."
@@ -266,6 +267,21 @@
         ("TEMP" .   "#ffffff")
         ("FIXME" .  "#ffffff")
         ("XXXX*" .  "#ffffff")))
+
+;; justl
+
+(defun justl-recipes ()
+  "Pick and execute a just recipe."
+  (interactive)
+  (let* ((justfile (justl--find-justfile default-directory))
+         (raw-entries (justl--get-recipes justfile))
+         (entry-names (mapcar #'justl--recipe-name raw-entries))
+         (just-recipe (completing-read "just recipe: " entry-names nil t nil)))
+    (justl--exec
+     justl-executable
+     just-recipe
+     (append (transient-args 'justl-help-popup)
+             (list just-recipe)))))
 
 ;; rjsx
 

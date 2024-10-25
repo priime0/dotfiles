@@ -189,7 +189,7 @@
 (use-package rjsx-mode :straight t)
 (use-package just-mode :straight t)
 (use-package justl :straight t
-  :bind (("C-c j" . #'justl)))
+  :bind (("C-c j" . #'justl-recipes)))
 (use-package scribble-mode :straight t)
 (use-package go-mode :straight t)
 (use-package auctex :straight t)
