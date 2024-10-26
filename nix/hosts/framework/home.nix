@@ -197,6 +197,21 @@
     };
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Lucas Sta Maria";
+    userEmail = "lucas@priime.dev";
+    signing = {
+      key = "2EAF5BA156A36810B057BF61F07FB16A826E3B47";
+      signByDefault = true;
+    };
+    extraConfig = {
+      pull.rebase = true;
+      github.user = "priime0";
+      credential.helper = "store";
+    };
+  };
+
   programs.gh = {
     enable = true;
     settings.editor = "emacsclient";
