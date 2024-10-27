@@ -53,6 +53,9 @@ bindsym $mod+e exec --no-startup-id rofi -show drun
 # bluetooth
 bindsym $mod+b exec --no-startup-id rofi-bluetooth
 
+# emoji
+bindsym $mod+i exec --no-startup-id rofimoji
+
 # emacs
 bindsym $mod+Return exec emacsclient -n -c -a ""
 
@@ -196,8 +199,6 @@ bindsym $mod+Shift+k move container to workspace next_on_output
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+p restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+period exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
