@@ -81,6 +81,7 @@
       gimp
       libreoffice
       peek
+      rofimoji
 
       emacs
       alacritty
