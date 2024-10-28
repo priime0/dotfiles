@@ -55,7 +55,7 @@
         yq
 
         nix-index
-        nixfmt
+        nixfmt-classic
 
         rustc
         cargo

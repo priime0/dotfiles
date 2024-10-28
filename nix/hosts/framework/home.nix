@@ -40,7 +40,7 @@
       nitrogen
       redshift
       networkmanager
-      nixfmt
+      nixfmt-classic
       hurl
       gh
       libnotify
@@ -68,7 +68,7 @@
       easyeffects
       thunderbird
       signal-desktop
-      kdeconnect
+      plasma5Packages.kdeconnect-kde
       (prismlauncher.override { jdks = [ jdk22 jdk8 ]; })
       tidal-hifi
       zotero
