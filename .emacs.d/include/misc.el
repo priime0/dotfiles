@@ -84,6 +84,7 @@
   (keymap-global-set "C-q" #'meow-quit)
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
   (meow-leader-define-key '("u" . "C-u"))
+  (meow-leader-define-key '("l" . "s-l"))
   (meow-motion-overwrite-define-key
    ;; custom keybinding for motion state
    '("<escape>" . ignore))
