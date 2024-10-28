@@ -23,6 +23,15 @@
 (use-package f :straight t)
 (use-package dash :straight t)
 
+;; LSP
+;; For some reason, eglot-related configuration MUST be put here, or
+;; else it will complain about the following error:
+;;     Feature provided by other file: project
+(use-package eglot :straight t)
+(use-package eldoc :straight t
+  :after (eglot))
+(use-package eldoc-box :straight t
+  :after (eldoc))
 
 ;; Completion
 (use-package corfu :straight t
@@ -95,13 +104,6 @@
   :bind (("C-." . embark-act)))
 (use-package embark-consult   :straight t)
 (use-package wgrep            :straight t)
-(use-package perspective      :straight t
-  :custom
-  (persp-mode-prefix-key (kbd "C-c M-p"))
-  :init
-  (persp-mode))
-(use-package persp-projectile :straight t
-  :after (perspective projectile))
 (use-package no-littering :straight t)
 
 ;; Version control
@@ -169,15 +171,6 @@
 (use-package olivetti :straight t
   :hook (org-mode . olivetti-mode))
 
-(use-package hledger-mode :straight t)
-
-;; LSP
-(use-package lsp-mode :straight t)
-(use-package lsp-ui :straight t
-  :after (lsp-mode)
-  :hook ((lsp-mode . lsp-ui-mode)
-         (lsp-mode . lsp-inlay-hints-mode)))
-
 ;; Languages
 (use-package racket-mode :straight t
   :hook (racket-mode . racket-xp-mode))
@@ -199,7 +192,6 @@
 (use-package poetry :straight t)
 (use-package sly :straight t)
 (use-package haskell-mode :straight t)
-(use-package lsp-haskell :straight t)
 (use-package llvm-mode
   :straight
   '(llvm-mode :type git :host github
@@ -241,11 +233,3 @@
 ;; ====== Hooks ==============================
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'hl-line-mode)
-
-(add-hook 'racket-mode-hook     #'lsp)
-(add-hook 'rustic-mode-hook     #'lsp)
-(add-hook 'python-mode-hook     #'lsp)
-(add-hook 'go-mode-hook         #'lsp)
-(add-hook 'tuareg-mode-hook     #'lsp)
-(add-hook 'haskell-mode-hook    #'lsp)
-(add-hook 'rjsx-mode-hook       #'lsp)

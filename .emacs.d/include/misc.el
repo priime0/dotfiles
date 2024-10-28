@@ -6,7 +6,6 @@
 ;;; Code:
 
 (require 'meow)
-(require 'lsp-mode)
 (require 'git-gutter)
 (require 'seq)
 (require 'justl)
@@ -166,23 +165,7 @@
 
 (meow-setup)
 
-;; LSP
-(setq lsp-inlay-hint-enable t)
-(setq lsp-ui-doc-include-signature t)
-(setq lsp-ui-doc-header t)
-(setq lsp-ui-doc-border (face-foreground 'default))
-(setq lsp-ui-sideline-show-code-actions t)
-(setq lsp-enable-file-watchers nil)
-(setq lsp-log-max nil)
-(setq lsp-enable-links nil)
-(setq lsp-use-plists t)
-
-(custom-set-faces
- '(lsp-ui-doc-header ((t (:inherit nano-strong :background-color nano-dark-background)))))
-
 (setq read-process-output-max (* 4 1024 1024))
-
-(define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
 
 ;; Magit
 (setq auth-sources '("~/.authinfo"))
