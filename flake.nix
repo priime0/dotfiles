@@ -20,8 +20,8 @@
         specialArgs = { inputs = inputs; };
         modules = [
           home-manager.nixosModule
-          ./hosts/common/sys.nix
-          ./hosts/framework/sys.nix
+          ./nix/hosts/common/sys.nix
+          ./nix/hosts/framework/sys.nix
         ];
       };
     };
