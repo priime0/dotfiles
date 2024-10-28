@@ -28,9 +28,7 @@
 ;; else it will complain about the following error:
 ;;     Feature provided by other file: project
 (use-package eglot :straight t
-  :hook ((racket-mode . eglot)
-         (rust-mode . eglot)
-         (irony-mode . eglot)))
+  :hook ((racket-mode rust-mode irony-mode) . eglot-ensure))
 (use-package eldoc :straight t
   :after (eglot))
 (use-package eldoc-box :straight t
@@ -82,7 +80,7 @@
 (use-package paredit :straight t
   :bind (("M-<backspace>" . #'backward-kill-sexp)
          ("M-k" . #'kill-sexp))
-  :hook ((emacs-lisp-mode scheme-mode racket-mode clojure-mode lisp-mode)
+  :hook ((emacs-lisp-mode scheme-mode clojure-mode lisp-mode)
          . paredit-mode))
 (use-package undo-tree :straight t
   :custom
@@ -176,8 +174,11 @@
 
 ;; Languages
 (use-package racket-mode :straight t
-  :hook (racket-mode . racket-xp-mode))
-(use-package rust-mode :straight t)
+  :hook
+  ((racket-mode . racket-xp-mode)
+   (racket-mode . paredit-mode)))
+(use-package rust-mode :straight t
+  :hook (rust-mode . eglot))
 (use-package rustic :straight t)
 
 (use-package markdown-mode :straight t
@@ -209,8 +210,7 @@
 (use-package inf-elixir :straight t)
 (use-package nix-mode :straight t)
 (use-package irony :straight t
-  :hook ((c++-mode-hook irony-mode)
-         (c-mode-hook irony-mode)))
+  :hook ((c++-mode-hook c-mode-hook) . irony-mode))
 
 
 ;; ====== Custom =============================
