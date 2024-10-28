@@ -57,6 +57,7 @@
       rofi-bluetooth
       docker
       awscli
+      bear
 
       discord
       steam
