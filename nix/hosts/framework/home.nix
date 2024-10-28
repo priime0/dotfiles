@@ -166,7 +166,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      shell = "fish";
+      terminal.shell = "fish";
       font.size = 5;
       font.normal = {
         family = "JetBrains Mono";
