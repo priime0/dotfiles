@@ -27,7 +27,10 @@
 ;; For some reason, eglot-related configuration MUST be put here, or
 ;; else it will complain about the following error:
 ;;     Feature provided by other file: project
-(use-package eglot :straight t)
+(use-package eglot :straight t
+  :hook ((racket-mode . eglot)
+         (rust-mode . eglot)
+         (irony-mode . eglot)))
 (use-package eldoc :straight t
   :after (eglot))
 (use-package eldoc-box :straight t
@@ -185,7 +188,6 @@
 (use-package justl :straight t
   :bind (("C-c j" . #'justl-recipes)))
 (use-package scribble-mode :straight t)
-(use-package go-mode :straight t)
 (use-package auctex :straight t)
 (use-package cdlatex :straight t)
 (use-package yaml-mode :straight t)
@@ -197,7 +199,6 @@
   '(llvm-mode :type git :host github
               :repo "nverno/llvm-mode"))
 (use-package clojure-mode :straight t)
-
 (use-package tuareg :straight t)
 (use-package utop :straight t)
 (use-package dune :straight t)
