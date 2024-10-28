@@ -99,6 +99,9 @@
 
       jdk22
 
+      ocaml
+      ocamlPackages.ocaml-lsp
+
       noto-fonts
       fira-code
       open-sans
