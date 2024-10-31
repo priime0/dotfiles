@@ -210,7 +210,7 @@
 (use-package inf-elixir :straight t)
 (use-package nix-mode :straight t)
 (use-package irony :straight t
-  :hook ((c++-mode-hook c-mode-hook) . irony-mode))
+  :hook ((c++-mode c-mode) . irony-mode))
 
 
 ;; ====== Custom =============================
