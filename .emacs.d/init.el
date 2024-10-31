@@ -29,6 +29,7 @@
 ;; else it will complain about the following error:
 ;;     Feature provided by other file: project
 (use-package eglot :straight t
+  :custom-face (eglot-inlay-hint-face ((t (:height 1.0))))
   :hook ((racket-mode rust-mode irony-mode) . eglot-ensure))
 (use-package eldoc :straight t
   :after (eglot))
