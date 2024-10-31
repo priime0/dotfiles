@@ -22,6 +22,7 @@
 (use-package s :straight t)
 (use-package f :straight t)
 (use-package dash :straight t)
+(straight-use-package 'emacs-async)
 
 ;; LSP
 ;; For some reason, eglot-related configuration MUST be put here, or
