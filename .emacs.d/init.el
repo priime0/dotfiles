@@ -32,7 +32,6 @@
 (load-library "priime-org")
 (load-library "priime-languages")
 
-(load-library "orgconfig")
 (when (eq system-type 'gnu/linux)
   (load-library "mu4econfig"))
 (load-library "racket")
