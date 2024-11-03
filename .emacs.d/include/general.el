@@ -186,6 +186,7 @@
 
 ;; emacs-nativecomp
 (setq native-comp-async-report-warnings-errors nil)
+(setq warning-minimum-level :error)
 
 ;; From https://stackoverflow.com/questions/8309769/how-can-i-prevent-emacs-from-opening-new-window-for-compilation-output
 
