@@ -4,6 +4,7 @@
 ;;; Code:
 
 (use-package magit :straight t
+  :custom (auth-sources '("~/.authinfo"))
   :bind (("<f5>" . magit-status)
          ("C-x g" . magit-status)))
 (use-package forge :straight t

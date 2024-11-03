@@ -3,6 +3,19 @@
 ;; Provides configuration for programming language packages.
 ;;; Code:
 
+(defun justl-recipes ()
+  "Pick and execute a just recipe."
+  (interactive)
+  (let* ((justfile (justl--find-justfile default-directory))
+         (raw-entries (justl--get-recipes justfile))
+         (entry-names (mapcar #'justl--recipe-name raw-entries))
+         (just-recipe (completing-read "just recipe: " entry-names nil t nil)))
+    (justl--exec
+     justl-executable
+     just-recipe
+     (append (transient-args 'justl-help-popup)
+             (list just-recipe)))))
+
 (use-package racket-mode :straight t
   :hook
   ((racket-mode . racket-xp-mode)
@@ -12,8 +25,16 @@
 (use-package rustic :straight t)
 
 (use-package markdown-mode :straight t
+  :hook ((markdown-mode . markdown-toggle-fontify-code-blocks-natively)
+         (markdown-mode . olivetti-mode))
   :custom-face
-  (markdown-inline-code-face ((t (:inherit nano-salient)))))
+  (markdown-inline-code-face ((t (:inherit nano-salient))))
+  (markdown-header-face-1 ((t (:inherit nano-strong :height 1.3  :family "Inter"))))
+  (markdown-header-face-2 ((t (:inherit nano-strong :height 1.25 :family "Inter"))))
+  (markdown-header-face-3 ((t (:inherit nano-strong :height 1.2  :family "Inter"))))
+  (markdown-header-face-4 ((t (:inherit nano-strong :height 1.15 :family "Inter"))))
+  (markdown-header-face-5 ((t (:inherit nano-strong :height 1.1  :family "Inter"))))
+  (markdown-header-face-6 ((t (:inherit nano-strong :height 1.05 :family "Inter")))))
 (use-package rjsx-mode :straight t)
 (use-package just-mode :straight t)
 (use-package justl :straight t
@@ -23,7 +44,8 @@
 (use-package cdlatex :straight t)
 (use-package yaml-mode :straight t)
 (use-package poetry :straight t)
-(use-package sly :straight t)
+(use-package sly :straight t
+  :custom (inferior-lisp-program "sbcl"))
 (use-package haskell-mode :straight t)
 (use-package llvm-mode
   :straight

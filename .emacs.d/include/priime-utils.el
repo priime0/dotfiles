@@ -1,6 +1,6 @@
-;;; utils.el --- Utility functions.
+;;; priime-utils.el --- Utility functions and commands
 ;;; Commentary:
-;;    Provides utility functions.
+;; Provides utility functions and commands.
 ;;; Code:
 
 (defun lists->alist (l1 l2)
@@ -17,6 +17,14 @@
                (lists->alist (cdr l1)
                              (cdr l2))))))
 
-(provide 'utils)
+(defun download-file (&optional url filepath)
+  "Download the file from URL to FILEPATH."
+  (interactive)
+  (let* ((url (or url
+                  (read-string "url: ")))
+         (filepath (or filepath (read-file-name "filename: "))))
+    (url-copy-file url filepath 1)))
 
-;;; utils.el ends here
+(provide 'priime-utils)
+
+;;; priime-utils.el ends here

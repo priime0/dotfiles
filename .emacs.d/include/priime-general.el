@@ -72,6 +72,14 @@
          (display-line-numbers-mode 1)
          (setq display-line-numbers t))))
 
+(defun download-file (&optional url filepath)
+  "Download the file from URL to FILEPATH."
+  (interactive)
+  (let* ((url (or url
+                  (read-string "url: ")))
+         (filepath (or filepath (read-file-name "filename: "))))
+    (url-copy-file url filepath 1)))
+
 (defvar-keymap priime-fill-map
   "f" #'set-fill-column
   "i" #'display-fill-column-indicator-mode
@@ -120,11 +128,12 @@
   ;; Misc
   (epa-file-encrypt-to '("lucas@priime.dev"))
   (epa-file-select-keys 1)
+  (read-process-output-max (* 4 1024 1024))
 
   :custom-face
   (default                  ((t (:family ,priime-fixed-font :weight medium))))
   (region                   ((t (:inherit nano-subtle :background "#EBE5F5"))))
-  (italic)                  ((t (:family inherit :slant italic :weight medium)))
+  (italic                   ((t (:family inherit :slant italic :weight medium))))
   (lazy-highlight           ((t (:inherit region))))
   (variable-pitch           ((t (:inherit default :family ,priime-variable-font :height 125 :weight regular))))
   (fixed-pitch              ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit nil))))

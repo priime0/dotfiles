@@ -6,7 +6,11 @@
 
 (use-package projectile :straight t
   :custom
-  (projectile-completion-system 'auto))
+  (projectile-completion-system 'auto)
+  :bind
+  (("C-c p" . projectile-command-map))
+  :init
+  (projectile-mode 1))
 (use-package bufler :straight t
   :bind (("C-x C-b" . bufler-list)
          ("C-x b" . bufler-switch-buffer))

@@ -31,7 +31,9 @@
   :init
   (add-hook 'after-init-hook 'marginalia-mode))
 (use-package orderless :straight t)
-(use-package consult :straight t)
+(use-package consult :straight t
+  :bind (("C-c r r" . consult-ripgrep)
+         ("C-c r g" . consult-grep)))
 (use-package yasnippet :straight t)
 (use-package yasnippet-snippets :straight t)
 
