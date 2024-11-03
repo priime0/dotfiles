@@ -52,7 +52,11 @@
   '(llvm-mode :type git :host github
               :repo "nverno/llvm-mode"))
 (use-package clojure-mode :straight t)
-(use-package tuareg :straight t)
+(use-package tuareg :straight t
+  :custom
+  (utop-command "opam exec -- dune utop . -- -emacs")
+  :hook ((tuareg-mode . flycheck-ocaml-setup)
+         (tuareg-mode . merlin-mode)))
 (use-package utop :straight t)
 (use-package dune :straight t)
 (use-package flycheck-ocaml :straight t)

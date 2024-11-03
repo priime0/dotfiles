@@ -4,6 +4,28 @@
 ;; development experience and productivity.
 ;;; Code:
 
+(defun pdf-download-and-view (&optional url filename)
+  "Download and view the PDF given by its URL as FILENAME."
+  (interactive)
+  (let* ((url (or url
+                  (read-string "Download URL: ")))
+         (default-filename (or filename
+                               (car (last (split-string url "/" t)))))
+         (filename (or filename
+                       (read-string (format "Filename (%s): " default-filename)
+                                    nil
+                                    nil
+                                    default-filename)))
+         (file-path (concat "/tmp/" filename))
+         (download-buffer (url-retrieve-synchronously url)))
+    (set-buffer download-buffer)
+    (goto-char (point-min))
+    (re-search-forward "^$" nil 'move)
+    (forward-char)
+    (delete-region (point-min) (point))
+    (write-file file-path)
+    (find-file (expand-file-name file-path))))
+
 (use-package projectile :straight t
   :custom
   (projectile-completion-system 'auto)
@@ -31,7 +53,12 @@
 (use-package pdf-tools
   :straight
   '(pdf-tools :type git :host github
-              :repo "vedang/pdf-tools"))
+              :repo "vedang/pdf-tools")
+  :custom
+  (doc-view-resolution 300)
+  (pdf-view-continuous t)
+  :init
+  (pdf-tools-install))
 (use-package olivetti :straight t
   :hook (org-mode . olivetti-mode))
 
