@@ -17,7 +17,9 @@
 (use-package embark-consult :straight t)
 (use-package wgrep :straight t)
 (use-package no-littering :straight t)
-(use-package vterm :straight t)
+(use-package vterm :straight t
+  :custom (vterm-shell (or (executable-find "fish") shell-file-name))
+  :bind (("C-c v" . #'vterm)))
 (use-package rg :straight t)
 (use-package anzu :straight t
   :init

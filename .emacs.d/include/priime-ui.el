@@ -5,7 +5,10 @@
 
 (use-package nano-theme
   :straight '(nano-theme :type git :host github
-                         :repo "rougier/nano-theme"))
+                         :repo "rougier/nano-theme")
+  :init
+  (load-theme 'nano t)
+  (nano-light))
 (use-package all-the-icons :straight t)
 (use-package neotree :straight t
   :after (all-the-icons)

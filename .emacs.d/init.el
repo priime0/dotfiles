@@ -21,6 +21,7 @@
 (add-to-list 'load-path "~/.emacs.d/include")
 
 (load-library "priime-elisp")
+(load-library "priime-general")
 (load-library "priime-lsp")
 (load-library "priime-completion")
 (load-library "priime-edit")
@@ -30,7 +31,6 @@
 (load-library "priime-org")
 (load-library "priime-languages")
 
-(load-library "general")
 (load-library "misc")
 (load-library "utils")
 (load-library "orgconfig")
