@@ -18,13 +18,13 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-;; Elisp
+;;; Elisp
 (use-package s :straight t)
 (use-package f :straight t)
 (use-package dash :straight t)
 (straight-use-package 'emacs-async)
 
-;; LSP
+;;; LSP
 ;; For some reason, eglot-related configuration MUST be put here, or
 ;; else it will complain about the following error:
 ;;     Feature provided by other file: project
@@ -36,7 +36,7 @@
 (use-package eldoc-box :straight t
   :after (eldoc))
 
-;; Completion
+;;; Completion
 (use-package corfu :straight t
   :custom
   (completion-styles '(orderless basic))
@@ -69,7 +69,7 @@
 (use-package yasnippet          :straight t)
 (use-package yasnippet-snippets :straight t)
 
-;; Syntax checking and editing, and formatting
+;;; Syntax checking and editing, and formatting
 (use-package meow :straight t
   :init
   (meow-global-mode)
@@ -94,7 +94,7 @@
 (use-package ws-butler :straight t
   :hook (prog-mode . ws-butler-mode))
 
-;; Convenience
+;;; Convenience
 (use-package projectile :straight t
   :custom
   (projectile-completion-system 'auto))
@@ -109,14 +109,14 @@
 (use-package wgrep            :straight t)
 (use-package no-littering :straight t)
 
-;; Version control
+;;; Version control
 (use-package magit :straight t
   :bind (("<f5>" . magit-status)
          ("C-x g" . magit-status)))
 (use-package forge :straight t
   :after (magit))
 
-;; UI
+;;; UI
 (use-package neotree :straight t
   :custom
   ((neo-theme 'icons)
@@ -137,7 +137,7 @@
   :straight '(nano-theme :type git :host github
                          :repo "rougier/nano-theme"))
 
-;; Org
+;;; Org
 (use-package org        :straight t)
 (use-package org-roam   :straight t
   :after (org))
@@ -161,7 +161,7 @@
     :host github
     :repo "hasu/emacs-ob-racket"))
 
-;; Productivity
+;;; Productivity
 (use-package vterm :straight t)
 (use-package rg :straight t)
 (use-package anzu :straight t
@@ -174,7 +174,7 @@
 (use-package olivetti :straight t
   :hook (org-mode . olivetti-mode))
 
-;; Languages
+;;; Languages
 (use-package racket-mode :straight t
   :hook
   ((racket-mode . racket-xp-mode)
