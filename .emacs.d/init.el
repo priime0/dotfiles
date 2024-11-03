@@ -217,7 +217,6 @@
 
 ;; ====== Custom =============================
 (add-to-list 'load-path "~/.emacs.d/include")
-(add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
 
 (load-library "general")
 (load-library "misc")
