@@ -31,14 +31,6 @@
   (split-window-below)
   (windmove-down))
 
-(defun priime-split-terminal ()
-  "Split a terminal on the right and move to it."
-  (priime-split-right)
-  (if (projectile-project-p)
-      (projectile-run-vterm)
-    (vterm))
-  (balance-windows))
-
 (defun priime-scroll-up ()
   "Scroll up granularly."
   (interactive)
