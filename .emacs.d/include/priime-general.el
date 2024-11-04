@@ -61,16 +61,22 @@
   (let ((amt (or arg 1)))
     (scroll-right amt)))
 
+(defun priime-display-relative ()
+  "Display relative line numbers."
+  (display-line-numbers-mode 1)
+  (setq display-line-numbers 'relative))
+
+(defun priime-display-fixed ()
+  "Display fixed line numbers."
+  (display-line-numbers-mode 1)
+  (setq display-line-numbers t))
+
 (defun priime-toggle-line-numbers ()
   "Toggle the display of line numbers."
   (interactive)
-  (cond ((equal display-line-numbers t)
-         (setq display-line-numbers 'relative))
-        ((equal display-line-numbers 'relative)
-         (setq display-line-numbers t))
-        (t
-         (display-line-numbers-mode 1)
-         (setq display-line-numbers t))))
+  (cond ((equal display-line-numbers t) (priime-display-relative))
+        ((equal display-line-numbers 'relative) (priime-display-fixed))
+        (t (priime-display-fixed))))
 
 (defun download-file (&optional url filepath)
   "Download the file from URL to FILEPATH."
@@ -105,7 +111,6 @@
   (visible-bell nil)
   (ring-bell-function 'ignore)
   (initial-scratch-message nil)
-  (display-line-numbers 'relative)
   (split-height-threshold
    (cond ((string= (system-name) "framework") 100)
          (t 80)))
@@ -144,6 +149,9 @@
   :bind
   (("C-v" . View-scroll-half-page-forward)
    ("M-v" . View-scroll-half-page-backward))
+
+  :hook
+  ((prog-mode . priime-display-relative))
 
   :init
   (menu-bar-mode -1)

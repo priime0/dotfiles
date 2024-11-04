@@ -126,7 +126,8 @@
   :hook
   ((org-mode . auto-save-mode)
    (auto-save . org-save-all-org-buffers)
-   (org-agenda-finalize-hook . org-modern-agenda))
+   (org-agenda-finalize-hook . org-modern-agenda)
+   (org-mode . variable-pitch-mode))
   :init
   (keymap-global-set "C-c o" org-roam-keymap)
   (org-babel-do-load-languages
