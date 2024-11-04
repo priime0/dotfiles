@@ -37,10 +37,7 @@
 (load-library "racket")
 (load-library "latexconfig")
 (load-library "cppconfig")
-(load-library "pdfconfig")
 (load-library "gpgconfig")
-(load-library "rustconfig")
-(load-library "ocamlconfig")
 
 ;; ====== Hooks ==============================
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
