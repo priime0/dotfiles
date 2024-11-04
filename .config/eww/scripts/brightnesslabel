@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-level=$(brightnessctl get)
-max=$(brightnessctl max)
-
-raw_percent=$(echo "scale=2 ; $level / $max" | bc)
-percent=$(echo "$raw_percent*100" | bc)
-final_percent=${percent%.*}
-echo "(label :class \"brightness__label\" :text \"$final_percent%\")"

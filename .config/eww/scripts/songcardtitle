@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-echo "(label :class \"songcard__title\" :text \"None Playing\")"
-while true 
-do
-    content=$(spt playback --status -f "%t" 2> /dev/null)
-    echo "(label :class \"songcard__title\" :text \"${content}\")"
-    sleep 1
-done

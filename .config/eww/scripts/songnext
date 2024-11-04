@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-spt playback --next

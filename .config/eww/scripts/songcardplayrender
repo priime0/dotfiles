@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-button=$(spt playback --status -f "%s" 2>/dev/null)
-if [ "$button" == "▶" ]; then
-    echo "(image :path \"img/musicpause.png\" :image-width 40 :image-height 40)"
-else
-    echo "(image :path \"img/musicplay.png\" :image-width 40 :image-height 40)"
-fi
