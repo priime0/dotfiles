@@ -17,8 +17,6 @@ My NixOS and Emacs configuration. I use [[https://www.gnu.org/software/stow/][st
 | Shell               | fish                  |
 | Browser             | qutebrowser / firefox |
 
-/Aside/: My Emacs config is relatively messy right now... I'm in the process of reorganising to leverage =use-package=.
-
 Nix files are stored in the =nix/= directory. To rebuild:
 
 #+begin_src sh
