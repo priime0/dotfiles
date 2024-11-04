@@ -41,7 +41,7 @@
   :bind
   (("C-c p" . projectile-command-map))
   :init
-  (projectile-mode 1))
+  (add-hook 'after-init-hook 'projectile-global-mode))
 (use-package bufler :straight t
   :bind (("C-x C-b" . bufler-list)
          ("C-x b" . bufler-switch-buffer))
