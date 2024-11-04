@@ -34,7 +34,8 @@
 (use-package consult :straight t
   :bind (("C-c r r" . consult-ripgrep)
          ("C-c r g" . consult-grep)))
-(use-package yasnippet :straight t)
+(use-package yasnippet :straight t
+  :hook ((prog-mode . yas-minor-mode)))
 (use-package yasnippet-snippets :straight t)
 
 (provide 'priime-completion)
