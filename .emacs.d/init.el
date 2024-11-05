@@ -36,7 +36,6 @@
 (when (equal (system-name) "framework")
   (load-library "mu4econfig"))
 (load-library "latexconfig")
-(load-library "cppconfig")
 (load-library "gpgconfig")
 
 ;; ====== Hooks ==============================

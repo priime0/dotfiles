@@ -30,6 +30,12 @@
   (unless (equal current-prefix-arg nil)
     (delete-other-windows)))
 
+(defun custom-compile-c++ ()
+  "Run the `just' command -- the command I use to compile my environment."
+  (interactive)
+  (save-buffer)
+  (compile (concat "just build " (buffer-name))))
+
 ;;; Languages
 
 (use-package racket-mode :straight t
@@ -94,6 +100,7 @@
 (use-package inf-elixir :straight t)
 (use-package nix-mode :straight t)
 (use-package irony :straight t
+  :bind (("C-c C-c" . custom-compile-c++))
   :hook ((c++-mode c-mode) . irony-mode))
 
 (provide 'priime-languages)
