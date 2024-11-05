@@ -32,6 +32,7 @@
 (load-library "priime-org")
 (load-library "priime-languages")
 
+;; Legacy
 (when (equal (system-name) "framework")
   (load-library "mu4econfig"))
 (load-library "racket")
