@@ -16,10 +16,38 @@
      (append (transient-args 'justl-help-popup)
              (list just-recipe)))))
 
+(defun racket-repl-switch ()
+  "Switch to the Racket REPL."
+  (interactive)
+  (racket-edit-switch-to-repl)
+  (unless (equal current-prefix-arg nil)
+    (delete-other-windows)))
+
+(defun racket-edit-switch ()
+  "Switch to the corresponding racket buffer."
+  (interactive)
+  (racket-repl-switch-to-edit)
+  (unless (equal current-prefix-arg nil)
+    (delete-other-windows)))
+
+;;; Languages
+
 (use-package racket-mode :straight t
+  :bind (:map racket-mode-map
+         ("C-c C-z" . racket-repl-switch)
+         :map racket-repl-mode-map
+         ("C-c C-k" . racket-repl-clear-leaving-last-prompt)
+         ("C-c C-z" . racket-edit-switch))
   :hook
   ((racket-mode . racket-xp-mode)
    (racket-mode . paredit-mode)))
+(use-package pollen-mode :straight t
+  :init
+  (setq auto-mode-alist
+        (append '(("\\.pp$" . racket-mode)
+                  ("\\.pm$" . pollen-mode)
+                  ("\\.pmd$" . pollen-mode))
+                auto-mode-alist)))
 (use-package rust-mode :straight t
   :hook (rust-mode . eglot))
 (use-package rustic :straight t)

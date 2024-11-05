@@ -27,6 +27,16 @@
   (kill-line)
   (meow-insert))
 
+;; (flycheck-define-checker racket-review
+;;   "check racket source code using racket review"
+;;   :command ("raco" "review" source)
+;;   :error-patterns
+;;   ((error line-start (file-name) ":" line ":" column ":error:" (message) line-end)
+;;    (warning line-start (file-name) ":" line ":" column ":warning:" (message) line-end))
+;;   :modes racket-mode)
+
+;;; Packages
+
 (use-package meow :straight t
   :bind (("C-q" . meow-quit))
   :custom
@@ -117,8 +127,7 @@
 (use-package flycheck :straight t
   :custom
   (flycheck-check-syntax-automatically '(save mode-enable))
-  :init
-  (add-hook 'after-init-hook 'global-flycheck-mode))
+  :hook (after-init . global-flycheck-mode))
 (use-package paredit :straight t
   :bind (("M-<backspace>" . #'backward-kill-sexp)
          ("M-k" . #'kill-sexp))

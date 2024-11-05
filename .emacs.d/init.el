@@ -35,7 +35,6 @@
 ;; Legacy
 (when (equal (system-name) "framework")
   (load-library "mu4econfig"))
-(load-library "racket")
 (load-library "latexconfig")
 (load-library "cppconfig")
 (load-library "gpgconfig")
