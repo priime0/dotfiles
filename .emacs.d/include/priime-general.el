@@ -23,13 +23,15 @@
   "Split the window right and move to it."
   (interactive)
   (split-window-right)
-  (windmove-right))
+  (windmove-right)
+  (balance-windows))
 
 (defun priime-split-down ()
   "Split the window down and move to it."
   (interactive)
   (split-window-below)
-  (windmove-down))
+  (windmove-down)
+  (balance-windows))
 
 (defun priime-scroll-up ()
   "Scroll up granularly."
