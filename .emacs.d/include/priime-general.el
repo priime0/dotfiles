@@ -145,8 +145,8 @@
    ("M-v" . View-scroll-half-page-backward)
    ("<f6>" . priime-split-right)
    ("<f7>" . priime-split-down)
-   ("M-<down>" . priime-scroll-up)
-   ("M-<up>" . priime-scroll-down))
+   ("C-M-<down>" . priime-scroll-up)
+   ("C-M-<up>" . priime-scroll-down))
 
   :hook
   ((prog-mode . priime-display-relative))
