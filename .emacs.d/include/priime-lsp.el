@@ -20,7 +20,7 @@
   :after (eglot))
 (use-package eldoc-box :straight t
   :after (eldoc)
-  :hook (eldoc-mode . eldoc-box-hover-at-point-mode))
+  :hook (eldoc-mode . eldoc-box-hover-mode))
 
 (provide 'priime-lsp)
 
