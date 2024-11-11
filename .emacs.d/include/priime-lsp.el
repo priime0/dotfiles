@@ -13,7 +13,8 @@
 (use-package eldoc :straight t
   :after (eglot))
 (use-package eldoc-box :straight t
-  :after (eldoc))
+  :after (eldoc)
+  :hook (eldoc-mode . eldoc-box-hover-at-point-mode))
 
 (provide 'priime-lsp)
 
