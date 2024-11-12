@@ -190,18 +190,6 @@
     };
   };
 
-  programs.fish = {
-    enable = true;
-    shellAliases = {
-      psax = "ps -ax | grep -i";
-      ls = "eza";
-      ll = "eza --all --long";
-      e = "emacs";
-      ed = "emacs --daemon";
-      ec = ''emacsclient -n -c -a ""'';
-    };
-  };
-
   programs.git = {
     enable = true;
     userName = "Lucas Sta Maria";

@@ -93,6 +93,7 @@
     description = "Lucas";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [ ];
+    shell = pkgs.fish;
   };
 
   documentation.dev.enable = true;
@@ -138,6 +139,18 @@
   programs.kdeconnect.enable = true;
   programs.steam.enable = true;
   programs.dconf.enable = true;
+
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      psax = "ps -ax | grep -i";
+      ls = "eza";
+      ll = "eza --all --long";
+      e = "emacs";
+      ed = "emacs --daemon";
+      ec = ''emacsclient -n -c -a ""'';
+    };
+  };
 
   programs.gnupg.agent = {
     enable = true;
