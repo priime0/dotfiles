@@ -71,6 +71,9 @@
   (pdf-tools-install))
 (use-package olivetti :straight t
   :hook (org-mode . olivetti-mode))
+(use-package casual :straight (casual :type git :host github :repo "kickingvegas/casual")
+  :init
+  (keymap-set dired-mode-map "C-o" #'casual-dired-tmenu))
 
 (provide 'priime-convenience)
 
