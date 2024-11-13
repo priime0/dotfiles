@@ -3,19 +3,13 @@
 ;; Provides configuration for LSP-related packages.
 ;;; Code:
 
-(defvar-keymap priime-eglot-keymap
-  "r" #'eglot-rename
-  "a" #'eglot-code-actions
-  "f" #'eglot-format)
-
 (use-package eglot :straight t
   :custom-face (eglot-inlay-hint-face ((t (:height 1.0))))
   :hook ((racket-mode rust-mode irony-mode) . eglot-ensure)
-  :bind-keymap ("C-c l" . priime-eglot-keymap)
-  :init
-  (add-to-list 'eglot-server-programs
-               '((rust-mode rust-ts-mode)
-                 ("rust-analyzer" :initializationOptions (:checkOnSave (:command "clippy"))))))
+  :bind (:map eglot-mode-map
+         ("C-c l r" . eglot-rename)
+         ("C-c l a" . eglot-code-actions)
+         ("C-c l f" . eglot-format)))
 (use-package eldoc :straight t
   :after (eglot))
 (use-package eldoc-box :straight t
