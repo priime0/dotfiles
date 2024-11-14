@@ -168,6 +168,7 @@
   ### Programs
   programs.home-manager.enable = true;
   programs.mu.enable = true;
+  programs.direnv.nix-direnv.enable = true;
 
   programs.alacritty = {
     enable = true;
