@@ -26,13 +26,18 @@
     (write-file file-path)
     (find-file (expand-file-name file-path))))
 
+(defun priime-terminal ()
+  "Open a terminal in the current project or current directory."
+  (interactive)
+  (if (projectile-project-p)
+      (projectile-run-vterm)
+    (vterm)))
+
 (defun priime-split-terminal ()
   "Split a terminal on the right and move to it."
   (interactive)
   (priime-split-right)
-  (if (projectile-project-p)
-      (projectile-run-vterm)
-    (vterm))
+  (priime-terminal)
   (balance-windows))
 
 (use-package projectile :straight t
@@ -54,7 +59,7 @@
 (use-package no-littering :straight t)
 (use-package vterm :straight t
   :custom (vterm-shell (or (executable-find "fish") shell-file-name))
-  :bind (("C-c v" . vterm)
+  :bind (("C-c v" . priime-terminal)
          ("<f8>" . priime-split-terminal)))
 (use-package rg :straight t)
 (use-package anzu :straight t
