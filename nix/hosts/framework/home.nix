@@ -58,6 +58,8 @@
       docker
       awscli
       bear
+      direnv
+      wasmtime
 
       discord
       steam
@@ -101,6 +103,7 @@
 
       ocaml
       ocamlPackages.ocaml-lsp
+      dune_3
 
       noto-fonts
       fira-code
