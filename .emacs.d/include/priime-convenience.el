@@ -58,6 +58,7 @@
          ("<f8>" . priime-split-terminal)))
 (use-package rg :straight t)
 (use-package anzu :straight t
+  :bind ("C-c r a" . anzu-query-replace-regexp)
   :init
   (add-hook 'after-init-hook 'global-anzu-mode))
 (use-package pdf-tools
