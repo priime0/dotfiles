@@ -67,6 +67,10 @@
     powertop.enable = true;
   };
 
+  services.logind = {
+    powerKey = "ignore";
+  };
+
   # Autologin
   services.displayManager.autoLogin.user = "priime";
 
