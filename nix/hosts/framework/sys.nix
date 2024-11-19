@@ -71,6 +71,12 @@
     powerKey = "ignore";
   };
 
+  # Swap
+  swapDevices = [ {
+    device = "/var/lib/swap";
+    size = 16 * 1024;
+  } ];
+
   # Autologin
   services.displayManager.autoLogin.user = "priime";
 
