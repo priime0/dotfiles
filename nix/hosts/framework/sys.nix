@@ -76,6 +76,7 @@
     device = "/var/lib/swap";
     size = 16 * 1024;
   } ];
+  boot.resumeDevice = "/var/lib/swap";
 
   # Autologin
   services.displayManager.autoLogin.user = "priime";
