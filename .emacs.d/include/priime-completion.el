@@ -28,6 +28,9 @@
 (use-package vertico :straight t
   :init
   (add-hook 'after-init-hook 'vertico-mode))
+(use-package vertico-posframe :straight t
+  :init
+  (vertico-posframe-mode 1))
 (use-package marginalia :straight t
   :init
   (add-hook 'after-init-hook 'marginalia-mode))
