@@ -46,7 +46,9 @@
          ("C-c C-z" . racket-edit-switch))
   :hook
   ((racket-mode . racket-xp-mode)
-   (racket-mode . paredit-mode)))
+   (racket-mode . paredit-mode))
+  :init
+  (put 'struct/contract 'racket-indent-function 1))
 (use-package pollen-mode :straight t
   :init
   (setq auto-mode-alist
