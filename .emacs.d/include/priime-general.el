@@ -132,7 +132,7 @@
   :custom-face
   (default                  ((t (:family ,priime-fixed-font :weight medium))))
   (region                   ((t (:inherit nano-subtle :background "#EBE5F5"))))
-  (italic                   ((t (:family inherit :slant italic :weight medium))))
+  (italic                   ((t (:inherit nano-default :slant italic))))
   (lazy-highlight           ((t (:inherit region))))
   (variable-pitch           ((t (:inherit default :family ,priime-variable-font :height 125 :weight regular))))
   (fixed-pitch              ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit nil))))
