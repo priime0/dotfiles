@@ -149,7 +149,8 @@
    ("C-M-<up>" . priime-scroll-down))
 
   :hook
-  ((prog-mode . priime-display-relative))
+  ((prog-mode . priime-display-relative)
+   (prog-mode . hl-line-mode))
 
   :init
   (menu-bar-mode -1)
