@@ -75,8 +75,7 @@
 (defun download-file (&optional url filepath)
   "Download the file from URL to FILEPATH."
   (interactive)
-  (let* ((url (or url
-                  (read-string "url: ")))
+  (let* ((url (or url (read-string "url: ")))
          (filepath (or filepath (read-file-name "filename: "))))
     (url-copy-file url filepath 1)))
 
@@ -139,6 +138,8 @@
   (shr-text                 ((t (:inherit variable-pitch-text :family ,priime-variable-font))))
   (line-number              ((t (:inherit default :foreground "#98A4AE"))))
   (line-number-current-line ((t (:inherit default :foreground "#98A4AE"))))
+  ;; show-paren-mode
+  (show-paren-match         ((t (:inherit nano-salient-i :weight black))))
 
   :bind
   (("C-v" . View-scroll-half-page-forward)
