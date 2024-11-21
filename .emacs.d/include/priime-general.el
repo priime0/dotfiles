@@ -139,7 +139,7 @@
   (line-number              ((t (:inherit default :foreground "#98A4AE"))))
   (line-number-current-line ((t (:inherit default :foreground "#98A4AE"))))
   ;; show-paren-mode
-  (show-paren-match         ((t (:inherit nano-salient-i :weight black))))
+  (show-paren-match         ((t (:inherit nano-salient :weight black))))
 
   :bind
   (("C-v" . View-scroll-half-page-forward)
