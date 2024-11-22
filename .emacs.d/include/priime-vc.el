@@ -5,7 +5,7 @@
 
 (use-package magit :straight t
   :custom
-  (auth-sources '("~/.authinfo"))
+  (auth-sources '("~/.authinfo.gpg"))
   (vc-follow-symlink t)
   :bind (("<f5>" . magit-status)
          ("C-x g" . magit-status)))
