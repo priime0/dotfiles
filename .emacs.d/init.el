@@ -31,6 +31,7 @@
 (load-library "priime-ui")
 (load-library "priime-org")
 (load-library "priime-languages")
+(load-library "priime-ai")
 
 ;; Legacy
 (when (equal (system-name) "framework")
