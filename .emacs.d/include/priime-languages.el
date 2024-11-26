@@ -70,7 +70,8 @@
   (markdown-header-face-3 ((t (:inherit nano-strong :height 1.2  :family "Inter"))))
   (markdown-header-face-4 ((t (:inherit nano-strong :height 1.15 :family "Inter"))))
   (markdown-header-face-5 ((t (:inherit nano-strong :height 1.1  :family "Inter"))))
-  (markdown-header-face-6 ((t (:inherit nano-strong :height 1.05 :family "Inter")))))
+  (markdown-header-face-6 ((t (:inherit nano-strong :height 1.05 :family "Inter"))))
+  (markdown-italic-face ((t (:inherit nano-default :slant italic)))))
 (use-package rjsx-mode :straight t)
 (use-package just-mode :straight t)
 (use-package justl :straight t
