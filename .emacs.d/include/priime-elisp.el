@@ -7,8 +7,9 @@
 
 (use-package s :straight t)
 (use-package f :straight t)
+(use-package ht :straight t)
 (use-package dash :straight t)
-(straight-use-package 'emacs-async)
+(use-package emacs-async :straight t)
 
 (provide 'priime-elisp)
 
