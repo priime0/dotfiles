@@ -85,6 +85,7 @@
       libreoffice
       peek
       rofimoji
+      playerctl
 
       emacs
       alacritty
