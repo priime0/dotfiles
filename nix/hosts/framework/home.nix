@@ -60,6 +60,7 @@
       bear
       direnv
       wasmtime
+      gleam
 
       discord
       steam
