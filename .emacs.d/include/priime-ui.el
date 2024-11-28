@@ -61,6 +61,7 @@
 (use-package hl-todo :straight t
   :hook ((prog-mode . hl-todo-mode)
          (LaTeX-mode . hl-todo-mode))
+  :bind (("C-c r h" . hl-todo-rgrep))
   :custom-face
   (hl-todo ((t (:inherit nano-salient-i))))
   :custom
