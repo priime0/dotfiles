@@ -65,8 +65,8 @@
   :custom-face
   (hl-todo ((t (:inherit nano-salient-i))))
   :custom
-  '(hl-todo-keyword-faces
-    (("HOLD" .   "#ffffff")
+  (hl-todo-keyword-faces
+   '(("HOLD" .   "#ffffff")
      ("TODO" .   "#ffffff")
      ("NEXT" .   "#ffffff")
      ("THEM" .   "#ffffff")
