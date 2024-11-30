@@ -3,12 +3,17 @@
 ;; Provides configuration for programming language packages.
 ;;; Code:
 
+(defun justl--current-recipes ()
+  "Retrieve the current recipe names from the current directory."
+  (let* ((justfile (justl--find-justfile default-directory))
+         (raw-entries (justl--get-recipes justfile))
+         (entry-names (mapcar #'justl--recipe-name raw-entries)))
+    entry-names))
+
 (defun justl-recipes ()
   "Pick and execute a just recipe."
   (interactive)
-  (let* ((justfile (justl--find-justfile default-directory))
-         (raw-entries (justl--get-recipes justfile))
-         (entry-names (mapcar #'justl--recipe-name raw-entries))
+  (let* ((entry-names (justl--current-recipes))
          (just-recipe (completing-read "just recipe: " entry-names nil t nil)))
     (justl--exec
      justl-executable
