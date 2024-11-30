@@ -96,7 +96,7 @@
    '("I" . meow-open-above)
    '("j" . meow-join)
    '("k" . meow-kill)
-   '("l" . meow-till)
+   '("l" . recenter-top-bottom)
    '("m" . meow-mark-word)
    '("M" . meow-mark-symbol)
    '("n" . meow-next)
