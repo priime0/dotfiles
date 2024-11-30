@@ -61,6 +61,7 @@
       direnv
       wasmtime
       gleam
+      erlang
 
       discord
       steam
