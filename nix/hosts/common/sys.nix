@@ -70,9 +70,7 @@
 
         racket
 
-        jdk8
-        jdk21
-        jdk22
+        jdk23
 
         nodejs_20
       ];

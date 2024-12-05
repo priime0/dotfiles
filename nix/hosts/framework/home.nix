@@ -73,7 +73,7 @@
       thunderbird
       signal-desktop
       plasma5Packages.kdeconnect-kde
-      (prismlauncher.override { jdks = [ jdk22 jdk8 ]; })
+      (prismlauncher.override { jdks = [ jdk23 jdk8 ]; })
       tidal-hifi
       zotero
       deadd-notification-center
@@ -102,7 +102,7 @@
 
       irony-server
 
-      jdk22
+      jdk23
 
       ocaml
       ocamlPackages.ocaml-lsp
