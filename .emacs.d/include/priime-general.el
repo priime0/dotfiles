@@ -20,6 +20,7 @@
 
 (defun priime-font-reload ()
   "Reload the default font."
+  (interactive)
   (let ((priime-font-height (* priime-font-size 10)))
     (set-face-attribute 'default nil
                         :family priime-fixed-font
