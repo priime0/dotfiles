@@ -8,7 +8,7 @@
 
 ;;; Font
 (defvar priime--font-config
-  (cond ((string= (system-name) "framework") '("Roboto Mono Medium" "Roboto" 12 0.8))
+  (cond ((string= (system-name) "framework") '("JetBrains Mono Medium" "Roboto" 10 0.8))
         ((eq system-type 'gnu/linux)         '("Roboto Mono Medium" "Roboto" 12 0.8))
         ((eq system-type 'darwin)            '("Menlo" "Verdana" 12 1))
         (t                                   '("Roboto Mono" "Roboto" 10 0.8))))
