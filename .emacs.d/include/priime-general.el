@@ -8,8 +8,8 @@
 
 ;;; Font
 (defvar priime--font-config
-  (cond ((string= (system-name) "framework") '("Roboto Mono Medium" "Roboto" 10 0.8))
-        ((eq system-type 'gnu/linux)         '("Roboto Mono Medium" "Roboto" 10 0.8))
+  (cond ((string= (system-name) "framework") '("Roboto Mono Medium" "Roboto" 12 0.8))
+        ((eq system-type 'gnu/linux)         '("Roboto Mono Medium" "Roboto" 12 0.8))
         ((eq system-type 'darwin)            '("Menlo" "Verdana" 12 1))
         (t                                   '("Roboto Mono" "Roboto" 10 0.8))))
 
@@ -17,6 +17,27 @@
 (defvar priime-variable-font (-second-item priime--font-config))
 (defvar priime-font-size     (-third-item priime--font-config))
 (defvar priime-fixed-height  (-fourth-item priime--font-config))
+
+(defun priime-font-reload ()
+  "Reload the default font."
+  (let ((priime-font-height (* priime-font-size 10)))
+    (set-face-attribute 'default nil
+                        :family priime-fixed-font
+                        :height priime-font-height
+                        :weight 'medium)))
+
+(defun priime-font+ (amt)
+  "Increases the font size by AMT."
+  (interactive "p")
+  (let ((amt (or amt 1)))
+    (setq priime-font-size (+ amt priime-font-size))
+    (priime-font-reload)))
+
+(defun priime-font- (amt)
+  "Decreases the font size by AMT."
+  (interactive "p")
+  (let ((amt (or amt 1)))
+    (priime-font+ (- amt))))
 
 ;;; Keybindings
 (defun priime-split-right ()
@@ -172,7 +193,11 @@
   (keymap-global-unset "C-z")
   (keymap-global-unset "C-x C-z")
   (keymap-global-unset "C-x f")
-  (keymap-global-set "C-x f" priime-fill-map))
+  (keymap-global-set "C-x f" priime-fill-map)
+
+  (keymap-global-set "C-+" #'priime-font+)
+  (keymap-global-unset "C--")
+  (keymap-global-set "C--" #'priime-font-))
 
 (provide 'priime-general)
 
