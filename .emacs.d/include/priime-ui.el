@@ -6,6 +6,8 @@
 (require 'projectile)
 (require 'magit)
 
+;;; Neotree
+
 (defun neotree-toggle-dir-or-project ()
   "By default, toggle the directory at the project level, with prefix current."
   (interactive)
@@ -37,12 +39,47 @@
       (neotree-hide)
     (neotree-dir dir)))
 
+;;; Windmove
+(defun priime-window-left ()
+  "Move or swap with the left window."
+  (interactive)
+  (if (eq current-prefix-arg nil)
+      (windmove-left)
+    (windmove-swap-states-left)))
+
+(defun priime-window-right ()
+  "Move or swap with the right window."
+  (interactive)
+  (if (eq current-prefix-arg nil)
+      (windmove-right)
+    (windmove-swap-states-right)))
+
+(defun priime-window-down ()
+  "Move or swap with the down window."
+  (interactive)
+  (if (eq current-prefix-arg nil)
+      (windmove-down)
+    (windmove-swap-states-down)))
+
+(defun priime-window-up ()
+  "Move or swap with the up window."
+  (interactive)
+  (if (eq current-prefix-arg nil)
+      (windmove-up)
+    (windmove-swap-states-up)))
+
 (use-package nano-theme
   :straight '(nano-theme :type git :host github
                          :repo "rougier/nano-theme")
   :init
   (load-theme 'nano t)
   (nano-light))
+(use-package windmove :straight nil
+  :init
+  (keymap-global-set "S-<left>" #'priime-window-left)
+  (keymap-global-set "S-<right>" #'priime-window-right)
+  (keymap-global-set "S-<down>" #'priime-window-down)
+  (keymap-global-set "S-<up>" #'priime-window-up))
 (use-package all-the-icons :straight t)
 (use-package neotree :straight t
   :after (all-the-icons)

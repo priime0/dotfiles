@@ -185,7 +185,6 @@
   (global-so-long-mode 1)
 
   (rassq-delete-all 'auto-save-mode auto-mode-alist)
-  (windmove-default-keybindings)
   (put 'scroll-left 'disabled nil)
   (put 'scroll-right 'disabled nil)
 
