@@ -61,9 +61,9 @@
                   ("\\.pm$" . pollen-mode)
                   ("\\.pmd$" . pollen-mode))
                 auto-mode-alist)))
-(use-package rust-mode :straight t
-  :hook (rust-mode . eglot))
-(use-package rustic :straight t)
+(use-package rust-mode :straight t)
+(use-package rustic :straight t
+  :custom (rustic-lsp-client 'eglot))
 (use-package rjsx-mode :straight t)
 (use-package poetry :straight t)
 (use-package sly :straight t
