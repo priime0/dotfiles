@@ -9,6 +9,7 @@
 (use-package f :straight t)
 (use-package ht :straight t)
 (use-package dash :straight t)
+(use-package htmlize :straight t)
 
 (provide 'priime-elisp)
 
