@@ -76,10 +76,10 @@
   (nano-light))
 (use-package windmove :straight nil
   :init
-  (keymap-global-set "S-<left>" #'priime-window-left)
-  (keymap-global-set "S-<right>" #'priime-window-right)
-  (keymap-global-set "S-<down>" #'priime-window-down)
-  (keymap-global-set "S-<up>" #'priime-window-up))
+  (keymap-set override-global-map "S-<left>" #'priime-window-left)
+  (keymap-set override-global-map "S-<right>" #'priime-window-right)
+  (keymap-set override-global-map "S-<down>" #'priime-window-down)
+  (keymap-set override-global-map "S-<up>" #'priime-window-up))
 (use-package all-the-icons :straight t)
 (use-package neotree :straight t
   :after (all-the-icons)
