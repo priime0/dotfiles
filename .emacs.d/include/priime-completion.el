@@ -33,7 +33,9 @@
 (use-package marginalia :straight t
   :init
   (add-hook 'after-init-hook 'marginalia-mode))
-(use-package orderless :straight t)
+(use-package orderless :straight t
+  :custom
+  (orderless-matching-styles '(orderless-literal-prefix orderless-literal orderless-regexp)))
 (use-package consult :straight t
   :bind (("C-c r r" . consult-ripgrep)
          ("C-c r g" . consult-grep)))
