@@ -197,7 +197,9 @@
 
   (keymap-global-set "C-+" #'priime-font+)
   (keymap-global-unset "C--")
-  (keymap-global-set "C--" #'priime-font-))
+  (keymap-global-set "C--" #'priime-font-)
+
+  (priime-font-reload))
 
 (provide 'priime-general)
 
