@@ -126,8 +126,7 @@
    '("<escape>" . ignore)))
 (use-package flycheck :straight t
   :custom
-  (flycheck-check-syntax-automatically '(save mode-enable))
-  :hook (after-init . global-flycheck-mode))
+  (flycheck-check-syntax-automatically '()))
 (use-package paredit :straight t
   :bind (("M-<backspace>" . #'backward-kill-sexp)
          ("M-k" . #'kill-sexp))
