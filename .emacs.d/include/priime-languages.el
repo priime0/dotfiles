@@ -108,7 +108,7 @@
 (use-package just-mode :straight t)
 (use-package justl :straight t
   :bind (("C-c j" . #'justl-recipes)))
-(use-package scribble-mode :straight t)
+(use-package scribble-mode :straight '(scribble-mode :type git :host github :repo "priime0/scribble-mode"))
 (use-package auctex :straight t)
 (use-package cdlatex :straight t)
 (use-package yaml-mode :straight t)
