@@ -91,6 +91,7 @@
 
       emacs
       alacritty
+      emacs-lsp-booster
 
       mu
       msmtp
