@@ -60,6 +60,7 @@
       bear
       direnv
       wasmtime
+      wabt
       gleam
       erlang
 
