@@ -155,7 +155,7 @@
   (region                   ((t (:inherit nano-subtle :background "#EBE5F5"))))
   (italic                   ((t (:inherit nano-default :slant italic))))
   (lazy-highlight           ((t (:inherit region))))
-  (variable-pitch           ((t (:inherit default :family ,priime-variable-font :height 125 :weight regular))))
+  (variable-pitch           ((t (:inherit default :family ,priime-variable-font :height 1.25 :weight regular))))
   (fixed-pitch              ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit nil))))
   (shr-text                 ((t (:inherit variable-pitch-text :family ,priime-variable-font))))
   (line-number              ((t (:inherit default :foreground "#98A4AE"))))
