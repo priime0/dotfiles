@@ -8,7 +8,7 @@
 
 ;;; Font
 (defvar priime--font-config
-  (cond ((string= (system-name) "framework") '("JetBrains Mono Medium" "Roboto" 10 0.8))
+  (cond ((string= (system-name) "framework") '("JetBrains Mono Medium" "Roboto" 10 0.9))
         ((eq system-type 'gnu/linux)         '("Roboto Mono Medium" "Roboto" 12 0.8))
         ((eq system-type 'darwin)            '("Menlo" "Verdana" 12 1))
         (t                                   '("Roboto Mono" "Roboto" 10 0.8))))
@@ -156,7 +156,7 @@
   (italic                   ((t (:inherit nano-default :slant italic))))
   (lazy-highlight           ((t (:inherit region))))
   (variable-pitch           ((t (:inherit default :family ,priime-variable-font :height 1.25 :weight regular))))
-  (fixed-pitch              ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit nil))))
+  (fixed-pitch              ((t (:family ,priime-fixed-font :height ,priime-fixed-height :inherit default))))
   (shr-text                 ((t (:inherit variable-pitch-text :family ,priime-variable-font))))
   (line-number              ((t (:inherit default :foreground "#98A4AE"))))
   (line-number-current-line ((t (:inherit default :foreground "#98A4AE"))))
