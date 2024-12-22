@@ -22,8 +22,30 @@
          (commit (git-link--commit))
          (new-link (s-replace branch commit old-link)))
     (kill-new new-link)
-    (message new-link)
     new-link))
+
+(defun git-link--magit-commit-url (type)
+  "Create a URL with the given TYPE to the current commit from Magit."
+  (let* ((remote (git-link--remote))
+         (remote-url (git-link--remote-url remote))
+         (short-hash (magit-commit-at-point))
+         (full-hash (magit-rev-hash short-hash))
+         (target-link (concat remote-url type full-hash)))
+    target-link))
+
+(defun git-link-magit-commit-tree ()
+  "Create a URL representing a tree to the current commit from Magit."
+  (interactive)
+  (let* ((target-link (git-link--magit-commit-url "/tree/")))
+    (kill-new target-link)
+    target-link))
+
+(defun git-link-magit-commit ()
+  "Create a URL representing a commit to the current commit from Magit."
+  (interactive)
+  (let* ((target-link (git-link--magit-commit-url "/commit/")))
+    (kill-new target-link)
+    target-link))
 
 (provide 'priime-vc)
 
