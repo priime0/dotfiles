@@ -12,13 +12,13 @@
   (gptel-context-remove))
 
 (defvar-keymap gptel-context-keymap
-  "a" #'gptel-context-add
+  "a" #'gptel-add
   "d" #'gptel-context-delete
   "n" #'gptel-context-next
   "p" #'gptel-context-previous
   "v" #'gptel-context-visit
   "RET" #'gptel-context-confirm
-  "f" #'gptel-context-add-file)
+  "f" #'gptel-add-file)
 
 (defvar-keymap gptel-keymap
   "c" gptel-context-keymap
