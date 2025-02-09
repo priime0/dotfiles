@@ -27,11 +27,15 @@
     (find-file (expand-file-name file-path))))
 
 (defun priime-terminal ()
-  "Open a terminal in the current project or current directory."
+  "Open an optionally-new terminal in the current project or current directory."
   (interactive)
+  (priime--open-terminal (and current-prefix-arg t)))
+
+(defun priime--open-terminal (prefix-arg)
+  "Open a terminal in the current project or current directory."
   (if (projectile-project-p)
-      (projectile-run-vterm)
-    (vterm)))
+      (projectile-run-vterm prefix-arg)
+    (vterm prefix-arg)))
 
 (defun priime-split-terminal ()
   "Split a terminal on the right and move to it."
