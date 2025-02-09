@@ -4,6 +4,9 @@
 ;; development experience and productivity.
 ;;; Code:
 
+(require 'dash)
+(require 'priime-utils)
+
 (defun pdf-download-and-view (&optional url filename)
   "Download and view the PDF given by its URL as FILENAME."
   (interactive)
@@ -44,6 +47,15 @@
   (priime-terminal)
   (balance-windows))
 
+(defun priime-find-terminal ()
+  "Search for an open terminal and move to it."
+  (interactive)
+  (let* ((term-buffers (-filter #'buffer-vterm-p (buffer-list)))
+         (term-buf-names (-map #'buffer-name term-buffers))
+         (selected-term-buffer
+          (completing-read "terminal buffer: " term-buf-names nil t nil)))
+    (switch-to-buffer selected-term-buffer)))
+
 (use-package projectile :straight t
   :custom
   (projectile-completion-system 'auto)
@@ -64,7 +76,8 @@
 (use-package vterm :straight t
   :custom (vterm-shell (or (executable-find "fish") shell-file-name))
   :bind (("C-c v" . priime-terminal)
-         ("<f8>" . priime-split-terminal)))
+         ("<f8>" . priime-split-terminal)
+         ("C-<f8>" . priime-find-terminal)))
 (use-package rg :straight t)
 (use-package anzu :straight t
   :bind ("C-c r a" . anzu-query-replace-regexp)

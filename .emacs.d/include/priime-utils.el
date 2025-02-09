@@ -25,6 +25,14 @@
          (filepath (or filepath (read-file-name "filename: "))))
     (url-copy-file url filepath 1)))
 
+(defun buffer-major-mode (buffer-name)
+  "Get the major mode of the buffer with the given name."
+  (buffer-local-value 'major-mode (get-buffer buffer-name)))
+
+(defun buffer-vterm-p (buffer-name)
+  "Is the buffer with the given name a vterm buffer?"
+  (eq 'vterm-mode (buffer-major-mode buffer-name)))
+
 (provide 'priime-utils)
 
 ;;; priime-utils.el ends here
