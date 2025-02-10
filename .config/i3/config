@@ -46,6 +46,12 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
+# Convenient volume/brightness keys
+bindsym $mod+a exec --no-startup-id pamixer --increase 5 && $refresh_i3status
+bindsym $mod+o exec --no-startup-id pamixer --decrease 5 && $refresh_i3status
+bindsym $mod+Shift+a exec --no-startup-id brightnessctl set +5%
+bindsym $mod+Shift+o exec --no-startup-id brightnessctl set 5%-
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -69,7 +75,7 @@ bindsym $mod+Return exec emacsclient -n -c -a ""
 bindsym $mod+Control+Return exec alacritty
 
 # screenshot
-bindsym $mod+Shift+o exec flameshot gui
+bindsym $mod+Shift+e exec flameshot gui
 
 # kill focused window
 bindsym $mod+Shift+semicolon kill
@@ -111,7 +117,7 @@ bindsym $mod+u fullscreen toggle
 bindsym $mod+c move position center
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+o layout stacking
+# bindsym $mod+o layout stacking
 bindsym $mod+comma layout tabbed
 bindsym $mod+period layout toggle split
 
@@ -122,7 +128,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
