@@ -54,7 +54,8 @@
          (term-buf-names (-map #'buffer-name term-buffers))
          (selected-term-buffer
           (completing-read "terminal buffer: " term-buf-names nil t nil)))
-    (switch-to-buffer selected-term-buffer)))
+    (unless (string-empty-p selected-term-buffer)
+      (switch-to-buffer selected-term-buffer))))
 
 (use-package projectile :straight t
   :custom
