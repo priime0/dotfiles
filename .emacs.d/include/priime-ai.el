@@ -29,7 +29,7 @@
 
 (use-package gptel :straight t
   :custom
-  (gptel-model 'claude-3-sonnet-20240229)
+  (gptel-model 'claude-3-5-sonnet-20241022)
   (gptel-backend
    (gptel-make-anthropic "Claude"
      :stream t
