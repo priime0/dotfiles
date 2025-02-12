@@ -28,6 +28,12 @@
   "o" #'gptel-menu)
 
 (use-package gptel :straight t
+  :custom
+  (gptel-model 'claude-3-sonnet-20240229)
+  (gptel-backend
+   (gptel-make-anthropic "Claude"
+     :stream t
+     :key #'gptel-api-key-from-auth-source))
   :init
   (keymap-global-set "C-c g" gptel-keymap))
 (use-package copilot
