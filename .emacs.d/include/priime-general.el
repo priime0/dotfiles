@@ -149,6 +149,9 @@
   (epa-file-encrypt-to '("lucas@priime.dev"))
   (epa-file-select-keys 1)
   (read-process-output-max (* 4 1024 1024))
+  (browse-url-handlers '(("\\.pdf\\'" .
+                          (lambda (url &rest _)
+                            (async-start-process "zathura" "zathura" "zathura" url)))))
 
   :custom-face
   (default                  ((t (:family ,priime-fixed-font :weight medium))))
