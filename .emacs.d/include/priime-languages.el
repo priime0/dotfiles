@@ -132,13 +132,13 @@
                (html . ("https://github.com/tree-sitter/tree-sitter-html" "v0.23.2"))
                (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.23.1" "src"))
                (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "tsx/src"))
-               (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "typescript/src"))))
+               (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "typescript/src"))
+               (typst "https://github.com/uben0/tree-sitter-typst")))
       (add-to-list 'treesit-language-source-alist grammar)
       (unless (treesit-language-available-p (car grammar))
         (treesit-install-language-grammar (car grammar)))))
   (dolist (mapping
-           '(
-             (css-mode . css-ts-mode)
+           '((css-mode . css-ts-mode)
              (typescript-mode . typescript-ts-mode)
              (js-mode . typescript-ts-mode)
              (js2-mode . typescript-ts-mode)
@@ -148,6 +148,14 @@
     (add-to-list 'major-mode-remap-alist mapping))
   :config
   (os/setup-install-grammars))
+
+(use-package typst-ts-mode
+  :straight '(:type git :host sourcehut :repo "meow_king/typst-ts-mode" :files (:defaults "*.el"))
+  :custom
+  (typst-ts-mode-watch-options "--open")
+
+  (typst-ts-mode-enable-raw-blocks-highlight t)
+  (typst-ts-mode-highlight-raw-blocks-at-startup t))
 
 
 (provide 'priime-languages)
