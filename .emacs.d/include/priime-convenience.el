@@ -53,7 +53,7 @@
   (let* ((term-buffers (-filter #'buffer-vterm-p (buffer-list)))
          (term-buf-names (-map #'buffer-name term-buffers))
          (selected-term-buffer
-          (completing-read "terminal buffer: " term-buf-names nil t nil)))
+          (completing-read "select terminal: " term-buf-names nil t nil)))
     (unless (string-empty-p selected-term-buffer)
       (switch-to-buffer selected-term-buffer))))
 
