@@ -119,6 +119,8 @@
       noto-fonts-cjk-sans
       libertine
       roboto
+
+      adwaita-icon-theme
     ];
     emacsPackages = with pkgs.emacsPackages; [ mu4e ];
     pythonPackages = with pkgs.python312Packages; [ python-lsp-server ];
@@ -127,6 +129,14 @@
   home.sessionPath = [
     "$HOME/.local/share/racket/8.14/bin/" # This has to be updated every time Racket updates :(
   ];
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 16;
+  };
 
   xresources.properties = {
     "Xft.antialias" = true;
