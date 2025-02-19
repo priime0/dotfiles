@@ -122,7 +122,8 @@
          ("\\.cjs\\'" . typescript-ts-mode)
          ("\\.ts\\'"  . typescript-ts-mode)
          ("\\.jsx\\'" . tsx-ts-mode)
-         ("\\.json\\'" .  json-ts-mode))
+         ("\\.json\\'" .  json-ts-mode)
+         ("\\.typ\\'" . typst-ts-mode))
   :preface
   (defun os/setup-install-grammars ()
     "Install Tree-sitter grammars if they are absent."
