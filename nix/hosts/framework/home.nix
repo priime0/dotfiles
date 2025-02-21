@@ -63,6 +63,7 @@
       wabt
       gleam
       erlang
+      zip
 
       discord
       steam
@@ -90,6 +91,8 @@
       rofimoji
       playerctl
 
+      nil
+
       emacs
       alacritty
       emacs-lsp-booster
@@ -104,11 +107,15 @@
 
       irony-server
 
+      typescript-language-server
+
       jdk23
 
       ocaml
       ocamlPackages.ocaml-lsp
       dune_3
+      opam
+      ocamlformat
 
       noto-fonts
       fira-code
@@ -121,6 +128,8 @@
       roboto
 
       adwaita-icon-theme
+
+      ihaskell
     ];
     emacsPackages = with pkgs.emacsPackages; [ mu4e ];
     pythonPackages = with pkgs.python312Packages; [ python-lsp-server ];
