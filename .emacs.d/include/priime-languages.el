@@ -77,8 +77,7 @@
 (use-package tuareg :straight t
   :custom
   (utop-command "opam exec -- dune utop . -- -emacs")
-  :hook ((tuareg-mode . flycheck-ocaml-setup)
-         (tuareg-mode . merlin-mode)))
+  :hook ((tuareg-mode . flycheck-ocaml-setup)))
 (use-package utop :straight t)
 (use-package dune :straight t)
 (use-package flycheck-ocaml :straight t)
