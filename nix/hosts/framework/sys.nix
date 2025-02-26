@@ -123,8 +123,11 @@
     enable = true;
     windowManager.i3.enable = true;
     displayManager.lightdm.enable = true;
-    xkb.layout = "us";
-    xkb.variant = "dvp";
+    xkb = {
+      layout = "us";
+      variant = "dvp";
+      options = "caps:backspace";
+    };
     autoRepeatDelay = 350;
     autoRepeatInterval = 17;
   };
