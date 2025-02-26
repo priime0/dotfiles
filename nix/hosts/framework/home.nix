@@ -108,6 +108,7 @@
       irony-server
 
       typescript-language-server
+      prettierd
 
       jdk23
 

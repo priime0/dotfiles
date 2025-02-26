@@ -150,6 +150,7 @@
   programs.kdeconnect.enable = true;
   programs.steam.enable = true;
   programs.dconf.enable = true;
+  programs.obs-studio.enable = true;
 
   programs.fish = {
     enable = true;
