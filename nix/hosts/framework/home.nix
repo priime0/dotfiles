@@ -157,6 +157,9 @@
 
   ### Services
 
+  services.pasystray.enable = true;
+  services.easyeffects.enable = true;
+
   # Compositor
   services.picom = {
     enable = true;
@@ -177,7 +180,6 @@
     defaultEditor = true;
   };
 
-  services.pasystray.enable = true;
 
   services.redshift = {
     enable = true;
