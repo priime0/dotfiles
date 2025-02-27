@@ -10,7 +10,7 @@
 (use-package ht :straight t)
 (use-package dash :straight t)
 (use-package htmlize :straight t)
-(use-package emacs-async :straight t)
+(use-package async :straight t)
 
 (provide 'priime-elisp)
 
