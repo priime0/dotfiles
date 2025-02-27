@@ -14,6 +14,7 @@
          ("C-c l f" . eglot-format))
   :init
   (fset #'jsonrpc--log-event #'ignore)
+  :config
   (add-to-list 'eglot-server-programs '(nix-mode "nil")))
 (use-package eglot-booster
   :straight (eglot-booster :type git :host github :repo "jdtsmith/eglot-booster")
