@@ -28,14 +28,13 @@
   "o" #'gptel-menu)
 
 (use-package gptel :straight t
-  :custom
-  (gptel-model 'claude-3-5-sonnet-20241022)
-  (gptel-backend
-   (gptel-make-anthropic "Claude"
-     :stream t
-     :key #'gptel-api-key-from-auth-source))
   :init
   (keymap-global-set "C-c g" gptel-keymap))
+  (setq gptel-model 'claude-3-7-sonnet-latest)
+  (setq gptel-backend
+        (gptel-make-anthropic "Claude"
+          :stream t
+          :key #'gptel-api-key-from-auth-source)))
 (use-package copilot
   :straight (copilot :type git :host github :repo "copilot-emacs/copilot.el"))
 (use-package copilot-chat
