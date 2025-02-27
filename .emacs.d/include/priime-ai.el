@@ -29,7 +29,7 @@
 
 (use-package gptel :straight t
   :init
-  (keymap-global-set "C-c g" gptel-keymap))
+  (keymap-global-set "C-c g" gptel-keymap)
   (setq gptel-model 'claude-3-7-sonnet-latest)
   (setq gptel-backend
         (gptel-make-anthropic "Claude"
