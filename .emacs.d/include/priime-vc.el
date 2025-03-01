@@ -7,6 +7,7 @@
   :custom
   (auth-sources '("~/.authinfo.gpg"))
   (vc-follow-symlink t)
+  (magit-format-file-function #'magit-format-file-all-the-icons)
   :bind (("<f5>" . magit-status)
          ("C-x g" . magit-status)))
 (use-package forge :straight t
