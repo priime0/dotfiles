@@ -47,7 +47,6 @@
   (meow-global-mode)
   (meow-setup-indicator)
   (meow-leader-define-key '("u" . "C-u"))
-  (meow-leader-define-key '("l" . "s-l"))
   (meow-motion-overwrite-define-key '("<escape>" . ignore))
   (meow-normal-define-key
    '("?" . meow-cheatsheet)
