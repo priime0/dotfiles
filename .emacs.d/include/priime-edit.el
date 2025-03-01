@@ -27,14 +27,6 @@
   (kill-line)
   (meow-insert))
 
-;; (flycheck-define-checker racket-review
-;;   "check racket source code using racket review"
-;;   :command ("raco" "review" source)
-;;   :error-patterns
-;;   ((error line-start (file-name) ":" line ":" column ":error:" (message) line-end)
-;;    (warning line-start (file-name) ":" line ":" column ":warning:" (message) line-end))
-;;   :modes racket-mode)
-
 ;;; Packages
 
 (use-package meow :straight t
