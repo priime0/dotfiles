@@ -27,6 +27,15 @@
   (kill-line)
   (meow-insert))
 
+(defvar-keymap meow-buffers
+  "b" #'bufler-switch-buffer
+  "l" #'bufler-list
+  "k" #'kill-buffer
+  "n" #'next-buffer
+  "p" #'previous-buffer
+  "r" #'rename-buffer
+  "s" #'scratch-buffer)
+
 ;;; Packages
 
 (use-package meow :straight t
@@ -34,13 +43,12 @@
   :custom
   (meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
   :init
+  (keymap-global-set "C-c b" meow-buffers)
   (meow-global-mode)
   (meow-setup-indicator)
   (meow-leader-define-key '("u" . "C-u"))
   (meow-leader-define-key '("l" . "s-l"))
-  (meow-motion-overwrite-define-key
-   ;; custom keybinding for motion state
-   '("<escape>" . ignore))
+  (meow-motion-overwrite-define-key '("<escape>" . ignore))
   (meow-normal-define-key
    '("?" . meow-cheatsheet)
    '("*" . meow-expand-0)
