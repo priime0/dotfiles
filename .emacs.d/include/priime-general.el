@@ -140,6 +140,7 @@
   (show-trailing-whitespace t)
   (sentence-end-double-space nil)
   (scroll-conservatively 101)
+  (scroll-margin 5)
   ;; GC
   (gc-cons-threshold 50000000)
   ;; emacs-nativecomp
