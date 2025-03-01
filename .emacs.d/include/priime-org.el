@@ -3,7 +3,9 @@
 ;; Provides configuration for org-related packages.
 ;;; Code:
 
-(defvar-keymap org-roam-keymap
+(defvar-keymap priime-org-keymap
+  "a" #'org-agenda
+  "c" #'org-capture
   "n" #'org-roam-capture
   "f" #'org-roam-node-find
   "i" #'org-roam-node-insert
@@ -80,8 +82,6 @@
 
 (use-package org :straight t
   :after (ob-racket)
-  :bind (("C-c a" . org-agenda)
-         ("C-c c" . org-capture))
   :custom
   (org-workspaces-alist '(("docs" . ("~/org/docs/" . "~/.emacs.d/org-roam.db"))))
   (org-hide-emphasis-markers t)
@@ -129,7 +129,7 @@
    (org-agenda-finalize-hook . org-modern-agenda)
    (org-mode . variable-pitch-mode))
   :init
-  (keymap-global-set "C-c o" org-roam-keymap)
+  (keymap-global-set "C-c o" priime-org-keymap)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((racket . t)
