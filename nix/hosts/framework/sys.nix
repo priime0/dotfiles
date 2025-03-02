@@ -51,7 +51,6 @@
   services.blueman.enable = true;
 
   # Audio
-  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
