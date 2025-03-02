@@ -93,7 +93,7 @@
 
       nil
 
-      emacs
+      emacs30
       alacritty
       emacs-lsp-booster
 
@@ -178,6 +178,7 @@
   services.emacs = {
     enable = true;
     defaultEditor = true;
+    package = pkgs.emacs30;
   };
 
 
