@@ -19,7 +19,7 @@
         system = "x86_64-linux";
         specialArgs = { inputs = inputs; };
         modules = [
-          home-manager.nixosModule
+          home-manager.nixosModules.default
           ./nix/hosts/common/sys.nix
           ./nix/hosts/framework/sys.nix
         ];
