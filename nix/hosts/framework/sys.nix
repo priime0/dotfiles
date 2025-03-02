@@ -59,6 +59,7 @@
   # AMD
   hardware.cpu.amd.updateMicrocode = true;
   hardware.graphics.enable = true;
+  hardware.amdgpu.amdvlk.enable = true;
 
   # Power
   powerManagement = {
