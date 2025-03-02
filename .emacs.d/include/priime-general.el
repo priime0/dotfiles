@@ -101,12 +101,6 @@
          (filepath (or filepath (read-file-name "filename: "))))
     (url-copy-file url filepath 1)))
 
-(defvar-keymap priime-fill-map
-  "f" #'set-fill-column
-  "i" #'display-fill-column-indicator-mode
-  "a" #'auto-fill-mode
-  "n" #'priime-toggle-line-numbers)
-
 ;;; Configuration
 
 (use-package emacs
@@ -196,8 +190,6 @@
 
   (keymap-global-unset "C-z")
   (keymap-global-unset "C-x C-z")
-  (keymap-global-unset "C-x f")
-  (keymap-global-set "C-x f" priime-fill-map)
 
   (keymap-global-set "C-+" #'priime-font+)
   (keymap-global-unset "C--")

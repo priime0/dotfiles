@@ -27,7 +27,7 @@
   (kill-line)
   (meow-insert))
 
-(defvar-keymap meow-buffers
+(defvar-keymap meow-buffers-keymap
   "b" #'bufler-switch-buffer
   "l" #'bufler-list
   "k" #'kill-buffer
@@ -36,9 +36,16 @@
   "r" #'rename-buffer
   "s" #'scratch-buffer)
 
-(defvar-keymap meow-windows
+(defvar-keymap meow-windows-keymap
   "k" #'delete-window
   "b" #'balance-windows)
+
+(defvar-keymap meow-misc-keymap
+  "f" #'set-fill-column
+  "i" #'display-fill-column-indicator-mode
+  "a" #'auto-fill-mode
+  "n" #'priime-toggle-line-numbers
+  "t" #'toggle-truncate-lines)
 
 ;;; Packages
 
@@ -47,8 +54,9 @@
   :custom
   (meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
   :init
-  (keymap-global-set "C-c b" meow-buffers)
-  (keymap-global-set "C-c w" meow-windows)
+  (keymap-global-set "C-c b" meow-buffers-keymap)
+  (keymap-global-set "C-c w" meow-windows-keymap)
+  (keymap-global-set "C-c s" meow-misc-keymap)
   (meow-global-mode)
   (meow-setup-indicator)
   (meow-leader-define-key '("u" . "C-u"))
