@@ -22,14 +22,14 @@
 
 (defvar-keymap gptel-keymap
   "c" gptel-context-keymap
-  "RET" #'gptel
+  "a" #'gptel
   "e" #'gptel-send
   "r" #'gptel-rewrite-menu
   "o" #'gptel-menu)
 
 (use-package gptel :straight t
   :init
-  (keymap-global-set "C-c g" gptel-keymap)
+  (keymap-global-set "C-c a" gptel-keymap)
   (setq gptel-model 'claude-3-7-sonnet-latest)
   (setq gptel-backend
         (gptel-make-anthropic "Claude"
