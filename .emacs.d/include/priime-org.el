@@ -126,7 +126,6 @@
   :hook
   ((org-mode . auto-save-mode)
    (auto-save . org-save-all-org-buffers)
-   (org-agenda-finalize-hook . org-modern-agenda)
    (org-mode . variable-pitch-mode))
   :init
   (keymap-global-set "C-c o" priime-org-keymap)
@@ -154,7 +153,7 @@
   :after (org)
   :hook (org-mode . org-modern-mode)
   :custom
-  (org-modern-star 'fold))
+  (org-modern-star 'replace))
 (use-package org-modern-indent
   :straight
   '(org-modern-indent
