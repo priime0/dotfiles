@@ -36,6 +36,10 @@
   "r" #'rename-buffer
   "s" #'scratch-buffer)
 
+(defvar-keymap meow-windows
+  "k" #'delete-window
+  "b" #'balance-windows)
+
 ;;; Packages
 
 (use-package meow :straight t
@@ -44,6 +48,7 @@
   (meow-cheatsheet-layout meow-cheatsheet-layout-dvp)
   :init
   (keymap-global-set "C-c b" meow-buffers)
+  (keymap-global-set "C-c w" meow-windows)
   (meow-global-mode)
   (meow-setup-indicator)
   (meow-leader-define-key '("u" . "C-u"))
