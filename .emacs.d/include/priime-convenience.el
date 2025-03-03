@@ -100,6 +100,11 @@
   (keymap-set dired-mode-map "C-o" #'casual-dired-tmenu))
 (use-package envrc :straight t
   :hook (after-init . envrc-global-mode))
+(use-package helpful :straight t
+  :config
+  (keymap-global-set "C-h f" #'helpful-callable)
+  (keymap-global-set "C-h v" #'helpful-variable)
+  (keymap-global-set "C-h k" #'helpful-key))
 
 (provide 'priime-convenience)
 
