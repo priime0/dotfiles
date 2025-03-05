@@ -92,6 +92,9 @@
       rofimoji
       playerctl
 
+      aspell
+      aspellDicts.en
+
       nil
 
       emacs30
