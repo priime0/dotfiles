@@ -64,6 +64,7 @@
       gleam
       erlang
       zip
+      framework-system-tools
 
       discord
       steam
