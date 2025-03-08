@@ -38,7 +38,14 @@
 
 (defvar-keymap meow-windows-keymap
   "k" #'delete-window
-  "b" #'balance-windows)
+  "b" #'balance-windows
+  "-" #'priime-split-down
+  "/" #'priime-split-right
+  ;; dvorak-specific
+  "h" #'priime-window-left
+  "t" #'priime-window-down
+  "n" #'priime-window-up
+  "s" #'priime-window-right)
 
 (defvar-keymap meow-misc-keymap
   "f" #'set-fill-column
