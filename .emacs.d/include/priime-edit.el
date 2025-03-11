@@ -37,6 +37,7 @@
   "s" #'scratch-buffer)
 
 (defvar-keymap meow-windows-keymap
+  "w" #'delete-other-windows
   "k" #'delete-window
   "b" #'balance-windows
   "-" #'priime-split-down
