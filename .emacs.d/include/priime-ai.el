@@ -14,6 +14,7 @@
 (defvar-keymap gptel-context-keymap
   "a" #'gptel-add
   "d" #'gptel-context-delete
+  "k" #'gptel-context-remove-all
   "n" #'gptel-context-next
   "p" #'gptel-context-previous
   "v" #'gptel-context-visit
