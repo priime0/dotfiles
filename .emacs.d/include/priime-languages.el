@@ -77,6 +77,7 @@
 (use-package tuareg :straight t
   :custom
   (utop-command "opam exec -- dune utop . -- -emacs")
+  (tuareg-match-clause-indent 0)
   :hook ((tuareg-mode . flycheck-ocaml-setup)))
 (use-package utop :straight t)
 (use-package dune :straight t)
