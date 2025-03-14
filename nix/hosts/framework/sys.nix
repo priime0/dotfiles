@@ -78,8 +78,11 @@
   } ];
   boot.resumeDevice = "/var/lib/swap";
 
-  # Autologin
-  services.displayManager.autoLogin.user = "priime";
+  # Display Manager
+  services.displayManager = {
+    autoLogin.user = "priime";
+    defaultSession = "none+bspwm";
+  };
 
   # Mouse
   services.libinput.mouse = { middleEmulation = false; };
@@ -122,7 +125,6 @@
   services.xserver = {
     enable = true;
     windowManager.bspwm.enable = true;
-    displayManager.defaultSession = "none+bspwm";
     displayManager.lightdm.enable = true;
     xkb = {
       layout = "us";
