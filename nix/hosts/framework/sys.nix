@@ -121,7 +121,8 @@
   # xserver and i3
   services.xserver = {
     enable = true;
-    windowManager.i3.enable = true;
+    windowManager.bspwm.enable = true;
+    displayManager.defaultSession = "none+bspwm";
     displayManager.lightdm.enable = true;
     xkb = {
       layout = "us";
