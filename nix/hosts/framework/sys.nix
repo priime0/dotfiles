@@ -67,22 +67,15 @@
     powertop.enable = true;
   };
 
-  services.logind = {
-    powerKey = "ignore";
-  };
-
   # Swap
-  swapDevices = [ {
+  swapDevices = [{
     device = "/var/lib/swap";
     size = 16 * 1024;
-  } ];
+  }];
   boot.resumeDevice = "/var/lib/swap";
 
   # Display Manager
-  services.displayManager = {
-    autoLogin.user = "priime";
-    defaultSession = "none+bspwm";
-  };
+  services.displayManager.autoLogin.user = "priime";
 
   # Mouse
   services.libinput.mouse = { middleEmulation = false; };
@@ -121,19 +114,17 @@
 
   ### Services
 
-  # xserver and i3
+  # xserver
   services.xserver = {
     enable = true;
-    windowManager.bspwm.enable = true;
     displayManager.lightdm.enable = true;
-    xkb = {
-      layout = "us";
-      variant = "dvp";
-      options = "caps:backspace";
-    };
     autoRepeatDelay = 350;
     autoRepeatInterval = 17;
   };
+
+  # Window Manager
+  programs.niri.enable = true;
+  programs.xwayland.enable = true;
 
   services.tailscale = {
     enable = true;
