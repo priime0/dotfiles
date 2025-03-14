@@ -86,7 +86,10 @@
 (use-package ocamlformat :straight t)
 (use-package elixir-mode :straight t)
 (use-package inf-elixir :straight t)
-(use-package nix-mode :straight t)
+(use-package nix-mode :straight t
+  :hook
+  ((nix-mode . electric-indent-local-mode)
+   (nix-mode . electric-pair-local-mode)))
 (use-package irony :straight t
   :bind (:map irony-mode-map ("C-c C-c" . custom-compile-c++))
   :hook ((c++-mode c-mode) . irony-mode))
