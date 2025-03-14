@@ -93,8 +93,6 @@
 (use-package irony :straight t
   :bind (:map irony-mode-map ("C-c C-c" . custom-compile-c++))
   :hook ((c++-mode c-mode) . irony-mode))
-(use-package gleam-ts-mode :straight t
-  :mode (rx ".gleam" eos))
 
 (use-package markdown-mode :straight t
   :hook ((markdown-mode . markdown-toggle-fontify-code-blocks-natively)
@@ -126,7 +124,8 @@
          ("\\.ts\\'"  . typescript-ts-mode)
          ("\\.jsx\\'" . tsx-ts-mode)
          ("\\.json\\'" .  json-ts-mode)
-         ("\\.typ\\'" . typst-ts-mode))
+         ("\\.typ\\'" . typst-ts-mode)
+         ("\\.gleam\\'" . gleam-ts-mode))
   :preface
   (defun os/setup-install-grammars ()
     "Install Tree-sitter grammars if they are absent."
@@ -137,7 +136,8 @@
                (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.23.1" "src"))
                (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "tsx/src"))
                (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "typescript/src"))
-               (typst "https://github.com/uben0/tree-sitter-typst")))
+               (typst "https://github.com/uben0/tree-sitter-typst")
+               (gleam "https://github.com/gleam-lang/tree-sitter-gleam")))
       (add-to-list 'treesit-language-source-alist grammar)
       (unless (treesit-language-available-p (car grammar))
         (treesit-install-language-grammar (car grammar)))))
@@ -160,6 +160,8 @@
   (typst-ts-mode-enable-raw-blocks-highlight t)
   (typst-ts-mode-highlight-raw-blocks-at-startup t))
 
+(use-package gleam-ts-mode :straight t
+  :mode (rx ".gleam" eos))
 
 (provide 'priime-languages)
 
