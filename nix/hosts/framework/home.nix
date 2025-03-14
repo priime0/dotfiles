@@ -192,7 +192,7 @@
     settings = {
       border_width = 2;
       normal_border_color = "#919191";
-      focused_border_color = "FF6054";
+      focused_border_color = "#FF6054";
       presel_feedback_color = "#CCCCCC";
       window_gap = 25;
       split_ratio = 0.5;
@@ -219,6 +219,10 @@
     enable = true;
     # Reminder: Written in QWERTY
     keybindings = {
+      # Reload
+      "super + shift + o" = "bspc wm -r";
+
+      # Applications
       "super + Return" = ''emacsclient -n -c -a ""'';
       "super + control + Return" = "alacritty";
       "super + d" = "rofi -show drun";
@@ -226,7 +230,7 @@
       "super + g" = "rofimoji";
       "super + shift + d" = "flameshot gui";
       "super + shift + q" = "bspc node -k";
-      "super + shift + o" = "bspc wm -r";
+
       # Window focus
       "super + {j,k,l,semicolon}" = "bspc node -f {west,south,north,east}";
       "super + {Left,Down,Up,Right}" = "bspc node -f {west,south,north,east}";
@@ -336,14 +340,7 @@
     enable = true;
     backend = "glx";
     activeOpacity = 1;
-    inactiveOpacity = 0.9;
-    settings = {
-      blur = {
-        method = "kawase";
-        size = 20;
-        deviation = 5.0;
-      };
-    };
+    inactiveOpacity = 1;
   };
 
   services.emacs = {
