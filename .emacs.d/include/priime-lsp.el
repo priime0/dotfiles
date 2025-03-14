@@ -26,6 +26,10 @@
   :after (eldoc)
   :hook (eldoc-mode . eldoc-box-hover-mode))
 
+(use-package ocaml-eglot :straight t
+  :after (eglot tuareg)
+  :hook ((tuareg-mode . ocaml-eglot)))
+
 (provide 'priime-lsp)
 
 ;;; priime-lsp.el ends here
