@@ -67,6 +67,12 @@
 
       niri
       fuzzel
+      mako
+      waybar
+      swaybg
+      xwayland
+      xwayland-satellite
+      gammastep
 
       discord
       steam
@@ -81,7 +87,6 @@
       (prismlauncher.override { jdks = [ jdk23 jdk8 ]; })
       tidal-hifi
       zotero
-      deadd-notification-center
       mullvad-browser
       networkmanagerapplet
       pasystray
@@ -133,6 +138,7 @@
       noto-fonts-cjk-sans
       libertine
       roboto
+      font-awesome
 
       adwaita-icon-theme
 
@@ -180,6 +186,21 @@
     package = pkgs.emacs30;
   };
 
+  services.gammastep = {
+    enable = true;
+    dawnTime = "6:00-7:00";
+    duskTime = "20:00-21:00";
+    temperature = {
+      day = 6500;
+      night = 3500;
+    };
+  };
+
+  services.mako = {
+    enable = true;
+    margin = "40,20";
+  };
+
   ### Programs
   programs.home-manager.enable = true;
   programs.mu.enable = true;
@@ -211,7 +232,7 @@
     enable = true;
     settings = {
       terminal.shell = "fish";
-      font.size = 5;
+      font.size = 10;
       font.normal = {
         family = "JetBrains Mono";
         style = "SemiBold";

@@ -29,6 +29,7 @@
       noto-fonts-cjk-sans
       libertine
       roboto
+      font-awesome
     ];
   };
 
