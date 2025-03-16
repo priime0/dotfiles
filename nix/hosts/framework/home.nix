@@ -70,6 +70,7 @@
       mako
       waybar
       swaybg
+      swaylock
       xwayland
       xwayland-satellite
       gammastep
@@ -198,6 +199,7 @@
 
   services.mako = {
     enable = true;
+    defaultTimeout = 10000;
     margin = "40,20";
   };
 
@@ -260,5 +262,12 @@
   programs.firefox = {
     enable = true;
     policies = { WebsiteFilter = { Block = [ "*://*.facebook.com/" ]; }; };
+  };
+
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      color = "000000";
+    };
   };
 }
