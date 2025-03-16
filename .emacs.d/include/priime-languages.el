@@ -61,8 +61,11 @@
                   ("\\.pm$" . pollen-mode)
                   ("\\.pmd$" . pollen-mode))
                 auto-mode-alist)))
-(use-package rust-mode :straight t)
+(use-package rust-mode :straight t
+  :hook ((rust-mode . electric-pair-local-mode)
+         (rust-mode . electric-indent-local-mode)))
 (use-package rustic :straight t
+  :after (rust-mode)
   :custom (rustic-lsp-client 'eglot))
 (use-package rjsx-mode :straight t)
 (use-package poetry :straight t)
@@ -89,7 +92,9 @@
    (nix-mode . electric-pair-local-mode)))
 (use-package irony :straight t
   :bind (:map irony-mode-map ("C-c C-c" . custom-compile-c++))
-  :hook ((c++-mode c-mode) . irony-mode))
+  :hook (((c++-mode c-mode) . irony-mode)
+         (irony-mode . electric-pair-local-mode)
+         (irony-mode . electric-indent-local-mode)))
 
 (use-package markdown-mode :straight t
   :hook ((markdown-mode . markdown-toggle-fontify-code-blocks-natively)
@@ -123,6 +128,11 @@
          ("\\.json\\'" .  json-ts-mode)
          ("\\.typ\\'" . typst-ts-mode)
          ("\\.gleam\\'" . gleam-ts-mode))
+  :hook
+  ((tsx-ts-mode . electric-pair-local-mode)
+   (tsx-ts-mode . electric-indent-local-mode)
+   (typescript-ts-mode . electric-pair-local-mode)
+   (typescript-ts-mode . electric-indent-local-mode))
   :preface
   (defun os/setup-install-grammars ()
     "Install Tree-sitter grammars if they are absent."
