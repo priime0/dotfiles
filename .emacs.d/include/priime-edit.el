@@ -157,7 +157,8 @@
 (use-package format-all :straight t
   :bind ("C-c f" . format-all-region-or-buffer))
 (use-package ws-butler :straight t
-  :hook (prog-mode . ws-butler-mode))
+  :config
+  (ws-butler-global-mode))
 
 (provide 'priime-edit)
 
