@@ -144,9 +144,6 @@
    '("'" . repeat)
    '(":" . meow-mx)
    '("<escape>" . ignore)))
-(use-package flycheck :straight t
-  :custom
-  (flycheck-check-syntax-automatically '()))
 (use-package paredit :straight t
   :bind (("M-<backspace>" . #'backward-kill-sexp)
          ("M-k" . #'kill-sexp))
