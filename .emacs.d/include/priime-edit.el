@@ -159,6 +159,8 @@
 (use-package ws-butler :straight t
   :config
   (ws-butler-global-mode))
+(use-package avy :straight t
+  :bind ("C-'" . #'avy-goto-word-0))
 
 (provide 'priime-edit)
 
