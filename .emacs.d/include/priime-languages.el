@@ -81,7 +81,9 @@
   :custom
   (utop-command "opam exec -- dune utop . -- -emacs")
   (tuareg-match-clause-indent 0)
-  :hook ((tuareg-mode . flycheck-ocaml-setup)))
+  :hook
+  ((tuareg-mode . electric-pair-local-mode)
+   (tuareg-mode . electric-indent-local-mode)))
 (use-package utop :straight t)
 (use-package dune :straight t)
 (use-package elixir-mode :straight t)
