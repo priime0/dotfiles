@@ -46,7 +46,8 @@
   "h" #'priime-window-left
   "t" #'priime-window-down
   "n" #'priime-window-up
-  "s" #'priime-window-right)
+  "s" #'priime-window-right
+  "c" #'priime-open-on-right)
 
 (defvar-keymap meow-misc-keymap
   "f" #'set-fill-column

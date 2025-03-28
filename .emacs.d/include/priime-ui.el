@@ -68,6 +68,19 @@
       (windmove-up)
     (windmove-swap-states-up)))
 
+(defun priime-open-on-right ()
+  "Take the current window's buffer and open it on the right window."
+  ;; This has an extremely niche usecase. When editing an OCaml project, I can
+  ;; have multiple windows open to different buffers. I want to mirror two
+  ;; windows such that one displays the module interface and the other displays
+  ;; the module implementation. This allows me to set both windows to the same
+  ;; overall "module", then quickly swap to the corresponding
+  ;; interface/implementation.
+  (interactive)
+  (let ((buf (current-buffer)))
+    (priime-window-right)
+    (switch-to-buffer buf)))
+
 (use-package nano-theme
   :straight '(nano-theme :type git :host github
                          :repo "rougier/nano-theme")
