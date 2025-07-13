@@ -78,14 +78,13 @@
       discord
       steam
       bitwarden
-      nautilus
       obs-studio
       vlc
       easyeffects
       thunderbird
       signal-desktop
       plasma5Packages.kdeconnect-kde
-      (prismlauncher.override { jdks = [ jdk23 jdk8 ]; })
+      (prismlauncher.override { jdks = [ jdk23 jdk17 jdk8 ]; })
       tidal-hifi
       zotero
       mullvad-browser
@@ -99,6 +98,13 @@
       peek
       rofimoji
       playerctl
+      nemo
+      protonmail-desktop
+      protonvpn-cli
+      protonvpn-gui
+      proton-pass
+      lutris
+      stremio
 
       aspell
       aspellDicts.en
@@ -107,7 +113,9 @@
 
       emacs30-pgtk
       alacritty
+      alacritty-theme
       emacs-lsp-booster
+      code-cursor
 
       mu
       msmtp
