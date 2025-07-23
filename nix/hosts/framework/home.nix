@@ -105,6 +105,8 @@
       proton-pass
       lutris
       stremio
+      qbittorrent
+      davinci-resolve
 
       aspell
       aspellDicts.en
