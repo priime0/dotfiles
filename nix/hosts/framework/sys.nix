@@ -59,7 +59,18 @@
 
   # AMD
   hardware.cpu.amd.updateMicrocode = true;
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      mesa
+      libva
+      libvdpau-va-gl
+      vulkan-loader
+      vulkan-validation-layers
+      amdvlk
+      mesa.opencl
+    ];
+  };
   hardware.amdgpu.amdvlk.enable = true;
 
   # Power
@@ -111,6 +122,9 @@
     CC = "gcc";
     LSP_USE_PLISTS = "true";
     MOZ_USE_XINPUT2 = "1";
+    RUSTICL_ENABLE="radeonsi";
+    ROC_ENABLE_PRE_VEGA = "1";
+    QT_QPA_PLATFORM = "xcb";
   };
 
   ### Services

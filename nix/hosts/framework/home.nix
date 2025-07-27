@@ -106,7 +106,13 @@
       lutris
       stremio
       qbittorrent
-      davinci-resolve
+      davinci-resolve-studio
+
+      # Required by DVR
+      kitty
+      mesa-demos
+      vulkan-tools
+      clinfo
 
       aspell
       aspellDicts.en
