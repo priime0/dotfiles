@@ -27,6 +27,11 @@
   (kill-line)
   (meow-insert))
 
+(defun message-buffer ()
+  "Switch to the *Messages* buffer."
+  (interactive)
+  (switch-to-buffer "*Messages*"))
+
 (defvar-keymap meow-buffers-keymap
   "b" #'bufler-switch-buffer
   "l" #'bufler-list
@@ -34,7 +39,8 @@
   "n" #'next-buffer
   "p" #'previous-buffer
   "r" #'rename-buffer
-  "s" #'scratch-buffer)
+  "s" #'scratch-buffer
+  "m" #'message-buffer)
 
 (defvar-keymap meow-windows-keymap
   "w" #'delete-other-windows
@@ -93,6 +99,7 @@
    '("9" . digit-argument)
    '("0" . digit-argument)
    '("-" . negative-argument)
+   '("&" . move-end-of-line)
    '(";" . meow-reverse)
    '("," . meow-inner-of-thing)
    '("." . meow-bounds-of-thing)
