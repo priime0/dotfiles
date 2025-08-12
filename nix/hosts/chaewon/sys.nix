@@ -51,6 +51,13 @@
     ATTR{address}=="92:00:06:59:7a:8b", NAME="eth0"
   '';
 
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "lucas@priime.dev";
+  };
+
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -75,6 +82,17 @@
   };
 
   programs.fish.enable = true;
+
+  services.nginx = {
+    enable = true;
+    virtualHosts = {
+      "files.priime.dev" = {
+        forceSSL = true;
+        enableACME = true;
+        locations."/" = { root = "/var/lib/files.priime.dev"; };
+      };
+    };
+  };
 
   system.stateVersion = "23.11";
   home-manager.users.priime = { pkgs, ... }: { imports = [ ./home.nix ]; };
