@@ -104,6 +104,28 @@
           '';
         };
       };
+      "git.priime.dev" = {
+        forceSSL = true;
+        enableACME = true;
+        extraConfig = ''
+          client_max_body_size 512M;
+        '';
+        locations."/".proxyPass = "http://localhost:3000";
+      };
+    };
+  };
+
+  services.forgejo = {
+    enable = true;
+    database.type = "postgres";
+    lfs.enable = true;
+    settings = {
+      server = {
+        DOMAIN = "git.priime.dev";
+        ROOT_URL = "https://git.priime.dev/";
+        HTTP_PORT = 3000;
+      };
+      service.DISABLE_REGISTRATION = true;
     };
   };
 
