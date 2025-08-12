@@ -94,6 +94,12 @@
   # Display Manager
   services.displayManager.autoLogin.user = "priime";
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+    config.common.default = "wlr";
+  };
+
   # Mouse
   services.libinput.mouse = { middleEmulation = false; };
 
