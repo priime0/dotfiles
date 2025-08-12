@@ -11,6 +11,9 @@
   # Network Manager
   networking.networkmanager.enable = true;
 
+  # Security
+  security.rtkit.enable = true;
+
   # Fonts
   fonts = {
     fontDir.enable = true;
@@ -61,6 +64,7 @@
   hardware.cpu.amd.updateMicrocode = true;
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       mesa
       libva
@@ -69,6 +73,7 @@
       vulkan-validation-layers
       amdvlk
       mesa.opencl
+      rocmPackages.clr.icd
     ];
   };
   hardware.amdgpu.amdvlk.enable = true;
