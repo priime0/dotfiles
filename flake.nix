@@ -24,5 +24,15 @@
           ./nix/hosts/framework/sys.nix
         ];
       };
+
+      nixosConfigurations.chaewon = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inputs = inputs; };
+        modules = [
+          home-manager.nixosModules.default
+          ./nix/hosts/common/sys.nix
+          ./nix/hosts/chaewon/sys.nix
+        ];
+      };
     };
 }
